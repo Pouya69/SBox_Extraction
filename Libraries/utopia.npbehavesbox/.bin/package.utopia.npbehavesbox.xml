@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>package.utopia.npbehavesbox</name>
+    </assembly>
+    <members>
+        <member name="M:NPBehave.Clock.AddTimer(System.Single,System.Int32,System.Action)">
+            <summary>Register a timer function</summary>
+            <param name="time">time in milliseconds</param>
+            <param name="repeat">number of times to repeat, set to -1 to repeat until unregistered.</param>
+            <param name="action">method to invoke</param>
+        </member>
+        <member name="M:NPBehave.Clock.AddTimer(System.Single,System.Single,System.Int32,System.Action)">
+            <summary>Register a timer function with random variance</summary>
+            <param name="delay">time in milliseconds</param>
+            <param name="randomVariance">deviate from time on a random basis</param>
+            <param name="repeat">number of times to repeat, set to -1 to repeat until unregistered.</param>
+            <param name="action">method to invoke</param>
+        </member>
+        <member name="M:NPBehave.Clock.AddUpdateObserver(System.Action)">
+            <summary>Register a function that is called every frame</summary>
+            <param name="action">function to invoke</param>
+        </member>
+        <member name="M:NPBehave.Cooldown.#ctor(System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,NPBehave.Node)">
+            <summary>
+            The Cooldown decorator ensures that the branch can not be started twice within the given cooldown time.
+            
+            The decorator can start the cooldown timer right away or wait until the child stopps, you can control this behavior with the
+            `startAfterDecoratee` parameter.
+            
+            The default behavior in case the cooldown timer is active and this node is started again is, that the decorator waits until
+            the cooldown is reached and then executes the underlying node.
+            You can change this behavior with the `failOnCooldown` parameter to make the decorator immediately fail instead.
+            
+            </summary>
+            <param name="cooldownTime">time until next execution</param>
+            <param name="randomVariation">random variation added to the cooldown time</param>
+            <param name="startAfterDecoratee">If set to <c>true</c> the cooldown timer is started from the point after the decoratee has been started, else it will be started right away.</param>
+            <param name="resetOnFailiure">If set to <c>true</c> the timer will be reset in case the underlying node fails.</param>
+            <param name="failOnCooldown">If currently on cooldown and this parameter is set to <c>true</c>, the decorator will immmediately fail instead of waiting for the cooldown.</param>
+            <param name="decoratee">Decoratee node.</param>
+        </member>
+        <member name="M:NPBehave.Repeater.#ctor(System.Int32,NPBehave.Node)">
+            <param name="loopCount">number of times to execute the decoratee. Set to -1 to repeat forever, be careful with endless loops!</param>
+            <param name="decoratee">Decorated Node</param>
+        </member>
+        <member name="M:NPBehave.Repeater.#ctor(NPBehave.Node)">
+            <param name="decoratee">Decorated Node, repeated forever</param>
+        </member>
+        <member name="M:NPBehave.Node.Stop">
+            <summary>
+            TODO: Rename to "Cancel" in next API-Incompatible version
+            </summary>
+        </member>
+        <member name="M:NPBehave.Node.Stopped(System.Boolean)">
+            THIS ABSOLUTLY HAS TO BE THE LAST CALL IN YOUR FUNCTION, NEVER MODIFY
+            ANY STATE AFTER CALLING Stopped !!!!
+        </member>
+        <member name="M:NPBehave.Node.DoParentCompositeStopped(NPBehave.Composite)">
+            THIS IS CALLED WHILE YOU ARE INACTIVE, IT's MEANT FOR DECORATORS TO REMOVE ANY PENDING
+            OBSERVERS
+        </member>
+        <member name="F:NPBehave.Stops.None">
+            <summary>
+            The decorator will only check it's condition once it is started and will never stop any running nodes.
+            </summary>
+        </member>
+        <member name="F:NPBehave.Stops.Self">
+            <summary>
+            The decorator will check it's condition once it is started and if it is met,
+            it will observe the blackboard for changes.
+            Once the condition is no longer met, it will stop itself allowing the parent composite to proceed with it's next node.
+            </summary>
+        </member>
+        <member name="F:NPBehave.Stops.LowerPriority">
+            <summary>
+            The decorator will check it's condition once it is started and if it's not met, it will observe the blackboard for changes.
+            Once the condition is met, it will stop the lower priority node allowing the parent composite to proceed with it's next node
+            </summary>
+        </member>
+        <member name="F:NPBehave.Stops.Both">
+            <summary>
+            The decorator will stop both: self and lower priority nodes.
+            </summary>
+        </member>
+        <member name="F:NPBehave.Stops.ImmediateRestart">
+            <summary>
+            The decorator will check it's condition once it is started and if it's not met, it will observe the blackboard for changes.
+            Once the condition is met, it will stop the lower priority node and order the parent composite to restart the Decorator immediately.
+            </summary>
+        </member>
+        <member name="F:NPBehave.Stops.LowerPriorityImmediateRestart">
+            <summary>
+            The decorator will check it's condition once it is started and if it's not met, it will observe the blackboard for changes.
+            Once the condition is met, it will stop the lower priority node and order the parent composite to restart the Decorator immediately.
+            As in BOTH it will also stop itself as soon as the condition is no longer met.
+            </summary>
+        </member>
+        <member name="M:NPBehave.NavMoveTo.#ctor(Sandbox.NavMeshAgent,System.String,System.Single,System.Boolean,System.Single,System.Single)">
+            CAUTION: EXPERIMENTAL !!!!
+            <param name="agent">target to move</param>
+            <param name="blackboardKey">blackboard key containing either a Transform or a Vector.</param>
+            <param name="tolerance">acceptable tolerance</param>
+            <param name="stopOnTolerance">should stop when in tolerance</param>
+            <param name="updateFrequency">frequency to check for changes of reaching the destination or a Transform's location</param>
+            <param name="updateVariance">random variance for updateFrequency</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,19 @@
+{
+  "files.associations": {
+    "*.shader": "slang",
+    "*.hlsl": "slang"
+  },
+  "slang.additionalSearchPaths": [
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\core\\shaders",
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\addons\\base\\Assets\\shaders",
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\addons\\menu\\Assets\\shaders",
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\addons\\tools\\Assets\\shaders",
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Assets\\shaders",
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\editor\\ActionGraph\\Assets\\shaders",
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\editor\\MovieMaker\\Assets\\shaders",
+    "F:\\steamlibrary\\steamapps\\common\\sbox\\editor\\Hammer\\Assets\\shaders",
+    "D:\\Projects\\sbox\\SbokuArena\\Libraries\\SbokuBot\\Assets\\shaders"
+  ],
+  "slang.predefinedMacros": [],
+  "slang.workspaceFlavor": "vfx"
+}

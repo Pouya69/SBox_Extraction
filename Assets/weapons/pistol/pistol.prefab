@@ -1,0 +1,192 @@
+{
+  "RootObject": {
+    "__guid": "448594b1-9ae7-4c04-9c52-ec017969aa78",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "pistol",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Weapon",
+        "__guid": "762cbaa1-abcb-4138-95b5-82c9911e63a6",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackCooldown": 0.1,
+        "MaxAmmoPerMagazine": 7,
+        "MaxMagazines": 3,
+        "MuzzleSocket": null,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "WeaponCollider": {
+          "_type": "component",
+          "component_id": "86558cd5-0bfa-4fa0-b24a-c7d2ea1470aa",
+          "go": "30b88218-9397-4788-a781-c120561dae97",
+          "component_type": "ModelCollider"
+        },
+        "WeaponHoldType": "Right",
+        "WeaponRenderer": {
+          "_type": "component",
+          "component_id": "1eefa31f-46a5-49c8-8e7a-c446f3ac4ed0",
+          "go": "30b88218-9397-4788-a781-c120561dae97",
+          "component_type": "ModelRenderer"
+        },
+        "WeaponRigidBody": {
+          "_type": "component",
+          "component_id": "21c19f6d-fd31-4bee-bc62-3fe6398e494f",
+          "go": "30b88218-9397-4788-a781-c120561dae97",
+          "component_type": "Rigidbody"
+        },
+        "WeaponType": "Pistol"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "30b88218-9397-4788-a781-c120561dae97",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "w_usp",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "1eefa31f-46a5-49c8-8e7a-c446f3ac4ed0",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 23,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "86558cd5-0bfa-4fa0-b24a-c7d2ea1470aa",
+            "__enabled": true,
+            "Flags": 0,
+            "ColliderFlags": 0,
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "21c19f6d-fd31-4bee-bc62-3fe6398e494f",
+            "__enabled": false,
+            "Flags": 0,
+            "AngularDamping": 0,
+            "EnableImpactDamage": true,
+            "EnhancedCcd": false,
+            "Gravity": true,
+            "GravityScale": 1,
+            "ImpactDamage": 0,
+            "LinearDamping": 0,
+            "Locking": {
+              "X": false,
+              "Y": false,
+              "Z": false,
+              "Pitch": false,
+              "Yaw": false,
+              "Roll": false
+            },
+            "MassCenterOverride": "0,0,0",
+            "MassOverride": 1,
+            "MinImpactDamageSpeed": 500,
+            "MotionEnabled": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OverrideMassCenter": false,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "facepunch.w_usp#152497"
+  ],
+  "__version": 2
+}

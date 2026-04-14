@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>package.righty.sbokubot</name>
+    </assembly>
+    <members>
+        <member name="T:Sandbox.AI.Default.IActionState">
+            <summary>
+            A movement state (walk, find a cover, etc.)
+            </summary>
+        </member>
+        <member name="T:Sandbox.AI.Default.ICombatState">
+            <summary>
+            A state for combat (shoot, reload, etc.)
+            </summary>
+        </member>
+        <member name="P:Sandbox.AI.Default.SbokuParent.SquaredDistanceToTarget">
+            <summary>
+            Get squared distance to target. If turget is null, we'll get NRE.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.IsOffline">
+            <summary>
+            If true, the bot won't make any new decisions
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.BurstPeriod">
+            <summary>
+            The duration of a single firing burst.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.AimSpeed">
+            <summary>
+            The duration of a single firing burst.
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.Destination">
+            <summary>
+            A point in space the bot is navigating toward
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.Target">
+            <summary>
+            Target the bot must attack
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.Weapon">
+            <summary>
+            Active weapon of the bot
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.HeightToAimAt">
+            <summary>
+            Height bots will aim at
+            </summary>
+        </member>
+        <member name="P:Sandbox.Sboku.SbokuBase.IsReloading">
+            <summary>
+            You must set it to true to reload and then manually unset. This way is more robust due to the way SWB works.
+            </summary>
+        </member>
+        <member name="M:Sandbox.Sboku.SbokuBase.Move(Vector3)">
+            <summary>
+            Try to move in the direction given by the wishVelocity unit vector
+            </summary>
+            <param name="wishVelocity"></param>
+        </member>
+        <member name="M:Sandbox.Sboku.SbokuBase.Rotate(System.Single)">
+            <summary>
+            Set rotation based on the yaw
+            </summary>
+            <param name="yaw"></param>
+        </member>
+        <member name="M:Sandbox.Sboku.SbokuBase.MoveTo(Vector3)">
+            <summary>
+            Navigate to the position
+            </summary>
+            <param name="targetPosition"></param>
+        </member>
+        <member name="M:Sandbox.Sboku.SbokuBase.MoveTo(System.Collections.Generic.List{Vector3})">
+            <summary>
+            Navigate to the position given the path.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:Sandbox.Sboku.SbokuBase.StopNavigating">
+            <summary>
+            Stop moving to the point, given by the MoveTo methods
+            </summary>
+        </member>
+        <member name="M:Sandbox.Sboku.SbokuSettings.CreateOrFind(Sandbox.Scene)">
+            <summary>
+            Use it once per component
+            </summary>
+            <param name="scene"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sandbox.Sboku.TimerHelper.Every(System.Single,System.Action)">
+            <summary>
+            Runs action every given period of time in seconds
+            </summary>
+            <param name="time"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sandbox.Sboku.TimerHelper.Remove(System.Object)">
+            <summary>
+            This method allows you to remove an action from the timer by utilizing the handler previously retrieved through the TimerHelper.
+            </summary>
+            <param name="handler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sandbox.Shared.ISbokuCondition.IsTerminal">
+            <summary>
+            Should we stop evaluating other conditions if the condition is true
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sandbox.Shared.ISbokuState">
+            <summary>
+            General interface for any state
+            </summary>
+        </member>
+    </members>
+</doc>
