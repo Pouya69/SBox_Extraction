@@ -12,7 +12,7 @@ public class ExtractionHostileBehaviour : BaseBehaviourTree
 				FaceTowardsInCombatTargetService(ShootingSequence()),
 				new RandomSelector(
 					new Sequence(
-						new Cooldown(35.0f, true, false, true, MoveToCover()) {Label = "Cooldown of Cover."},
+						new Cooldown(20.0f, true, false, true, FaceTowardsInCombatTargetService(MoveToCover())) {Label = "Cooldown of Cover."},
 						FaceTowardsInCombatTargetService(new Repeater(2, new Sequence(
 							TakeCoverAndStand(),
 							ShootingSequence()

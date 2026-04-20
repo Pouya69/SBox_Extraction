@@ -26,7 +26,6 @@ public sealed class EnvironmentQueryHandler : Component
 	[Button("Debug Find Cover (Donut)")]
 	private void DebugFindCover()
 	{
-
 		DonutEnvironmentQuery query = new DonutEnvironmentQuery( GameObject, DebugPlayerRef, WorldPosition, 2000.0f, 50.0f, 100.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
 			, [new EEnvQueryFilter( EEnvQueryFilterType.COLLISION, true), new EEnvQueryFilter( EEnvQueryFilterType.BLOCKED_FROM_TARGET, false )],
 			[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, GameObject, false )], new Vector3( 0, 0, 20.0f ), new Vector3( 0, 0, 60.0f ) );
@@ -81,7 +80,8 @@ public sealed class EnvironmentQueryHandler : Component
 
 			if (i % AwaitEveryItems == 0)
 			{
-				await Task.Frame();
+				if (Game.IsPlaying)
+					await Task.Frame();
 				//Log.Info( "Time taken: " + timeSinceEQS + " seconds" );
 				//timeSinceEQS = 0.0f;
 			}
@@ -229,8 +229,8 @@ public sealed class EnvironmentQueryHandler : Component
 					BlockedFromFilter( ref query, ref PassedLocs, query.Target, filter.ReversedResult );
 					break;
 			}
-
-			await Task.Frame();
+			if ( Game.IsPlaying )
+				await Task.Frame();
 		}
 
 		foreach ( var item in PassedLocs )
@@ -360,13 +360,15 @@ public sealed class EnvironmentQueryHandler : Component
 			PotentionalGoodPoints[i] = item;
 			if ( i % AwaitEveryItems == 0 )
 			{
-				await Task.Frame();
+				if ( Game.IsPlaying )
+					await Task.Frame();
 				//
 				//timeSinceEQS = 0.0f;
 			}
 				
 		}
-		await Task.Frame();
+		if ( Game.IsPlaying )
+			await Task.Frame();
 		PotentionalGoodPoints.Sort( ( x, y ) => y.Score.CompareTo( x.Score ) );
 
 		if (DebugQueries)
