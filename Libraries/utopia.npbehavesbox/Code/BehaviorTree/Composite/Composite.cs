@@ -9,15 +9,37 @@ namespace NPBehave
         public Composite(string name, Node[] children) : base(name)
         {
             Children = children;
-            Assert.True(children.Length > 0, "Composite nodes (Selector, Sequence, Parallel) need at least one child!");
 
-            foreach (Node node in Children)
+			if ( children.Length == 0 )
+				Log.Warning( "\"Composite nodes (Selector, Sequence, Parallel) need at least one child!\"" );
+
+			foreach (Node node in Children)
             {
                 node.SetParent(this);
             }
         }
 
-        public override void SetRoot(Root rootNode)
+		public Composite( string name ) : base( name )
+		{
+		}
+
+		/// <summary>
+		/// ONLY when initializing the composite AFTER construction.
+		/// </summary>
+		public void InitComposite( Node[] children )
+		{
+			Children = children;
+
+			if ( children.Length == 0 )
+				Log.Warning( "\"Composite nodes (Selector, Sequence, Parallel) need at least one child!\"" );
+
+			foreach ( Node node in Children )
+			{
+				node.SetParent( this );
+			}
+		}
+
+		public override void SetRoot(Root rootNode)
         {
             base.SetRoot(rootNode);
 

@@ -85,7 +85,12 @@
           "component_type": "SkinnedModelRenderer"
         },
         "_PatrolPath": null,
-        "Addition": 1,
+        "ActionSystemComponent": {
+          "_type": "component",
+          "component_id": "4413b42a-6531-4cf2-ba1a-2308ae03f18f",
+          "go": "f6a69296-ac3b-4558-abe4-34932d61a7c4",
+          "component_type": "ActionSystemComponent"
+        },
         "Agent": {
           "_type": "component",
           "component_id": "f0835b46-d11e-40fc-ad49-7dd41800084b",
@@ -98,13 +103,18 @@
           "go": "f6a69296-ac3b-4558-abe4-34932d61a7c4",
           "component_type": "CharacterController"
         },
+        "AIEnvironmentQueryHandler": {
+          "_type": "component",
+          "component_id": "af6fb0cf-342d-403d-b363-406644b9bce6",
+          "go": "f6a69296-ac3b-4558-abe4-34932d61a7c4",
+          "component_type": "EnvironmentQueryHandler"
+        },
         "EnableFootstepSounds": true,
         "FootstepMixer": {
           "Name": "unknown",
           "Id": "00000000-0000-0000-0000-000000000000"
         },
         "FootstepVolume": 1,
-        "NiggaString": "Nigga",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -197,6 +207,36 @@
         "RemoveUnownedItems": true,
         "Source": "Manual",
         "WorkshopItems": []
+      },
+      {
+        "__type": "EnvironmentQueryHandler",
+        "__guid": "af6fb0cf-342d-403d-b363-406644b9bce6",
+        "__enabled": true,
+        "Flags": 0,
+        "AwaitEveryItems": 2,
+        "DebugLastDuration": 5,
+        "DebugPlayerRef": null,
+        "DebugQueries": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "ActionSystemComponent",
+        "__guid": "4413b42a-6531-4cf2-ba1a-2308ae03f18f",
+        "__enabled": true,
+        "Flags": 0,
+        "BaseDamage": 0,
+        "MaxHealth": 0,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
       }
     ],
     "Children": [
@@ -270,7 +310,7 @@
             "Flags": 0,
             "ColliderFlags": 0,
             "Elasticity": null,
-            "End": "0,0,49.6",
+            "End": "0,0,49.5999985",
             "Friction": null,
             "IsTrigger": false,
             "OnComponentDestroy": null,
@@ -285,7 +325,7 @@
             "OnTriggerExit": null,
             "Radius": 10.6,
             "RollingResistance": null,
-            "Start": "0,0,9.6",
+            "Start": "0,0,9.60000038",
             "Static": false,
             "Surface": "surfaces/flesh.surface",
             "SurfaceVelocity": "0,0,0"
@@ -1336,8 +1376,8 @@
                                                 "__version": 2,
                                                 "Flags": 0,
                                                 "Name": "weapon_r",
-                                                "Position": "2.847642,0.5282557,-2.965243",
-                                                "Rotation": "0.09265877,0.07049491,-0.006576842,0.9931775",
+                                                "Position": "2.84764194,0.528255701,-2.9652431",
+                                                "Rotation": "0.0926587731,0.0704949126,-0.00657684216,0.993177474",
                                                 "Scale": "1,1,1",
                                                 "Tags": "",
                                                 "Enabled": true,
@@ -2126,7 +2166,7 @@
             ]
           },
           {
-            "__guid": "5982bd29-60f4-42ec-aad9-4ee8bb737646",
+            "__guid": "1c71dcfb-726a-4b4d-98e0-1b2db4a00781",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - bucket_hat_black",
@@ -2143,7 +2183,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "aaec10f4-abf0-43a1-9815-a589ed57e6e0",
+                "__guid": "97032e31-8a16-497e-971e-1bb3e8410bb5",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2195,7 +2235,7 @@
             "Children": []
           },
           {
-            "__guid": "d038d29e-0e50-4dcb-af82-70aa6726552d",
+            "__guid": "272045f1-55ef-4237-a952-d8e30264a6c4",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - denim_skirt_black",
@@ -2212,7 +2252,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "4d8168e4-e571-4e22-96d5-0debd2dc9623",
+                "__guid": "1ba17b5f-0a0b-4101-8c0f-a8051e1b05c7",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2264,7 +2304,7 @@
             "Children": []
           },
           {
-            "__guid": "b0901f43-5217-4b6b-b724-7dbe021ddd8a",
+            "__guid": "62a15f2c-e907-4d09-bf98-1859a66ed688",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - flannel_shirt",
@@ -2281,7 +2321,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "01d3a470-dc34-4c69-b220-858ecb9687d8",
+                "__guid": "69650eac-1885-470b-99c5-881d83f5d124",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2333,7 +2373,7 @@
             "Children": []
           },
           {
-            "__guid": "521fd8ed-e2b1-4f4c-afbe-e8f9fa3a7df4",
+            "__guid": "103ea371-1427-4a8b-b2af-27be72749629",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - army_boots",
@@ -2350,7 +2390,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "cc8d9937-b7b8-4586-a481-e1e76bc7df85",
+                "__guid": "1bf9db21-4e1d-42a3-9ca6-6cc1b9afbbc6",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2402,7 +2442,7 @@
             "Children": []
           },
           {
-            "__guid": "0ec2b88f-037a-4eb0-8442-2f6ce589ef54",
+            "__guid": "80bbe655-e847-4cc2-b310-79deb3c34bc5",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - medium_beard",
@@ -2419,7 +2459,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "75272934-f1bd-47e6-b249-02a2c174315e",
+                "__guid": "3a160be6-32c0-4cdd-ada7-e696fb4799bc",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2477,7 +2517,7 @@
         "__version": 2,
         "Flags": 0,
         "Name": "Head",
-        "Position": "0,0,61.925",
+        "Position": "0,0,61.9249992",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",
@@ -2507,6 +2547,7 @@
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
         "IncludedBodies": "",
+        "DeferGeneration": false,
         "CustomBounds": false
       }
     },

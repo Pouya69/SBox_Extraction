@@ -11,8 +11,12 @@ namespace NPBehave
         {
         }
 
-		#if DEBUG
-	    public override string DebugIcon => "rule";
+		public Selector() : base( "Selector")
+		{
+		}
+
+#if DEBUG
+		public override string DebugIcon => "rule";
 		#endif
         protected override void DoStart()
         {
