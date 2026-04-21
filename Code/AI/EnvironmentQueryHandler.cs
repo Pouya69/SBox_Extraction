@@ -24,13 +24,23 @@ public sealed class EnvironmentQueryHandler : Component
 	//private TimeSince timeSinceEQS;
 
 	[Button("Debug Find Cover (Donut)")]
-	private void DebugFindCover()
+	private void DebugFindCoverDonut()
 	{
-		DonutEnvironmentQuery query = new DonutEnvironmentQuery( GameObject, DebugPlayerRef, WorldPosition, 2000.0f, 50.0f, 100.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
+		DonutEnvironmentQuery query = new DonutEnvironmentQuery( GameObject, DebugPlayerRef, WorldPosition, 2000.0f, 50.0f, 400.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
 			, [new EEnvQueryFilter( EEnvQueryFilterType.COLLISION, true), new EEnvQueryFilter( EEnvQueryFilterType.BLOCKED_FROM_TARGET, false )],
 			[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, GameObject, false )], new Vector3( 0, 0, 20.0f ), new Vector3( 0, 0, 60.0f ) );
 
 		RunQuery( query, EEnvQueryResultType.BEST, DebugOnQueryCompleted);
+	}
+
+	[Button( "Debug Find Cover (Box)" )]
+	private void DebugFindCoverBox()
+	{
+		BoxEnvironmentQuery query = new BoxEnvironmentQuery( GameObject, DebugPlayerRef, WorldPosition, 2000.0f, 400.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
+			, [new EEnvQueryFilter( EEnvQueryFilterType.COLLISION, true ), new EEnvQueryFilter( EEnvQueryFilterType.BLOCKED_FROM_TARGET, false )],
+			[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, GameObject, false )], new Vector3( 0, 0, 20.0f ), new Vector3( 0, 0, 60.0f ) );
+
+		RunQuery( query, EEnvQueryResultType.BEST, DebugOnQueryCompleted );
 	}
 
 	private void DebugOnQueryCompleted(EnvQueryResult result)
@@ -92,6 +102,59 @@ public sealed class EnvironmentQueryHandler : Component
 		await FindBestFromScore(query);
 
 		var result = CalculateResult( resultType);
+
+
+
+
+		QueryCompleted( ref result );
+	}
+
+	public async void RunQuery( BoxEnvironmentQuery query, EEnvQueryResultType resultType, Action<EnvQueryResult> onQueryCompletedFunctor )
+	{
+		QueryStatus = NPBehave.Action.Result.Progress;
+		PotentionalGoodPoints.Clear();
+		// timeSinceEQS = 0.0f;
+
+		CurrentFunctor = onQueryCompletedFunctor;
+		OnQueryCompleted += onQueryCompletedFunctor;
+
+		Vector3 matrixStartPoint = query.OwnerOffset + query.StartLocation + new Vector3( -1, -1, 0 ) * query.BoxHalfExtent;
+
+		int amountOfPointsOnEachDirection = (int)((query.BoxHalfExtent * 2) / query.PointDistance) + 1;
+
+		// Filtering
+		for ( int i = 0; i < amountOfPointsOnEachDirection; i++ )
+		{
+			Vector3[] rowLocs = new Vector3[amountOfPointsOnEachDirection];
+			for ( int j = 0; j < amountOfPointsOnEachDirection; j++ )
+			{
+				rowLocs[j] = matrixStartPoint + new Vector3(j * query.PointDistance, i * query.PointDistance,0);
+				if ( i % AwaitEveryItems == 0 )
+				{
+					if ( Game.IsPlaying )
+						await Task.Frame();
+					//Log.Info( "Time taken: " + timeSinceEQS + " seconds" );
+					//timeSinceEQS = 0.0f;
+				}
+			}
+			// Go the next row.
+			await FilterResults( query, rowLocs );
+
+
+			if ( i % AwaitEveryItems == 0 )
+			{
+				if ( Game.IsPlaying )
+					await Task.Frame();
+				//Log.Info( "Time taken: " + timeSinceEQS + " seconds" );
+				//timeSinceEQS = 0.0f;
+			}
+
+		}
+
+		// Scoring
+		await FindBestFromScore( query );
+
+		var result = CalculateResult( resultType );
 
 
 
@@ -200,7 +263,7 @@ public sealed class EnvironmentQueryHandler : Component
 		return OutQueryResult;
 	}
 
-	private async Task FilterResults(DonutEnvironmentQuery query, Vector3[] locsToCheck )
+	private async Task FilterResults(EnvironmentQuery query, Vector3[] locsToCheck )
 	{
 		if ( query.FilterTypes.Length == 0)
 		{
@@ -214,19 +277,19 @@ public sealed class EnvironmentQueryHandler : Component
 			{
 
 				case EEnvQueryFilterType.COLLISION:
-					CollisionFilter( ref query, ref PassedLocs, filter.ReversedResult );
+					CollisionFilter( query, ref PassedLocs, filter.ReversedResult );
 					break;
 
 				case EEnvQueryFilterType.DOT:
-					DotFilter( ref query, ref PassedLocs, filter.ReversedResult );
+					DotFilter( query, ref PassedLocs, filter.ReversedResult );
 					break;
 
 				case EEnvQueryFilterType.BLOCKED_FROM_OWNER:
-					BlockedFromFilter( ref query, ref PassedLocs, query.Owner, filter.ReversedResult );
+					BlockedFromFilter( query, ref PassedLocs, query.Owner, filter.ReversedResult );
 					break;
 
 				case EEnvQueryFilterType.BLOCKED_FROM_TARGET:
-					BlockedFromFilter( ref query, ref PassedLocs, query.Target, filter.ReversedResult );
+					BlockedFromFilter( query, ref PassedLocs, query.Target, filter.ReversedResult );
 					break;
 			}
 			if ( Game.IsPlaying )
@@ -249,7 +312,7 @@ public sealed class EnvironmentQueryHandler : Component
 			PotentionalGoodPoints.Add( new( loc, 1.0f ) );
 	}
 
-	private void BlockedFromFilter( ref DonutEnvironmentQuery query, ref List<Vector3> locsToCheck, GameObject Target, bool reversed)
+	private void BlockedFromFilter( EnvironmentQuery query, ref List<Vector3> locsToCheck, GameObject Target, bool reversed)
 	{
 		for ( int i = locsToCheck.Count - 1; i >= 0; i-- )
 		{
@@ -272,7 +335,7 @@ public sealed class EnvironmentQueryHandler : Component
 		}
 	}
 
-	private void CollisionFilter ( ref DonutEnvironmentQuery query, ref List<Vector3> locsToCheck, bool reversed )
+	private void CollisionFilter ( EnvironmentQuery query, ref List<Vector3> locsToCheck, bool reversed )
 	{
 		for ( int i = locsToCheck.Count - 1; i >= 0; i-- ) {
 			var loc = locsToCheck[i];
@@ -295,7 +358,7 @@ public sealed class EnvironmentQueryHandler : Component
 		}
 	}
 
-	private void DotFilter( ref DonutEnvironmentQuery query, ref List<Vector3> locsToCheck, bool reversed, float DotGreaterThan = 0.0f )
+	private void DotFilter( EnvironmentQuery query, ref List<Vector3> locsToCheck, bool reversed, float DotGreaterThan = 0.0f )
 	{
 		Vector3 ownerForward = query.Owner.WorldTransform.Forward;
 		Vector3 ownerLocation = query.StartLocation;
@@ -323,7 +386,7 @@ public sealed class EnvironmentQueryHandler : Component
 
 	}
 
-	private async Task FindBestFromScore(DonutEnvironmentQuery query)
+	private async Task FindBestFromScore(EnvironmentQuery query)
 	{
 
 		foreach ( var scoring in query.Scorings )
@@ -343,19 +406,20 @@ public sealed class EnvironmentQueryHandler : Component
 		}
 	}
 
-	private async Task DistanceScoreMethod(DonutEnvironmentQuery query, EEnvQueryScoring scoring )
+	private async Task DistanceScoreMethod(EnvironmentQuery query, EEnvQueryScoring scoring )
 	{
 		if ( PotentionalGoodPoints.Count == 0 ) return;
 
 		var relativeToPosition = scoring.RelativeTo.WorldPosition;
+		float halfExtent = query.GetHalfExtent();
 
 		for ( int i = 0; i < PotentionalGoodPoints.Count; i++ )
 		{
 			var item = PotentionalGoodPoints[i];
 			if ( scoring.ReversedResult )
-				item.Score += relativeToPosition.DistanceSquared( item.Location ) / (query.Radius * query.Radius);
+				item.Score += relativeToPosition.DistanceSquared( item.Location ) / (halfExtent * halfExtent);
 			else
-				item.Score += 1.0f - ((relativeToPosition.DistanceSquared( item.Location ) / (query.Radius * query.Radius)));
+				item.Score += 1.0f - ((relativeToPosition.DistanceSquared( item.Location ) / (halfExtent * halfExtent)));
 
 			PotentionalGoodPoints[i] = item;
 			if ( i % AwaitEveryItems == 0 )

@@ -1,5 +1,7 @@
 
 
+using System.Reflection.Metadata.Ecma335;
+
 public enum EEnvQueryAxisType
 {
 	ALL_AXIS,
@@ -55,6 +57,7 @@ public class EnvironmentQuery
 		OwnerOffset = ownerOffset;
 	}
 
+	public virtual float GetHalfExtent() => 0.0f;
 }
 
 public struct EnvQueryResult
@@ -129,5 +132,20 @@ public class DonutEnvironmentQuery : EnvironmentQuery
 		InnerRadius = innerRadius;
 	}
 
+	public override float GetHalfExtent() => Radius;
 	
+}
+
+public class BoxEnvironmentQuery : EnvironmentQuery
+{
+	public float BoxHalfExtent;
+
+	public BoxEnvironmentQuery( GameObject owner, GameObject target, Vector3 startLocation, float boxHalfExtent, float pointDistance, float pointRadius, EEnvQueryAxisType axisType, string ignoreTag
+		, EEnvQueryFilter[] filterTypes, EEnvQueryScoring[] scorings, Vector3 ownerOffset = new Vector3(), Vector3 targetOffset = new Vector3() )
+		: base( owner, target, startLocation, pointDistance, pointRadius, axisType, ignoreTag, filterTypes, scorings, ownerOffset, targetOffset )
+	{
+		BoxHalfExtent = boxHalfExtent;
+	}
+
+	public override float GetHalfExtent() => BoxHalfExtent;
 }
