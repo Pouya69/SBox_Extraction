@@ -286,7 +286,7 @@ private void OnFootstepEvent( SceneModel.FootstepEvent e )
 
 	public void CrouchBehindCover()
 	{
-		_anim.DuckLevel = 0.7f;
+		_anim.DuckLevel = 1.0f;
 	}
 
 	public void StandUpFromCover()

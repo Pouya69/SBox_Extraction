@@ -100,19 +100,27 @@ public class ExtractionHostileBehaviour : BaseBehaviourTree
 		{
 			// Start it.
 			var currentHostile = GetCurrentHostile();
-			DonutEnvironmentQuery query;
+			EnvironmentQuery query;
 			if ( currentHostile is null )
 			{
 				// Go take cover around yourself
-				query = new DonutEnvironmentQuery( Owner.GameObject, Owner.GameObject, Owner.WorldPosition, 2000.0f, 0.0f, 110.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
+				query = new BoxEnvironmentQuery( Owner.GameObject, Owner.GameObject, Owner.WorldPosition, 2000.0f, 110.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
 				, [new EEnvQueryFilter( EEnvQueryFilterType.COLLISION, true ), new EEnvQueryFilter( EEnvQueryFilterType.BLOCKED_FROM_TARGET, false )],
-				[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, Owner.GameObject, false )], new Vector3( 0, 0, 20.0f ), new Vector3( 0, 0, 60.0f ) );
+				[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, Owner.GameObject, false )], new Vector3( 0, 0, 30.0f ), new Vector3( 0, 0, 50.0f ) );
 			}
 			else
 			{
-				query = new DonutEnvironmentQuery( Owner.GameObject, currentHostile, Owner.WorldPosition, 2000.0f, 0.0f, 110.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
+				/*
+				query = new BoxEnvironmentQuery( Owner.GameObject, currentHostile, Owner.WorldPosition, 2000.0f, 200.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
 				, [new EEnvQueryFilter( EEnvQueryFilterType.COLLISION, true ), new EEnvQueryFilter( EEnvQueryFilterType.BLOCKED_FROM_TARGET, false )],
-				[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, Owner.GameObject, false ), new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, currentHostile, false )], new Vector3( 0, 0, 20.0f ), new Vector3( 0, 0, 30.0f ) );
+				[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, Owner.GameObject, false ), new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, currentHostile, false )], new Vector3( 0, 0, 30.0f ), new Vector3( 0, 0, 50.0f ) );
+				*/
+
+				// This one also checks if it is behind the player but would prefer closer still.
+				query = new BoxEnvironmentQuery( Owner.GameObject, currentHostile, Owner.WorldPosition, 2000.0f, 200.0f, 15.0f, EEnvQueryAxisType.ONLY_XY, "ai_cover"
+				, [new EEnvQueryFilter( EEnvQueryFilterType.COLLISION, true ), new EEnvQueryFilter( EEnvQueryFilterType.BLOCKED_FROM_TARGET, false )],
+				[new EEnvQueryScoring( EEnvQueryScoringType.DISTANCE, Owner.GameObject, false ), new EEnvQueryScoring(EEnvQueryScoringType.DOT, currentHostile, true, 0.0f)], new Vector3( 0, 0, 30.0f ), new Vector3( 0, 0, 50.0f ) );
+
 			}
 
 			StartSprinting();

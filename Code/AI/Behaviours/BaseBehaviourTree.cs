@@ -100,6 +100,12 @@ public class BaseBehaviourTree : Selector
 			Owner.AIEnvironmentQueryHandler.RunQuery( donutQuery, resultType, onQueryCompletedFunctor );
 		}
 
+		var boxQuery = query as BoxEnvironmentQuery;
+		if ( boxQuery is not null )
+		{
+			Owner.AIEnvironmentQueryHandler.RunQuery(boxQuery, resultType, onQueryCompletedFunctor );
+		}
+
 		// Support for other query types coming soon... (Box etc.)
 	}
 

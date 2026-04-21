@@ -91,12 +91,14 @@ public struct EEnvQueryScoring
 	public GameObject RelativeTo;
 	public bool ReversedResult;
 	public EEnvQueryScoringFallOffType FallOffType = EEnvQueryScoringFallOffType.QUADRATIC;
+	public float Value;
 
-	public EEnvQueryScoring( EEnvQueryScoringType scoringType, GameObject relativeTo, bool reversedResult )
+	public EEnvQueryScoring( EEnvQueryScoringType scoringType, GameObject relativeTo, bool reversedResult, float value = 0.0f )
 	{
 		ScoringType = scoringType;
 		ReversedResult = reversedResult;
 		RelativeTo = relativeTo;
+		Value = value;
 	}
 }
 
@@ -117,6 +119,7 @@ public enum EEnvQueryScoringFallOffType
 public enum EEnvQueryScoringType
 {
 	NO_SCORING,
+	DOT,
 	DISTANCE
 }
 

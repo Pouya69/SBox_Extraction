@@ -2,6 +2,7 @@ using NPBehave;
 using Sandbox;
 using System;
 using System.Collections;
+using System.Threading;
 using System.Threading.Tasks;
 using Random = System.Random;
 using Task = System.Threading.Tasks.Task;
@@ -215,7 +216,10 @@ public sealed class EnvironmentQueryHandler : Component
 		if ( OutQueryResult.Success )
 		{
 			var rand = new Random();
-			OutQueryResult.Location = PotentionalGoodPoints[rand.Next( 0, PotentionalGoodPoints.Count / 4 )].Location;
+			int pickedIndex = rand.Next( 0, PotentionalGoodPoints.Count / 4 );
+			if ( DebugQueries )
+				Log.Info( "Picked " + pickedIndex + " index..." );
+			OutQueryResult.Location = PotentionalGoodPoints[pickedIndex].Location;
 		}
 
 		return OutQueryResult;
@@ -366,7 +370,7 @@ public sealed class EnvironmentQueryHandler : Component
 		for ( int i = locsToCheck.Count - 1; i >= 0; i-- )
 		{
 			var loc = locsToCheck[i];
-			bool condition = ownerForward.Dot( (loc - query.StartLocation) ) >= DotGreaterThan;
+			bool condition = ownerForward.Dot( loc - query.StartLocation ) >= DotGreaterThan;
 			if (reversed)
 				condition = condition ? false : true;
 
@@ -386,6 +390,8 @@ public sealed class EnvironmentQueryHandler : Component
 
 	}
 
+	
+
 	private async Task FindBestFromScore(EnvironmentQuery query)
 	{
 
@@ -399,11 +405,54 @@ public sealed class EnvironmentQueryHandler : Component
 				default:
 					return;
 
+				case EEnvQueryScoringType.DOT:
+					await DotScoreMethod( query, scoring );
+					break;
+
 				case EEnvQueryScoringType.DISTANCE:
 					await DistanceScoreMethod( query, scoring );
-					return;
+					break;
 			}
 		}
+	}
+
+	private async Task DotScoreMethod( EnvironmentQuery query, EEnvQueryScoring scoring )
+	{
+		if ( PotentionalGoodPoints.Count == 0 ) return;
+
+		Vector3 relatveToForward = scoring.RelativeTo.WorldTransform.Forward;
+		Vector3 relativeToPosition = scoring.RelativeTo.WorldPosition;
+
+		for ( int i = 0; i < PotentionalGoodPoints.Count; i++ )
+		{
+			var item = PotentionalGoodPoints[i];
+			if ( scoring.ReversedResult )
+				item.Score -= relatveToForward.Dot( (item.Location - relativeToPosition).WithZ( relatveToForward.z ).Normal );
+			else
+				item.Score += relatveToForward.Dot( (item.Location - relativeToPosition).WithZ( relatveToForward.z ).Normal );
+
+			PotentionalGoodPoints[i] = item;
+			if ( i % AwaitEveryItems == 0 )
+			{
+				if ( Game.IsPlaying )
+					await Task.Frame();
+				//
+				//timeSinceEQS = 0.0f;
+			};
+		}
+
+		if ( Game.IsPlaying )
+			await Task.Frame();
+		PotentionalGoodPoints.Sort( ( x, y ) => y.Score.CompareTo( x.Score ) );
+
+
+		if ( DebugQueries )
+		{
+			Log.Warning( "Dot scoring method from " + scoring.RelativeTo.Name );
+			for ( int i = 0; i < PotentionalGoodPoints.Count; i++ )
+				Log.Warning( i + ": " + "Score: " + PotentionalGoodPoints[i].Score + ", Location " + PotentionalGoodPoints[i].Location );
+		}
+
 	}
 
 	private async Task DistanceScoreMethod(EnvironmentQuery query, EEnvQueryScoring scoring )
@@ -437,8 +486,9 @@ public sealed class EnvironmentQueryHandler : Component
 
 		if (DebugQueries)
 		{
+			Log.Warning( "Distance scoring method from " + scoring.RelativeTo.Name );
 			for ( int i = 0; i < PotentionalGoodPoints.Count; i++ )
-				Log.Info( i + ": " + PotentionalGoodPoints[i].Score );
+				Log.Warning( i + ": " + "Score: " + PotentionalGoodPoints[i].Score + ", Location " + PotentionalGoodPoints[i].Location );
 		}
 	}
 		
