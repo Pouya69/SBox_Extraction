@@ -1,8 +1,8 @@
 {
-  "Title": "My Project",
+  "Title": "SBox_Extraction",
   "Type": "game",
   "Org": "local",
-  "Ident": "my_project",
+  "Ident": "sbox_extraction",
   "Schema": 1,
   "IncludeSourceFiles": false,
   "Resources": null,
@@ -23,6 +23,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene"
+    "StartupScene": "scenes/minimal.scene",
+    "LaunchMode": "Normal"
   }
 }
