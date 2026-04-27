@@ -16,7 +16,8 @@ public partial class QuestInfo : GameResource
 	public int XP_AfterCompletingQuest { get; set; }
 
 	public List<QuestObjectiveInfo> QuestObjectives { get; set; }
-	public List<QuestObjectiveInfo> QuestOptionalObjectives { get; set; }
+
+	public List<ObjectiveRewardInfo> QuestCompletionRewards { get; set; }
 
 	protected override Bitmap CreateAssetTypeIcon( int width, int height )
 	{
@@ -33,6 +34,7 @@ public partial class QuestObjectiveInfo : GameResource
 	/// It could also be used for hiding the objective from the player (no UI).
 	/// </summary>
 	public bool ShouldShowToPlayer { get; set; } = true;
+	public bool IsOptional { get; set; } = false;
 
 	[ReadOnly]
 	public string Quest_UID { get; private set; } = GuidGenerator.NewObjectiveId;
@@ -40,6 +42,8 @@ public partial class QuestObjectiveInfo : GameResource
 	public string Description { get; set; }
 
 	public int XP_AfterCompletingObjective { get; set; }
+
+	public List<ObjectiveRewardInfo> ObjectiveCompletionRewards { get; set; }
 
 	protected override Bitmap CreateAssetTypeIcon( int width, int height )
 	{
@@ -103,5 +107,34 @@ public partial class QuestLocationObjectiveInfo : QuestObjectiveInfo
 	protected override Bitmap CreateAssetTypeIcon( int width, int height )
 	{
 		return CreateSimpleAssetTypeIcon( "location_on", width, height, "#fdea60", "black" );
+	}
+}
+
+[AssetType( Name = "Location", Extension = "qloc", Category = "Quests" )]
+public partial class QuestLocationInfo : GameResource
+{
+	[ReadOnly]
+	public string Quest_UID { get; private set; } = GuidGenerator.NewObjectiveId;
+
+	public string LocationName { get; set; }
+	//public GameTags UID_LocationTag;
+
+	protected override Bitmap CreateAssetTypeIcon( int width, int height )
+	{
+		return CreateSimpleAssetTypeIcon( "home", width, height, "#fdea60", "black" );
+	}
+}
+
+[AssetType( Name = "Reward", Extension = "qreward", Category = "Quests" )]
+public partial class ObjectiveRewardInfo : GameResource
+{
+	public GameObject ObjectRef { get; set; }
+	public int Amount { get; set; }
+
+	//public GameTags UID_LocationTag;
+
+	protected override Bitmap CreateAssetTypeIcon( int width, int height )
+	{
+		return CreateSimpleAssetTypeIcon( "trophy", width, height, "#fdea60", "black" );
 	}
 }
