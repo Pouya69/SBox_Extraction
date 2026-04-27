@@ -1,0 +1,9 @@
+{
+  "LocationName": "Go back for your rewards.",
+  "ShouldShowToPlayer": true,
+  "Quest_UID": "o-643c85a2-816c-483a-8a51-bc29c636b1a0",
+  "Description": null,
+  "XP_AfterCompletingObjective": 0,
+  "__references": [],
+  "__version": 0
+}

@@ -1,0 +1,9 @@
+{
+  "LocationName": "The Area",
+  "ShouldShowToPlayer": true,
+  "Quest_UID": "o-24bf0e9b-02cd-4f69-b2fb-c310e0e1dfe7",
+  "Description": "Go To specified location",
+  "XP_AfterCompletingObjective": 0,
+  "__references": [],
+  "__version": 0
+}

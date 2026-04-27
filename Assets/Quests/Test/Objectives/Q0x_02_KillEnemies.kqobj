@@ -1,0 +1,9 @@
+{
+  "ShouldShowToPlayer": false,
+  "Amount": 7,
+  "Quest_UID": "o-b85cdbfb-729e-4cc0-a148-272072f8199c",
+  "Description": "Clear the area of hostiles.",
+  "XP_AfterCompletingObjective": 5,
+  "__references": [],
+  "__version": 0
+}

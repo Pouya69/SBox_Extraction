@@ -1,0 +1,21 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Q 0X Test 01",
+      "Type": "quest",
+      "Org": "local",
+      "Ident": "q0xtest01",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "quests/test/q0x_test_01.quest"
+      }
+    }
+  }
+}

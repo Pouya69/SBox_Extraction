@@ -1,0 +1,12 @@
+{
+  "ObjectReference": {
+    "_type": "gameobject",
+    "go": "56c8166b-d04a-44fd-80a5-838d8ed350e5"
+  },
+  "ShouldShowToPlayer": false,
+  "Quest_UID": "o-9c91eabe-679d-451b-adcc-42822c1f042d",
+  "Description": "Find and grab the artifact.",
+  "XP_AfterCompletingObjective": 5,
+  "__references": [],
+  "__version": 0
+}
