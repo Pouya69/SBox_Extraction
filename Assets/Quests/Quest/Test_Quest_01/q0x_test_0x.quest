@@ -1,0 +1,16 @@
+{
+  "Quest_UID": "q-40650da4-57ba-46c9-a9a7-19414e424f02",
+  "Title": "Stolen Gem",
+  "Description": "Find the lost artifact within the Vancouver Area.",
+  "XP_AfterCompletingQuest": 60,
+  "QuestObjectives": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "QuestCompletionRewards": [],
+  "FailureConditions": [],
+  "__references": [],
+  "__version": 0
+}

@@ -1,0 +1,8 @@
+{
+  "AmountNeeded": 5,
+  "Entity": null,
+  "WillFinishQuest": false,
+  "Condition": "KILLED",
+  "__references": [],
+  "__version": 0
+}

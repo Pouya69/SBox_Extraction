@@ -435,7 +435,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Cube (2)",
-      "Position": "49.5370712,34.0889587,43.6761398",
+      "Position": "41.1168938,45.8743362,43.6761475",
       "Rotation": "1.81932798E-08,-8.23505879E-17,0.305232495,0.952278018",
       "Scale": "0.563288927,0.563288927,0.563288927",
       "Tags": "",
@@ -662,6 +662,11 @@
     "GameObjectSystems": {
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "aa186e1c-0847-47c5-b4b3-019181667903"
+        }
       }
     }
   },

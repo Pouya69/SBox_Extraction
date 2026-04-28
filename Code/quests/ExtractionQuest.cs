@@ -4,13 +4,26 @@ public class ExtractionQuest : IExtractionQuest
 {
 	private EQuestStatus QuestStatus { get; set; } = EQuestStatus.NOT_STARTED;
 
-	[Property] private QuestInfo QuestInfo { get; set; }
+	[Property, ReadOnly] private QuestInfo QuestInfo { get; set; }
 
+	[Property, ReadOnly] public List<FExtractionGenericObjective> QuestObjectives;
 
+	[Property, ReadOnly] public List<FExtractionGenericObjective> FailedObjectives;
 
-	public QuestObjectiveInfo[] GetQuestObjectives()
+	[Property, ReadOnly] public List<FExtractionGenericObjective> ActiveObjectives;
+
+	[Property, ReadOnly] public List<FExtractionGenericObjective> CompletedObjectives;
+
+	public QuestObjectiveInfo GetObjectiveInfo( int objectiveIndex )
 	{
-		throw new System.NotImplementedException();
+		if ( QuestObjectives.Count <= objectiveIndex ) return null;
+
+		return QuestObjectives[objectiveIndex].ObjectiveInfo;
+	}
+
+	public FExtractionGenericObjective[] GetQuestObjectives()
+	{
+		return QuestObjectives.ToArray();
 	}
 
 	public string GetQuest_GUID()
@@ -18,7 +31,7 @@ public class ExtractionQuest : IExtractionQuest
 		return QuestInfo.Quest_UID;
 	}
 
-	public bool IsObjectiveComplete( ExtractionGenericObjective Objective )
+	public bool IsObjectiveComplete( FExtractionGenericObjective Objective )
 	{
 		throw new System.NotImplementedException();
 	}
@@ -43,6 +56,26 @@ public class ExtractionQuest : IExtractionQuest
 		return QuestStatus == EQuestStatus.IN_PROGRESS;
 	}
 
+	public bool ObjectiveComplete( QuestObjectiveInfo objective )
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public bool ObjectiveComplete( int objectiveIndex )
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public bool ObjectiveFailed( QuestObjectiveInfo objective )
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public bool ObjectiveFailed( int objectiveIndex )
+	{
+		throw new System.NotImplementedException();
+	}
+
 	public void QuestComplete()
 	{
 		QuestStatus = EQuestStatus.COMPLETED;
@@ -63,9 +96,20 @@ public class ExtractionQuest : IExtractionQuest
 		throw new System.NotImplementedException();
 	}
 
+	public FExtractionGenericObjective[] GetCurrentObjectives()
+	{
+		return ActiveObjectives.ToArray();
+	}
 }
 
-public class ExtractionGenericObjective
+public struct FExtractionGenericObjective
 {
+	public FExtractionGenericObjective( QuestObjectiveInfo objectiveInfo)
+	{
+		ObjectiveStatus = EQuestStatus.NOT_STARTED;
+		ObjectiveInfo = objectiveInfo;
+	}
 
+	public EQuestStatus ObjectiveStatus;
+	public QuestObjectiveInfo ObjectiveInfo;
 }

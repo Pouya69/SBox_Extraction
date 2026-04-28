@@ -10,10 +10,21 @@ public enum EQuestStatus
 	FAILED,
 }
 
+public enum EQuestObjectiveType
+{
+	LOCATION,
+	KILL,
+	SPEAK,
+	FETCH
+}
+
 public interface IExtractionQuestEntity
 {
 	public void AddEntityToGlobalManager();
 	public bool IsAlive();
+
+	public void EntityKilled();
+	public void EntityPickedUp();
 }
 
 public interface IExtractionQuest
@@ -26,14 +37,52 @@ public interface IExtractionQuest
 	public bool IsQuestComplete();
 	public bool IsQuestFailed();
 	public bool IsQuestInProgress();
-	public bool IsObjectiveComplete( ExtractionGenericObjective Objective );
+	public bool IsObjectiveComplete( FExtractionGenericObjective Objective );
 	public bool IsObjectiveComplete(string Objective_UID);
 
-	public QuestObjectiveInfo[] GetQuestObjectives();
+	public bool ObjectiveComplete(QuestObjectiveInfo objective);
+	public bool ObjectiveComplete(int objectiveIndex);
+	public bool ObjectiveFailed( QuestObjectiveInfo objective );
+	public bool ObjectiveFailed( int objectiveIndex );
+
+	public FExtractionGenericObjective[] GetCurrentObjectives();
+
+
+	public QuestObjectiveInfo GetObjectiveInfo(int objectiveIndex);
+
+	public FExtractionGenericObjective[] GetQuestObjectives();
 }
 
 public static class ExtractionQuestUtility
 {
+	public static void CheckQuestObjectiveConditions(IExtractionQuest quest, QuestObjectiveInfo objective, object objectToCheck, EQuestObjectiveCondition actionTaken, ExtractionPlayerQuestSystemHandlerComponent playerQuestSystem)
+	{
+		foreach ( var condition in objective.FailureConditions )
+		{
+			if ( condition.IsConditionMet( objectToCheck, actionTaken, playerQuestSystem ) == EQuestObjectiveResultType.NOT_RELAVANT )
+				continue;
+
+			if ( condition.WillFinishQuest )
+			{
+				quest.QuestFailed();
+				continue;
+			}
+			quest.ObjectiveFailed( objective );
+			return;
+		}
+
+
+
+		if ( objective.SuccessCondition.IsConditionMet( objectToCheck, actionTaken, playerQuestSystem ) == EQuestObjectiveResultType.NOT_RELAVANT )
+			return;
+
+		if ( objective.SuccessCondition.WillFinishQuest )
+		{
+			quest.QuestComplete();
+			return;
+		}
+		quest.ObjectiveComplete( objective );
+	}
 
 	public static IExtractionQuest GetQuestByGUID(string QuestGUID) => ExtractionQuestSystem.GetQuestByGUID( QuestGUID );
 }
@@ -45,4 +94,6 @@ public static class GuidGenerator
 	public static string NewObjectiveId => "o-" + Guid.NewGuid().ToString();
 
 	public static string NewEntityId => "e-" + Guid.NewGuid().ToString();
+
+	public static string NewLocationId => "l-" + Guid.NewGuid().ToString();
 }

@@ -1,0 +1,13 @@
+{
+  "ShouldShowToPlayer": true,
+  "IsOptional": false,
+  "Objective_UID": "o-c8cf852c-c42b-41b2-897f-cd5384b23eca",
+  "Description": null,
+  "XP_AfterCompletingObjective": 0,
+  "ObjectiveCompletionRewards": [],
+  "SuccessCondition": null,
+  "FailureConditions": [],
+  "LeadsTo": [],
+  "__references": [],
+  "__version": 0
+}

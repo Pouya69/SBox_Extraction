@@ -1,0 +1,8 @@
+{
+  "AmountNeeded": 1,
+  "Entity": null,
+  "WillFinishQuest": false,
+  "Condition": "GRABBED",
+  "__references": [],
+  "__version": 0
+}

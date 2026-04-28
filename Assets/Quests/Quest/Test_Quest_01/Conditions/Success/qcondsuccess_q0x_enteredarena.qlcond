@@ -1,0 +1,7 @@
+{
+  "Location": "quests/locations/qlocation_arena.qloc",
+  "WillFinishQuest": false,
+  "Condition": "ENTERED",
+  "__references": [],
+  "__version": 0
+}
