@@ -23,12 +23,14 @@ public interface IExtractionQuestEntity
 	public void AddEntityToGlobalManager();
 	public bool IsAlive();
 
-	public void EntityKilled();
-	public void EntityPickedUp();
+	public void EnteredArea(QuestLocationInfo location);
+	public void EntityKilled( IExtractionQuestEntity Instigator );
+	public void EntityPickedUp( IExtractionQuestEntity Instigator );
 }
 
 public interface IExtractionQuest
 {
+
 	public string GetQuest_GUID();
 	public void QuestStarted();
 	public void QuestComplete();
@@ -37,7 +39,7 @@ public interface IExtractionQuest
 	public bool IsQuestComplete();
 	public bool IsQuestFailed();
 	public bool IsQuestInProgress();
-	public bool IsObjectiveComplete( FExtractionGenericObjective Objective );
+	public bool IsObjectiveComplete( QuestObjectiveInfo Objective );
 	public bool IsObjectiveComplete(string Objective_UID);
 
 	public bool ObjectiveComplete(QuestObjectiveInfo objective);
@@ -45,16 +47,19 @@ public interface IExtractionQuest
 	public bool ObjectiveFailed( QuestObjectiveInfo objective );
 	public bool ObjectiveFailed( int objectiveIndex );
 
-	public FExtractionGenericObjective[] GetCurrentObjectives();
-
-
 	public QuestObjectiveInfo GetObjectiveInfo(int objectiveIndex);
 
-	public FExtractionGenericObjective[] GetQuestObjectives();
+	public QuestObjectiveInfo[] GetQuestObjectives();
 }
 
 public static class ExtractionQuestUtility
 {
+
+	public static ExtractionQuest CreateQuestFromQuestInfo(QuestInfo questInfo)
+	{
+		return new ExtractionQuest( questInfo );
+	}
+
 	public static void CheckQuestObjectiveConditions(IExtractionQuest quest, QuestObjectiveInfo objective, object objectToCheck, EQuestObjectiveCondition actionTaken, ExtractionPlayerQuestSystemHandlerComponent playerQuestSystem)
 	{
 		foreach ( var condition in objective.FailureConditions )

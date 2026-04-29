@@ -1,9 +1,9 @@
 {
   "AmountNeeded": 1,
-  "Entity": "quests/entities/qentity_stolenartifact.qent",
+  "Entity": "quests/entities/qentity_pouya.qent",
   "Entity_02": null,
   "WillFinishQuest": false,
-  "Condition": "GRABBED",
+  "Condition": "SPOKEN_TO",
   "__references": [],
   "__version": 0
 }

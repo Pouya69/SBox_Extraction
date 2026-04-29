@@ -10,18 +10,23 @@ public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuest
 		throw new System.NotImplementedException();
 	}
 
-	public void EntityKilled()
+	public void EnteredArea(QuestLocationInfo locationInfo)
 	{
-		ExtractionQuestSystem.EntityKilled(this);
+		ExtractionQuestSystem.LocationEntered(this, locationInfo);
 	}
 
-	public void EntityPickedUp()
+	public void EntityKilled( IExtractionQuestEntity Instigator )
 	{
-		ExtractionQuestSystem.EntityPickedUp(this);
+		ExtractionQuestSystem.EntityKilled(Instigator, this);
+	}
+
+	public void EntityPickedUp( IExtractionQuestEntity Instigator )
+	{
+		ExtractionQuestSystem.EntityPickedUp( Instigator, this );
 	}
 
 	public bool IsAlive()
 	{
-		throw new System.NotImplementedException();
+		return EntityActionSystemComponent.IsAlive();
 	}
 }

@@ -6,7 +6,8 @@ public sealed class PlayerControllerExtension : Component
 {
 	// public record OnHealedEvent(GameObject HealedObject, float NewHealth, float HealedHealth) : IGameEvent;
 
-	[Property] public ActionSystemComponent ActionSystemComponent;
+	[Property, RequireComponent] public ActionSystemComponent ActionSystemComponent { get; private set; }
+	[Property, RequireComponent] private PlayerInteractionComponent PlayerInteractionComponent { get; set; }
 	public record OnPlayerDeathEvent(GameObject DiedObject) : IGameEvent;
 	
 	[Property] private PlayerController Controller;
@@ -67,6 +68,10 @@ public sealed class PlayerControllerExtension : Component
 		{
 			NextAttack = HasWeaponEquipped ? CurrentWeaponEquipped.AttackCooldown : MeleeAttackCooldown;
 			Attack();
+		}
+		if (Input.Pressed("Use"))
+		{
+			PlayerInteractionComponent.AttemptInteract();
 		}
 
 		if ( !HasWeaponEquipped && _resetPose)

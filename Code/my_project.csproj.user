@@ -1,4 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="core\ActionSystemComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\AI\EnvironmentQueryHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\AI\MyAttemptAI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\Player\Player Controller Extension.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="environment\WaterPond.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="MyComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="quests\ExtractionLocation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="quests\ExtractionPlayerQuestSystemHandlerComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="quests\ExtractionQuestEntityComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="test_only\TestOnly_AITargetStateTester.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Weapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WeaponPickUpOnly.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

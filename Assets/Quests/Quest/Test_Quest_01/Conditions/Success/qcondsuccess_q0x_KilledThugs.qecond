@@ -1,6 +1,7 @@
 {
   "AmountNeeded": 5,
-  "Entity": null,
+  "Entity": "quests/entities/qentity_thug.qent",
+  "Entity_02": null,
   "WillFinishQuest": false,
   "Condition": "KILLED",
   "__references": [],

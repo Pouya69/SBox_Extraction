@@ -42,7 +42,7 @@
         "__guid": "80f7ce13-41f0-496e-9edf-2c6f1c01f54f",
         "__enabled": true,
         "Flags": 0,
-        "Center": "-0.412497,0.3741398,2.680541",
+        "Center": "-0.412497014,0.374139786,2.68054104",
         "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
@@ -58,7 +58,7 @@
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
         "RollingResistance": null,
-        "Scale": "10.13551,3.251522,9.175145",
+        "Scale": "10.1355104,3.25152206,9.17514515",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
@@ -128,6 +128,7 @@
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
         "IncludedBodies": "",
+        "DeferGeneration": false,
         "CustomBounds": false
       }
     },

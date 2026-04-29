@@ -1,0 +1,15 @@
+{
+  "ShouldShowToPlayer": true,
+  "IsOptional": false,
+  "Objective_UID": "o-6275080e-ed6c-41ea-b859-336f3e598deb",
+  "Description": "Grab the artifact.",
+  "XP_AfterCompletingObjective": 0,
+  "ObjectiveCompletionRewards": [],
+  "SuccessCondition": "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_grabbedartifact.qecond",
+  "FailureConditions": [],
+  "LeadsTo": [
+    "quests/quest/test_quest_01/objectives/qobj_0x_gobackhome_04.qobj"
+  ],
+  "__references": [],
+  "__version": 0
+}

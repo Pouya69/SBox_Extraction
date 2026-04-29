@@ -22,7 +22,9 @@ public class ActionSystemComponent : Component
 	
 	[Property] public float BaseDamage {get; set;}
 	private float _damage;
-	
+
+	public bool IsAlive() => Health > 0;
+
 	public float Health
 	{
 		get => _health;

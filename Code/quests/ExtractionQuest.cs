@@ -2,26 +2,25 @@ using Sandbox;
 
 public class ExtractionQuest : IExtractionQuest
 {
+	public ExtractionQuest(QuestInfo questInfo) { 
+		QuestInfo = questInfo;
+		QuestObjectives = questInfo.QuestObjectives;
+	}
+
 	private EQuestStatus QuestStatus { get; set; } = EQuestStatus.NOT_STARTED;
 
-	[Property, ReadOnly] private QuestInfo QuestInfo { get; set; }
+	[Property, ReadOnly] public QuestInfo QuestInfo { get; private set; }
 
-	[Property, ReadOnly] public List<FExtractionGenericObjective> QuestObjectives;
-
-	[Property, ReadOnly] public List<FExtractionGenericObjective> FailedObjectives;
-
-	[Property, ReadOnly] public List<FExtractionGenericObjective> ActiveObjectives;
-
-	[Property, ReadOnly] public List<FExtractionGenericObjective> CompletedObjectives;
+	[Property, ReadOnly] public List<QuestObjectiveInfo> QuestObjectives = new();
 
 	public QuestObjectiveInfo GetObjectiveInfo( int objectiveIndex )
 	{
 		if ( QuestObjectives.Count <= objectiveIndex ) return null;
 
-		return QuestObjectives[objectiveIndex].ObjectiveInfo;
+		return QuestObjectives[objectiveIndex];
 	}
 
-	public FExtractionGenericObjective[] GetQuestObjectives()
+	public QuestObjectiveInfo[] GetQuestObjectives()
 	{
 		return QuestObjectives.ToArray();
 	}
@@ -31,7 +30,7 @@ public class ExtractionQuest : IExtractionQuest
 		return QuestInfo.Quest_UID;
 	}
 
-	public bool IsObjectiveComplete( FExtractionGenericObjective Objective )
+	public bool IsObjectiveComplete( QuestObjectiveInfo Objective )
 	{
 		throw new System.NotImplementedException();
 	}
@@ -58,7 +57,7 @@ public class ExtractionQuest : IExtractionQuest
 
 	public bool ObjectiveComplete( QuestObjectiveInfo objective )
 	{
-		throw new System.NotImplementedException();
+		return true;
 	}
 
 	public bool ObjectiveComplete( int objectiveIndex )
@@ -96,20 +95,24 @@ public class ExtractionQuest : IExtractionQuest
 		throw new System.NotImplementedException();
 	}
 
-	public FExtractionGenericObjective[] GetCurrentObjectives()
+	public override string ToString()
 	{
-		return ActiveObjectives.ToArray();
-	}
-}
 
-public struct FExtractionGenericObjective
-{
-	public FExtractionGenericObjective( QuestObjectiveInfo objectiveInfo)
-	{
-		ObjectiveStatus = EQuestStatus.NOT_STARTED;
-		ObjectiveInfo = objectiveInfo;
-	}
+		string result = "Quest Title: " + QuestInfo.Title + "\n"
+			+ "Quest Description: " + QuestInfo.Description + "\n"
+			+ "Quest Objectives:";
 
-	public EQuestStatus ObjectiveStatus;
-	public QuestObjectiveInfo ObjectiveInfo;
+
+		if ( QuestObjectives.Count == 0 )
+			return result;
+
+		for ( int i = 0; i < QuestObjectives.Count; i++ ) {
+
+			var item = QuestObjectives[i];
+
+			result += "\nObjective " + (i + 1) + ": " + item.Description + "\n\tSuccess Conditions:\n\t\t" + item.SuccessCondition.ToString();
+		}
+
+		return result;
+	}
 }
