@@ -1,4 +1,4 @@
-using Sandbox.Core.sandbox.UI;
+using Sandbox.core.sandbox.UI;
 
 /// <summary>
 /// Holds a banlist, can ban users

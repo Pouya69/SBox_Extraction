@@ -21,7 +21,7 @@
         "__enabled": true,
         "Flags": 0,
         "AttackCooldown": 0,
-        "DebugWeaponActions": true,
+        "DebugWeaponActions": false,
         "GunStorageCapacity": 10,
         "MaxAmmoPerMagazine": 31,
         "MaxMagazines": 4,

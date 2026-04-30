@@ -1,4 +1,4 @@
-using Sandbox.Core.sandbox.UI;
+using Sandbox.core.sandbox.UI;
 using Sandbox.UI;
 
 public sealed partial class GameManager : GameObjectSystem<GameManager>, Component.INetworkListener, ISceneStartup, IScenePhysicsEvents, ICleanupEvents, ISaveEvents

@@ -1,4 +1,4 @@
-using Sandbox.Core.sandbox.UI;
+using Sandbox.core.sandbox.UI;
 
 public sealed partial class GameManager
 {

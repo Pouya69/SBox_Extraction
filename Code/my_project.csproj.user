@@ -17,7 +17,391 @@
     <Compile Update="core\Player\PlayerInteractionComponent.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="core\Player\SourceMovement\SourceCamera.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\Player\SourceMovement\SourceMovement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\Player\TempPlayerController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Components\ConstraintCleanup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Components\ManualLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Components\MassOverride.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Components\MorphState.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Components\MountMetadata.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Components\Ownable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Components\SpawningProgress.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Entity\DynamiteEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Entity\EmitterEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Entity\EntitySpawnerEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Entity\PointLightEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Entity\SpotLightEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\AmmoInventory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\BaseBulletWeapon\BaseBulletWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\BaseCarryable\BaseCarryable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\BaseCarryable\BaseCarryable.ViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\BaseCarryable\BaseCarryable.WorldModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\BaseWeapon\BaseWeapon.Ammo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\BaseWeapon\BaseWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\BaseWeapon\BaseWeapon.Reloading.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\IronSightsWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\MeleeWeapon\MeleeWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\WeaponModel\ViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\WeaponModel\ViewModel.Throwables.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\WeaponModel\WeaponModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Game\Weapon\WeaponModel\WorldModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Items\DroppedWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Items\Pickups\AmmoPickup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Items\Pickups\BasePickup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Items\Pickups\HealthPickup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Items\Pickups\InventoryPickup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Map\BaseToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Map\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Map\Door.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Map\FuncMover.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Map\MapPlayerSpawner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Map\TriggerPush.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Map\TriggerTeleport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Combat\CombatNpc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Layers\AnimationLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Layers\AnimationLayer.Hold.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Layers\BaseNpcLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Layers\NavigationLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Layers\SensesLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Layers\SpeechLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Npc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Npc.Debug.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Npc.Layers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Npc.Schedule.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Rollermine\RollermineNpc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Npcs\Scientist\ScientistNpc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\DeathCameraTarget.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\Player.Ammo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\Player.Camera.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\Player.ConsoleCommands.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\Player.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\Player.Undo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerDamageIndicators.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerFallDamage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerFlashlight.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerGib.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerInventory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerObserver.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Player\PlayerStats.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Spawner\SpawnerWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Utility\CameraSetup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Utility\EnvironmentShake.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Utility\SelfCollisionSound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\CameraWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\Colt1911\Colt1911Weapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\CrowbarWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\GlockWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\HandGrenade\HandGrenadeWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\HandGrenade\TimedExplosive.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\M4a1\M4a1Weapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\Mp5\Mp5Weapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\PhysGun\PhygunViewmodel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\PhysGun\PhygunWorldmodel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\PhysGun\Physgun.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\PhysGun\Physgun.Effects.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\PhysGun\Physgun.Hud.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ScreenWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\Shotgun\ShotgunWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\Sniper\SniperViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\Sniper\SniperWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Balloon\Balloon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Balloon\BalloonEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\BallSocket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\BaseConstraintToolMode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Decal\DecalTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Duplicator\Duplicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Duplicator\Duplicator.IconRendering.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Elastic.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Emitter\EmitterTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Hoverball\HoverballEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Hoverball\HoverballTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Hydraulic\BallSocketPair.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Hydraulic\HydraulicEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Hydraulic\HydraulicTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\KeepUpright.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Linker\LinkerTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Mass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\NoCollide.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Remover.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Resizer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Rope.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Slider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Thruster\Propeller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Thruster\ThrusterEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Thruster\ThrusterTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Trail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Unbreakable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Weld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Wheel\WheelEntity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Modes\Wheel\WheelTool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Toolgun.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Toolgun.Effects.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\Toolgun.Screen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\ToolMode.Cookies.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\ToolMode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\ToolMode.Effects.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\ToolMode.Helpers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="core\sandbox\Weapons\ToolGun\ToolMode.SnapGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="environment\WaterPond.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Gadgets\JumperPadComponent.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="MyComponent.cs">
@@ -38,10 +422,13 @@
     <Compile Update="test_only\TestOnly_AITargetStateTester.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Weapon.cs">
+    <Compile Update="Weapon\VacuumGun.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="WeaponPickUpOnly.cs">
+    <Compile Update="Weapon\Weapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Weapon\WeaponPickUpOnly.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
