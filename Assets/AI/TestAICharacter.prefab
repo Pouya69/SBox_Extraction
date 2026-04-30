@@ -68,7 +68,7 @@
         }
       },
       {
-        "__type": "MyAttemptAI",
+        "__type": "NPBehave.MyAttemptAI",
         "__guid": "6b7e011a-1373-4a08-a437-2044c91030cd",
         "__enabled": true,
         "Flags": 0,
@@ -109,12 +109,15 @@
           "go": "f6a69296-ac3b-4558-abe4-34932d61a7c4",
           "component_type": "EnvironmentQueryHandler"
         },
+        "AimingSpeed": 50,
         "EnableFootstepSounds": true,
         "FootstepMixer": {
           "Name": "unknown",
           "Id": "00000000-0000-0000-0000-000000000000"
         },
         "FootstepVolume": 1,
+        "IsRunningBehaviour": true,
+        "NormalSpeed": 110,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -128,6 +131,8 @@
           "component_type": "SkinnedModelRenderer"
         },
         "RotationSpeed": 1.8,
+        "RotationSpeedInCombat": 30,
+        "SprintSpeed": 320,
         "WaitTimeBetweenPoints": 2,
         "WeaponAttachmentSocket": {
           "_type": "gameobject",
@@ -2166,7 +2171,7 @@
             ]
           },
           {
-            "__guid": "1c71dcfb-726a-4b4d-98e0-1b2db4a00781",
+            "__guid": "19237589-c0c0-407d-8df5-638af0dbd31d",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - bucket_hat_black",
@@ -2183,7 +2188,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "97032e31-8a16-497e-971e-1bb3e8410bb5",
+                "__guid": "a66d3f12-2ba2-4082-925c-cf58ac2fb81b",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2235,7 +2240,7 @@
             "Children": []
           },
           {
-            "__guid": "272045f1-55ef-4237-a952-d8e30264a6c4",
+            "__guid": "e5cdbac8-512b-4f7a-8526-0b40a8bd065e",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - denim_skirt_black",
@@ -2252,7 +2257,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "1ba17b5f-0a0b-4101-8c0f-a8051e1b05c7",
+                "__guid": "7b35de64-b166-4cc9-8291-9944946b5e1c",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2304,7 +2309,7 @@
             "Children": []
           },
           {
-            "__guid": "62a15f2c-e907-4d09-bf98-1859a66ed688",
+            "__guid": "e7f3fe78-bef5-4295-9927-7755afab4314",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - flannel_shirt",
@@ -2321,7 +2326,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "69650eac-1885-470b-99c5-881d83f5d124",
+                "__guid": "bed51c45-1c10-461a-b1e0-a78000001134",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2373,7 +2378,7 @@
             "Children": []
           },
           {
-            "__guid": "103ea371-1427-4a8b-b2af-27be72749629",
+            "__guid": "e535ca7b-1443-41d7-b587-0f622fb07347",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - army_boots",
@@ -2390,7 +2395,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "1bf9db21-4e1d-42a3-9ca6-6cc1b9afbbc6",
+                "__guid": "20dcdcac-4071-4974-99eb-1c59b8a4bb3e",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2442,7 +2447,7 @@
             "Children": []
           },
           {
-            "__guid": "80bbe655-e847-4cc2-b310-79deb3c34bc5",
+            "__guid": "b4477f24-8a83-46c9-a0ac-ab58b4618383",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - medium_beard",
@@ -2459,7 +2464,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "3a160be6-32c0-4cdd-ada7-e696fb4799bc",
+                "__guid": "cdb0caa0-a061-4bb3-b494-10a65595b6f3",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,

@@ -1,0 +1,17 @@
+{
+  "ShouldShowToPlayer": true,
+  "IsOptional": false,
+  "Objective_UID": "o-517757ab-7b00-47a3-a343-35bfd5be7676",
+  "Description": "Go to arena.",
+  "XP_AfterCompletingObjective": 0,
+  "ObjectiveCompletionRewards": [],
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_enteredarena.qlcond"
+  ],
+  "FailureConditions": [],
+  "LeadsTo": [
+    "quests/quest/test_quest_01/objectives/qobj_0x_killthethugs_02.qobj"
+  ],
+  "__references": [],
+  "__version": 0
+}

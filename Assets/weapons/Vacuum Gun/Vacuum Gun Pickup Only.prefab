@@ -3,7 +3,7 @@
     "__guid": "cfe71426-6b3a-44f5-923a-fd6e93e985bc",
     "__version": 2,
     "Flags": 0,
-    "Name": "pistol_pickuponly",
+    "Name": "Vacuum Gun Pickup Only",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -34,7 +34,7 @@
         "OnComponentUpdate": null,
         "WeaponPrefab": {
           "_type": "gameobject",
-          "prefab": "weapons/pistol/pistol.prefab"
+          "prefab": "weapons/vacuum gun/vacuum gun_02.prefab"
         }
       },
       {
@@ -42,7 +42,7 @@
         "__guid": "80f7ce13-41f0-496e-9edf-2c6f1c01f54f",
         "__enabled": true,
         "Flags": 0,
-        "Center": "-0.412497014,0.374139786,2.68054104",
+        "Center": "0,2.96413946,2.68054104",
         "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
@@ -58,7 +58,7 @@
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
         "RollingResistance": null,
-        "Scale": "10.1355104,3.25152206,9.17514515",
+        "Scale": "26.2454948,17.1015148,12.4451485",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
@@ -86,13 +86,13 @@
             "__guid": "bcfa763e-40b3-4ccb-8acd-3530253d286a",
             "__enabled": true,
             "Flags": 0,
-            "BodyGroups": 23,
+            "BodyGroups": 18446744073709551615,
             "CreateAttachments": false,
             "LodOverride": null,
             "MaterialGroup": null,
             "MaterialOverride": null,
             "Materials": null,
-            "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+            "Model": "models/weapons/sbox_physgun/w_physgun.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -140,7 +140,7 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "__references": [
-    "facepunch.w_usp#152497"
+    "facepunch.w_physgun#154012"
   ],
   "__version": 2
 }

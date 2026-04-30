@@ -1,0 +1,16 @@
+{
+  "ShouldShowToPlayer": true,
+  "IsOptional": true,
+  "Objective_UID": "o-7743dcab-b92f-4d47-8227-3507f9f60a8e",
+  "Description": "Find out where arena is.",
+  "XP_AfterCompletingObjective": 0,
+  "ObjectiveCompletionRewards": [],
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_foundwherearenais.qecond",
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_enteredarena.qlcond"
+  ],
+  "FailureConditions": [],
+  "LeadsTo": [],
+  "__references": [],
+  "__version": 0
+}

@@ -1,0 +1,23 @@
+{
+  "Quest_UID": "q-79112bd0-85c8-4d4f-bcc9-b12169d0d37d",
+  "Title": "The Stolen Artifact",
+  "Description": "Word has it that some group of Thugs jumped Pouya and stole his artifact. He needs the money for his daughter so I better find it.",
+  "XP_AfterCompletingQuest": 25,
+  "QuestObjectives": [
+    "quests/quest/test_quest_01/objectives/qobj_0x_findwherearenais_01_optional.qobj",
+    "quests/quest/test_quest_01/objectives/qobj_0x_gotoarena_01.qobj",
+    "quests/quest/test_quest_01/objectives/qobj_0x_killthethugs_02.qobj",
+    "quests/quest/test_quest_01/objectives/qobj_0x_grabtheartifact_03.qobj",
+    "quests/quest/test_quest_01/objectives/qobj_0x_gobackhome_04.qobj"
+  ],
+  "QuestCompletionRewards": [],
+  "FailureConditions": [],
+  "StartingObjectives": [
+    "quests/quest/test_quest_01/objectives/qobj_0x_findwherearenais_01_optional.qobj",
+    "quests/quest/test_quest_01/objectives/qobj_0x_gotoarena_01.qobj"
+  ],
+  "QuestCompletionLeadsTo": [],
+  "QuestFailureLeadsTo": [],
+  "__references": [],
+  "__version": 0
+}

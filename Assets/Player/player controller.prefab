@@ -296,7 +296,7 @@
             "OnTriggerExit": null,
             "Radius": 11.313708,
             "RollingResistance": null,
-            "Start": "0,0,60.68629",
+            "Start": "0,0,60.6862907",
             "Static": false,
             "Surface": null,
             "SurfaceVelocity": "0,0,0"
@@ -347,6 +347,7 @@
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
         "IncludedBodies": "",
+        "DeferGeneration": false,
         "CustomBounds": false
       }
     },

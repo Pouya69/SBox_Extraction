@@ -1,0 +1,15 @@
+{
+  "ShouldShowToPlayer": true,
+  "IsOptional": false,
+  "Objective_UID": "o-b74baca7-d970-4c44-acba-019af2d6aa4c",
+  "Description": "Give the artifact to Pouya.",
+  "XP_AfterCompletingObjective": 0,
+  "ObjectiveCompletionRewards": [],
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_givenartifacttopouya.qecond"
+  ],
+  "FailureConditions": [],
+  "LeadsTo": [],
+  "__references": [],
+  "__version": 0
+}

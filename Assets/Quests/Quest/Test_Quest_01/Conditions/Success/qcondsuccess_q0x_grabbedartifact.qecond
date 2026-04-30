@@ -1,0 +1,9 @@
+{
+  "AmountNeeded": 1,
+  "Entity": "quests/entities/qentity_stolenartifact.qent",
+  "Entity_02": null,
+  "WillFinishQuest": false,
+  "Condition": "GRABBED",
+  "__references": [],
+  "__version": 0
+}

@@ -1,12 +1,14 @@
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.Events;
+using static Sandbox.Citizen.CitizenAnimationHelper;
 
 public sealed class PlayerControllerExtension : Component
 {
 	// public record OnHealedEvent(GameObject HealedObject, float NewHealth, float HealedHealth) : IGameEvent;
 
-	[Property] public ActionSystemComponent ActionSystemComponent;
+	[Property, RequireComponent] public ActionSystemComponent ActionSystemComponent { get; private set; }
+	[Property, RequireComponent] private PlayerInteractionComponent PlayerInteractionComponent { get; set; }
 	public record OnPlayerDeathEvent(GameObject DiedObject) : IGameEvent;
 	
 	[Property] private PlayerController Controller;
@@ -18,7 +20,7 @@ public sealed class PlayerControllerExtension : Component
 	private TimeUntil _resetPose;
 	
 	private Weapon CurrentWeaponEquipped { get; set; }
-	public bool HasWeaponEquipped => CurrentWeaponEquipped is not null;
+	public bool HasWeaponEquipped => CurrentWeaponEquipped != null;
 
 	protected override void OnStart()
 	{
@@ -49,24 +51,36 @@ public sealed class PlayerControllerExtension : Component
 			_modelRenderer.Set( "holdtype", 5 );
 			_resetPose = ResetPoseTime;
 		}
+		CurrentWeaponEquipped.Shoot();
 		PlayAttackAnimation();
 	}
 
 	public void Reload()
 	{
-		
+		CurrentWeaponEquipped.Reload();
 	}
 
 	protected override void OnFixedUpdate()
 	{
 		if ( Input.Pressed( "Reload" ) )
 		{
-			Reload();
+			if ( HasWeaponEquipped )
+				Reload();
 		}
 		if (Input.Pressed( "Attack1" ) && NextAttack)
 		{
 			NextAttack = HasWeaponEquipped ? CurrentWeaponEquipped.AttackCooldown : MeleeAttackCooldown;
 			Attack();
+		}
+		else if (Input.Released( "Attack1" ) )
+		{
+			if ( HasWeaponEquipped )
+				CurrentWeaponEquipped.StopShoot();
+		}
+
+		if (Input.Pressed("Use"))
+		{
+			PlayerInteractionComponent.AttemptInteract();
 		}
 
 		if ( !HasWeaponEquipped && _resetPose)
@@ -84,12 +98,14 @@ public sealed class PlayerControllerExtension : Component
 	public void PlayReloadAnimation() => _modelRenderer.Set("b_reload", true);
 
 	public void PlayHealAnimation() => _modelRenderer.Set("b_reload", true);
-	public void ResetAnimationHoldType() => _modelRenderer.Set( "holdtype", 0 );
+	public void ResetAnimationHoldType() => SetAnimationHoldType( CitizenAnimationHelper.HoldTypes.None );
+	public void SetAnimationHoldType(CitizenAnimationHelper.HoldTypes holdType) => _modelRenderer.Set( "holdtype", holdType.AsInt() );
+	public void SetHandedHoldType( Hand hand ) => _modelRenderer.Set( "holdtype_handedness", hand.AsInt() );
 
 	private void SwitchToWeaponAnimation( Weapon weapon )
 	{
-		_modelRenderer.Set("holdtype", weapon.GetWeaponType().AsInt());
-		_modelRenderer.Set("holdtype_handedness", weapon.GetWeaponHoldType().AsInt());
+		SetAnimationHoldType( weapon.GetWeaponType());
+		SetHandedHoldType(weapon.GetWeaponHoldType());
 	}
 
 	public void OnDamaged( GameObject Attacker, GameObject Victim, float NewHealth, float DamageApplied )

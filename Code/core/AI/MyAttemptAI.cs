@@ -13,7 +13,7 @@ public enum ECharacterGroundMovementType
 	AIMING
 }
 
-public sealed class MyAttemptAI : Component
+public class MyAttemptAI : Component
 {
 	public Root _behaviorTree { get; set; }
 
@@ -26,6 +26,7 @@ public sealed class MyAttemptAI : Component
 	[Property] private SkinnedModelRenderer Renderer { get; set; }
 	[Property] private CitizenAnimationHelper _anim { get; set; }
 	[Property] private SkinnedModelRenderer _modelRenderer;
+	[Group( "AI" )][Property] public bool IsRunningBehaviour { get; private set; } = true;
 	[Group( "AI" )] [Property] public NavMeshAgent Agent { get; private set; }
 	[Group( "AI" )] [Property] public CharacterController AiController { get; private set; }
 	[Group( "AI" )] [Property] private SplineComponent _PatrolPath { get; set; }
@@ -39,6 +40,7 @@ public sealed class MyAttemptAI : Component
 	[Group( "Character Movement" )] [Property] private float AimingSpeed { get; set; } = 50.0f;
 	public ECharacterGroundMovementType CurrentGroundMovementType { get; private set; }
 	private Weapon CurrentWeaponEquipped { get; set; }
+	private GameObject LookAtObject;
 	[Property] private GameObject WeaponAttachmentSocket { get; set; }
 
 	[Property] public ActionSystemComponent ActionSystemComponent;
@@ -49,32 +51,19 @@ public sealed class MyAttemptAI : Component
 
 	protected override void OnStart()
 	{
-		_clock = new Clock();
-		_blackboard = new Blackboard( _clock );
 
 		this.Renderer.OnFootstepEvent -= this.OnFootstepEvent;
 		this.Renderer.OnFootstepEvent += this.OnFootstepEvent;
 		// this.ActionSystemComponent.On
 
 		// _blackboard.Set( "MyVector3", new Vector3( 8 ));
-		_blackboard.Set( "MyGameObject", GameObject );
-		_blackboard.Set( "Is Hostile", false );
-		_blackboard.Set( "Current Hostile", GameObject );
-		_blackboard.Set( "Target Destination", WorldPosition );
-		_blackboard.Set( "Is Moving To Destination", false );
+		if ( IsRunningBehaviour )
+			StartAIBehaviour();
+
 		SetNewFacingObject(GameObject);
 
 		ChangeGroundMovementTypeSprint( ECharacterGroundMovementType.WALKING );
 		// _blackboard.Set( "ASimpleBool", true);
-
-		var patrolBehaviour = new ExtractionPatrollingNPCBehaviour( this, GetPointsFromSpine(_PatrolPath.Spline, _PatrolPath.WorldPosition) );
-		var hostileBehaviour = new ExtractionHostileBehaviour( this );
-
-		_behaviorTree = new Root( _blackboard,
-			new Selector(
-				new BlackboardCondition( "Is Hostile", Operator.IsNotEqual, true, Stops.Self, patrolBehaviour ),
-				new BlackboardCondition("Is Hostile", Operator.IsEqual, true, Stops.Self, hostileBehaviour)
-			) );
 
 		if ( WeaponToSpawnWith is not null )
 			GiveWeapon( WeaponToSpawnWith.Clone().GetComponent<Weapon>() );
@@ -92,9 +81,31 @@ public sealed class MyAttemptAI : Component
 			));
 		*/
 
+
+	}
+
+	protected virtual void StartAIBehaviour()
+	{
+
+		_clock = new Clock();
+		_blackboard = new Blackboard( _clock );
+
+		_blackboard.Set( "MyGameObject", GameObject );
+		_blackboard.Set( "Is Hostile", false );
+		_blackboard.Set( "Current Hostile", GameObject );
+		_blackboard.Set( "Target Destination", WorldPosition );
+		_blackboard.Set( "Is Moving To Destination", false );
+
+		var patrolBehaviour = new ExtractionPatrollingNPCBehaviour( this, GetPointsFromSpine( _PatrolPath.Spline, _PatrolPath.WorldPosition ) );
+		var hostileBehaviour = new ExtractionHostileBehaviour( this );
+
+		_behaviorTree = new Root( _blackboard,
+			new Selector(
+				new BlackboardCondition( "Is Hostile", Operator.IsNotEqual, true, Stops.Self, patrolBehaviour ),
+				new BlackboardCondition( "Is Hostile", Operator.IsEqual, true, Stops.Self, hostileBehaviour )
+			) );
+
 		_behaviorTree.Start();
-
-
 	}
 
 	public Vector3[] GetPointsFromSpine(Spline spline, Vector3 origin = new Vector3()) {
@@ -230,7 +241,10 @@ private void OnFootstepEvent( SceneModel.FootstepEvent e )
 	protected override void OnUpdate()
 	{
 		var delta = Time.Delta;
-		_clock.Update( delta );
+
+		if (IsRunningBehaviour)
+			_clock.Update( delta );
+
 		base.OnUpdate();
 	}
 
@@ -239,10 +253,15 @@ private void OnFootstepEvent( SceneModel.FootstepEvent e )
 		base.OnFixedUpdate();
 		bool isMoving = IsAIInMovement();
 		Vector3 direction = new();
+		AiController.Velocity = Agent.Velocity;
 		if ( isMoving )
 		{
 			direction = (GetCurrentTargetLocation() - AiController.WorldPosition).Normal.WithZ( 0 );
-			AiController.Velocity = Agent.Velocity;
+		}
+		else if (!IsRunningBehaviour)
+		{
+			AiController.Velocity = Vector3.Zero;
+			AiController.Move();
 		}
 		// AiController.Move();
 		
@@ -251,12 +270,26 @@ private void OnFootstepEvent( SceneModel.FootstepEvent e )
 
 	private void UpdateAnimation(Vector3 wishVelocity, Rotation rotation, Vector3 lookDirection)
 	{
-		_anim.WithWishVelocity(  wishVelocity );
-		_anim.WithVelocity( Agent.Velocity );
-		_anim.AimAngle = rotation;
-		_anim.IsGrounded = IsOnGround;
-		// Log.Info( Agent. );
-		_anim.WithLook( lookDirection );
+		if ( IsRunningBehaviour ) {
+			_anim.WithWishVelocity( wishVelocity );
+			_anim.WithVelocity( Agent.Velocity );
+			_anim.AimAngle = rotation;
+			_anim.IsGrounded = IsOnGround;
+			// Log.Info( Agent. );
+			_anim.WithLook( lookDirection );
+			_anim.LookAt = LookAtObject;
+		}
+		else
+		{
+			_anim.WithWishVelocity( wishVelocity );
+			_anim.WithVelocity( Vector3.Zero );
+			_anim.AimAngle = rotation;
+			_anim.IsGrounded = IsOnGround;
+			// Log.Info( Agent. );
+			_anim.WithLook( lookDirection );
+			_anim.LookAt = LookAtObject;
+		}
+
 		_anim.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
 	}
 
@@ -302,7 +335,7 @@ private void OnFootstepEvent( SceneModel.FootstepEvent e )
 	
 	public bool IsAIInMovement()
 	{
-		return (bool) _blackboard.Get( "Is Moving To Destination" );
+		return IsRunningBehaviour && (bool) _blackboard.Get( "Is Moving To Destination" );
 	}
 	public Vector3 GetCurrentTargetLocation()
 	{
@@ -326,12 +359,16 @@ private void OnFootstepEvent( SceneModel.FootstepEvent e )
 
 	public void SetNewFacingObject(Vector3 newFacingLocation)
 	{
-		_blackboard.Set( "Facing Object", newFacingLocation );
+		if ( IsRunningBehaviour )
+			_blackboard.Set( "Facing Object", newFacingLocation );
 	}
 
 	public void SetNewFacingObject( GameObject newFacingObject )
 	{
-		_blackboard.Set( "Facing Object", newFacingObject );
+		if (IsRunningBehaviour)
+			_blackboard.Set( "Facing Object", newFacingObject );
+
+		LookAtObject = newFacingObject;
 	}
 
 	public void ChangeGroundMovementTypeSprint(ECharacterGroundMovementType newGroundMovementType)
