@@ -3,12 +3,12 @@ using Sandbox;
 public sealed class ExtractionLocation : Component
 {
 	[Property] public QuestLocationInfo LocationInfo { get; private set; }
-	[Property, RequireComponent] private SphereCollider LocationCollisionTrigger { get; set; }
+	[Property, RequireComponent] private BoxCollider LocationCollisionTrigger { get; set; }
 
 	protected override void OnAwake()
 	{
 		if ( LocationCollisionTrigger == null )
-			LocationCollisionTrigger = GetComponent<SphereCollider>();
+			LocationCollisionTrigger = GetComponent<BoxCollider>();
 
 		LocationCollisionTrigger.OnObjectTriggerEnter += OnEntityEnteredLocation;
 	}

@@ -5,7 +5,9 @@
   "Description": "Grab the artifact.",
   "XP_AfterCompletingObjective": 0,
   "ObjectiveCompletionRewards": [],
-  "SuccessCondition": "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_grabbedartifact.qecond",
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_grabbedartifact.qecond"
+  ],
   "FailureConditions": [],
   "LeadsTo": [
     "quests/quest/test_quest_01/objectives/qobj_0x_gobackhome_04.qobj"

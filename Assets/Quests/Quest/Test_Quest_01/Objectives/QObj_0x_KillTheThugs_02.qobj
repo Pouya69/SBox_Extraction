@@ -5,7 +5,9 @@
   "Description": "Clear the area of Thugs.",
   "XP_AfterCompletingObjective": 5,
   "ObjectiveCompletionRewards": [],
-  "SuccessCondition": "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_killedthugs.qecond",
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_killedthugs.qecond"
+  ],
   "FailureConditions": [],
   "LeadsTo": [
     "quests/quest/test_quest_01/objectives/qobj_0x_grabtheartifact_03.qobj"

@@ -5,7 +5,9 @@
   "Description": "Go to arena.",
   "XP_AfterCompletingObjective": 0,
   "ObjectiveCompletionRewards": [],
-  "SuccessCondition": "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_enteredarena.qlcond",
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_enteredarena.qlcond"
+  ],
   "FailureConditions": [],
   "LeadsTo": [
     "quests/quest/test_quest_01/objectives/qobj_0x_killthethugs_02.qobj"

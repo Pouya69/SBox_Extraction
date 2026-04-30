@@ -86,7 +86,11 @@ public partial class QuestObjectiveInfo : GameResource
 
 	[JsonInclude] public List<ObjectiveRewardInfo> ObjectiveCompletionRewards { get; private set; }
 
-	[JsonInclude] public ObjectiveConditionInfo SuccessCondition { get; private set; }
+
+	/// <summary>
+	/// WORKS ONLY AS "OR" OPERATOR. IF YOU WANT "AND", ADD A NEW OBJECTIVE.
+	/// </summary>
+	[JsonInclude] public List<ObjectiveConditionInfo> SuccessConditions { get; private set; }
 	[JsonInclude] public List<ObjectiveConditionInfo> FailureConditions { get; private set; }
 
 	[JsonInclude] public List<QuestObjectiveInfo> LeadsTo { get; private set; }
@@ -110,6 +114,11 @@ public partial class QuestLocationInfo : GameResource
 	protected override Bitmap CreateAssetTypeIcon( int width, int height )
 	{
 		return CreateSimpleAssetTypeIcon( "home", width, height, "#fdea60", "black" );
+	}
+
+	public override string ToString()
+	{
+		return LocationName;
 	}
 }
 

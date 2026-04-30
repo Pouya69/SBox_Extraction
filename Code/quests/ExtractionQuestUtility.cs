@@ -18,6 +18,14 @@ public enum EQuestObjectiveType
 	FETCH
 }
 
+public enum EExtractionObjectSize
+{
+	SMALL,
+	MEDIUM,
+	LARGE,
+	CREATURE_TYPE
+}
+
 public interface IExtractionQuestEntity
 {
 	public void AddEntityToGlobalManager();
@@ -26,6 +34,22 @@ public interface IExtractionQuestEntity
 	public void EnteredArea(QuestLocationInfo location);
 	public void EntityKilled( IExtractionQuestEntity Instigator );
 	public void EntityPickedUp( IExtractionQuestEntity Instigator );
+
+	public string GetEntityName();
+
+	public EExtractionObjectSize GetObjectSize();
+
+	public bool CanBeRemoteGrabbed();
+
+	public Renderer GetRenderer();
+
+	public void ToggleEnablePhysics( bool enable );
+	
+	public void LaunchEntity(Vector3 velocity, bool ignoreMass = true);
+
+	public GameObject GetGameObject();
+
+	public Rigidbody GetRigidbody();
 }
 
 public interface IExtractionQuest
@@ -42,13 +66,14 @@ public interface IExtractionQuest
 	public bool IsObjectiveComplete( QuestObjectiveInfo Objective );
 	public bool IsObjectiveComplete(string Objective_UID);
 
-	public bool ObjectiveComplete(QuestObjectiveInfo objective);
+	public bool ObjectiveComplete(QuestObjectiveInfo objective, ExtractionPlayerQuestSystemHandlerComponent playerQuestSystem );
 	public bool ObjectiveComplete(int objectiveIndex);
 	public bool ObjectiveFailed( QuestObjectiveInfo objective );
 	public bool ObjectiveFailed( int objectiveIndex );
 
 	public QuestObjectiveInfo GetObjectiveInfo(int objectiveIndex);
 
+	public QuestObjectiveInfo[] GetQuestStartingObjectives();
 	public QuestObjectiveInfo[] GetQuestObjectives();
 }
 
@@ -60,7 +85,7 @@ public static class ExtractionQuestUtility
 		return new ExtractionQuest( questInfo );
 	}
 
-	public static void CheckQuestObjectiveConditions(IExtractionQuest quest, QuestObjectiveInfo objective, object objectToCheck, EQuestObjectiveCondition actionTaken, ExtractionPlayerQuestSystemHandlerComponent playerQuestSystem)
+	public static bool CheckQuestObjectiveConditions(IExtractionQuest quest, QuestObjectiveInfo objective, object objectToCheck, EQuestObjectiveCondition actionTaken, ExtractionPlayerQuestSystemHandlerComponent playerQuestSystem)
 	{
 		foreach ( var condition in objective.FailureConditions )
 		{
@@ -70,23 +95,30 @@ public static class ExtractionQuestUtility
 			if ( condition.WillFinishQuest )
 			{
 				quest.QuestFailed();
-				continue;
+				return true;
 			}
 			quest.ObjectiveFailed( objective );
-			return;
+			return true;
 		}
 
-
-
-		if ( objective.SuccessCondition.IsConditionMet( objectToCheck, actionTaken, playerQuestSystem ) == EQuestObjectiveResultType.NOT_RELAVANT )
-			return;
-
-		if ( objective.SuccessCondition.WillFinishQuest )
+		foreach ( var successCondition in objective.SuccessConditions )
 		{
-			quest.QuestComplete();
-			return;
+			// This works for OR operator. for AND @TODO
+			if ( successCondition.IsConditionMet( objectToCheck, actionTaken, playerQuestSystem ) == EQuestObjectiveResultType.NOT_RELAVANT )
+				continue;
+
+			if ( successCondition.WillFinishQuest )
+			{
+				quest.QuestComplete();
+				return true;
+			}
+
+			Log.Info( "Objective Complete: " + objective.Description );
+			quest.ObjectiveComplete( objective, playerQuestSystem );
+			return true;
 		}
-		quest.ObjectiveComplete( objective );
+
+		return false;
 	}
 
 	public static IExtractionQuest GetQuestByGUID(string QuestGUID) => ExtractionQuestSystem.GetQuestByGUID( QuestGUID );

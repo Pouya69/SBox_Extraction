@@ -55,8 +55,9 @@ public class ExtractionQuest : IExtractionQuest
 		return QuestStatus == EQuestStatus.IN_PROGRESS;
 	}
 
-	public bool ObjectiveComplete( QuestObjectiveInfo objective )
+	public bool ObjectiveComplete( QuestObjectiveInfo objective, ExtractionPlayerQuestSystemHandlerComponent playerQuestSystem )
 	{
+		playerQuestSystem.QuestObjectiveCompleted( this, objective );
 		return true;
 	}
 
@@ -109,10 +110,20 @@ public class ExtractionQuest : IExtractionQuest
 		for ( int i = 0; i < QuestObjectives.Count; i++ ) {
 
 			var item = QuestObjectives[i];
+			result += "\nObjective " + (i + 1) + ": " + item.Description + "\n\tSuccess Conditions:\n\t\t";
 
-			result += "\nObjective " + (i + 1) + ": " + item.Description + "\n\tSuccess Conditions:\n\t\t" + item.SuccessCondition.ToString();
+			for ( int j = 0; j < item.SuccessConditions.Count; j++ )
+			{
+				var successCondition = item.SuccessConditions[j];
+				result += successCondition.ToString() + "\n\t\t";
+			}
 		}
 
 		return result;
+	}
+
+	public QuestObjectiveInfo[] GetQuestStartingObjectives()
+	{
+		return QuestInfo.StartingObjectives.ToArray();
 	}
 }

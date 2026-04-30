@@ -5,7 +5,9 @@
   "Description": "Give the artifact to Pouya.",
   "XP_AfterCompletingObjective": 0,
   "ObjectiveCompletionRewards": [],
-  "SuccessCondition": "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_givenartifacttopouya.qecond",
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_givenartifacttopouya.qecond"
+  ],
   "FailureConditions": [],
   "LeadsTo": [],
   "__references": [],

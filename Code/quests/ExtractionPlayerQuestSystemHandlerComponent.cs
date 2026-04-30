@@ -1,4 +1,5 @@
 using Sandbox;
+using System.Security.AccessControl;
 
 public sealed class ExtractionPlayerQuestSystemHandlerComponent : Component
 {
@@ -23,7 +24,7 @@ public sealed class ExtractionPlayerQuestSystemHandlerComponent : Component
 			string questStringDebug = quest.ToString();
 
 			string logString = "*** NEW QUEST ADDED ***\n" + questStringDebug;
-			Log.Info( logString );
+			Log.Info( logString );	
 		}
 		ActiveQuests.Add( new(quest) );
 	}
@@ -50,6 +51,20 @@ public sealed class ExtractionPlayerQuestSystemHandlerComponent : Component
 
 	}
 
+	public async void QuestObjectiveCompleted(ExtractionQuest quest, QuestObjectiveInfo objective)
+	{
+		await Task.Frame();
+
+		RemoveObjectiveFromActiveObjectivesInQuest(quest, objective, true);
+	}
+
+	public async void QuestObjectiveFailed( ExtractionQuest quest, QuestObjectiveInfo objective )
+	{
+		await Task.Frame();
+
+		RemoveObjectiveFromActiveObjectivesInQuest( quest, objective, false );
+	}
+
 	public void RemoveQuestFromActiveQuests( IExtractionQuest quest )
 	{
 		for ( int i = 0; i < ActiveQuests.Count; i++ )
@@ -64,6 +79,34 @@ public sealed class ExtractionPlayerQuestSystemHandlerComponent : Component
 		}
 	}
 
+	private void RemoveObjectiveFromActiveObjectivesInQuest(IExtractionQuest quest, QuestObjectiveInfo objective, bool wasQuestSuccessful = true) {
+		for ( int i = 0; i < ActiveQuests.Count; i++ )
+		{
+			var trackedQuest = ActiveQuests[i];
+
+			if ( trackedQuest.Quest.GetQuest_GUID().Equals( quest.GetQuest_GUID() ) )
+			{
+				for ( int j = 0; j < trackedQuest.ActiveObjectives.Count; j++ )
+				{
+					var activeObjective = trackedQuest.ActiveObjectives[i];
+
+					if ( trackedQuest.ActiveObjectives[j].Objective_UID.Equals( objective.Objective_UID ) )
+					{
+						trackedQuest.ActiveObjectives.RemoveAt( j );
+
+						if ( wasQuestSuccessful )
+							trackedQuest.CompletedObjectives.Add( activeObjective );
+						else
+							trackedQuest.FailedObjectives.Add( activeObjective );
+
+						return;
+					}
+				}
+
+				return;
+			}
+		}
+	}
 
 	protected override void OnDisabled()
 	{
@@ -77,6 +120,8 @@ public sealed class ExtractionPlayerQuestSystemHandlerComponent : Component
 
 	private void Quests_OnLocationEntered( IExtractionQuestEntity instigator, QuestLocationInfo location )
 	{
+		// Log.Info(instigator.GetEntityName() + " entered " + location.ToString() );
+
 		foreach ( var quest in ActiveQuests )
 		{
 			var currentObjectives = quest.ActiveObjectives;
@@ -84,6 +129,8 @@ public sealed class ExtractionPlayerQuestSystemHandlerComponent : Component
 			// Will fail / complete / ignore the objective.
 			foreach ( var currentObjective in currentObjectives )
 			{
+				if (DebugQuestStats)
+					Log.Info( "Checking objective: " + currentObjective.Description );
 				ExtractionQuestUtility.CheckQuestObjectiveConditions( quest.Quest, currentObjective, location, EQuestObjectiveCondition.ENTERED, this );
 			}
 			// We will not break it since there can be multiple quests that require the same stuff happening.
@@ -163,7 +210,9 @@ public struct FTrackedQuest
 	public FTrackedQuest(IExtractionQuest quest)
 	{
 		Quest = quest;
-		ActiveObjectives = new();
+		ActiveObjectives = quest.GetQuestStartingObjectives().ToList();
+		FailedObjectives = new();
+		CompletedObjectives = new();
 	}
 
 	public FTrackedQuest( IExtractionQuest quest, params QuestObjectiveInfo[] activeObjectives )
@@ -174,4 +223,6 @@ public struct FTrackedQuest
 
 	public IExtractionQuest Quest { get; private set; }
 	public List<QuestObjectiveInfo> ActiveObjectives { get; private set; }
+	public List<QuestObjectiveInfo> FailedObjectives { get; private set; }
+	public List<QuestObjectiveInfo> CompletedObjectives { get; private set; }
 }

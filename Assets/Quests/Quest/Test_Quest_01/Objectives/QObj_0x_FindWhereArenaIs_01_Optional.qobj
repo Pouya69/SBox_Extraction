@@ -5,7 +5,10 @@
   "Description": "Find out where arena is.",
   "XP_AfterCompletingObjective": 0,
   "ObjectiveCompletionRewards": [],
-  "SuccessCondition": "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_foundwherearenais.qecond",
+  "SuccessConditions": [
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_foundwherearenais.qecond",
+    "quests/quest/test_quest_01/conditions/success/qcondsuccess_q0x_enteredarena.qlcond"
+  ],
   "FailureConditions": [],
   "LeadsTo": [],
   "__references": [],

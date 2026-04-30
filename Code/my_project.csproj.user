@@ -14,6 +14,9 @@
     <Compile Update="core\Player\Player Controller Extension.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="core\Player\PlayerInteractionComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="environment\WaterPond.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -27,6 +30,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="quests\ExtractionQuestEntityComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="quests\ExtractionQuestGiver.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="test_only\TestOnly_AITargetStateTester.cs">
