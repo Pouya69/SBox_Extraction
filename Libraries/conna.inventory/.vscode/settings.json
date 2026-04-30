@@ -1,0 +1,20 @@
+{
+  "files.associations": {
+    "*.shader": "slang",
+    "*.hlsl": "slang"
+  },
+  "slang.additionalSearchPaths": [
+    "D:\\sboxprojects\\github\\sbox-public\\game\\core\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\addons\\base\\Assets\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\addons\\menu\\Assets\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\addons\\tools\\Assets\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\editor\\ShaderGraph\\Assets\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\editor\\ActionGraph\\Assets\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\editor\\MovieMaker\\Assets\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\editor\\Hammer\\Assets\\shaders",
+    "D:\\SBoxProjects\\github\\sbox-public\\game\\editor\\DooEditor\\Assets\\shaders",
+    "D:\\SBoxProjects\\SBox_Extraction\\Libraries\\conna.inventory\\Assets\\shaders"
+  ],
+  "slang.predefinedMacros": [],
+  "slang.workspaceFlavor": "vfx"
+}

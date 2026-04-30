@@ -1,0 +1,68 @@
+/*PlayerHud {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	//background-color: #444;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+	font-family: Poppins;
+	font-size: 24px;
+
+	.title {
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
+
+	> .vitals {
+		position: absolute;
+		bottom: 32px;
+		left: 32px;
+		font-size: 64px;
+		font-weight: bold;
+		text-stroke: 8px black;
+		color: white;
+		flex-direction: column;
+	}
+
+	> .money {
+		position: absolute;
+		top: 32px;
+		left: 32px;
+		font-size: 64px;
+		font-weight: bold;
+		text-stroke: 8px black;
+		color: white;
+		flex-direction: column;
+	}
+
+	> .healthbars {
+		position: absolute;
+		bottom: 32px;
+		left: 32px;
+
+		> .healthbar {
+			width: 500px;
+			height: 64px;
+			background-color: darkgrey;
+			padding: 8px;
+
+			> .inner {
+				background-color: black;
+				flex-grow: 1;
+
+				> .fill {
+					height: 100%;
+					background-color: red;
+				}
+			}
+		}
+	}
+}
+*/
+
+
