@@ -18,7 +18,14 @@ public sealed class PlayerControllerExtension : Component
 	[Property] private float ResetPoseTime { get; set; } = 4.0f;
 	public TimeUntil NextAttack;
 	private TimeUntil _resetPose;
-	
+
+	[Property] public GameObject LeftHandHoldSocket { get; private set; }
+	[Property] public GameObject RightHandHoldSocket { get; private set; }
+	[Property] public GameObject LeftHandSocket { get; private set; }
+	[Property] public GameObject RightHandSocket { get; private set; }
+
+	private HoldTypes CurrentHoldType = HoldTypes.None;
+
 	private Weapon CurrentWeaponEquipped { get; set; }
 	public bool HasWeaponEquipped => CurrentWeaponEquipped != null;
 
@@ -51,7 +58,8 @@ public sealed class PlayerControllerExtension : Component
 			_modelRenderer.Set( "holdtype", 5 );
 			_resetPose = ResetPoseTime;
 		}
-		CurrentWeaponEquipped.Shoot();
+		else
+			CurrentWeaponEquipped.Shoot();
 		PlayAttackAnimation();
 	}
 
@@ -69,7 +77,20 @@ public sealed class PlayerControllerExtension : Component
 		}
 		if (Input.Pressed( "Attack1" ) && NextAttack)
 		{
-			NextAttack = HasWeaponEquipped ? CurrentWeaponEquipped.AttackCooldown : MeleeAttackCooldown;
+			if (PlayerInteractionComponent.IsHoldingObject)
+			{
+				PlayerInteractionComponent.DropHeldEntity();
+				return;
+			}
+
+			if (HasWeaponEquipped)
+			{
+				NextAttack = CurrentWeaponEquipped.AttackCooldown;
+			}
+			else
+			{
+				NextAttack = HasWeaponEquipped ? CurrentWeaponEquipped.AttackCooldown : MeleeAttackCooldown;
+			}
 			Attack();
 		}
 		else if (Input.Released( "Attack1" ) )
@@ -83,8 +104,9 @@ public sealed class PlayerControllerExtension : Component
 			PlayerInteractionComponent.AttemptInteract();
 		}
 
-		if ( !HasWeaponEquipped && _resetPose)
+		if ( !HasWeaponEquipped && _resetPose && CurrentHoldType == HoldTypes.None)
 		{
+			// Log.Info( "NOT WORKING" );
 			ResetAnimationHoldType();
 		}
 	}
@@ -99,7 +121,12 @@ public sealed class PlayerControllerExtension : Component
 
 	public void PlayHealAnimation() => _modelRenderer.Set("b_reload", true);
 	public void ResetAnimationHoldType() => SetAnimationHoldType( CitizenAnimationHelper.HoldTypes.None );
-	public void SetAnimationHoldType(CitizenAnimationHelper.HoldTypes holdType) => _modelRenderer.Set( "holdtype", holdType.AsInt() );
+
+	public void SetAnimationHoldType( CitizenAnimationHelper.HoldTypes holdType ) {
+		CurrentHoldType = holdType;
+		_modelRenderer.Set( "holdtype", holdType.AsInt() ); 
+	}
+
 	public void SetHandedHoldType( Hand hand ) => _modelRenderer.Set( "holdtype_handedness", hand.AsInt() );
 
 	private void SwitchToWeaponAnimation( Weapon weapon )
@@ -127,5 +154,30 @@ public sealed class PlayerControllerExtension : Component
 	public void OnAddedDamage( float NewDamage, float AdditionPercentage )
 	{
 		throw new System.NotImplementedException();
+	}
+
+	public void PickupObjectTwoHandedAnimation()
+	{
+		SetAnimationHoldType( HoldTypes.HoldItem );
+		 if ( !PlayerInteractionComponent.Hold_IK_Enabled ) return;
+		 _modelRenderer.Set( "ik.hand_left.enabled", true );
+		 _modelRenderer.Set( "ik.hand_right.enabled", true );
+	}
+
+	public void DropGrabbedEntityAnimation()
+	{
+		SetAnimationHoldType( HoldTypes.None );
+		if ( !PlayerInteractionComponent.Hold_IK_Enabled ) return;
+		 _modelRenderer.Set( "ik.hand_left.enabled", false );
+		 _modelRenderer.Set( "ik.hand_right.enabled", false );
+	}
+
+	public void IK_SetHandsHoldingPositionsAndRotations(Vector3 leftPos, Rotation leftRot, Vector3 rightPos, Rotation rightRot)
+	{
+		_modelRenderer.Set( "ik.hand_left.position", Transform.World.PointToLocal( leftPos) );
+		_modelRenderer.Set( "ik.hand_left.rotation", Transform.World.RotationToLocal( leftRot) );
+
+		_modelRenderer.Set( "ik.hand_right.position", Transform.World.PointToLocal( rightPos ) );
+		_modelRenderer.Set( "ik.hand_right.rotation", Transform.World.RotationToLocal(rightRot) );
 	}
 }

@@ -3,6 +3,7 @@ using Sandbox;
 public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuestEntity
 {
 	[Property, RequireComponent] private Rigidbody rigidbody { get; set; }
+	[Property] private Collider collider { get; set; }
 	[Property] public QuestEntityInfo EntityInfo;
 	[Property] private ActionSystemComponent EntityActionSystemComponent;
 	[Property] private EExtractionObjectSize ObjectSize { get; set; } = EExtractionObjectSize.SMALL;
@@ -82,5 +83,10 @@ public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuest
 	public Rigidbody GetRigidbody()
 	{
 		return rigidbody;
+	}
+
+	public Collider GetCollider()
+	{
+		return collider;
 	}
 }

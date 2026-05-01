@@ -15,4 +15,7 @@ public sealed class ExtractionQuestGiver : Component, IInteractable
 
 		interactionComponent.PlayerQuestSystem.AddQuest( questCreated );
 	}
+
+	public bool IsPickUpTwoHanded() => false;
+	public bool CanBePickedUp() => false;
 }

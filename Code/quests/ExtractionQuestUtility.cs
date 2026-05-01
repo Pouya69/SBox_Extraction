@@ -50,6 +50,8 @@ public interface IExtractionQuestEntity
 	public GameObject GetGameObject();
 
 	public Rigidbody GetRigidbody();
+
+	public Collider GetCollider();
 }
 
 public interface IExtractionQuest
