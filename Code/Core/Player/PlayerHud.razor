@@ -1,45 +1,26 @@
-@using Sandbox;
-@using Sandbox.UI;
+@using System
+@using Sandbox
+@using Sandbox.UI
 @inherits PanelComponent
-@namespace Sandbox
+@namespace Conna.Inventory
+
+@if (Inventory is null)
+	return;
 
 <root>
-	<div class="money">
-		<p>✡️🤑@PlayerController.Coins</p>
-	</div>
-
-	<div class= "vitals">
-	
-	</div>
-
-	<div class="healthbars">
-		<div class="healthbar">
-			<div class="inner">
-				<div class="fill" style="width: @(PlayerController.Health / PlayerController.MaxHealth * 100f)%"></div>
-			</div>
-		</div>
-	</div>
-	
+	<ExampleInventoryPanel @ref="InventoryPanelRef" Title="Inventory" Inventory="@Inventory" />
 </root>
 
-@code
-{
-	[Property] TempPlayerController PlayerController { get; set; }
+@code {
+	public BaseInventory Inventory { get; set; }
+	public ExampleInventoryPanel InventoryPanelRef { get; set; }
 
-	string GetTimeString()
+	protected override void OnTreeFirstBuilt()
 	{
-		var time = PlayerController.TimeAlive;
-		var minutes = (int)time / 60;
-		var seconds = (int)time % 60;
-		return $"{minutes:00}:{seconds:00}";
+		base.OnTreeFirstBuilt();
+
+		Inventory = new ExampleInventory(Id, 10, 5);
+
+		StateHasChanged();
 	}
-
-	protected override int BuildHash()
-	{
-		return System.HashCode.Combine(PlayerController.Health, PlayerController.TimeAlive.ToString());
-	} 
 }
-
-
-
-

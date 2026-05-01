@@ -118,6 +118,56 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "8d684cdb-e133-4b77-8ee5-57f4fad49511"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "84740167-6ad0-47d8-8025-4d66bbc1073e"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "8d684cdb-e133-4b77-8ee5-57f4fad49511",
+              "__enabled": true,
+              "Flags": 0,
+              "AngularDamping": 1,
+              "EnableImpactDamage": true,
+              "EnhancedCcd": false,
+              "Gravity": true,
+              "GravityScale": 1,
+              "ImpactDamage": 0,
+              "LinearDamping": 0.060794044,
+              "Locking": {
+                "X": false,
+                "Y": false,
+                "Z": false,
+                "Pitch": true,
+                "Yaw": true,
+                "Roll": true
+              },
+              "MassCenterOverride": "0,0,36",
+              "MassOverride": 500,
+              "MinImpactDamageSpeed": 500,
+              "MotionEnabled": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideMassCenter": true,
+              "RigidbodyFlags": "DisableCollisionSounds",
+              "StartAsleep": false
+            }
           }
         ],
         "RemovedObjects": [],
@@ -128,7 +178,15 @@
               "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
             },
             "Property": "Position",
-            "Value": "108.960678,181.69519,35.7532578"
+            "Value": "150.348999,303.091431,32"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "Property": "Tags",
+            "Value": "player"
           }
         ],
         "MovedObjects": []
@@ -142,7 +200,9 @@
         "f4b1829f-778b-45e7-a880-14a43957ac1f": "a8496630-5748-4849-97bb-72594ea501c8",
         "b9e497d2-0db3-48ab-8c6a-682b28115752": "422ab8e9-a1d4-4336-b0c8-a0bd40c9b8bb",
         "a93420e5-402a-44b5-bf52-75a4bf2b044e": "022c4a00-1d41-4a0a-b220-8b499d2bacf0",
-        "f34d4196-12b7-48bf-90e9-21ee18233ea1": "51cf59ea-ca07-4301-94cc-afd349e232b6"
+        "f34d4196-12b7-48bf-90e9-21ee18233ea1": "51cf59ea-ca07-4301-94cc-afd349e232b6",
+        "3631bc5f-3313-40f7-9416-ae6cdb207908": "d0f16a9a-d2a7-4f21-adf4-481ca2db4339",
+        "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14": "a9b31e67-f23a-4b97-8093-f221237eccbf"
       }
     },
     {
@@ -173,7 +233,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Opacity": 1,
+          "Opacity": 0.5,
           "Scale": 1,
           "ScaleStrategy": "FollowDesktopScaling",
           "TargetCamera": {
@@ -185,11 +245,11 @@
           "ZIndex": 100
         },
         {
-          "__type": "Sandbox.TempPlayerHud",
-          "__guid": "2e746fbf-f3cd-4e66-948d-2e36b8fe318e",
+          "__type": "Conna.Inventory.PobxPlayerInventoryHud",
+          "__guid": "2482e45e-2873-488f-bb51-27fbe3878c17",
           "__enabled": true,
           "Flags": 0,
-          "MyStringValue": "Hello World!",
+          "Inventory": null,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -208,7 +268,7 @@
       "Position": "294.274689,241.659561,53.7097168",
       "Rotation": "0,0,0,1",
       "Scale": "0.25,0.25,0.25",
-      "Tags": "",
+      "Tags": "playertriggeronly",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkFlags": 0,
@@ -307,14 +367,14 @@
       "Children": []
     },
     {
-      "__guid": "64f94141-9d0f-45fc-bae4-2d5278729531",
+      "__guid": "588c0dbb-b1a9-432c-858b-90a28e5c0d08",
       "__version": 2,
       "Flags": 0,
       "Name": "BallItem",
-      "Position": "298.941315,163.470764,50.9365616",
+      "Position": "290.463287,313.109436,71.6824188",
       "Rotation": "0,0,0,1",
-      "Scale": "0.25,0.25,0.25",
-      "Tags": "",
+      "Scale": "1,1,1",
+      "Tags": "playertriggeronly",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkFlags": 0,
@@ -323,35 +383,52 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "4e088767-93b6-4245-8c93-2b9c8b524aa0",
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "8c32b39f-cc8d-4d84-9daf-e00c80b3f47b",
           "__enabled": true,
           "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/sphere.vmdl",
+          "Center": "0,0,0",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Radius": 32,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "BallLoot",
+          "__guid": "04f51ecf-6687-4b62-99f5-d107810e701d",
+          "__enabled": true,
+          "Flags": 0,
+          "collider": {
+            "_type": "component",
+            "component_id": "8c32b39f-cc8d-4d84-9daf-e00c80b3f47b",
+            "go": "588c0dbb-b1a9-432c-858b-90a28e5c0d08",
+            "component_type": "SphereCollider"
           },
-          "RenderType": "On",
-          "Tint": "0,0.40465,0.03372,1"
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         },
         {
           "__type": "Sandbox.Rigidbody",
-          "__guid": "89d93dbe-02b1-486d-b53b-08a366d60501",
+          "__guid": "1fc7f3f3-a3d0-4d49-a211-a5a16a09a2f4",
           "__enabled": true,
           "Flags": 0,
           "AngularDamping": 0,
@@ -382,44 +459,18 @@
           "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "51574663-44ee-404c-b5f2-b19771c8337e",
-          "__enabled": true,
-          "Flags": 0,
-          "Center": "0,0,0",
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
         {
-          "__guid": "892fe63b-6ea0-4a9d-b578-5b0768585bff",
+          "__guid": "64f94141-9d0f-45fc-bae4-2d5278729531",
           "__version": 2,
           "Flags": 0,
-          "Name": "Object",
+          "Name": "BallMesh",
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
-          "Scale": "4,4,4",
-          "Tags": "interaction",
+          "Scale": "0.25,0.25,0.25",
+          "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
           "NetworkFlags": 0,
@@ -428,64 +479,31 @@
           "OwnerTransfer": 1,
           "Components": [
             {
-              "__type": "Sandbox.SphereCollider",
-              "__guid": "94ddc2d1-f184-46eb-aa57-291e045ebb84",
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "4e088767-93b6-4245-8c93-2b9c8b524aa0",
               "__enabled": true,
               "Flags": 0,
-              "Center": "0,0,0",
-              "ColliderFlags": 0,
-              "Elasticity": null,
-              "Friction": null,
-              "IsTrigger": true,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/dev/sphere.vmdl",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "OnObjectTriggerEnter": null,
-              "OnObjectTriggerExit": null,
-              "OnTriggerEnter": null,
-              "OnTriggerExit": null,
-              "Radius": 32,
-              "RollingResistance": null,
-              "Static": false,
-              "Surface": null,
-              "SurfaceVelocity": "0,0,0"
-            },
-            {
-              "__type": "Sandbox.Rigidbody",
-              "__guid": "a892de14-7d86-4391-bea1-214da295d411",
-              "__enabled": true,
-              "Flags": 0,
-              "AngularDamping": 0,
-              "EnableImpactDamage": true,
-              "EnhancedCcd": false,
-              "Gravity": true,
-              "GravityScale": 1,
-              "ImpactDamage": 0,
-              "LinearDamping": 0,
-              "Locking": {
-                "X": false,
-                "Y": false,
-                "Z": false,
-                "Pitch": false,
-                "Yaw": false,
-                "Roll": false
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
               },
-              "MassCenterOverride": "0,0,0",
-              "MassOverride": 0,
-              "MinImpactDamageSpeed": 500,
-              "MotionEnabled": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "OverrideMassCenter": false,
-              "RigidbodyFlags": 0,
-              "StartAsleep": false
+              "RenderType": "On",
+              "Tint": "0,0.40465,0.03372,1"
             }
           ],
           "Children": []
@@ -513,11 +531,6 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "170146ff-33a3-45a5-b9eb-dbed923d29f2"
