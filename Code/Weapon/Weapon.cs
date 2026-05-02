@@ -85,4 +85,9 @@ public class Weapon : Component, ISbokuWeapon
 	{
 
 	}
+
+	public void OnPlayerUpdate(PobxPlayer player)
+	{
+
+	}
 }

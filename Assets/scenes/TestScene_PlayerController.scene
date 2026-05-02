@@ -89,7 +89,7 @@
           {
             "Id": {
               "Type": "Component",
-              "IdValue": "84740167-6ad0-47d8-8025-4d66bbc1073e"
+              "IdValue": "404c426d-70d3-4552-8a1f-be886e4fd19b"
             },
             "Parent": {
               "Type": "GameObject",
@@ -102,28 +102,275 @@
             "ContainerProperty": "Components",
             "IsContainerArray": true,
             "Data": {
-              "__type": "TempPlayerController",
-              "__guid": "84740167-6ad0-47d8-8025-4d66bbc1073e",
+              "__type": "PobxPlayer",
+              "__guid": "404c426d-70d3-4552-8a1f-be886e4fd19b",
               "__enabled": true,
               "Flags": 0,
-              "Armor": 0,
-              "Coins": 0,
-              "Health": 100,
-              "IsHudEnable": false,
-              "MaxArmor": 100,
-              "MaxHealth": 100,
+              "ActionSystemComp": {
+                "_type": "component",
+                "component_id": "c53b7711-d572-4646-afe7-f2bd78a97f66",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "ActionSystemComponent"
+              },
+              "Camera": {
+                "_type": "component",
+                "component_id": "f34d4196-12b7-48bf-90e9-21ee18233ea1",
+                "go": "a93420e5-402a-44b5-bf52-75a4bf2b044e",
+                "component_type": "CameraComponent"
+              },
+              "Controller": {
+                "_type": "component",
+                "component_id": "2b2a4606-1668-42be-86a6-0ab3540625fc",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "CharacterController"
+              },
+              "InventoryComponent": {
+                "_type": "component",
+                "component_id": "19a25957-dcd9-4bf9-be95-7636373577c8",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "PlayerInventoryComponent"
+              },
+              "InventoryHud": {
+                "_type": "component",
+                "component_id": "9c850b64-bc48-4436-a547-501fb40fc061",
+                "go": "82ec548d-8776-40f5-8938-b7bb0449aa97",
+                "component_type": "PobxPlayerInventoryHud"
+              },
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "PlayerHud": {
+              "PlayerInteractionComponent": {
                 "_type": "component",
-                "component_id": "2482e45e-2873-488f-bb51-27fbe3878c17",
-                "go": "53c2c04f-6847-4b05-aca9-4df94b6a7030",
-                "component_type": "PobxPlayerInventoryHud"
+                "component_id": "2392c7b2-c161-4525-badb-d1da0e763d7f",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "PlayerInteractionComponent"
+              },
+              "SourceMovement": {
+                "_type": "component",
+                "component_id": "32805b7e-ace0-4d1e-b7ca-5afcfb4a2338",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "SourceMovement"
               }
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c53b7711-d572-4646-afe7-f2bd78a97f66"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "404c426d-70d3-4552-8a1f-be886e4fd19b"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "ActionSystemComponent",
+              "__guid": "c53b7711-d572-4646-afe7-f2bd78a97f66",
+              "__enabled": true,
+              "Flags": 0,
+              "BaseDamage": 10,
+              "MaxHealth": 100,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "19a25957-dcd9-4bf9-be95-7636373577c8"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c53b7711-d572-4646-afe7-f2bd78a97f66"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "PlayerInventoryComponent",
+              "__guid": "19a25957-dcd9-4bf9-be95-7636373577c8",
+              "__enabled": true,
+              "Flags": 0,
+              "DropDistanceFromCameraForward": 10,
+              "DropScanRadius": 30,
+              "Inventory": null,
+              "InventoryHud": {
+                "_type": "component",
+                "component_id": "9c850b64-bc48-4436-a547-501fb40fc061",
+                "go": "82ec548d-8776-40f5-8938-b7bb0449aa97",
+                "component_type": "PobxPlayerInventoryHud"
+              },
+              "InventorySlotMode": "Tetris",
+              "InventoryStorageSize": "3,3",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Player": {
+                "_type": "component",
+                "component_id": "404c426d-70d3-4552-8a1f-be886e4fd19b",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "PobxPlayer"
+              }
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "2392c7b2-c161-4525-badb-d1da0e763d7f"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "19a25957-dcd9-4bf9-be95-7636373577c8"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "PlayerInteractionComponent",
+              "__guid": "2392c7b2-c161-4525-badb-d1da0e763d7f",
+              "__enabled": true,
+              "Flags": 0,
+              "DebugInteraction": false,
+              "DroppingLaunchStrength": 500,
+              "Hold_IK_Enabled": false,
+              "IK_HoldMaxHandsDistance": 8,
+              "IK_HoldPositionReference": null,
+              "IK_HoldScanRadius": 6,
+              "InteractionAcceptableDistance": 50,
+              "InteractionFindDistance": 80,
+              "InteractionFindRadius": 200,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Player": {
+                "_type": "component",
+                "component_id": "404c426d-70d3-4552-8a1f-be886e4fd19b",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "PobxPlayer"
+              },
+              "PlayerQuestSystem": {
+                "_type": "component",
+                "component_id": "1192d2d3-dbbd-419f-ac64-530ae7974753",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "ExtractionPlayerQuestSystemHandlerComponent"
+              }
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "1192d2d3-dbbd-419f-ac64-530ae7974753"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "2392c7b2-c161-4525-badb-d1da0e763d7f"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "ExtractionPlayerQuestSystemHandlerComponent",
+              "__guid": "1192d2d3-dbbd-419f-ac64-530ae7974753",
+              "__enabled": true,
+              "Flags": 0,
+              "ActiveQuests": [],
+              "CompletedQuests": [],
+              "DebugQuestStats": true,
+              "EntityComponent": {
+                "_type": "component",
+                "component_id": "adb7ee58-f79c-4840-9e66-f5627a67cff5",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "ExtractionQuestEntityComponent"
+              },
+              "FailedQuests": [],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "adb7ee58-f79c-4840-9e66-f5627a67cff5"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "1192d2d3-dbbd-419f-ac64-530ae7974753"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "ExtractionQuestEntityComponent",
+              "__guid": "adb7ee58-f79c-4840-9e66-f5627a67cff5",
+              "__enabled": true,
+              "Flags": 0,
+              "collider": {
+                "_type": "component",
+                "component_id": "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14",
+                "go": "3631bc5f-3313-40f7-9416-ae6cdb207908",
+                "component_type": "CapsuleCollider"
+              },
+              "EntityActionSystemComponent": {
+                "_type": "component",
+                "component_id": "c53b7711-d572-4646-afe7-f2bd78a97f66",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "ActionSystemComponent"
+              },
+              "EntityInfo": null,
+              "ObjectSize": "CREATURE_TYPE",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "renderer": {
+                "_type": "component",
+                "component_id": "b9e497d2-0db3-48ab-8c6a-682b28115752",
+                "go": "f4b1829f-778b-45e7-a880-14a43957ac1f",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "rigidbody": {
+                "_type": "component",
+                "component_id": "8d684cdb-e133-4b77-8ee5-57f4fad49511",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "Rigidbody"
+              },
+              "ShouldReportToQuestSystem": true
             }
           },
           {
@@ -137,7 +384,7 @@
             },
             "PreviousElement": {
               "Type": "Component",
-              "IdValue": "84740167-6ad0-47d8-8025-4d66bbc1073e"
+              "IdValue": "adb7ee58-f79c-4840-9e66-f5627a67cff5"
             },
             "ContainerProperty": "Components",
             "IsContainerArray": true,
@@ -185,7 +432,7 @@
               "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
             },
             "Property": "Position",
-            "Value": "150.348999,455.639771,32"
+            "Value": "150.348999,455.639771,106.572861"
           },
           {
             "Target": {
@@ -211,67 +458,6 @@
         "3631bc5f-3313-40f7-9416-ae6cdb207908": "d0f16a9a-d2a7-4f21-adf4-481ca2db4339",
         "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14": "a9b31e67-f23a-4b97-8093-f221237eccbf"
       }
-    },
-    {
-      "__guid": "53c2c04f-6847-4b05-aca9-4df94b6a7030",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Screen",
-      "Position": "160.79567,306.802368,68.7829742",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ScreenPanel",
-          "__guid": "6fc2d9fc-8fdf-4141-8f41-ce4a6302dced",
-          "__enabled": true,
-          "Flags": 0,
-          "AutoScreenScale": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Opacity": 0.5,
-          "Scale": 1,
-          "ScaleStrategy": "FollowDesktopScaling",
-          "TargetCamera": {
-            "_type": "component",
-            "component_id": "51cf59ea-ca07-4301-94cc-afd349e232b6",
-            "go": "022c4a00-1d41-4a0a-b220-8b499d2bacf0",
-            "component_type": "CameraComponent"
-          },
-          "ZIndex": 100
-        },
-        {
-          "__type": "Conna.Inventory.PobxPlayerInventoryHud",
-          "__guid": "2482e45e-2873-488f-bb51-27fbe3878c17",
-          "__enabled": false,
-          "Flags": 0,
-          "Inventory": null,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "TempPlayer": {
-            "_type": "component",
-            "component_id": "84740167-6ad0-47d8-8025-4d66bbc1073e",
-            "go": "3cab0b55-63eb-4bc2-8410-afb63b2d9701",
-            "component_type": "TempPlayerController"
-          }
-        }
-      ],
-      "Children": []
     },
     {
       "__guid": "32800d3f-b339-4f24-99ac-3f710427b3a3",
@@ -400,156 +586,6 @@
       ]
     },
     {
-      "__guid": "fadc0077-7d8d-45b0-9e6b-18d792be55a8",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "BallItem",
-      "Position": "294.274689,316.186646,53.7097168",
-      "Rotation": "0,0,0,1",
-      "Scale": "0.5,0.5,0.5",
-      "Tags": "interact",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "06915882-f846-43e8-83a8-34d6fadf8d2e",
-          "__enabled": true,
-          "Flags": 0,
-          "Center": "0,0,0",
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "08b55cb4-12f8-4a7f-9753-8a169fcdd530",
-          "__enabled": true,
-          "Flags": 0,
-          "AngularDamping": 0,
-          "EnableImpactDamage": true,
-          "EnhancedCcd": false,
-          "Gravity": true,
-          "GravityScale": 1,
-          "ImpactDamage": 0,
-          "LinearDamping": 0,
-          "Locking": {
-            "X": false,
-            "Y": false,
-            "Z": false,
-            "Pitch": false,
-            "Yaw": false,
-            "Roll": false
-          },
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MinImpactDamageSpeed": 500,
-          "MotionEnabled": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "BallItemInteraction",
-          "__guid": "01402d70-93cb-4a82-b733-a019264231c4",
-          "__enabled": true,
-          "Flags": 0,
-          "Collider": null,
-          "InteractionDistance": 120,
-          "InteractionEnabled": true,
-          "InteractionHold": true,
-          "InteractionHoldDuration": 0.5,
-          "InteractionString": "Interact",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "TempPlayerController": {
-            "_type": "component",
-            "component_id": "84740167-6ad0-47d8-8025-4d66bbc1073e",
-            "go": "3cab0b55-63eb-4bc2-8410-afb63b2d9701",
-            "component_type": "TempPlayerController"
-          }
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "02dd7a1d-c906-4d7a-a3e7-61371e8e2a8d",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "BallMesh",
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ad5f51de-ce1d-4945-bfc3-5528f1c6f8bd",
-              "__enabled": true,
-              "Flags": 0,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "LodOverride": null,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Materials": null,
-              "Model": "models/dev/sphere.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,0,0,1"
-            }
-          ],
-          "Children": []
-        }
-      ]
-    },
-    {
       "__guid": "588c0dbb-b1a9-432c-858b-90a28e5c0d08",
       "__version": 2,
       "Flags": 0,
@@ -565,19 +601,6 @@
       "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
-        {
-          "__type": "BallLoot",
-          "__guid": "04f51ecf-6687-4b62-99f5-d107810e701d",
-          "__enabled": true,
-          "Flags": 0,
-          "collider": null,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        },
         {
           "__type": "Sandbox.Rigidbody",
           "__guid": "1fc7f3f3-a3d0-4d49-a211-a5a16a09a2f4",
@@ -687,6 +710,117 @@
           "Children": []
         }
       ]
+    },
+    {
+      "__guid": "51daa738-873b-41d7-b8bd-7f85a1230de3",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Hud",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "87e1bdeb-3650-4cb4-a43d-52297cbb303a",
+          "__enabled": true,
+          "Flags": 0,
+          "AutoScreenScale": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Opacity": 0.5,
+          "Scale": 1,
+          "ScaleStrategy": "FollowDesktopScaling",
+          "TargetCamera": {
+            "_type": "component",
+            "component_id": "51cf59ea-ca07-4301-94cc-afd349e232b6",
+            "go": "022c4a00-1d41-4a0a-b220-8b499d2bacf0",
+            "component_type": "CameraComponent"
+          },
+          "ZIndex": 100
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "82ec548d-8776-40f5-8938-b7bb0449aa97",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Inventory",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Conna.Inventory.PobxPlayerInventoryHud",
+              "__guid": "9c850b64-bc48-4436-a547-501fb40fc061",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        }
+      ]
+    },
+    {
+      "__guid": "ae3c309a-2626-4193-bc11-5cde2e8347f8",
+      "__version": 2,
+      "__Prefab": "environment/grabbable items/ballitem.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "275ba4c4-f301-4658-8e78-67fe169612c4"
+            },
+            "Property": "Position",
+            "Value": "279.031677,341.421936,64"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d7ca216d-b164-492e-b1ab-2f5d6153fbc4"
+            },
+            "Property": "CurrentCount",
+            "Value": 3
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "275ba4c4-f301-4658-8e78-67fe169612c4": "ae3c309a-2626-4193-bc11-5cde2e8347f8",
+        "c21bf598-22ed-4dc3-940b-3054da50e0bf": "924dcc1b-6f01-4933-b8a9-3a58d658210a",
+        "45d8a92e-4716-4738-a271-d6dc37d1c3e4": "e8338fed-5925-4a9c-a404-2c9aef34760b",
+        "eb8b99fa-72eb-408d-b195-189aa1c95446": "2fc6169a-f48c-411d-8b34-9ebe321ddfce",
+        "d7ca216d-b164-492e-b1ab-2f5d6153fbc4": "d5261791-2fc5-4e7e-b0bc-11ab21e99970",
+        "d02da249-e0f4-44ee-b76d-b360d1bd9aa4": "be63b3eb-eef1-4012-8837-0e97841aba86",
+        "525690e1-1496-4d07-9d44-4886b3aae79f": "99e2413d-1e9d-464d-bf19-3b4225fece8e"
+      }
     }
   ],
   "SceneProperties": {

@@ -1,15 +1,6 @@
 using System;
 
-public enum ECharacterEntityType
-{
-	[Icon("face")]
-	PLAYER,
-	[Icon("sentiment_extremely_dissatisfied")]
-	[Description("For enemies without a specific purpose. Will just go hostile.")]
-	ENEMY_BASIC,
-}
-
-public class ActionSystemComponent : Component
+public class ActionSystemComponent : Component, Component.IDamageable
 {
 	public event Action<GameObject, GameObject, float, float> OnDamaged;
 	public event Action<GameObject, float, float> OnHealed;
@@ -88,5 +79,10 @@ public class ActionSystemComponent : Component
 	{
 		Health = MaxHealth;
 		Damage = BaseDamage;
+	}
+
+	public void OnDamage( in DamageInfo damage )
+	{
+		Health -= damage.Damage;
 	}
 }

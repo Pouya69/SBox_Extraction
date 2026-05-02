@@ -1,5 +1,5 @@
+using Conna.Inventory;
 using Sandbox;
-using static Sandbox.Services.Inventory;
 
 public sealed class PlayerInteractionComponent : Component
 {
@@ -14,7 +14,7 @@ public sealed class PlayerInteractionComponent : Component
 	[Property, Group( "Hold" )] public bool Hold_IK_Enabled { get; private set; }
 
 	[Property, RequireComponent, Group( "Components" )] public ExtractionPlayerQuestSystemHandlerComponent PlayerQuestSystem { get; private set; }
-	[Property, RequireComponent, Group("Components")] public PlayerControllerExtension Player {  get; private set; }
+	[Property, RequireComponent, Group("Components")] public PobxPlayer Player {  get; private set; }
 	private GameObject FocusedInteractable;
 
 	// Temporary For Now.
@@ -25,8 +25,8 @@ public sealed class PlayerInteractionComponent : Component
 	{
 		FindBestInteractable();
 
-		if ( Hold_IK_Enabled && IsHoldingObject )
-			SetHandPositionAroundGrabbedObject_IK();
+		//if ( Hold_IK_Enabled && IsHoldingObject )
+			//SetHandPositionAroundGrabbedObject_IK();
 	}
 
 	private void FindBestInteractable()
@@ -104,7 +104,7 @@ public sealed class PlayerInteractionComponent : Component
 		GrabbingEntity = entity;
 		IsHoldingObject = true;
 
-		Player.PickupObjectTwoHandedAnimation();
+		// Player.PickupObjectTwoHandedAnimation();
 	}
 
 	public async void DropHeldEntity()
@@ -114,7 +114,7 @@ public sealed class PlayerInteractionComponent : Component
 			GrabbingEntity.GetGameObject().SetParent( null );
 			var launchVel = DroppingLaunchStrength * IK_HoldPositionReference.WorldTransform.Forward;
 			GrabbingEntity.LaunchEntity( launchVel );
-			Player.DropGrabbedEntityAnimation();
+			// Player.DropGrabbedEntityAnimation();
 			IsHoldingObject = false;
 
 			await Task.Frame();
@@ -124,6 +124,7 @@ public sealed class PlayerInteractionComponent : Component
 		}
 	}
 
+	/*
 	public void SetHandPositionAroundGrabbedObject_IK()
 	{
 		Vector3 leftHandForward = Player.LeftHandSocket.WorldTransform.Forward;
@@ -154,5 +155,18 @@ public sealed class PlayerInteractionComponent : Component
 		}
 
 		Player.IK_SetHandsHoldingPositionsAndRotations(finalLeftPos, finalLeftRot, finalRightPos, finalRightRot);
+	}
+	*/
+
+	public void OnControl()
+	{
+		if ( Input.Pressed( "Use" ) )
+		{
+			AttemptInteract();
+		}
+	}
+
+	public InventoryResult AddItemToInventory( PobxBaseInventoryItem item ) {
+		return Player.InventoryComponent.AddItemToInventory( item );
 	}
 }

@@ -5,11 +5,7 @@ using static Sandbox.Services.Inventory;
 
 public sealed class TempPlayerController : Component
 {
-	[Property] public float Health { get; set; } = 100f;
-	[Property] public float MaxHealth { get; set; } = 100f;
-	[Property] public float Armor { get; set; } = 0f;
-	[Property] public float MaxArmor { get; set; } = 100f;
-	[Property] public int Coins { get; set; } = 0;
+	
 
 	[Property] private bool IsHudEnable {  get; set; } = false;
 

@@ -5,86 +5,107 @@
 @inherits Panel
 @namespace Conna.Inventory
 
-<root class="inventory-panel">
-	<div class="inventory-header">
-		<label class="inventory-title">@Title</label>
-		<div class="inventory-header-right">
-			<button class="merge-stacks-button" onclick="@OnConsolidateClicked">📦</button>
-			<button class="auto-sort-button" onclick="@OnAutoSortClicked">🔄</button>
-			<label class="inventory-size">@Inventory?.Width x @Inventory?.Height</label>
-		</div>
-	</div>
+<style>
+	.inventory-root {
 
-	<div @ref="GridPanel" class="inventory-grid" style="width: @(GridWidthPx); height: @(GridHeightPx);">
-		@for (int row = 0; row < (Inventory?.Height ?? 0); row++)
-		{
-			@for (int col = 0; col < (Inventory?.Width ?? 0); col++)
-			{
-				var x = GridPadding + col * CellTotal;
-				var y = GridPadding + row * CellTotal;
-
-				<div class="grid-cell" style="left: @(x)px; top: @(y)px; width: @(CellSize)px; height: @(CellSize)px;"></div>
-			}
-		}
-
-		@if (Inventory is not null)
-		{
-			@foreach (var entry in Inventory.Entries)
-			{
-				var isDragging = DraggedItem == entry.Item && IsDragging;
-				var left = GridPadding + entry.Slot.X * CellTotal;
-				var top = GridPadding + entry.Slot.Y * CellTotal;
-				var width = entry.Slot.W * CellSize + (entry.Slot.W - 1) * CellGap;
-				var height = entry.Slot.H * CellSize + (entry.Slot.H - 1) * CellGap;
-
-				<div class="inventory-item @(isDragging ? "dragging" : "") @(SelectedItem == entry.Item ? "selected" : "")"
-					 style="left: @(left)px; top: @(top)px; width: @(width)px; height: @(height)px;"
-					 onmousedown="@((e) => OnItemMouseDown(e, entry.Item))">
-
-					<label class="item-name">@entry.Item.DisplayName</label>
-
-					@if (entry.Item.MaxStackSize > 1)
-					{
-						<label class="item-stack">@entry.Item.StackCount</label>
-					}
-				</div>
-			}
-
-			@if (DraggedItem is not null && IsDragging)
-			{
-				var previewLeft = GridPadding + DragPreviewX * CellTotal;
-				var previewTop = GridPadding + DragPreviewY * CellTotal;
-				var previewWidth = DraggedItem.Width * CellSize + (DraggedItem.Width - 1) * CellGap;
-				var previewHeight = DraggedItem.Height * CellSize + (DraggedItem.Height - 1) * CellGap;
-
-				<div class="drag-preview @(CanDropAtCurrentPosition ? "valid" : "invalid")"
-					 style="left: @(previewLeft)px; top: @(previewTop)px; width: @(previewWidth)px; height: @(previewHeight)px;">
-				</div>
-			}
-		}
-	</div>
-
-	@if (DraggedItem is not null && IsDragging)
-	{
-		var ghostWidth = DraggedItem.Width * CellSize + (DraggedItem.Width - 1) * CellGap;
-		var ghostHeight = DraggedItem.Height * CellSize + (DraggedItem.Height - 1) * CellGap;
-		var ghostLeft = DragMouseX - ghostWidth / 2;
-		var ghostTop = DragMouseY - ghostHeight / 2;
-		var displayCount = IsSplitting ? DraggedItem.StackCount / 2 : DraggedItem.StackCount;
-
-		<div class="drag-ghost" style="left: @(ghostLeft)px; top: @(ghostTop)px; width: @(ghostWidth)px; height: @(ghostHeight)px;">
-			<label class="item-name">@DraggedItem.DisplayName</label>
-			@if (DraggedItem.MaxStackSize > 1)
-			{
-				<label class="item-stack">@displayCount</label>
-			}
-		</div>
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 100vw;
 	}
+
+	.inventory-panel {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+</style>
+
+<root class="inventory-root">
+	<div class="inventory-panel">
+		<div class="inventory-header">
+			<label class="inventory-title">@Title</label>
+			<div class="inventory-header-right">
+				<button class="merge-stacks-button" onclick="@OnConsolidateClicked">📦</button>
+				<button class="auto-sort-button" onclick="@OnAutoSortClicked">🔄</button>
+				<label class="inventory-size">@Inventory?.Width x @Inventory?.Height</label>
+			</div>
+		</div>
+
+		<div @ref="GridPanel" class="inventory-grid" style="width: @(GridWidthPx); height: @(GridHeightPx);">
+			@for (int row = 0; row < (Inventory?.Height ?? 0); row++)
+			{
+				@for (int col = 0; col < (Inventory?.Width ?? 0); col++)
+				{
+					var x = GridPadding + col * CellTotal;
+					var y = GridPadding + row * CellTotal;
+
+					<div class="grid-cell" style="left: @(x)px; top: @(y)px; width: @(CellSize)px; height: @(CellSize)px;"></div>
+				}
+			}
+
+			@if (Inventory is not null)
+			{
+				@foreach (var entry in Inventory.Entries)
+				{
+					var isDragging = DraggedItem == entry.Item && IsDragging;
+					var left = GridPadding + entry.Slot.X * CellTotal;
+					var top = GridPadding + entry.Slot.Y * CellTotal;
+					var width = entry.Slot.W * CellSize + (entry.Slot.W - 1) * CellGap;
+					var height = entry.Slot.H * CellSize + (entry.Slot.H - 1) * CellGap;
+
+					<div class="inventory-item @(isDragging ? "dragging" : "") @(SelectedItem == entry.Item ? "selected" : "")"
+						 style="left: @(left)px; top: @(top)px; width: @(width)px; height: @(height)px;"
+						 onmousedown="@((e) => OnItemMouseDown(e, entry.Item))">
+
+						<label class="item-name">@entry.Item.DisplayName</label>
+
+						@if (entry.Item.MaxStackSize > 1)
+						{
+							<label class="item-stack">@entry.Item.StackCount</label>
+						}
+					</div>
+				}
+
+				@if (DraggedItem is not null && IsDragging)
+				{
+					var previewLeft = GridPadding + DragPreviewX * CellTotal;
+					var previewTop = GridPadding + DragPreviewY * CellTotal;
+					var previewWidth = DraggedItem.Width * CellSize + (DraggedItem.Width - 1) * CellGap;
+					var previewHeight = DraggedItem.Height * CellSize + (DraggedItem.Height - 1) * CellGap;
+
+					<div class="drag-preview @(CanDropAtCurrentPosition ? "valid" : "invalid")"
+						 style="left: @(previewLeft)px; top: @(previewTop)px; width: @(previewWidth)px; height: @(previewHeight)px;">
+					</div>
+				}
+			}
+		</div>
+
+		@if (DraggedItem is not null && IsDragging)
+		{
+			var ghostWidth = DraggedItem.Width * CellSize + (DraggedItem.Width - 1) * CellGap;
+			var ghostHeight = DraggedItem.Height * CellSize + (DraggedItem.Height - 1) * CellGap;
+			var ghostLeft = DragMouseX - ghostWidth / 2;
+			var ghostTop = DragMouseY - ghostHeight / 2;
+			var displayCount = IsSplitting ? DraggedItem.StackCount / 2 : DraggedItem.StackCount;
+
+			<div class="drag-ghost" style="left: @(ghostLeft)px; top: @(ghostTop)px; width: @(ghostWidth)px; height: @(ghostHeight)px;">
+				<label class="item-name">@DraggedItem.DisplayName</label>
+				@if (DraggedItem.MaxStackSize > 1)
+				{
+					<label class="item-stack">@displayCount</label>
+				}
+			</div>
+		}
+	</div>
 </root>
 
 @code {
 	public string Title { get; set; } = "Inventory";
-	public BaseInventory Inventory { get; set; }
+	public PobxPlayerInventory Inventory { get; set; }
 	public InventoryItem SelectedItem { get; private set; }
 
 	public event Action<InventoryItem> OnSelected;
@@ -98,6 +119,7 @@
 	private float DragMouseX { get; set; }
 	private float DragMouseY { get; set; }
 	private bool CanDropAtCurrentPosition { get; set; }
+	private bool IsAboutToDropFromInventory { get; set; }
 	private bool IsDragging { get; set; }
 	private bool IsShiftHeld { get; set; }
 	private bool IsSplitting { get; set; }
@@ -215,9 +237,13 @@
 		if (!isInGridBounds)
 		{
 			CanDropAtCurrentPosition = false;
+			if (!IsSplitting)
+				IsAboutToDropFromInventory = true;
 		}
 		else if (IsSplitting)
 		{
+			IsAboutToDropFromInventory = false;
+
 			// When splitting, we can drop on empty spaces or stackable items
 			var itemsAtTarget = Inventory.GetItemsInRect(targetX, targetY, itemWidthInCells, itemHeightInCells);
 			itemsAtTarget.Remove(DraggedItem);
@@ -238,6 +264,7 @@
 		}
 		else
 		{
+			IsAboutToDropFromInventory = false;
 			// Check if we can move to empty space
 			var itemsAtTarget = Inventory.GetItemsInRect(targetX, targetY, itemWidthInCells, itemHeightInCells);
 			itemsAtTarget.Remove(DraggedItem);
@@ -285,6 +312,7 @@
 		DraggedItem = null;
 		IsDragging = false;
 		IsSplitting = false;
+		IsAboutToDropFromInventory = false;
 		StateHasChanged();
 	}
 
@@ -292,6 +320,16 @@
 	{
 		if (DraggedItem is null || Inventory is null)
 			return;
+
+
+		if (IsAboutToDropFromInventory)
+		{
+			// var itemsAtTarget = Inventory.GetItemsInRect(DragStartSlot.X, DragStartSlot.Y, DraggedItem.Width, DraggedItem.Height);
+			// itemsAtTarget.Remove(DraggedItem);
+			DeleteFromInventoryAndDrop(DraggedItem);
+			StateHasChanged();
+			return;
+		}
 
 		var targetX = DragPreviewX;
 		var targetY = DragPreviewY;
@@ -329,6 +367,17 @@
 		{
 			_ = Inventory.Network.TryMoveOrSwap(DraggedItem, targetX, targetY);
 		}
+	}
+
+	private void DeleteFromInventoryAndDrop(InventoryItem itemToDrop)
+	{
+		if (!IsAboutToDropFromInventory || DraggedItem is null || Inventory is null)
+			return;
+
+		IsAboutToDropFromInventory = false;
+
+		var result = Inventory.RemoveItemAndDropFromInventory(itemToDrop as PobxBaseInventoryItem);
+		Assert.True(result == InventoryResult.Success);
 	}
 
 	public override void OnDeleted()

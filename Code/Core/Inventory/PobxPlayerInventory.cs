@@ -9,5 +9,20 @@ using Conna.Inventory;
 //	}
 //}
 
-public class PobxPlayerInventory( Guid id, int width, int height, InventorySlotMode slotMode = InventorySlotMode.Single )
-	: BaseInventory( id, width, height, slotMode );
+public class PobxPlayerInventory( Guid id, int width, int height, InventorySlotMode slotMode = InventorySlotMode.Single ) : BaseInventory( id, width, height, slotMode )
+{
+	/// <summary>
+	/// When it is fully dropped. OnItemRemoved is used for other actions as wel. This one is drop and remove only.
+	/// </summary>
+	public Action<PobxBaseInventoryItem> OnItemFullyDroppedFromInventory;
+
+	public InventoryResult RemoveItemAndDropFromInventory(PobxBaseInventoryItem item)
+	{
+		var result = TryRemove( item );
+
+		if (result == InventoryResult.Success)
+			OnItemFullyDroppedFromInventory?.Invoke(item);
+
+		return result;
+	}
+}

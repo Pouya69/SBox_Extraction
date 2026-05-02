@@ -1,0 +1,39 @@
+@using System
+@using Sandbox
+@using Sandbox.UI
+@inherits PanelComponent
+@namespace Conna.Inventory
+
+@if (Inventory is null)
+	return;
+
+<root>
+	<PobxPlayerInventoryPanel @ref="InventoryPanelRef" Title="Inventory" Inventory="@Inventory" />
+</root>
+
+@code {
+	private PobxPlayer Player { get; set; }
+	private PobxPlayerInventory Inventory { get; set; }
+	private PobxPlayerInventoryPanel InventoryPanelRef { get; set; }
+
+	protected override void OnTreeFirstBuilt()
+	{
+		base.OnTreeFirstBuilt();
+		// Log.Info(Inventory);
+
+
+		StateHasChanged();
+	}
+
+	protected override void OnAwake()
+	{
+		base.OnAwake();
+		Player = Scene.Get<PobxPlayer>();
+		Inventory = Player.InventoryComponent.Inventory;
+	}
+
+	public void HandleInput()
+	{
+		
+	}
+}
