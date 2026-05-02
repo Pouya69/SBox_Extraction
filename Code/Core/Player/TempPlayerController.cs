@@ -11,9 +11,27 @@ public sealed class TempPlayerController : Component
 	[Property] public float MaxArmor { get; set; } = 100f;
 	[Property] public int Coins { get; set; } = 0;
 
+	[Property] private bool IsHudEnable {  get; set; } = false;
+
 	public TimeSince TimeAlive { get; set; } = 0;
 
 	public PobxPlayerInventory Inventory { get; private set; }
+	[Property] private PobxPlayerInventoryHud PlayerHud { get; set; }
+
+
+	protected override void OnUpdate()
+	{
+		if ( Input.Pressed( "Inventory" ) )
+		{
+			ToggleInventoryHud();
+		}
+	}
+
+	private void ToggleInventoryHud()
+	{
+		IsHudEnable = !IsHudEnable;
+		PlayerHud.Enabled = IsHudEnable;
+	}
 
 	protected override void OnAwake()
 	{
@@ -32,7 +50,7 @@ public sealed class TempPlayerController : Component
 		Log.Info( result );
 
 		// Add at specific position (no stack merging)
-		//result = Inventory.TryAddAt( item, x: 2, y: 0 );
+		result = Inventory.TryAddAt( InventoryItem, x: 2, y: 0 );
 
 		return result;
 	}
