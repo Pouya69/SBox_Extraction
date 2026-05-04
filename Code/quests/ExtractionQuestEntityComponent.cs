@@ -51,6 +51,7 @@ public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuest
 	{
 		if ( rigidbody == null ) return;
 
+		rigidbody.Sleeping = false;
 		rigidbody.Velocity = ignoreMass ? velocity : (rigidbody.Velocity + velocity);
 		// Log.Info( rigidbody.Velocity );
 	}

@@ -28,8 +28,17 @@
 	protected override void OnAwake()
 	{
 		base.OnAwake();
+
+	}
+
+	protected override void OnStart()
+	{
 		Player = Scene.Get<PobxPlayer>();
 		Inventory = Player.InventoryComponent.Inventory;
+
+		Assert.True(Player.IsValid());
+
+		Assert.True(Inventory != null);
 	}
 
 	public void HandleInput()

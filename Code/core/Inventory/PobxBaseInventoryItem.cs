@@ -4,6 +4,8 @@ using SimpleInteractions;
 
 public class PobxBaseInventoryItem : InventoryItem
 {
+	public bool WillDestroyOnAdd = true;
+	public InventoryGrabbableComponent InventoryGrabbableReference;
 	public PrefabScene PobxItemReference;
 	public string displayName;
 	public int width;
@@ -11,7 +13,9 @@ public class PobxBaseInventoryItem : InventoryItem
 	public int maxStackSize;
 	public int startingStackCount;
 
-	public PobxBaseInventoryItem( PrefabScene pobxItemReference, string displayName, int width, int height, int maxStackSize, int startingStackCount ) {
+	public PobxBaseInventoryItem( PrefabScene pobxItemReference, string displayName, int width, int height, int maxStackSize, int startingStackCount, bool willDestroyOnAdd = true, InventoryGrabbableComponent grabbableRef = null) {
+		this.WillDestroyOnAdd = willDestroyOnAdd;
+		InventoryGrabbableReference = grabbableRef;
 		PobxItemReference = pobxItemReference;
 		this.displayName = displayName;
 		this.width = width;
@@ -30,7 +34,7 @@ public class PobxBaseInventoryItem : InventoryItem
 	public override InventoryItem CreateStackClone( int stackCount )
 	{
 		var description = TypeLibrary.GetType( GetType() );
-		var clone = description.Create<PobxBaseInventoryItem>( [PobxItemReference, displayName, width, height, maxStackSize, startingStackCount] );
+		var clone = description.Create<PobxBaseInventoryItem>( [PobxItemReference, displayName, width, height, maxStackSize, startingStackCount, WillDestroyOnAdd, InventoryGrabbableReference] );
 		clone.StackCount = stackCount;
 
 		return clone;

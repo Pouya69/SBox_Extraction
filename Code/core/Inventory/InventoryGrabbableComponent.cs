@@ -1,14 +1,16 @@
 using Sandbox;
 
-public sealed class InventoryGrabbableComponent : Component, IInteractable
+public class InventoryGrabbableComponent : Component, IInteractable
 {
 	/// <summary>
 	/// This will be used for dropping etc.
 	/// </summary>
-	[Property, Feature( "Inventory" )] protected PrefabScene ItemPrefab;
+	[Property, Feature( "Inventory" )] protected PrefabScene ItemWorldModelPrefab;
+	[Property, Feature( "Inventory" )] protected Renderer Renderer;
 	[Property, Feature( "Inventory" )] protected Vector2Int ItemSizeInInventory = new(1,1);
 	[Property, Feature( "Inventory" )] protected int InventoryMaxStackSize = 1;
 	[Property, Feature( "Inventory" )] protected int CurrentCount = 1;
+	public GameObject WorldModel { get; protected set; }
 	/// <summary>
 	/// If false, the item will be discarded upon dropping.
 	/// </summary>
@@ -18,8 +20,21 @@ public sealed class InventoryGrabbableComponent : Component, IInteractable
 
 	protected override void OnAwake()
 	{
-		pobxBaseInventoryItem = new PobxBaseInventoryItem( ItemPrefab, EntityReference.GetEntityName(), ItemSizeInInventory.x, ItemSizeInInventory.y, InventoryMaxStackSize, CurrentCount );
+		WorldModel = Renderer.GameObject;
+		pobxBaseInventoryItem = new PobxBaseInventoryItem( ItemWorldModelPrefab, EntityReference.GetEntityName(), ItemSizeInInventory.x, ItemSizeInInventory.y, InventoryMaxStackSize, CurrentCount, WillBeDestroyedOnAddToInventory(), this );
 	}
+
+	protected override void OnEnabled()
+	{
+		// EnableItem();
+	}
+
+	protected override void OnDisabled()
+	{
+		// DisableItem();
+	}
+
+	public virtual bool WillBeDestroyedOnAddToInventory() => true;
 
 	public void Interact( PlayerInteractionComponent interactionComponent )
 	{
@@ -31,7 +46,7 @@ public sealed class InventoryGrabbableComponent : Component, IInteractable
 		}
 		// Object is added. We can destroy the object now.
 
-		this.GameObject.Destroy();
+		AddedItemToInventory( interactionComponent );
 
 
 		//GameObject.Enabled = false;
@@ -39,6 +54,18 @@ public sealed class InventoryGrabbableComponent : Component, IInteractable
 		// Log.Info( $"{Rpc.Caller.DisplayName} interacted with {this.GameObject.Name}!" );
 		//GameObject.Destroy();
 	}
+
+	protected virtual void AddedItemToInventory( PlayerInteractionComponent interactionComponent )
+	{
+		ExtractionQuestSystem.EntityPickedUp( interactionComponent.Player, EntityReference );
+		if (pobxBaseInventoryItem.WillDestroyOnAdd)
+			this.GameObject.Destroy();
+	}
+
+	public virtual void ItemRemovedFromInventory() { }
+
+	public virtual void EnableItem() { }
+	public virtual void DisableItem() { }
 
 	public bool CanBePickedUp()
 	{
@@ -57,4 +84,9 @@ public sealed class InventoryGrabbableComponent : Component, IInteractable
 		pobxBaseInventoryItem.StackCount = newCount;
 		CurrentCount = newCount; 
 	}
+
+	/// <summary>
+	/// Should be implemented in the derived classes.
+	/// </summary>
+	public virtual void OnControl( PobxPlayer Player ) { }
 }

@@ -1,7 +1,7 @@
 using Conna.Inventory;
 using Sandbox;
 
-public sealed class PobxPlayer : Component
+public sealed class PobxPlayer : Component, IExtractionQuestEntity
 {
 	public static PobxPlayer LocalPlayer;
 
@@ -13,6 +13,13 @@ public sealed class PobxPlayer : Component
 	[Property, RequireComponent, Feature( "Components" )] private PobxPlayerInventoryHud InventoryHud { get; set; }
 	[Property, RequireComponent, Feature( "Components" )] private PlayerInteractionComponent PlayerInteractionComponent { get; set; }
 
+	public Transform EyeTransform
+	{
+		get
+		{
+			return Camera.WorldTransform;
+		}
+	}
 
 	// [Property] private PobxPlayerInventoryHud PlayerHud { get; set; }
 
@@ -39,8 +46,78 @@ public sealed class PobxPlayer : Component
 		}
 		*/
 
-		PlayerInteractionComponent.OnControl();
-		InventoryComponent.OnControl();
+		PlayerInteractionComponent?.OnControl();
+		InventoryComponent?.OnControl();
 		InventoryHud?.HandleInput();
+	}
+
+	public void AddEntityToGlobalManager()
+	{
+		throw new NotImplementedException();
+	}
+
+	public bool IsAlive()
+	{
+		throw new NotImplementedException();
+	}
+
+	public void EnteredArea( QuestLocationInfo location )
+	{
+		throw new NotImplementedException();
+	}
+
+	public void EntityKilled( IExtractionQuestEntity Instigator )
+	{
+		throw new NotImplementedException();
+	}
+
+	public void EntityPickedUp( IExtractionQuestEntity Instigator )
+	{
+		throw new NotImplementedException();
+	}
+
+	public string GetEntityName()
+	{
+		throw new NotImplementedException();
+	}
+
+	public EExtractionObjectSize GetObjectSize()
+	{
+		throw new NotImplementedException();
+	}
+
+	public bool CanBeRemoteGrabbed()
+	{
+		throw new NotImplementedException();
+	}
+
+	public Renderer GetRenderer()
+	{
+		throw new NotImplementedException();
+	}
+
+	public void ToggleEnablePhysics( bool enable )
+	{
+		throw new NotImplementedException();
+	}
+
+	public void LaunchEntity( Vector3 velocity, bool ignoreMass = true )
+	{
+		throw new NotImplementedException();
+	}
+
+	public GameObject GetGameObject()
+	{
+		throw new NotImplementedException();
+	}
+
+	public Rigidbody GetRigidbody()
+	{
+		throw new NotImplementedException();
+	}
+
+	public Collider GetCollider()
+	{
+		throw new NotImplementedException();
 	}
 }

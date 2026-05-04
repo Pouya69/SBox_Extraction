@@ -25,11 +25,10 @@ public class SourceMovement : Component {
 	[Sync] public bool IsRunning { get; private set; } = false;
 
 	public GameObject Head { get; set; }
-	private CharacterController Controller;
+	[Property, RequireComponent] public CharacterController Controller { get; private set; }
 
 	protected override void OnStart() {
 		Head = GameObject.Children.FirstOrDefault(go => go.Name == "Head");
-		Controller = Components.Get<CharacterController>();
 	}
 
 	protected override void OnUpdate() {
@@ -38,7 +37,7 @@ public class SourceMovement : Component {
 		if (!Controller.IsOnGround) UpdateJump(); else UpdateDuck();
 
 		IsRunning = (RunByDefault == true ? !Input.Down("Run") : Input.Down("Run")) && !IsDucking;
-		if ((AutoBhop ? Input.Down("Jump") : Input.Pressed("Jump")) && !IsDucking) OnJump();
+		if ((AutoBhop ? Input.Down("Jump") : Input.Pressed("Jump"))) OnJump();
 	}
 
 	protected override void OnFixedUpdate() {

@@ -7,7 +7,7 @@
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
-    "Tags": "",
+    "Tags": "player",
     "Enabled": true,
     "NetworkMode": 2,
     "NetworkFlags": 0,
@@ -44,6 +44,12 @@
         "AirAccelerate": 12,
         "AirMaxWishSpeed": 30,
         "AutoBhop": false,
+        "Controller": {
+          "_type": "component",
+          "component_id": "2b2a4606-1668-42be-86a6-0ab3540625fc",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "CharacterController"
+        },
         "DuckSpeed": 120,
         "Friction": 4.8,
         "GravityScale": 1,
@@ -58,6 +64,221 @@
         "RunSpeed": 320,
         "StopSpeed": 75,
         "WalkSpeed": 240
+      },
+      {
+        "__type": "PobxPlayer",
+        "__guid": "91cc671d-c4e3-40c0-b575-b6c16eda611b",
+        "__enabled": true,
+        "Flags": 0,
+        "ActionSystemComp": {
+          "_type": "component",
+          "component_id": "12d5ca19-8c90-4a6a-913d-1ead7c7fa34b",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "ActionSystemComponent"
+        },
+        "Camera": {
+          "_type": "component",
+          "component_id": "f34d4196-12b7-48bf-90e9-21ee18233ea1",
+          "go": "a93420e5-402a-44b5-bf52-75a4bf2b044e",
+          "component_type": "CameraComponent"
+        },
+        "Controller": {
+          "_type": "component",
+          "component_id": "2b2a4606-1668-42be-86a6-0ab3540625fc",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "CharacterController"
+        },
+        "InventoryComponent": {
+          "_type": "component",
+          "component_id": "4407d421-040d-4db3-b341-b4bb30385c62",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "PlayerInventoryComponent"
+        },
+        "InventoryHud": null,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "PlayerInteractionComponent": {
+          "_type": "component",
+          "component_id": "d4f67a84-400a-405a-a70d-4c0193efce02",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "PlayerInteractionComponent"
+        },
+        "SourceMovement": {
+          "_type": "component",
+          "component_id": "32805b7e-ace0-4d1e-b7ca-5afcfb4a2338",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "SourceMovement"
+        }
+      },
+      {
+        "__type": "ActionSystemComponent",
+        "__guid": "12d5ca19-8c90-4a6a-913d-1ead7c7fa34b",
+        "__enabled": true,
+        "Flags": 0,
+        "BaseDamage": 10,
+        "MaxHealth": 100,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "PlayerInventoryComponent",
+        "__guid": "4407d421-040d-4db3-b341-b4bb30385c62",
+        "__enabled": true,
+        "Flags": 0,
+        "DropDistanceFromCameraForward": 10,
+        "DropScanRadius": 30,
+        "Inventory": null,
+        "InventoryHud": null,
+        "InventorySlotMode": "Tetris",
+        "InventoryStorageSize": "3,3",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Player": {
+          "_type": "component",
+          "component_id": "91cc671d-c4e3-40c0-b575-b6c16eda611b",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "PobxPlayer"
+        }
+      },
+      {
+        "__type": "PlayerInteractionComponent",
+        "__guid": "d4f67a84-400a-405a-a70d-4c0193efce02",
+        "__enabled": true,
+        "Flags": 0,
+        "DebugInteraction": false,
+        "DroppingLaunchStrength": 500,
+        "Hold_IK_Enabled": false,
+        "IK_HoldMaxHandsDistance": 8,
+        "IK_HoldPositionReference": null,
+        "IK_HoldScanRadius": 6,
+        "InteractionAcceptableDistance": 50,
+        "InteractionFindDistance": 80,
+        "InteractionFindRadius": 200,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Player": {
+          "_type": "component",
+          "component_id": "91cc671d-c4e3-40c0-b575-b6c16eda611b",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "PobxPlayer"
+        },
+        "PlayerQuestSystem": {
+          "_type": "component",
+          "component_id": "171c5a6e-3b5a-4dfc-8081-06816b695c65",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "ExtractionPlayerQuestSystemHandlerComponent"
+        }
+      },
+      {
+        "__type": "ExtractionPlayerQuestSystemHandlerComponent",
+        "__guid": "171c5a6e-3b5a-4dfc-8081-06816b695c65",
+        "__enabled": true,
+        "Flags": 0,
+        "ActiveQuests": [],
+        "CompletedQuests": [],
+        "DebugQuestStats": true,
+        "EntityComponent": {
+          "_type": "component",
+          "component_id": "e2470a3d-c43f-4621-ad26-b48ee5982e31",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "ExtractionQuestEntityComponent"
+        },
+        "FailedQuests": [],
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "ExtractionQuestEntityComponent",
+        "__guid": "e2470a3d-c43f-4621-ad26-b48ee5982e31",
+        "__enabled": true,
+        "Flags": 0,
+        "collider": {
+          "_type": "component",
+          "component_id": "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14",
+          "go": "3631bc5f-3313-40f7-9416-ae6cdb207908",
+          "component_type": "CapsuleCollider"
+        },
+        "EntityActionSystemComponent": {
+          "_type": "component",
+          "component_id": "12d5ca19-8c90-4a6a-913d-1ead7c7fa34b",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "ActionSystemComponent"
+        },
+        "EntityInfo": null,
+        "ObjectSize": "CREATURE_TYPE",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "renderer": {
+          "_type": "component",
+          "component_id": "b9e497d2-0db3-48ab-8c6a-682b28115752",
+          "go": "f4b1829f-778b-45e7-a880-14a43957ac1f",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "e008bb2d-9b77-416a-9066-a0654d490cb7",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "Rigidbody"
+        },
+        "ShouldReportToQuestSystem": true
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "e008bb2d-9b77-416a-9066-a0654d490cb7",
+        "__enabled": true,
+        "Flags": 0,
+        "AngularDamping": 1,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
+        "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
+        "LinearDamping": 0.060794044,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassCenterOverride": "0,0,36",
+        "MassOverride": 500,
+        "MinImpactDamageSpeed": 500,
+        "MotionEnabled": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": true,
+        "RigidbodyFlags": "DisableCollisionSounds",
+        "StartAsleep": false
       }
     ],
     "Children": [
@@ -140,10 +361,10 @@
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "b9e497d2-0db3-48ab-8c6a-682b28115752",
-            "__enabled": true,
+            "__enabled": false,
             "Flags": 0,
             "AnimationGraph": null,
-            "BodyGroups": 341,
+            "BodyGroups": 649,
             "BoneMergeTarget": null,
             "CreateAttachments": false,
             "CreateBoneObjects": false,
@@ -151,7 +372,7 @@
             "MaterialGroup": "default",
             "MaterialOverride": null,
             "Materials": null,
-            "Model": "models/citizen/citizen.vmdl",
+            "Model": "models/citizen_human/citizen_human_male.vmdl",
             "Morphs": {},
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -183,7 +404,77 @@
             "UseAnimGraph": true
           }
         ],
-        "Children": []
+        "Children": [
+          {
+            "__guid": "eea31d07-ac9d-49c9-a83d-e441ce722f62",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "Clothing - y_front_pants_white",
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "clothing",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "401d29e8-0327-490f-922e-a9f0697b14bf",
+                "__enabled": false,
+                "Flags": 0,
+                "AnimationGraph": null,
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "b9e497d2-0db3-48ab-8c6a-682b28115752",
+                  "go": "f4b1829f-778b-45e7-a880-14a43957ac1f",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateAttachments": false,
+                "CreateBoneObjects": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": "models/citizen_clothes/underwear/y_front_pants/models/y_front_pants_m_human.vmdl",
+                "Morphs": {},
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "Parameters": {
+                  "bools": {},
+                  "ints": {},
+                  "floats": {},
+                  "vectors": {},
+                  "rotations": {}
+                },
+                "PlaybackRate": 1,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Sequence": {
+                  "Name": null,
+                  "Looping": true,
+                  "Blending": false
+                },
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
+              }
+            ],
+            "Children": []
+          }
+        ]
       },
       {
         "__guid": "a93420e5-402a-44b5-bf52-75a4bf2b044e",
@@ -229,6 +520,18 @@
             "Viewport": "0,0,1,1",
             "ZFar": 10000,
             "ZNear": 10
+          },
+          {
+            "__type": "CameraSetup",
+            "__guid": "87639332-8b40-4158-9bb7-add1baff564d",
+            "__enabled": true,
+            "Flags": 0,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ],
         "Children": []
@@ -241,7 +544,7 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
-        "Tags": "",
+        "Tags": "pawn",
         "Enabled": true,
         "NetworkMode": 2,
         "NetworkFlags": 0,
@@ -256,7 +559,7 @@
             "Flags": 0,
             "ColliderFlags": 0,
             "Elasticity": null,
-            "End": "0,0,10",
+            "End": "0,0,40",
             "Friction": null,
             "IsTrigger": false,
             "OnComponentDestroy": null,

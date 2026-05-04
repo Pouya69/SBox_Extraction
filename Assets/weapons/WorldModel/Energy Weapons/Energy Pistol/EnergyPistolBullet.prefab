@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "275ba4c4-f301-4658-8e78-67fe169612c4",
+    "__guid": "df7c49f6-e4c0-4e0e-818d-2b274290d0b5",
     "__version": 2,
     "Flags": 0,
-    "Name": "ballitem",
+    "Name": "energypistolbullet",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
-    "Scale": "0.5,0.5,0.5",
-    "Tags": "interaction",
+    "Scale": "1,1,1",
+    "Tags": "projectile",
     "Enabled": true,
     "NetworkMode": 2,
     "NetworkFlags": 0,
@@ -16,12 +16,77 @@
     "OwnerTransfer": 1,
     "Components": [
       {
-        "__type": "Sandbox.BoxCollider",
-        "__guid": "c21bf598-22ed-4dc3-940b-3054da50e0bf",
+        "__type": "PobxBullet",
+        "__guid": "9c9556ca-0167-4923-90a4-4ddbbe668713",
+        "__enabled": true,
+        "Flags": 0,
+        "Collider": {
+          "_type": "component",
+          "component_id": "e3d657b7-4e76-4f1a-a18e-d40c3b17fbb4",
+          "go": "df7c49f6-e4c0-4e0e-818d-2b274290d0b5",
+          "component_type": "SphereCollider"
+        },
+        "Damage": 20,
+        "DestroyAfterSeconds": 12,
+        "InitialSpeed": 1000,
+        "MaxSpeed": 1000,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Rigidbody": {
+          "_type": "component",
+          "component_id": "9e282124-679a-4b35-95b6-21351fbba1a8",
+          "go": "df7c49f6-e4c0-4e0e-818d-2b274290d0b5",
+          "component_type": "Rigidbody"
+        },
+        "RotationInterpSpeed": 6,
+        "UpdateRotationTowardsVelocity": false,
+        "VelocityInterpSpeed": 2
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "9e282124-679a-4b35-95b6-21351fbba1a8",
+        "__enabled": true,
+        "Flags": 0,
+        "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
+        "Gravity": false,
+        "GravityScale": 1,
+        "ImpactDamage": 390.29013,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 22.329996,
+        "MinImpactDamageSpeed": 0,
+        "MotionEnabled": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": "DisableCollisionSounds",
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "e3d657b7-4e76-4f1a-a18e-d40c3b17fbb4",
         "__enabled": true,
         "Flags": 0,
         "Center": "0,0,0",
-        "ColliderFlags": 0,
+        "ColliderFlags": "IgnoreTraces, IgnoreMass",
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -35,126 +100,23 @@
         "OnObjectTriggerExit": null,
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
+        "Radius": 1,
         "RollingResistance": null,
-        "Scale": "50,50,50",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
-      },
-      {
-        "__type": "Sandbox.Rigidbody",
-        "__guid": "45d8a92e-4716-4738-a271-d6dc37d1c3e4",
-        "__enabled": true,
-        "Flags": 0,
-        "AngularDamping": 0,
-        "EnableImpactDamage": true,
-        "EnhancedCcd": false,
-        "Gravity": true,
-        "GravityScale": 1,
-        "ImpactDamage": 0,
-        "LinearDamping": 0,
-        "Locking": {
-          "X": false,
-          "Y": false,
-          "Z": false,
-          "Pitch": false,
-          "Yaw": false,
-          "Roll": false
-        },
-        "MassCenterOverride": "0,0,0",
-        "MassOverride": 0,
-        "MinImpactDamageSpeed": 500,
-        "MotionEnabled": true,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "OverrideMassCenter": false,
-        "RigidbodyFlags": 0,
-        "StartAsleep": false
-      },
-      {
-        "__type": "ExtractionQuestEntityComponent",
-        "__guid": "eb8b99fa-72eb-408d-b195-189aa1c95446",
-        "__enabled": true,
-        "Flags": 0,
-        "collider": {
-          "_type": "component",
-          "component_id": "c21bf598-22ed-4dc3-940b-3054da50e0bf",
-          "go": "275ba4c4-f301-4658-8e78-67fe169612c4",
-          "component_type": "BoxCollider"
-        },
-        "EntityActionSystemComponent": null,
-        "EntityInfo": "quests/entities/qentity_defaultprop.qent",
-        "ObjectSize": "SMALL",
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "renderer": {
-          "_type": "component",
-          "component_id": "525690e1-1496-4d07-9d44-4886b3aae79f",
-          "go": "d02da249-e0f4-44ee-b76d-b360d1bd9aa4",
-          "component_type": "ModelRenderer"
-        },
-        "rigidbody": {
-          "_type": "component",
-          "component_id": "45d8a92e-4716-4738-a271-d6dc37d1c3e4",
-          "go": "275ba4c4-f301-4658-8e78-67fe169612c4",
-          "component_type": "Rigidbody"
-        },
-        "ShouldReportToQuestSystem": true
-      },
-      {
-        "__type": "InventoryGrabbableComponent",
-        "__guid": "d7ca216d-b164-492e-b1ab-2f5d6153fbc4",
-        "__enabled": true,
-        "Flags": 0,
-        "CanBeDropped": true,
-        "CurrentCount": 2,
-        "EntityReference": {
-          "Type": "Component",
-          "Value": {
-            "_type": "component",
-            "component_id": "eb8b99fa-72eb-408d-b195-189aa1c95446",
-            "go": "275ba4c4-f301-4658-8e78-67fe169612c4",
-            "component_type": "ExtractionQuestEntityComponent"
-          }
-        },
-        "InventoryMaxStackSize": 3,
-        "ItemSizeInInventory": "1,2",
-        "ItemWorldModelPrefab": {
-          "_type": "gameobject",
-          "prefab": "environment/grabbable items/ballitem.prefab"
-        },
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Renderer": {
-          "_type": "component",
-          "component_id": "525690e1-1496-4d07-9d44-4886b3aae79f",
-          "go": "d02da249-e0f4-44ee-b76d-b360d1bd9aa4",
-          "component_type": "ModelRenderer"
-        }
       }
     ],
     "Children": [
       {
-        "__guid": "d02da249-e0f4-44ee-b76d-b360d1bd9aa4",
+        "__guid": "ecf3960e-4517-48c5-b5ed-8f6a56a1eef1",
         "__version": 2,
         "Flags": 0,
-        "Name": "BallMesh",
-        "Position": "0,0,0",
+        "Name": "FX",
+        "Position": "0,0,-2",
         "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
+        "Scale": "0.200000003,0.200000003,0.200000003",
+        "Tags": "particles",
         "Enabled": true,
         "NetworkMode": 2,
         "NetworkFlags": 0,
@@ -164,7 +126,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "525690e1-1496-4d07-9d44-4886b3aae79f",
+            "__guid": "ee37c9c6-fdfe-4b9c-9948-a47e8a3eacc9",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -173,7 +135,7 @@
             "MaterialGroup": null,
             "MaterialOverride": null,
             "Materials": null,
-            "Model": "models/dev/sphere.vmdl",
+            "Model": "models/citizen_props/beachball.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -187,7 +149,7 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,0,0,1"
+            "Tint": "24.79,2.99786,24.79,1"
           }
         ],
         "Children": []

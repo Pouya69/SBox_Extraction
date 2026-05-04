@@ -8,7 +8,6 @@ public sealed class VacuumGun : Weapon
 		SPITTING
 	}
 
-	[Property, Feature( "Sucking" )] private int GunStorageCapacity = 5;
 	[Property, Feature( "Sucking" )] private float VacuumStrength = 300.0f;
 	[Property, Feature( "Sucking" )] private float VacuumScanRadius = 100.0f;
 	[Property, Feature( "Sucking" )] private float VacuumScanDistance = 300.0f;
@@ -19,11 +18,8 @@ public sealed class VacuumGun : Weapon
 	[Property, Feature( "Sucking" )] private string ScanCollisionTag { get; set; } = "interaction";
 
 	[Property, Feature( "Spit Out" )] private float SpitOutStrength = 600.0f;
-	[Property, Feature( "Spit Out" )] private float SpitOutFireRate = 20.0f;
 
 	private Stack<IExtractionQuestEntity> SuckedEntities = new();
-
-	private float CurrentFireTime;
 
 	private EVacuumGunMode CurrentVacuumMode = EVacuumGunMode.SUCKING;
 
@@ -32,7 +28,7 @@ public sealed class VacuumGun : Weapon
 		base.OnAwake();
 	}
 
-	public override void Shoot()
+	protected override void PrimaryAttack()
 	{
 		CurrentFireTime = 0.0f;
 		if ( IsVacuumFull() && CurrentVacuumMode == EVacuumGunMode.SUCKING )
@@ -41,18 +37,13 @@ public sealed class VacuumGun : Weapon
 			return;
 		}
 
-		base.Shoot();
+		base.PrimaryAttack();
 	}
 
 	public override void Reload()
 	{
 		base.Reload();
 		ChangeFireMode();
-	}
-
-	public override void StopShoot()
-	{
-		base.StopShoot();
 	}
 
 	protected override void OnUpdate()
@@ -73,7 +64,7 @@ public sealed class VacuumGun : Weapon
 		{
 			CurrentFireTime += Time.Delta;
 
-			if ( CurrentFireTime < 1.0f / SpitOutFireRate ) return;
+			if ( CurrentFireTime < 1.0f / FireRate ) return;
 		}
 		
 
@@ -210,6 +201,6 @@ public sealed class VacuumGun : Weapon
 
 	}
 
-	public bool IsVacuumFull() => SuckedEntities.Count == GunStorageCapacity;
+	public bool IsVacuumFull() => SuckedEntities.Count == MaxBullets;
 	public bool IsVacuumEmpty() => SuckedEntities.Count == 0;
 }

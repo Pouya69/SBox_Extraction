@@ -1,0 +1,324 @@
+{
+  "RootObject": {
+    "__guid": "b61a9fed-7a21-40a6-9351-7c4f41a5b17b",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "energypistol",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "interaction",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "EnergyPistolWeapon",
+        "__guid": "5d4f5fb1-a708-4b1f-bbde-a868c9bcda6d",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackCooldown": 0,
+        "BulletConfig": {
+          "Damage": 12,
+          "BulletRadius": 1,
+          "AimConeBase": "0.5,0.25",
+          "AimConeSpread": "3,3",
+          "AimConeRecovery": 0.2,
+          "RecoilPitch": "-0.300000012,-0.100000001",
+          "RecoilYaw": "-0.100000001,0.100000001",
+          "CameraRecoilStrength": 1,
+          "CameraRecoilFrequency": 1,
+          "Range": 4096
+        },
+        "BulletPoolingComp": {
+          "_type": "component",
+          "component_id": "003edcfe-9f58-4f41-ad5a-a453ecf4b29a",
+          "go": "b61a9fed-7a21-40a6-9351-7c4f41a5b17b",
+          "component_type": "BulletPoolingComponent"
+        },
+        "BulletPrefab": {
+          "_type": "gameobject",
+          "prefab": "weapons/worldmodel/energy weapons/energy pistol/energypistolbullet.prefab"
+        },
+        "BulletsShotPerAttack": 1,
+        "CanBeDropped": true,
+        "CurrentCount": 1,
+        "DebugWeaponActions": false,
+        "EntityReference": {
+          "Type": "Component",
+          "Value": {
+            "_type": "component",
+            "component_id": "3db29ef1-2d0d-42f1-8868-95da3a3dcecb",
+            "go": "b61a9fed-7a21-40a6-9351-7c4f41a5b17b",
+            "component_type": "ExtractionQuestEntityComponent"
+          }
+        },
+        "FireRate": 0.05,
+        "HasSecondaryAttack": false,
+        "InventoryMaxStackSize": 1,
+        "IronSightsFireScale": 0.2,
+        "IsReloadable": true,
+        "ItemSizeInInventory": "2,1",
+        "ItemWorldModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "weapons/worldmodel/energy weapons/energy pistol/energypistol.prefab"
+        },
+        "MaxAmmoPerMagazine": 31,
+        "MaxBullets": 300,
+        "MuzzleSocket": {
+          "_type": "gameobject",
+          "go": "3e56cd92-7a76-43f1-a87f-64cdf4c03d34"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Renderer": {
+          "_type": "component",
+          "component_id": "b6f07a2d-ea6f-47c6-9c3a-82a99e723061",
+          "go": "9dc97564-1a15-4f00-b691-0606584c877a",
+          "component_type": "ModelRenderer"
+        },
+        "ReserveBulletsLeft": 0,
+        "ShouldReloadAutomatically": true,
+        "UsesBullets": true,
+        "WeaponCollider": {
+          "_type": "component",
+          "component_id": "c1eef7f4-7663-4200-ab4b-e93b20549a22",
+          "go": "9dc97564-1a15-4f00-b691-0606584c877a",
+          "component_type": "ModelCollider"
+        },
+        "WeaponHoldType": "Both",
+        "WeaponRigidBody": {
+          "_type": "component",
+          "component_id": "92bd45ca-ae26-4ec3-be4d-6aaf5fbfcfde",
+          "go": "9dc97564-1a15-4f00-b691-0606584c877a",
+          "component_type": "Rigidbody"
+        },
+        "WeaponType": "Pistol",
+        "WeaponViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "weapons/viewmodel/energypistol_vm.prefab"
+        }
+      },
+      {
+        "__type": "BulletPoolingComponent",
+        "__guid": "003edcfe-9f58-4f41-ad5a-a453ecf4b29a",
+        "__enabled": true,
+        "Flags": 0,
+        "BulletPrefab": {
+          "_type": "gameobject",
+          "prefab": "weapons/worldmodel/energy weapons/energy pistol/energypistolbullet.prefab"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "StartingBulletPoolCount": 31,
+        "Weapon": {
+          "_type": "component",
+          "component_id": "5d4f5fb1-a708-4b1f-bbde-a868c9bcda6d",
+          "go": "b61a9fed-7a21-40a6-9351-7c4f41a5b17b",
+          "component_type": "EnergyPistolWeapon"
+        }
+      },
+      {
+        "__type": "ExtractionQuestEntityComponent",
+        "__guid": "3db29ef1-2d0d-42f1-8868-95da3a3dcecb",
+        "__enabled": true,
+        "Flags": 0,
+        "collider": {
+          "_type": "component",
+          "component_id": "c1eef7f4-7663-4200-ab4b-e93b20549a22",
+          "go": "9dc97564-1a15-4f00-b691-0606584c877a",
+          "component_type": "ModelCollider"
+        },
+        "EntityActionSystemComponent": null,
+        "EntityInfo": "weapons/worldmodel/energy weapons/energy pistol/qentity_energypistoltest.qent",
+        "ObjectSize": "SMALL",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "renderer": {
+          "_type": "component",
+          "component_id": "b6f07a2d-ea6f-47c6-9c3a-82a99e723061",
+          "go": "9dc97564-1a15-4f00-b691-0606584c877a",
+          "component_type": "ModelRenderer"
+        },
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "92bd45ca-ae26-4ec3-be4d-6aaf5fbfcfde",
+          "go": "9dc97564-1a15-4f00-b691-0606584c877a",
+          "component_type": "Rigidbody"
+        },
+        "ShouldReportToQuestSystem": true
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "9dc97564-1a15-4f00-b691-0606584c877a",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "energyPistol_WM",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "b6f07a2d-ea6f-47c6-9c3a-82a99e723061",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/weapons/sbox_toolgun/w_toolgun.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "92bd45ca-ae26-4ec3-be4d-6aaf5fbfcfde",
+            "__enabled": true,
+            "Flags": 0,
+            "AngularDamping": 0,
+            "EnableImpactDamage": true,
+            "EnhancedCcd": false,
+            "Gravity": true,
+            "GravityScale": 1,
+            "ImpactDamage": 0,
+            "LinearDamping": 0,
+            "Locking": {
+              "X": false,
+              "Y": false,
+              "Z": false,
+              "Pitch": false,
+              "Yaw": false,
+              "Roll": false
+            },
+            "MassCenterOverride": "0,0,0",
+            "MassOverride": 0,
+            "MinImpactDamageSpeed": 500,
+            "MotionEnabled": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OverrideMassCenter": false,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "c1eef7f4-7663-4200-ab4b-e93b20549a22",
+            "__enabled": true,
+            "Flags": 0,
+            "ColliderFlags": 0,
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "Model": "models/weapons/sbox_toolgun/w_toolgun.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "3e56cd92-7a76-43f1-a87f-64cdf4c03d34",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "Muzzle",
+            "Position": "6.11150169,0,5.58365965",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [],
+            "Children": []
+          }
+        ]
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "facepunch.wtoolgun#144911"
+  ],
+  "__version": 2
+}
