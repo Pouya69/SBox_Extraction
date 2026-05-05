@@ -1,18 +1,18 @@
 using Sandbox;
 
-public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuestEntity
+public class ExtractionQuestEntityComponent : Component, IExtractionQuestEntity
 {
-	[Property, RequireComponent] private Rigidbody rigidbody { get; set; }
-	[Property] private Collider collider { get; set; }
+	[Property, RequireComponent] protected Rigidbody rigidbody { get; set; }
+	[Property] protected Collider collider { get; set; }
 	[Property] public QuestEntityInfo EntityInfo;
-	[Property] private ActionSystemComponent EntityActionSystemComponent;
-	[Property] private EExtractionObjectSize ObjectSize { get; set; } = EExtractionObjectSize.SMALL;
-	[Property, RequireComponent] private Renderer renderer { get; set; }
+	[Property] protected ActionSystemComponent EntityActionSystemComponent;
+	[Property] protected EExtractionObjectSize ObjectSize { get; set; } = EExtractionObjectSize.SMALL;
+	[Property, RequireComponent] protected Renderer renderer { get; set; }
 	/// <summary>
 	/// Should this entity cast events to the quest system? (e.g. killed, entered, picked up)
 	/// If not, it will only be considered for logics.
 	/// </summary>
-	[Property] public bool ShouldReportToQuestSystem { get; private set; } = true;
+	[Property] public bool ShouldReportToQuestSystem { get; protected set; } = true;
 
 	public void AddEntityToGlobalManager()
 	{
@@ -47,12 +47,13 @@ public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuest
 		return EntityActionSystemComponent.IsAlive();
 	}
 
-	public void LaunchEntity( Vector3 velocity, bool ignoreMass = true )
+	public virtual void LaunchEntity( Vector3 velocity, bool ignoreMass = true )
 	{
 		if ( rigidbody == null ) return;
 
 		rigidbody.Sleeping = false;
 		rigidbody.Velocity = ignoreMass ? velocity : (rigidbody.Velocity + velocity);
+		// rigidbody.ApplyImpulse( velocity );
 		// Log.Info( rigidbody.Velocity );
 	}
 
@@ -66,7 +67,7 @@ public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuest
 		return renderer;
 	}
 
-	public void ToggleEnablePhysics( bool enable )
+	public virtual void ToggleEnablePhysics( bool enable )
 	{
 		rigidbody.MotionEnabled = enable;
 	}
@@ -76,7 +77,7 @@ public sealed class ExtractionQuestEntityComponent : Component, IExtractionQuest
 		return GameObject;
 	}
 
-	public bool CanBeRemoteGrabbed()
+	public virtual bool CanBeRemoteGrabbed()
 	{
 		return ObjectSize == EExtractionObjectSize.SMALL || ObjectSize == EExtractionObjectSize.CREATURE_TYPE;
 	}

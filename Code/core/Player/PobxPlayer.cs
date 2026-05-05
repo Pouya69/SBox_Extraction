@@ -1,14 +1,15 @@
 using Conna.Inventory;
 
-public sealed class PobxPlayer : Component, IExtractionQuestEntity
+public sealed class PobxPlayer : Component
 {
 	private static PobxPlayer LocalPlayer { get; set; }
 	public static PobxPlayer FindLocalPlayer() => LocalPlayer;
 	public static T FindLocalWeapon<T>() where T : InventoryGrabbableComponent => FindLocalPlayer()?.GetComponentInChildren<T>( true );
 	public bool IsLocalPlayer => !IsProxy;
 
-	[Property, RequireComponent, Feature( "Components" )] public CharacterController Controller { get; private set; }
 	[Property, Feature( "Components" )] public GameObject Head { get; private set; }
+	[Property, RequireComponent, Feature( "Components" )] public CharacterController Controller { get; private set; }
+	[Property, RequireComponent, Feature( "Components" )] public PobxCharacterEntityComponent EntityComponent { get; private set; }
 	[Property, RequireComponent, Feature( "Components" )] public SourceMovement SourceMovement { get; private set; }
 	[Property, RequireComponent, Feature( "Components" )] public CameraComponent Camera { get; private set; }
 	[Property, RequireComponent, Feature( "Components") ] private ActionSystemComponent ActionSystemComp { get; set; }
@@ -52,75 +53,5 @@ public sealed class PobxPlayer : Component, IExtractionQuestEntity
 		PlayerInteractionComponent?.OnControl();
 		InventoryComponent?.OnControl();
 		InventoryHud?.HandleInput();
-	}
-
-	public void AddEntityToGlobalManager()
-	{
-		throw new NotImplementedException();
-	}
-
-	public bool IsAlive()
-	{
-		throw new NotImplementedException();
-	}
-
-	public void EnteredArea( QuestLocationInfo location )
-	{
-		throw new NotImplementedException();
-	}
-
-	public void EntityKilled( IExtractionQuestEntity Instigator )
-	{
-		throw new NotImplementedException();
-	}
-
-	public void EntityPickedUp( IExtractionQuestEntity Instigator )
-	{
-		throw new NotImplementedException();
-	}
-
-	public string GetEntityName()
-	{
-		throw new NotImplementedException();
-	}
-
-	public EExtractionObjectSize GetObjectSize()
-	{
-		throw new NotImplementedException();
-	}
-
-	public bool CanBeRemoteGrabbed()
-	{
-		throw new NotImplementedException();
-	}
-
-	public Renderer GetRenderer()
-	{
-		throw new NotImplementedException();
-	}
-
-	public void ToggleEnablePhysics( bool enable )
-	{
-		throw new NotImplementedException();
-	}
-
-	public void LaunchEntity( Vector3 velocity, bool ignoreMass = true )
-	{
-		throw new NotImplementedException();
-	}
-
-	public GameObject GetGameObject()
-	{
-		throw new NotImplementedException();
-	}
-
-	public Rigidbody GetRigidbody()
-	{
-		throw new NotImplementedException();
-	}
-
-	public Collider GetCollider()
-	{
-		throw new NotImplementedException();
 	}
 }

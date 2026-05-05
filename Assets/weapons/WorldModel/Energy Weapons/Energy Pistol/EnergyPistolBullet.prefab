@@ -133,7 +133,7 @@
             "CreateAttachments": false,
             "LodOverride": null,
             "MaterialGroup": null,
-            "MaterialOverride": "materials/light_blue.vmat",
+            "MaterialOverride": "materials/future/light_blue.vmat",
             "Materials": null,
             "Model": "models/citizen_props/beachball.vmdl",
             "OnComponentDestroy": null,
@@ -426,6 +426,8 @@
   "MenuPath": null,
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
-  "__references": [],
+  "__references": [
+    "hammermafia.lightblue#203412"
+  ],
   "__version": 2
 }

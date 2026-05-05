@@ -2,12 +2,14 @@ using Sandbox;
 
 public sealed class PobxChest : ContainerBase
 {
+	[Property, Feature( "Properties" )] private SoundEvent SpitSound { get; set; }
 	[Property, Feature( "Properties" )] private Vector2 SpitOutStrengthRange { get; set; } = 500.0f;
 	[Property, Feature( "Properties" )] private float SpitOutHorizentalRandomness = 30.0f;
 	[Property, Feature( "Properties" )] private float SpitOutVerticalRandomness = 30.0f;
 
 	protected override void SpitOut( GameObject gameObject )
 	{
+
 		// base.SpitOut( gameObject );
 		gameObject.WorldPosition = this.ObjectSpawnPoint.WorldPosition;
 		gameObject.WorldRotation = Rotation.Random;
@@ -27,10 +29,10 @@ public sealed class PobxChest : ContainerBase
 			Log.Error( gameObject.Name + " has no rigid body. Spawned in chest: " + this.GameObject.Name );
 		}
 
-	}
+		if ( SpitSound.IsValid() )
+		{
+			GameObject.PlaySound( SpitSound );
+		}
 
-
-	protected override void OnUpdate()
-	{
 	}
 }

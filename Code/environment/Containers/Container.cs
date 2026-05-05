@@ -2,6 +2,7 @@ using Sandbox;
 
 public class ContainerBase : Component
 {
+	[Property, Feature( "Properties" )] protected SoundEvent ContainerOpenSound { get; set; }
 	[Property, Feature( "Properties" )] protected ActionSystemComponent ActionSystemComponent { get; set; }
 	[Property, Feature( "Properties" )] protected GameObject ObjectSpawnPoint { get; set; }
 	[Property, Feature( "Inventory" )] public List<FContainerItem> ContainerItems { get; protected set; }
@@ -30,6 +31,11 @@ public class ContainerBase : Component
 
 	protected virtual void OnDeath( GameObject obj )
 	{
+		if ( ContainerOpenSound.IsValid())
+		{
+			GameObject.PlaySound( ContainerOpenSound );
+		}
+
 		ActionSystemComponent.Destroy();
 		SpitOutObjects();
 	}

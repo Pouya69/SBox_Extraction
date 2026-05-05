@@ -114,6 +114,40 @@
         "OverrideMassCenter": false,
         "RigidbodyFlags": 0,
         "StartAsleep": false
+      },
+      {
+        "__type": "ExtractionQuestEntityComponent",
+        "__guid": "33cab897-eedb-4383-9e49-34d925f7a1f8",
+        "__enabled": true,
+        "Flags": 0,
+        "collider": {
+          "_type": "component",
+          "component_id": "0269cb1d-6e1b-4710-bd94-b4420518c89b",
+          "go": "6adc9610-5d65-445d-a795-b9825e176ffc",
+          "component_type": "BoxCollider"
+        },
+        "EntityActionSystemComponent": null,
+        "EntityInfo": "quests/entities/qentity_defaultprop.qent",
+        "ObjectSize": "SMALL",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "renderer": {
+          "_type": "component",
+          "component_id": "465050bc-f639-4c25-8eef-5b246d324c78",
+          "go": "6adc9610-5d65-445d-a795-b9825e176ffc",
+          "component_type": "ModelRenderer"
+        },
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "cd1a26a8-ca1f-4ec0-9265-7d2829e88fcd",
+          "go": "6adc9610-5d65-445d-a795-b9825e176ffc",
+          "component_type": "Rigidbody"
+        },
+        "ShouldReportToQuestSystem": true
       }
     ],
     "Children": [],

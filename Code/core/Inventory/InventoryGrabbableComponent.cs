@@ -57,7 +57,7 @@ public class InventoryGrabbableComponent : Component, IInteractable
 
 	protected virtual void AddedItemToInventory( PlayerInteractionComponent interactionComponent )
 	{
-		ExtractionQuestSystem.EntityPickedUp( interactionComponent.Player, EntityReference );
+		ExtractionQuestSystem.EntityPickedUp( interactionComponent.Player.EntityComponent, EntityReference );
 		if (pobxBaseInventoryItem.WillDestroyOnAdd)
 			this.GameObject.Destroy();
 	}

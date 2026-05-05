@@ -33,11 +33,28 @@ public class SourceMovement : Component {
 
 	protected override void OnUpdate() {
 		if (Network.IsProxy) return;
-
-		if (!Controller.IsOnGround) UpdateJump(); else UpdateDuck();
+		if (!Controller.IsOnGround) UpdateJump();
+		UpdateDuck();
 
 		IsRunning = (RunByDefault == true ? !Input.Down("Run") : Input.Down("Run")) && !IsDucking;
-		if ((AutoBhop ? Input.Down("Jump") : Input.Pressed("Jump"))) OnJump();
+		if ((AutoBhop ? Input.Down("Jump") : Input.Pressed("Jump"))) OnJump(JumpPower);
+	}
+
+	public void LaunchCharacter(Vector3 velocity, bool ignoreMass = true)
+	{
+		// if ( !Controller.IsOnGround ) return;
+		if ( ignoreMass )
+		{
+			Controller.Velocity = Controller.Velocity.WithZ( 0 );
+			Controller.Punch( velocity );
+		}
+		else
+		{
+			Controller.Velocity = Controller.Velocity.WithZ( 0 );
+			Controller.Punch( velocity );
+		}
+
+		
 	}
 
 	protected override void OnFixedUpdate() {
@@ -148,12 +165,14 @@ public class SourceMovement : Component {
 		Controller.Velocity = vel;
 	}
 
-	void OnJump() {
+	void OnJump(float inJumpPower) {
 		if (!Controller.IsOnGround) return;
 
 		Controller.Velocity = Controller.Velocity.WithZ(0);
-		Controller.Punch(Vector3.Up * JumpPower);
+		Controller.Punch(Vector3.Up * inJumpPower );
 	}
+
+
 
 	void UpdateJump() {
 		if (Controller is null) return;

@@ -1,30 +1,22 @@
 using Sandbox;
 
-public sealed class JumperPadComponent : Component
+public sealed class JumperPadComponent : Component, Component.ITriggerListener
 {
 	/// <summary>
 	/// Uses the up vector of the object.
 	/// </summary>
 	[Property] private float LaunchVelocity = 500.0f;
 	[Property] private Vector3 LaunchVelocityAddition = new(0,0,50.0f);
-	[Property, RequireComponent] private BoxCollider collider { get; set; }
 
-	protected override void OnAwake()
+	void ITriggerListener.OnTriggerEnter( GameObject other )
 	{
-		collider.OnObjectTriggerEnter += OnPhysicsObjectEnteredJumpPad;
-	}
-
-	protected override void OnDestroy()
-	{
-		collider.OnObjectTriggerEnter -= OnPhysicsObjectEnteredJumpPad;
-	}
-
-	private void OnPhysicsObjectEnteredJumpPad(GameObject gameObject)
-	{
-		var entityComponent = gameObject.GetComponent<IExtractionQuestEntity>();
+		var entityComponent = other.GetComponentInChildren<IExtractionQuestEntity>(true);
 		if ( entityComponent == null)
+		{
 			return;
+		}
 
 		entityComponent.LaunchEntity( (LaunchVelocity * Transform.World.Up) + LaunchVelocityAddition );
 	}
+	
 }
