@@ -126,10 +126,22 @@ public sealed class PlayerInventoryComponent : Component
 
 		Rotation spawnRot = Rotation.Identity;
 
-		GameObject spawnedObject = item.PobxItemReference.Clone(projectedSpawnPos, spawnRot);
-		var grabComponent = spawnedObject.GetComponent<InventoryGrabbableComponent>();
-		grabComponent.SetCount( item.StackCount );
-		grabComponent.ItemRemovedFromInventory();
+		if ( item.WillDestroyOnAdd )
+		{
+			GameObject spawnedObject = item.PobxItemReference.Clone( projectedSpawnPos, spawnRot );
+			var grabComponent = spawnedObject.GetComponent<InventoryGrabbableComponent>();
+			grabComponent.SetCount( item.StackCount );
+			grabComponent.ItemRemovedFromInventory();
+		}
+		else
+		{
+			item.InventoryGrabbableReference.GameObject.SetParent( null );
+			item.InventoryGrabbableReference.WorldPosition = projectedSpawnPos;
+			item.InventoryGrabbableReference.WorldRotation = spawnRot;
+			item.InventoryGrabbableReference.ItemRemovedFromInventory();
+		}
+		
+		
 	}
 
 	private void OnItemAddedToInventory( BaseInventory.Entry entry )

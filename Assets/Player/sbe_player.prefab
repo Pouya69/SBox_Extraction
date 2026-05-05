@@ -88,13 +88,22 @@
           "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
           "component_type": "CharacterController"
         },
+        "Head": {
+          "_type": "gameobject",
+          "go": "758efe8e-c234-4271-afdc-132f446d4757"
+        },
         "InventoryComponent": {
           "_type": "component",
           "component_id": "4407d421-040d-4db3-b341-b4bb30385c62",
           "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
           "component_type": "PlayerInventoryComponent"
         },
-        "InventoryHud": null,
+        "InventoryHud": {
+          "_type": "component",
+          "component_id": "015c545e-6bad-4bf7-b027-15f53f1d0a62",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "PobxPlayerInventoryHud"
+        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -136,7 +145,12 @@
         "DropDistanceFromCameraForward": 10,
         "DropScanRadius": 30,
         "Inventory": null,
-        "InventoryHud": null,
+        "InventoryHud": {
+          "_type": "component",
+          "component_id": "015c545e-6bad-4bf7-b027-15f53f1d0a62",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+          "component_type": "PobxPlayerInventoryHud"
+        },
         "InventorySlotMode": "Tetris",
         "InventoryStorageSize": "3,3",
         "OnComponentDestroy": null,
@@ -279,6 +293,18 @@
         "OverrideMassCenter": true,
         "RigidbodyFlags": "DisableCollisionSounds",
         "StartAsleep": false
+      },
+      {
+        "__type": "Conna.Inventory.PobxPlayerInventoryHud",
+        "__guid": "015c545e-6bad-4bf7-b027-15f53f1d0a62",
+        "__enabled": true,
+        "Flags": 0,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
       }
     ],
     "Children": [

@@ -1,11 +1,14 @@
 using Conna.Inventory;
-using Sandbox;
 
 public sealed class PobxPlayer : Component, IExtractionQuestEntity
 {
-	public static PobxPlayer LocalPlayer;
+	private static PobxPlayer LocalPlayer { get; set; }
+	public static PobxPlayer FindLocalPlayer() => LocalPlayer;
+	public static T FindLocalWeapon<T>() where T : InventoryGrabbableComponent => FindLocalPlayer()?.GetComponentInChildren<T>( true );
+	public bool IsLocalPlayer => !IsProxy;
 
 	[Property, RequireComponent, Feature( "Components" )] public CharacterController Controller { get; private set; }
+	[Property, Feature( "Components" )] public GameObject Head { get; private set; }
 	[Property, RequireComponent, Feature( "Components" )] public SourceMovement SourceMovement { get; private set; }
 	[Property, RequireComponent, Feature( "Components" )] public CameraComponent Camera { get; private set; }
 	[Property, RequireComponent, Feature( "Components") ] private ActionSystemComponent ActionSystemComp { get; set; }

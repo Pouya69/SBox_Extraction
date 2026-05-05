@@ -106,12 +106,18 @@ public sealed class PobxBullet : Component, Component.ICollisionListener
 
 	void ICollisionListener.OnCollisionStart( Collision collision )
 	{
-		DamageInfo damageInfo = new(Damage, BelongsToWeapon.GameObject.Parent, BelongsToWeapon.GameObject);
-		damageInfo.Position = collision.Contact.Point;
-		damageInfo.Origin = BulletStartPoint;
+		DamageInfo damageInfo = new( Damage, BelongsToWeapon.GameObject.Parent, BelongsToWeapon.GameObject )
+		{
+			Position = collision.Contact.Point,
+			Origin = BulletStartPoint
+		};
+
 		PobxFunctionLibrary.ApplyDirectionalDamage(damageInfo, collision.Other.GameObject);
 
-		AddBackToWeaponPool();
+		if ( BelongsToWeapon.IsValid() )
+			AddBackToWeaponPool();
+		else
+			DestroyGameObject();
 
 
 

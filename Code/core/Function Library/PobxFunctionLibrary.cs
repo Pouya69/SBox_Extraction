@@ -15,7 +15,7 @@ public static class PobxFunctionLibrary
 
 		if ( entity.IsValid())
 		{
-			Log.Info( "Working" );
+			// Log.Info( "Working" );
 			entity.Sleeping = false;
 			entity.Velocity += damageInfo.Damage * 5.0f * ((damageInfo.Position - damageInfo.Origin).Normal);
 			entity.Sleeping = false;

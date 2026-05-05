@@ -62,7 +62,9 @@ public class InventoryGrabbableComponent : Component, IInteractable
 			this.GameObject.Destroy();
 	}
 
-	public virtual void ItemRemovedFromInventory() { }
+	public virtual void ItemRemovedFromInventory() {
+		DisableItem();
+	}
 
 	public virtual void EnableItem() { }
 	public virtual void DisableItem() { }

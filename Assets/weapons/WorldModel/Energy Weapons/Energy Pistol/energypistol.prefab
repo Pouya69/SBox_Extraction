@@ -27,10 +27,10 @@
           "AimConeBase": "0.5,0.25",
           "AimConeSpread": "3,3",
           "AimConeRecovery": 0.2,
-          "RecoilPitch": "-0.300000012,-0.100000001",
-          "RecoilYaw": "-0.100000001,0.100000001",
-          "CameraRecoilStrength": 1,
-          "CameraRecoilFrequency": 1,
+          "RecoilPitch": "-7.3199935,-3.89999771",
+          "RecoilYaw": "-6.95000029,6.13999987",
+          "CameraRecoilStrength": 5.2399993,
+          "CameraRecoilFrequency": 0.8800013,
           "Range": 4096
         },
         "BulletPoolingComp": {
@@ -56,11 +56,11 @@
             "component_type": "ExtractionQuestEntityComponent"
           }
         },
-        "FireRate": 0.05,
+        "FireRate": 0.2,
         "HasSecondaryAttack": false,
         "InventoryMaxStackSize": 1,
-        "IronSightsFireScale": 0.2,
-        "IsReloadable": true,
+        "IronSightsFireScale": 1,
+        "IsReloadable": false,
         "ItemSizeInInventory": "2,1",
         "ItemWorldModelPrefab": {
           "_type": "gameobject",
@@ -84,9 +84,11 @@
           "go": "9dc97564-1a15-4f00-b691-0606584c877a",
           "component_type": "ModelRenderer"
         },
-        "ReserveBulletsLeft": 0,
+        "ReserveBulletsLeft": 300,
+        "ShootForce": 100000,
+        "ShootSound": "audio/weapons/energy pistol/shot/energypistol_shot.sound",
         "ShouldReloadAutomatically": true,
-        "UsesBullets": true,
+        "UsesBullets": false,
         "WeaponCollider": {
           "_type": "component",
           "component_id": "c1eef7f4-7663-4200-ab4b-e93b20549a22",

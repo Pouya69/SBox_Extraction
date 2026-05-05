@@ -13,6 +13,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	public event Action<Weapon> OnReloadFinished;
 	public event Action<Weapon> OnNoAmmoLeft;
 
+	[Property, Feature( "Weapon" ), Group( "References" )] public SoundEvent ShootSound { get; set; }
 	[Property, Feature( "Weapon" ), Group( "References" )] protected BulletPoolingComponent BulletPoolingComp { get; set; }
 	[Property, Feature( "Weapon" ), Group( "References" )] protected PrefabScene BulletPrefab { get; set; }
 	[Property, Feature( "Weapon" ), Group( "References" )] protected PrefabScene WeaponViewModelPrefab;
@@ -85,9 +86,9 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		CameraRecoilFrequency = 1f,
 	};
 
-	/// <summary>
-	/// The bullet max scan range for tracing.
-	/// </summary>
+	[Property, Feature( "Shooting Config" ), ClientEditable, Range( 0f, 500000f ), Step(10.0f)]
+	public float ShootForce { get; set; } = 100000f;
+
 
 	protected TimeSince CurrentFireTime;
 
@@ -258,19 +259,74 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		var bulletTransform = viewModel.GetTracerOrigin();
 
 		var bulletPos = bulletTransform.Position;
-		Vector3 bulletForward = bulletTransform.Forward;
-		Ray aimRay = AimRay;
+
+		var aimConeAmount = GetAimConeAmount( BulletConfig.AimConeRecovery );
+		var fwd = AimRay.Forward.WithAimCone(
+			BulletConfig.AimConeBase.x + aimConeAmount * BulletConfig.AimConeSpread.x,
+			BulletConfig.AimConeBase.y + aimConeAmount * BulletConfig.AimConeSpread.y
+			);
+		Vector3 bulletForward = fwd;
+		Ray aimRay = AimRay with { Forward = fwd };
 		
 		// var traceEndPos = traceStartPos + ();
 		var traceResult = Scene.Trace.Ray(aimRay, BulletConfig.Range).IgnoreGameObjectHierarchy(this.GameObject.Parent).WithTag( "projectile" ).Radius( BulletConfig.BulletRadius ).UseHitPosition().UseHitboxes().Run();
 		if (traceResult.Hit)
 		{
+			Log.Info( "Hit" );
 			bulletForward = (traceResult.HitPosition - bulletPos).Normal;
 		}
 
 		var bulletRot = Rotation.LookAt( bulletForward );
 
 		bullet.InitializeBullet( bulletPos, bulletRot, BulletConfig );
+
+		PlayShootSound();
+		ApplyRecoil();
+	}
+
+	public void PlayShootSound()
+	{
+		if ( !ShootSound.IsValid() ) return;
+		var sound = GameObject.PlaySound( ShootSound );
+
+		if (HasOwner && Owner.IsLocalPlayer && sound.IsValid()) {
+			// Player has to be not blended.
+			sound.SpacialBlend = 0.0f;
+		}
+	}
+
+	public virtual void ApplyRecoil()
+	{
+		if ( !HasOwner )
+		{
+			if ( ShootForce > 0.0f && GetComponent<Rigidbody>( true ) is var rb )
+			{
+				// physical recoil for AI and other stuff.
+				var muzzle = WorldModel?.GetComponent<WeaponModel>()?.MuzzleTransform.WorldTransform ?? (MuzzleSocket?.WorldTransform ?? WorldTransform);
+				rb.ApplyForce( muzzle.Rotation.Up * ShootForce );
+			}
+			return;
+		}
+
+		Owner.Head.WorldRotation *= Rotation.From(new Angles(
+			Random.Shared.Float( BulletConfig.RecoilPitch.x, BulletConfig.RecoilPitch.y ),
+			Random.Shared.Float( BulletConfig.RecoilYaw.x, BulletConfig.RecoilYaw.y ),
+			0
+		));
+
+		if ( Owner.IsLocalPlayer)
+		{
+			_ = new Sandbox.CameraNoise.Recoil( BulletConfig.CameraRecoilStrength, BulletConfig.CameraRecoilFrequency );
+		}
+		
+
+
+		
+	}
+
+	protected float GetAimConeAmount( float recovery )
+	{
+		return CurrentFireTime.Relative.Remap( 0, recovery, 1, 0 );
 	}
 
 	public virtual void ChangeFireMode()
@@ -417,6 +473,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		// base.ItemRemovedFromInventory();
 		WorldModel.Enabled = true;
 		ToggleWeaponPhysics( true );
+		DisableItem();
 	}
 
 	public override void EnableItem()

@@ -48,6 +48,7 @@ public class ActionSystemComponent : Component, Component.IDamageable
 
 	public virtual void ApplyDamage(GameObject Attacker, float Damage)
 	{
+		Log.Info( "Applying damage..." );
 		if ( Damage > 0.0f )
 		{
 			// Damaged.
@@ -66,9 +67,14 @@ public class ActionSystemComponent : Component, Component.IDamageable
 	private void UpdateHealth(float NewHealth)
 	{
 		_health = MathX.Clamp( NewHealth, 0.0f, MaxHealth );
+		Log.Info( _health );
 		if ( Health <= 0.0f )
 			Death();
 	}
+
+	public void Heal( GameObject instigator, float healAmount ) => ApplyDamage( instigator, -healAmount );
+	public bool CanBeHealed(bool isExtra = false) => isExtra ? Health < 2 * MaxHealth : Health < MaxHealth;
+
 
 	protected virtual void Death()
 	{
