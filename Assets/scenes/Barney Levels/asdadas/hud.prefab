@@ -1,0 +1,83 @@
+{
+  "RootObject": {
+    "__guid": "be8c7b4e-6439-439e-ad02-f8074e1daba5",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Hud",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.ScreenPanel",
+        "__guid": "cbb5587c-a722-4f20-8ea8-f8da1eaba511",
+        "__enabled": true,
+        "Flags": 0,
+        "AutoScreenScale": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Opacity": 0.5,
+        "Scale": 1,
+        "ScaleStrategy": "FollowDesktopScaling",
+        "TargetCamera": {
+          "_type": "component",
+          "component_id": "7c3d4958-7017-4431-bca5-b90813cbcd0f",
+          "go": "874027f6-5a06-41f2-b0a7-3198e2a09167",
+          "component_type": "CameraComponent"
+        },
+        "ZIndex": 100
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "1ad086f1-caae-4407-bfc5-5cada4e28587",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "Inventory",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Conna.Inventory.PobxPlayerInventoryHud",
+            "__guid": "c9edb890-ef46-4cdf-800d-9586a952b0c4",
+            "__enabled": true,
+            "Flags": 0,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ],
+        "Children": []
+      }
+    ]
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

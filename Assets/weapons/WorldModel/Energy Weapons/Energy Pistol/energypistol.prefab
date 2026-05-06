@@ -56,7 +56,7 @@
             "component_type": "ExtractionQuestEntityComponent"
           }
         },
-        "FireRate": 0.2,
+        "FireRate": 0.13999994,
         "HasSecondaryAttack": false,
         "InventoryMaxStackSize": 1,
         "IronSightsFireScale": 1,
