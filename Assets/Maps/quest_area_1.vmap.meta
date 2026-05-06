@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Quest Area 1",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "questarea1",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "rust.2_sand#25017"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "maps/quest_area_1.vmap"
+      }
+    }
+  }
+}
