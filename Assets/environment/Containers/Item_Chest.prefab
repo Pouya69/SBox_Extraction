@@ -1,0 +1,159 @@
+{
+  "RootObject": {
+    "__guid": "ec0d361e-322b-4d80-8416-45846b38e92d",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "chest_freezer",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "f1d5d1a7-fded-4cc4-abfa-bb5482aa7c4b",
+        "__enabled": true,
+        "Flags": 0,
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "LodOverride": null,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Materials": null,
+        "Model": "models/props/chest_freezer/chest_freezer.vmdl",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "7592f0a1-2d20-4749-aaf7-6f3c62a389eb",
+        "__enabled": true,
+        "Flags": 0,
+        "ColliderFlags": 0,
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "Model": "models/props/chest_freezer/chest_freezer.vmdl",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "PobxChest",
+        "__guid": "72e5f52c-d730-47f9-94c6-fdb8721f38c6",
+        "__enabled": true,
+        "Flags": 0,
+        "ActionSystemComponent": {
+          "_type": "component",
+          "component_id": "db70dc84-8d4a-43a0-af84-72f7f24bbec2",
+          "go": "ec0d361e-322b-4d80-8416-45846b38e92d",
+          "component_type": "ActionSystemComponent"
+        },
+        "ContainerItems": [
+          {
+            "Amount": 4,
+            "ObjectPrefab": {
+              "_type": "gameobject",
+              "prefab": "weapons/worldmodel/energy weapons/energy pistol/energypistol.prefab"
+            }
+          },
+          {
+            "Amount": 300,
+            "ObjectPrefab": {
+              "_type": "gameobject",
+              "prefab": "gadgets/vital items/medkit_prefab.prefab"
+            }
+          }
+        ],
+        "ContainerOpenSound": "audio/gadgets/containers/chest/chest_open_sound.sound",
+        "ObjectSpawnPoint": {
+          "_type": "gameobject",
+          "go": "c07056a2-9eeb-4483-83ac-769c24b5a055"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "SpitOutDelay": 0.11,
+        "SpitOutHorizentalRandomness": 96.420006,
+        "SpitOutStrengthRange": "748.304077,500",
+        "SpitOutVerticalRandomness": 68.96999,
+        "SpitSound": "audio/gadgets/containers/chest/chest_spitsound.sound"
+      },
+      {
+        "__type": "ActionSystemComponent",
+        "__guid": "db70dc84-8d4a-43a0-af84-72f7f24bbec2",
+        "__enabled": true,
+        "Flags": 0,
+        "BaseDamage": 0,
+        "MaxHealth": 80,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "c07056a2-9eeb-4483-83ac-769c24b5a055",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "SpawnPoint",
+        "Position": "10.0114746,-3.05175781E-05,47.2798424",
+        "Rotation": "0,-0.382683486,0,0.923879564",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
+      }
+    ]
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "facepunch.chestfreezer#142025"
+  ],
+  "__version": 2
+}

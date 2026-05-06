@@ -490,6 +490,14 @@
             },
             "Property": "Position",
             "Value": "137.714508,560.969238,32.0105438"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "5d4f5fb1-a708-4b1f-bbde-a868c9bcda6d"
+            },
+            "Property": "FireRate",
+            "Value": 0.13999994
           }
         ],
         "MovedObjects": []
@@ -666,6 +674,47 @@
           {
             "Id": {
               "Type": "Component",
+              "IdValue": "1081b9d3-a579-4391-ba5b-b9ec21fd3956"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "f378b829-67bf-44f0-ae8f-4426a5b8b080"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "PobxCharacterEntityComponent",
+              "__guid": "1081b9d3-a579-4391-ba5b-b9ec21fd3956",
+              "__enabled": true,
+              "Flags": 0,
+              "collider": null,
+              "Controller": null,
+              "EntityActionSystemComponent": null,
+              "EntityInfo": null,
+              "ObjectSize": "SMALL",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "renderer": null,
+              "rigidbody": {
+                "_type": "component",
+                "component_id": "e008bb2d-9b77-416a-9066-a0654d490cb7",
+                "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+                "component_type": "Rigidbody"
+              },
+              "ShouldReportToQuestSystem": true
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
               "IdValue": "2b017d92-0254-47f0-afa0-d217960f835c"
             },
             "Parent": {
@@ -709,7 +758,7 @@
           {
             "Id": {
               "Type": "Component",
-              "IdValue": "245bd480-b45e-4713-a16d-3cfd1b39c772"
+              "IdValue": "58e787d0-b5a7-4b92-9ac3-ebe34f45903e"
             }
           },
           {
@@ -748,7 +797,12 @@
               "IdValue": "91cc671d-c4e3-40c0-b575-b6c16eda611b"
             },
             "Property": "EntityComponent",
-            "Value": null
+            "Value": {
+              "_type": "component",
+              "component_id": "f378b829-67bf-44f0-ae8f-4426a5b8b080",
+              "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+              "component_type": "PobxCharacterEntityComponent"
+            }
           },
           {
             "Target": {
@@ -782,7 +836,12 @@
               "IdValue": "171c5a6e-3b5a-4dfc-8081-06816b695c65"
             },
             "Property": "EntityComponent",
-            "Value": null
+            "Value": {
+              "_type": "component",
+              "component_id": "f378b829-67bf-44f0-ae8f-4426a5b8b080",
+              "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
+              "component_type": "PobxCharacterEntityComponent"
+            }
           },
           {
             "Target": {
@@ -858,7 +917,8 @@
         "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14": "bac6a0c4-80dc-4a3a-bfc6-503c22c79385",
         "eea31d07-ac9d-49c9-a83d-e441ce722f62": "b78f1c1b-fca5-4388-9f7e-d9c1ce47671e",
         "401d29e8-0327-490f-922e-a9f0697b14bf": "2e360ca1-101c-4dd4-a007-1352800dce08",
-        "015c545e-6bad-4bf7-b027-15f53f1d0a62": "a7e28e55-6a4d-4998-85a8-e6485f88ab40"
+        "015c545e-6bad-4bf7-b027-15f53f1d0a62": "a7e28e55-6a4d-4998-85a8-e6485f88ab40",
+        "1081b9d3-a579-4391-ba5b-b9ec21fd3956": "6401af7b-e72a-423b-93e1-7a8860f083d9"
       }
     },
     {
@@ -1448,7 +1508,7 @@
                                     {
                                       "TimeRange": "0,3240",
                                       "SampleRate": 30,
-                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfgfHKegbGM/sZGE/cZ2A68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefcaV2/5PS9srn7171/2pfEfyGQKPrs85v69/ivNF/lzuE+8Zbp7bP9ni4fxcjjv9DLcu+U82fTo/FwAxoD3lfAAAAA=="
+                                      "Samples": "H4sIAAAAAAAACgF8AIP//////wEAAAAbAAAAAAAAAP75B8AJ4P//Ctz//+/Vz2EByK8ANs6vnc7FL2RPwg+cEMAvAKq5v2Z5vr+ZEbxPAIa5D2mcuq+XErhvABHAfwBevc9rCMjfAMm675RKwQ9t0dIPlA/IrwA9yZ9tBuCPAAngjwAI3J8A2t4fk/rHdvd8AAAA"
                                     }
                                   ]
                                 }
@@ -1800,150 +1860,30 @@
     {
       "__guid": "e11bcac2-63eb-4bda-a1b5-4f639e040e7c",
       "__version": 2,
-      "Flags": 0,
-      "Name": "chest_freezer",
-      "Position": "502.246735,307.393677,32.1343498",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "d2432729-9c9b-4d63-a24e-b31c2d7c0080",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/props/chest_freezer/chest_freezer.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "712d435f-e19f-44f6-be99-942914f82f53",
-          "__enabled": true,
-          "Flags": 0,
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "Model": "models/props/chest_freezer/chest_freezer.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "PobxChest",
-          "__guid": "eb8ecce5-f646-4140-b04b-4aea63710d83",
-          "__enabled": true,
-          "Flags": 0,
-          "ActionSystemComponent": {
-            "_type": "component",
-            "component_id": "12b53792-f3c5-438c-83bd-8411663ec3ee",
-            "go": "e11bcac2-63eb-4bda-a1b5-4f639e040e7c",
-            "component_type": "ActionSystemComponent"
-          },
-          "ContainerItems": [
-            {
-              "Amount": 4,
-              "ObjectPrefab": {
-                "_type": "gameobject",
-                "prefab": "weapons/worldmodel/energy weapons/energy pistol/energypistol.prefab"
-              }
+      "__Prefab": "environment/containers/chest_freezer.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "ec0d361e-322b-4d80-8416-45846b38e92d"
             },
-            {
-              "Amount": 300,
-              "ObjectPrefab": {
-                "_type": "gameobject",
-                "prefab": "gadgets/vital items/medkit_prefab.prefab"
-              }
-            }
-          ],
-          "ContainerOpenSound": "audio/gadgets/containers/chest/chest_open_sound.sound",
-          "ObjectSpawnPoint": {
-            "_type": "gameobject",
-            "go": "1318e5f6-36c0-4d54-9b3b-34bf492e9cb8"
-          },
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "SpitOutDelay": 0.11,
-          "SpitOutHorizentalRandomness": 96.420006,
-          "SpitOutStrengthRange": "748.304077,500",
-          "SpitOutVerticalRandomness": 68.96999,
-          "SpitSound": "audio/gadgets/containers/chest/chest_spitsound.sound"
-        },
-        {
-          "__type": "ActionSystemComponent",
-          "__guid": "12b53792-f3c5-438c-83bd-8411663ec3ee",
-          "__enabled": true,
-          "Flags": 0,
-          "BaseDamage": 0,
-          "MaxHealth": 80,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "1318e5f6-36c0-4d54-9b3b-34bf492e9cb8",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "SpawnPoint",
-          "Position": "10.0114746,-3.05175781E-05,47.2798424",
-          "Rotation": "0,-0.382683486,0,0.923879564",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [],
-          "Children": []
-        }
-      ]
+            "Property": "Position",
+            "Value": "502.246735,307.393677,32.1343498"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "ec0d361e-322b-4d80-8416-45846b38e92d": "e11bcac2-63eb-4bda-a1b5-4f639e040e7c",
+        "f1d5d1a7-fded-4cc4-abfa-bb5482aa7c4b": "d2432729-9c9b-4d63-a24e-b31c2d7c0080",
+        "7592f0a1-2d20-4749-aaf7-6f3c62a389eb": "712d435f-e19f-44f6-be99-942914f82f53",
+        "72e5f52c-d730-47f9-94c6-fdb8721f38c6": "eb8ecce5-f646-4140-b04b-4aea63710d83",
+        "db70dc84-8d4a-43a0-af84-72f7f24bbec2": "12b53792-f3c5-438c-83bd-8411663ec3ee",
+        "c07056a2-9eeb-4483-83ac-769c24b5a055": "1318e5f6-36c0-4d54-9b3b-34bf492e9cb8"
+      }
     },
     {
       "__guid": "2460b1e9-7ee4-4a38-ac95-57125f0966f2",
@@ -2040,7 +1980,6 @@
   "Title": null,
   "Description": null,
   "__references": [
-    "facepunch.chestfreezer#142025",
     "facepunch.oildrumexplosive#166080",
     "fpopium.crackhead_02#184482"
   ],
