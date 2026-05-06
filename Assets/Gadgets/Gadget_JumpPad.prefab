@@ -46,12 +46,8 @@
         "__guid": "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265",
         "__enabled": true,
         "Flags": 0,
-        "collider": {
-          "_type": "component",
-          "component_id": "5674a111-7ef0-45f5-b8d6-a5520ebae11d",
-          "go": "dad3591a-f355-40d2-a6ec-15b272f4b617",
-          "component_type": "BoxCollider"
-        },
+        "JumpPadSoundFirstTime": "audio/gadgets/jumppad/jumppad_generalsound.sound",
+        "JumpPadSoundSecondOrMore": "audio/gadgets/jumppad/jumppad_characersecondland_sound.sound",
         "LaunchVelocity": 500,
         "LaunchVelocityAddition": "0,0,50",
         "OnComponentDestroy": null,

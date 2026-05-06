@@ -52,6 +52,8 @@ public interface IExtractionQuestEntity
 	public Rigidbody GetRigidbody();
 
 	public Collider GetCollider();
+
+	public bool IsUsingJumpPad();
 }
 
 public interface IExtractionQuest

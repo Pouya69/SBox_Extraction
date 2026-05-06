@@ -21,6 +21,11 @@ public class SourceMovement : Component {
 	public Vector3 Velocity;
 	private Vector3 WishVelocity;
 
+	private bool WasOnGroundLastFrame = true;
+
+	public event Action OnLanded;
+
+
 	[Sync] public bool IsDucking { get; private set; } = false;
 	[Sync] public bool IsRunning { get; private set; } = false;
 
@@ -83,7 +88,14 @@ public class SourceMovement : Component {
 	void Move() {
 		if (Controller is null) return;
 
-		if (Controller.IsOnGround) {
+		bool onGround = Controller.IsOnGround;
+
+		if ( onGround ) {
+			if (!WasOnGroundLastFrame)
+			{
+				OnLanded?.Invoke();
+			}
+
 			ApplyFriction();
 
 			var wishdir = WishVelocity.WithZ(0);
@@ -102,6 +114,8 @@ public class SourceMovement : Component {
 			var gravity = Scene.PhysicsWorld.Gravity * GravityScale;
 			Controller.Velocity += gravity * Time.Delta;
 		}
+
+		WasOnGroundLastFrame = onGround;
 
 		Controller.Move();
 	}

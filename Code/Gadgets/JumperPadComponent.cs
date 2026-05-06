@@ -7,6 +7,8 @@ public sealed class JumperPadComponent : Component, Component.ITriggerListener
 	/// </summary>
 	[Property] private float LaunchVelocity = 500.0f;
 	[Property] private Vector3 LaunchVelocityAddition = new(0,0,50.0f);
+	[Property] private SoundEvent JumpPadSoundFirstTime { get; set; }
+	[Property] private SoundEvent JumpPadSoundSecondOrMore { get; set; }
 
 	void ITriggerListener.OnTriggerEnter( GameObject other )
 	{
@@ -16,7 +18,30 @@ public sealed class JumperPadComponent : Component, Component.ITriggerListener
 			return;
 		}
 
+		if ( entityComponent.IsUsingJumpPad() )
+		{
+			// Second time or more on jump pad.
+			PlayJumpSound( JumpPadSoundSecondOrMore );
+		}
+		else
+		{
+			// First time
+			PlayJumpSound( JumpPadSoundFirstTime );
+		}
+
 		entityComponent.LaunchEntity( (LaunchVelocity * Transform.World.Up) + LaunchVelocityAddition );
 	}
-	
+
+	private void PlayJumpSound( SoundEvent soundToPlay )
+	{
+		if ( soundToPlay.IsValid() )
+		{
+			var soundSpawned = GameObject.PlaySound( soundToPlay );
+			var player = GameObject.GetComponentInChildren<PobxPlayer>( true );
+			if ( player.IsValid() && player.IsLocalPlayer && soundSpawned.IsValid() )
+			{
+				soundSpawned.SpacialBlend = 0.0f;
+			}
+		}
+	}
 }

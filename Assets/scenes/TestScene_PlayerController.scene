@@ -1133,7 +1133,7 @@
                                     {
                                       "TimeRange": "0,3240",
                                       "SampleRate": 30,
-                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfgfHKegbGM/sZGE/cZ2A68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX8q35F8hsCj63Mu7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwAL05myfAAAAA=="
+                                      "Samples": "H4sIAAAAAAAACgF8AIP//////wEAAAAbAAAAAAAAAP75B8AJ4P//Ctz//+/Vz2EByK8ANs6vnc7FL2RPwg+cEMAvAKq5v2Z5vr+ZEbxPAIa5D2mcuq+XE7h/ABDAbwBevc9rCMjfAMm675QQwK8AC9RvAA/IrwA9yZ9t2N5/kzfhn20I3J8A2t4fk4nRXvN8AAAA"
                                     }
                                   ]
                                 }
@@ -1502,7 +1502,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "004d1801-be9e-47c2-9e1b-c0f886435f4f": "b5dda381-1734-449b-8f54-b24eec6341cc"
+        "fb97184c-f874-4f00-8682-b8ef07a89610": "b865b4b7-6fbc-49a3-9ec7-853a3f7ea9c6"
       }
     },
     {
@@ -1830,6 +1830,11 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "1508a031-335e-47a8-ac87-12b89c8d041c"
@@ -1837,11 +1842,6 @@
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
-      },
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
       }
     }
   },

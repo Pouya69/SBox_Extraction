@@ -91,4 +91,6 @@ public class ExtractionQuestEntityComponent : Component, IExtractionQuestEntity
 	{
 		return collider;
 	}
+
+	public virtual bool IsUsingJumpPad() => false;
 }
