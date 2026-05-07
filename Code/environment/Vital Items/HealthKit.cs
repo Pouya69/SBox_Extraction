@@ -21,6 +21,8 @@ public sealed class HealthKit : Component, IInteractable
 		
 	}
 
+	public bool IsInteractable() => true;
+
 	public bool IsPickUpTwoHanded()
 	{
 		return false;

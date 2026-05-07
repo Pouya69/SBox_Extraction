@@ -18,4 +18,6 @@ public sealed class ExtractionQuestGiver : Component, IInteractable
 
 	public bool IsPickUpTwoHanded() => false;
 	public bool CanBePickedUp() => false;
+
+	public bool IsInteractable() => true;
 }

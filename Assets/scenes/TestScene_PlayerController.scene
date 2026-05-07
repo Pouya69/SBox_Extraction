@@ -408,6 +408,14 @@
           {
             "Target": {
               "Type": "Component",
+              "IdValue": "d7ca216d-b164-492e-b1ab-2f5d6153fbc4"
+            },
+            "Property": "DeployThrowStrength",
+            "Value": 300
+          },
+          {
+            "Target": {
+              "Type": "Component",
               "IdValue": "c21bf598-22ed-4dc3-940b-3054da50e0bf"
             },
             "Property": "__type",
@@ -1133,7 +1141,7 @@
                                     {
                                       "TimeRange": "0,3240",
                                       "SampleRate": 30,
-                                      "Samples": "H4sIAAAAAAAACgF8AIP//////wEAAAAbAAAAAAAAAP75B8AJ4P//Ctz//+/Vz2EByK8ANs6vnc7FL2RPwg+cEMAvAKq5v2Z5vr+ZEbxPAIa5D2mcuq+XE7h/ABDAbwBevc9rCMjfAMm675QQwK8AC9RvAA/IrwA9yZ9t2N5/kzfhn20I3J8A2t4fk4nRXvN8AAAA"
+                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfQebS+3m8F/gZbh31T2Y68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX9q6Fn5HK49/xku7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwDQt9OifAAAAA=="
                                     }
                                   ]
                                 }
@@ -1502,7 +1510,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "fb97184c-f874-4f00-8682-b8ef07a89610": "b865b4b7-6fbc-49a3-9ec7-853a3f7ea9c6"
+        "550c3800-32f8-47e6-ae1c-0a94aed31784": "f0599520-4037-46be-8523-79d60575dd5a"
       }
     },
     {
@@ -1830,6 +1838,9 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
@@ -1839,9 +1850,6 @@
         "Storage": {
           "$blob": "1508a031-335e-47a8-ac87-12b89c8d041c"
         }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
       }
     }
   },

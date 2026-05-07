@@ -1,9 +1,9 @@
 using Sandbox;
 
-public sealed class GrabbableComponent : Component, IInteractable
+public class GrabbableComponent : Component, IInteractable
 {
 	[Property, RequireComponent] public IExtractionQuestEntity EntityRef { get; set; }
-	[Property] public bool IsGrabTwoHanded { get; private set; }
+	[Property] public bool IsGrabTwoHanded { get; protected set; }
 
 	public bool CanBePickedUp() => true;
 
@@ -11,6 +11,8 @@ public sealed class GrabbableComponent : Component, IInteractable
 	{
 		interactionComponent.PickUpEntity( EntityRef );
 	}
+
+	public bool IsInteractable() => true;
 
 	public bool IsPickUpTwoHanded() => IsGrabTwoHanded;
 }

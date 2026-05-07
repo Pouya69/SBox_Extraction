@@ -9,13 +9,16 @@ public sealed class PlayerInventoryComponent : Component
 	[Property, Feature( "Inventory" ), Group( "Config" )] private Vector2Int InventoryStorageSize = new( 3, 3 );
 	[Property, Feature( "Inventory" ), Group("Config")] private InventorySlotMode InventorySlotMode = InventorySlotMode.Single;
 
-	[Property, Feature( "Inventory" ), Group( "Drop" )] private float DropDistanceFromCameraForward = 10.0f;
+	[Property, Feature( "Inventory" ), Group( "Drop" )] public float DropDistanceFromCameraForward { get; private set; } = 10.0f;
 	[Property, Feature( "Inventory" ), Group( "Drop" )] private float DropScanRadius = 30.0f;
 
 	public Weapon PrimaryWeapon { get; private set; }
 	public Weapon SecondaryWeapon { get; private set; }
 
 	public Weapon ActiveWeapon { get; private set; }
+	public GadgetBase Gadget { get; private set; }
+
+	public bool IsGadgetEquipped { get; private set; } = false;
 
 	protected override void OnAwake()
 	{
@@ -59,8 +62,11 @@ public sealed class PlayerInventoryComponent : Component
 			SwitchToSlot3OrMore( 7 );
 
 
-		if ( ActiveWeapon.IsValid() )
+		if ( IsGadgetEquipped )
+			Gadget.OnControl( Player );
+		else if ( ActiveWeapon.IsValid() )
 			ActiveWeapon.OnControl( Player );
+
 	}
 
 	private void ToggleInventory()
@@ -73,22 +79,34 @@ public sealed class PlayerInventoryComponent : Component
 
 	public InventoryResult AddItemToInventory( PobxBaseInventoryItem item )
 	{
+
 		if (item.InventoryGrabbableReference.IsValid())
 		{
-			if (PrimaryWeapon == null)
+			if ( (item.InventoryGrabbableReference as Weapon) is var weapon && weapon.IsValid())
 			{
-				var weapon = item.InventoryGrabbableReference as Weapon;
-				if ( weapon != null )
+				if (!PrimaryWeapon.IsValid())
 					PrimaryWeapon = weapon;
-
+				else if (!SecondaryWeapon.IsValid())
+					SecondaryWeapon = weapon;
 				Log.Info( "Added Weapon" );
 			}
-			else if (SecondaryWeapon == null)
+			else if ( (item.InventoryGrabbableReference as GadgetBase) is var gadget && gadget.IsValid() )
 			{
-				var weapon = item.InventoryGrabbableReference as Weapon;
-				if ( weapon != null )
-					PrimaryWeapon = weapon;
+				if (!Gadget.IsValid())
+				{
+					Log.Info( "Gadget" );
+
+					Gadget = gadget;
+					Gadget.InitializeGadget( this.Player );
+				}
+				else
+				{
+					Gadget.pobxBaseInventoryItem.StackCount = Math.Clamp( Gadget.pobxBaseInventoryItem.StackCount + item.StackCount, 0, Gadget.pobxBaseInventoryItem.MaxStackSize );
+					gadget.DestroyGameObject();
+					return InventoryResult.Success;
+				}
 			}
+
 		}
 
 		InventoryResult result = Inventory.TryAdd( item );
@@ -96,7 +114,7 @@ public sealed class PlayerInventoryComponent : Component
 		{
 			if ( item.SpaceLeftInStack() > 0 )
 			{
-				item.StackCount += item.StackCount;
+				item.StackCount = Math.Clamp( item.StackCount + item.StackCount, 0, item.MaxStackSize);
 				result = InventoryResult.Success;
 			}
 		}
@@ -114,7 +132,7 @@ public sealed class PlayerInventoryComponent : Component
 		}
 
 		Vector3 startPos = Player.Camera.WorldPosition;
-		Vector3 projectedSpawnPos = startPos + Player.Camera.WorldTransform.Forward * DropDistanceFromCameraForward;
+		Vector3 projectedSpawnPos = startPos + Player.EyeTransform.Forward * DropDistanceFromCameraForward;
 
 		// We check so that if we hit something, we don't spawn behind the wall or smth.
 
@@ -131,14 +149,14 @@ public sealed class PlayerInventoryComponent : Component
 			GameObject spawnedObject = item.PobxItemReference.Clone( projectedSpawnPos, spawnRot );
 			var grabComponent = spawnedObject.GetComponent<InventoryGrabbableComponent>();
 			grabComponent.SetCount( item.StackCount );
-			grabComponent.ItemRemovedFromInventory();
+			grabComponent.ItemRemovedFromInventory(this.Player);
 		}
 		else
 		{
 			item.InventoryGrabbableReference.GameObject.SetParent( null );
 			item.InventoryGrabbableReference.WorldPosition = projectedSpawnPos;
 			item.InventoryGrabbableReference.WorldRotation = spawnRot;
-			item.InventoryGrabbableReference.ItemRemovedFromInventory();
+			item.InventoryGrabbableReference.ItemRemovedFromInventory(this.Player);
 		}
 		
 		
@@ -163,7 +181,13 @@ public sealed class PlayerInventoryComponent : Component
 
 	public void SwitchToPrimaryWeapon()
 	{
-		Log.Info( "Switching" );
+		if (IsGadgetEquipped)
+		{
+			Gadget.DisableItem();
+		}
+
+		IsGadgetEquipped = false;
+
 		if (ActiveWeapon.IsValid())
 		{
 			ActiveWeapon.DisableItem();
@@ -175,6 +199,18 @@ public sealed class PlayerInventoryComponent : Component
 
 	public void SwitchToSecondaryWeapon()
 	{
+		if ( IsGadgetEquipped )
+		{
+			Gadget.DisableItem();
+		}
+
+		if ( ActiveWeapon.IsValid() )
+		{
+			ActiveWeapon.DisableItem();
+		}
+
+		IsGadgetEquipped = false;
+
 		ActiveWeapon = PrimaryWeapon;
 	}
 
@@ -185,6 +221,38 @@ public sealed class PlayerInventoryComponent : Component
 	public void SwitchToSlot3OrMore(int slotNumber)
 	{
 		if ( slotNumber <= 2 ) return;
+
+		switch ( slotNumber ) {
+			case 3:
+				SwitchToGadget();
+				break;
+		}
+	}
+
+	public void DisableGadget()
+	{
+		IsGadgetEquipped = false;
+		Gadget.DisableItem();
+		Gadget = null;
+	}
+
+	private void SwitchToGadget()
+	{
+		if ( !Gadget.IsValid() ) return;
+
+		if (!Gadget.CanBeEquipped() )
+		{
+			DisableGadget();
+			return;
+		}
+
+		IsGadgetEquipped = true;
+		if ( ActiveWeapon.IsValid() )
+		{
+			ActiveWeapon.DisableItem();
+		}
+
+		Gadget.EnableItem();
 	}
 
 }

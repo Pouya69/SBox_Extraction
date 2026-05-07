@@ -1,0 +1,211 @@
+{
+  "RootObject": {
+    "__guid": "7330b309-835b-4fa8-b67f-135118d4019d",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "jumppad_item",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "interaction",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "DeployableGadget",
+        "__guid": "d6620b54-8000-4fa7-8b6a-c03442bd529b",
+        "__enabled": true,
+        "Flags": 0,
+        "CanBeDropped": true,
+        "CurrentCount": 1,
+        "DeployThrowStrength": 300,
+        "EntityReference": {
+          "Type": "Component",
+          "Value": {
+            "_type": "component",
+            "component_id": "19345320-45fe-41e0-8bbe-0e4597fac654",
+            "go": "7330b309-835b-4fa8-b67f-135118d4019d",
+            "component_type": "ExtractionQuestEntityComponent"
+          }
+        },
+        "GadgetWorldPrefab": {
+          "_type": "gameobject",
+          "prefab": "gadgets/world/gadget_jumppad.prefab"
+        },
+        "InventoryMaxStackSize": 3,
+        "ItemSizeInInventory": "1,1",
+        "ItemWorldModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "gadgets/deployables/jumppad_item.prefab"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Renderer": {
+          "_type": "component",
+          "component_id": "03287e25-dbb6-47e5-ab71-566142a7aa2c",
+          "go": "7330b309-835b-4fa8-b67f-135118d4019d",
+          "component_type": "ModelRenderer"
+        },
+        "UseSound": "sounds/impacts/melee/impact-melee-cloth.sound"
+      },
+      {
+        "__type": "ExtractionQuestEntityComponent",
+        "__guid": "19345320-45fe-41e0-8bbe-0e4597fac654",
+        "__enabled": true,
+        "Flags": 0,
+        "collider": {
+          "_type": "component",
+          "component_id": "1e3f7b46-0060-4b97-a846-fe97f2a20945",
+          "go": "7330b309-835b-4fa8-b67f-135118d4019d",
+          "component_type": "BoxCollider"
+        },
+        "EntityActionSystemComponent": null,
+        "EntityInfo": "quests/entities/qentity_deployablejumppad.qent",
+        "ObjectSize": "SMALL",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "renderer": {
+          "_type": "component",
+          "component_id": "03287e25-dbb6-47e5-ab71-566142a7aa2c",
+          "go": "7330b309-835b-4fa8-b67f-135118d4019d",
+          "component_type": "ModelRenderer"
+        },
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "0286dcc0-8cbc-42b5-a5f1-b95cfddaa3f5",
+          "go": "7330b309-835b-4fa8-b67f-135118d4019d",
+          "component_type": "Rigidbody"
+        },
+        "ShouldReportToQuestSystem": true
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "0286dcc0-8cbc-42b5-a5f1-b95cfddaa3f5",
+        "__enabled": true,
+        "Flags": 0,
+        "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
+        "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "03287e25-dbb6-47e5-ab71-566142a7aa2c",
+        "__enabled": true,
+        "Flags": 0,
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "LodOverride": null,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Materials": null,
+        "Model": "models/citizen_props/cardboardbox01.vmdl",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "1e3f7b46-0060-4b97-a846-fe97f2a20945",
+        "__enabled": true,
+        "Flags": 0,
+        "Center": "0,0,16.3099995",
+        "ColliderFlags": 0,
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "33,33,33",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      }
+    ],
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

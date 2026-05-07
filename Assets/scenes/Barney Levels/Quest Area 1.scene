@@ -207,6 +207,14 @@
           },
           {
             "Target": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "Property": "Tags",
+            "Value": "player,pawn"
+          },
+          {
+            "Target": {
               "Type": "Component",
               "IdValue": "91cc671d-c4e3-40c0-b575-b6c16eda611b"
             },
@@ -302,108 +310,6 @@
       }
     },
     {
-      "__guid": "ea462f7e-a3aa-4c12-b3bd-0d3ae3fb4bfd",
-      "__version": 2,
-      "__Prefab": "gadgets/gadget_jumppad.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "dad3591a-f355-40d2-a6ec-15b272f4b617"
-            },
-            "Property": "Position",
-            "Value": "-683.327332,-1120.54919,44.1572762"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "dad3591a-f355-40d2-a6ec-15b272f4b617"
-            },
-            "Property": "Rotation",
-            "Value": "-0.103727311,0.0645066649,0.842825413,0.524142087"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265"
-            },
-            "Property": "LaunchVelocity",
-            "Value": 715.64044
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "dad3591a-f355-40d2-a6ec-15b272f4b617": "ea462f7e-a3aa-4c12-b3bd-0d3ae3fb4bfd",
-        "5674a111-7ef0-45f5-b8d6-a5520ebae11d": "5b98b91c-611e-4624-8c61-fb558da3736d",
-        "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265": "396c4c92-5576-446e-9fe4-a61dffa7e22f",
-        "7a6dc223-b091-4330-af61-77410fae0e2d": "bf3a6d1a-5640-4877-9bbf-4737c11b7a0f",
-        "01bcf550-4e2a-45a5-a65b-cf4288677aa5": "6c69de2d-f12c-4220-9158-7d6ca2a847fb",
-        "a9422eed-40bc-4336-9270-153e5c5f28bd": "7d8ba7a6-afef-4c5e-9c39-3dc9e8a3e58b",
-        "cc5fcbfc-23f6-4a08-ac69-0e6affb2efa1": "5df2f03a-dfbb-4f28-909d-b4de43e65958",
-        "9017c026-053a-4cf9-b9b2-8e62381ad142": "51e5ea7f-a648-421a-bf8b-2b254c28e777",
-        "7e453cce-4d25-48af-9f9d-095eca364a72": "c012b234-5bb0-439e-b72c-e543d5e0d06c"
-      }
-    },
-    {
-      "__guid": "8dc6645c-7e56-4fee-9ca1-701451371bf1",
-      "__version": 2,
-      "__Prefab": "gadgets/gadget_jumppad.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "dad3591a-f355-40d2-a6ec-15b272f4b617"
-            },
-            "Property": "Name",
-            "Value": "gadget_jumppad (1)"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "dad3591a-f355-40d2-a6ec-15b272f4b617"
-            },
-            "Property": "Position",
-            "Value": "-1505.89624,-526.668091,67.4126892"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "dad3591a-f355-40d2-a6ec-15b272f4b617"
-            },
-            "Property": "Rotation",
-            "Value": "0.0345893949,0.10147351,-0.320782304,0.941066086"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265"
-            },
-            "Property": "LaunchVelocity",
-            "Value": 792.47015
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "dad3591a-f355-40d2-a6ec-15b272f4b617": "8dc6645c-7e56-4fee-9ca1-701451371bf1",
-        "5674a111-7ef0-45f5-b8d6-a5520ebae11d": "fb0af03b-56a6-4b88-89d0-b7f0e83902d8",
-        "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265": "a2efb38a-8562-4c18-aa2d-0ee8211e352b",
-        "7a6dc223-b091-4330-af61-77410fae0e2d": "947e4a77-bf8b-452e-81d3-14feb5aae51f",
-        "01bcf550-4e2a-45a5-a65b-cf4288677aa5": "5a1f23f3-94df-4074-b233-3eda45ffdad6",
-        "a9422eed-40bc-4336-9270-153e5c5f28bd": "dd220681-8b03-4149-bed7-03a9af8047ae",
-        "cc5fcbfc-23f6-4a08-ac69-0e6affb2efa1": "ebcadc9a-c643-4d70-b5b6-07e8acecefe4",
-        "9017c026-053a-4cf9-b9b2-8e62381ad142": "83e27033-4072-4ead-b57e-ba7298754921",
-        "7e453cce-4d25-48af-9f9d-095eca364a72": "914bcb78-bb9a-4949-b28e-781da9ddf0c4"
-      }
-    },
-    {
       "__guid": "06f0bbb0-ee94-427f-85ba-fb30fd6de056",
       "__version": 2,
       "__Prefab": "environment/containers/item_chest.prefab",
@@ -437,6 +343,174 @@
         "72e5f52c-d730-47f9-94c6-fdb8721f38c6": "ee97c156-030d-43bc-b7aa-71b4e19f81c5",
         "db70dc84-8d4a-43a0-af84-72f7f24bbec2": "64d44c2c-f15a-40d5-ad3d-b8a4a3578cf0",
         "c07056a2-9eeb-4483-83ac-769c24b5a055": "c3288011-b621-4362-bee7-04cdc182f384"
+      }
+    },
+    {
+      "__guid": "0e415bbf-3f43-4b6f-a2bf-592849beb71f",
+      "__version": 2,
+      "__Prefab": "gadgets/deployables/jumppad_item.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Position",
+            "Value": "-1138.99365,-1184.38684,33.3208389"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Rotation",
+            "Value": "0.0205594599,0.0644137561,-0.303369284,0.950471044"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "7330b309-835b-4fa8-b67f-135118d4019d": "0e415bbf-3f43-4b6f-a2bf-592849beb71f",
+        "d6620b54-8000-4fa7-8b6a-c03442bd529b": "bcc5e295-02b1-4164-9bf3-9aa6f8b07f19",
+        "19345320-45fe-41e0-8bbe-0e4597fac654": "a13c8d72-489f-423d-ad04-7350a46ac322",
+        "0286dcc0-8cbc-42b5-a5f1-b95cfddaa3f5": "16bfa063-c831-4b4d-87b1-47fbe9486bea",
+        "03287e25-dbb6-47e5-ab71-566142a7aa2c": "50dcf2f1-670e-4ee7-8805-4811d5f707fc",
+        "1e3f7b46-0060-4b97-a846-fe97f2a20945": "376e59d1-f5fa-4e02-bd7e-34d7a3f26cc3"
+      }
+    },
+    {
+      "__guid": "fef6040f-2c66-4c82-bca9-15c339ee650b",
+      "__version": 2,
+      "__Prefab": "gadgets/deployables/jumppad_item.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Name",
+            "Value": "jumppad_item (3)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Position",
+            "Value": "-1249.01343,-1026.86853,57.9577751"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Rotation",
+            "Value": "0.0205594599,0.0644137561,-0.303369284,0.950471044"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "7330b309-835b-4fa8-b67f-135118d4019d": "fef6040f-2c66-4c82-bca9-15c339ee650b",
+        "d6620b54-8000-4fa7-8b6a-c03442bd529b": "52e52a3d-ea25-4960-9b7c-a86939cda354",
+        "19345320-45fe-41e0-8bbe-0e4597fac654": "d318bc4d-1f02-4310-912f-7526b3d85d2b",
+        "0286dcc0-8cbc-42b5-a5f1-b95cfddaa3f5": "071d8791-1fd4-48ea-b3dc-62c932c7c4c5",
+        "03287e25-dbb6-47e5-ab71-566142a7aa2c": "7debc5f9-7a6f-451f-ac2a-14d6f04d719b",
+        "1e3f7b46-0060-4b97-a846-fe97f2a20945": "b55ad8d2-e453-41d6-a202-0eedcc26ea9e"
+      }
+    },
+    {
+      "__guid": "7663a7eb-ca61-40bc-b09d-2a3ed1fd07f4",
+      "__version": 2,
+      "__Prefab": "gadgets/deployables/jumppad_item.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Name",
+            "Value": "jumppad_item (1)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Position",
+            "Value": "-1211.9408,-1137.48376,45.9410477"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Rotation",
+            "Value": "-0.0318206102,0.0834338665,0.354926169,0.930620074"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "7330b309-835b-4fa8-b67f-135118d4019d": "7663a7eb-ca61-40bc-b09d-2a3ed1fd07f4",
+        "d6620b54-8000-4fa7-8b6a-c03442bd529b": "c7dfdeda-6ee0-405a-b3b5-4727fc3882e6",
+        "19345320-45fe-41e0-8bbe-0e4597fac654": "71610758-2209-4d49-bf04-fd131acb0f7f",
+        "0286dcc0-8cbc-42b5-a5f1-b95cfddaa3f5": "00fb2294-ad9f-4536-9856-0c343f865c1f",
+        "03287e25-dbb6-47e5-ab71-566142a7aa2c": "4cdf2da7-71a9-4c4a-9ece-e4f0e4e81834",
+        "1e3f7b46-0060-4b97-a846-fe97f2a20945": "2d85b1f1-0609-47de-8f22-cab5524833c5"
+      }
+    },
+    {
+      "__guid": "16af0e08-f207-47d8-8ce2-75f1414057ee",
+      "__version": 2,
+      "__Prefab": "gadgets/deployables/jumppad_item.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Name",
+            "Value": "jumppad_item (2)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Position",
+            "Value": "-1213.93665,-1204.22107,25.1946793"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7330b309-835b-4fa8-b67f-135118d4019d"
+            },
+            "Property": "Rotation",
+            "Value": "-0.0723160803,-0.0203322545,0.959954023,-0.269898653"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "7330b309-835b-4fa8-b67f-135118d4019d": "16af0e08-f207-47d8-8ce2-75f1414057ee",
+        "d6620b54-8000-4fa7-8b6a-c03442bd529b": "81fcf849-a964-4492-afea-d99ba4ca3590",
+        "19345320-45fe-41e0-8bbe-0e4597fac654": "d3e21368-727d-4a54-9aff-26dea9e561d1",
+        "0286dcc0-8cbc-42b5-a5f1-b95cfddaa3f5": "9f690516-fe54-452f-b291-52dcc8b27bf1",
+        "03287e25-dbb6-47e5-ab71-566142a7aa2c": "d2c4286c-8455-47ce-9f5d-4bf4907d819a",
+        "1e3f7b46-0060-4b97-a846-fe97f2a20945": "1fb9004e-bdcf-4547-81dd-3108631d5046"
       }
     }
   ],

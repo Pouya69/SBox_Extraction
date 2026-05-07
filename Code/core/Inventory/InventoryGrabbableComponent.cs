@@ -16,7 +16,8 @@ public class InventoryGrabbableComponent : Component, IInteractable
 	/// </summary>
 	[Property, Feature( "Inventory" )] public bool CanBeDropped { get; protected set; } = true;
 	[Property] protected IExtractionQuestEntity EntityReference;
-	protected PobxBaseInventoryItem pobxBaseInventoryItem;
+	[Property] public float DeployThrowStrength { get; protected set; } = 300.0f;
+	public PobxBaseInventoryItem pobxBaseInventoryItem { get; protected set;  }
 
 	protected override void OnAwake()
 	{
@@ -62,7 +63,7 @@ public class InventoryGrabbableComponent : Component, IInteractable
 			this.GameObject.Destroy();
 	}
 
-	public virtual void ItemRemovedFromInventory() {
+	public virtual void ItemRemovedFromInventory(PobxPlayer player) {
 		DisableItem();
 	}
 
@@ -91,4 +92,6 @@ public class InventoryGrabbableComponent : Component, IInteractable
 	/// Should be implemented in the derived classes.
 	/// </summary>
 	public virtual void OnControl( PobxPlayer Player ) { }
+
+	public virtual bool IsInteractable() => true;
 }

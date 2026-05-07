@@ -10,6 +10,8 @@ public sealed class JumperPadComponent : Component, Component.ITriggerListener
 	[Property] private SoundEvent JumpPadSoundFirstTime { get; set; }
 	[Property] private SoundEvent JumpPadSoundSecondOrMore { get; set; }
 
+	public bool IsMostlyUpwards => Transform.World.Up.Dot( Vector3.Up ) > 0.5f;
+
 	void ITriggerListener.OnTriggerEnter( GameObject other )
 	{
 		var entityComponent = other.GetComponentInChildren<IExtractionQuestEntity>(true);
@@ -29,7 +31,10 @@ public sealed class JumperPadComponent : Component, Component.ITriggerListener
 			PlayJumpSound( JumpPadSoundFirstTime );
 		}
 
-		entityComponent.LaunchEntity( (LaunchVelocity * Transform.World.Up) + LaunchVelocityAddition );
+		if ( IsMostlyUpwards )
+			entityComponent.LaunchEntity( (LaunchVelocity * Transform.World.Up) + LaunchVelocityAddition );
+		else
+			entityComponent.LaunchEntity( (LaunchVelocity * 1.5f * Transform.World.Up) + LaunchVelocityAddition );
 	}
 
 	private void PlayJumpSound( SoundEvent soundToPlay )

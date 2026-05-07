@@ -385,11 +385,6 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 	}
 
-	protected override void OnUpdate()
-	{
-		
-	}
-
 	protected virtual void PrimaryAttack()
 	{
 		IsShooting = true;
@@ -468,7 +463,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		// base.AddedItemToInventory();
 	}
 
-	public override void ItemRemovedFromInventory()
+	public override void ItemRemovedFromInventory( PobxPlayer player )
 	{
 		// base.ItemRemovedFromInventory();
 		WorldModel.Enabled = true;
