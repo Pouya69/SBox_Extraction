@@ -101,8 +101,11 @@ public sealed class PlayerInventoryComponent : Component
 				}
 				else
 				{
+					int OldCount =  Gadget.pobxBaseInventoryItem.StackCount;
 					Gadget.pobxBaseInventoryItem.StackCount = Math.Clamp( Gadget.pobxBaseInventoryItem.StackCount + item.StackCount, 0, Gadget.pobxBaseInventoryItem.MaxStackSize );
-					gadget.DestroyGameObject();
+					if ( OldCount != Gadget.pobxBaseInventoryItem.StackCount )
+						gadget.DestroyGameObject();
+
 					return InventoryResult.Success;
 				}
 			}
