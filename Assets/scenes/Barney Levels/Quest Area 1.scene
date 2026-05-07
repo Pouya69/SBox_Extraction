@@ -512,6 +512,294 @@
         "03287e25-dbb6-47e5-ab71-566142a7aa2c": "d2c4286c-8455-47ce-9f5d-4bf4907d819a",
         "1e3f7b46-0060-4b97-a846-fe97f2a20945": "1fb9004e-bdcf-4547-81dd-3108631d5046"
       }
+    },
+    {
+      "__guid": "0ff63307-7bb1-4992-93ec-5b6f62e8a828",
+      "__version": 2,
+      "__Prefab": "weapons/worldmodel/vacuum gun/vacuum gun_02.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "f901538b-6e94-4662-8704-e96ba0acccb7"
+            },
+            "Property": "Position",
+            "Value": "-915.874634,-950.882568,21.1493073"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "f901538b-6e94-4662-8704-e96ba0acccb7"
+            },
+            "Property": "Rotation",
+            "Value": "-0.0103154331,0.107700765,0.094782576,0.989601076"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "BulletConfig",
+            "Value": {
+              "Damage": 12,
+              "BulletRadius": 1,
+              "AimConeBase": "0.5,0.25",
+              "AimConeSpread": "5.99999952,9.05000591",
+              "AimConeRecovery": 0.2,
+              "RecoilPitch": "-0.749999702,-0.460000038",
+              "RecoilYaw": "-0.100000001,0.100000001",
+              "CameraRecoilStrength": 8.750006,
+              "CameraRecoilFrequency": 0.510004,
+              "Range": 4096
+            }
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "DebugWeaponActions",
+            "Value": true
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "EntityReference",
+            "Value": {
+              "Type": "Component",
+              "Value": {
+                "_type": "component",
+                "component_id": "7f0afada-54dd-4892-9ccb-aea409889807",
+                "go": "f901538b-6e94-4662-8704-e96ba0acccb7",
+                "component_type": "ExtractionQuestEntityComponent"
+              }
+            }
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "FireRate",
+            "Value": 0.22999988
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "UsesBullets",
+            "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "VacuumScanForwardOffset",
+            "Value": 0.22000001
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "VacuumScanRadius",
+            "Value": 66.98011
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "VacuumStrength",
+            "Value": 17.36001
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "09e25dfb-2023-4ad7-9686-7f789c343543"
+            },
+            "Property": "VacuumSuckedDistanceThreshold",
+            "Value": 127.50998
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "a2a3ed30-2218-42fc-925f-8676c64c6cea"
+            },
+            "Property": "Position",
+            "Value": "10.7433701,2.74181366E-06,5.45275402"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "f901538b-6e94-4662-8704-e96ba0acccb7": "0ff63307-7bb1-4992-93ec-5b6f62e8a828",
+        "09e25dfb-2023-4ad7-9686-7f789c343543": "d7aeaeb6-918f-474d-b458-a727bfcd5c74",
+        "7f0afada-54dd-4892-9ccb-aea409889807": "eb3f0cae-6776-4011-a357-c8fbb87dfd8c",
+        "76bfac36-7c70-43bb-b232-3493ffbd41f0": "289260f1-14fb-4bea-89c1-2cb0e583b9c1",
+        "3c929f15-0474-4090-8514-c8f54dea9e9d": "ba5638e8-3769-4f99-8569-5917f38837b6",
+        "eb43fe31-47a8-4ed1-ac0c-f8088a4abaee": "eec006e8-3cb9-4368-a846-62279cf5a57f",
+        "8019ac9a-5fe4-4e87-a077-675f7da5fba3": "4c371781-b9f8-474d-a811-ce6b74cfa14f",
+        "2c0d10b4-8fd0-4772-b3f4-d1927ea507a3": "d9d48ae4-dc11-4961-b811-438e36ed850a",
+        "a2a3ed30-2218-42fc-925f-8676c64c6cea": "8214e294-e390-4922-a1bf-6b4e2a1b9b24",
+        "a0a9a6ce-6fea-46ae-9a19-8dedc95d5749": "4161b5e3-1e4b-44f4-9344-06a948cc4210",
+        "99b9aeea-ddd4-4683-94db-cc9d91b77426": "5f1155a2-91e2-47bd-b2b2-2e31c64e1535",
+        "95418495-53a6-44de-b7ed-cbe528652dbf": "a84cfbaa-df06-40ff-9207-8b053c14ff11"
+      }
+    },
+    {
+      "__guid": "47eb4b6c-63dc-481b-91d8-1bf26a79ced9",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-639.675537,-696.844543,69.2772522"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,0,0.99999994"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "47eb4b6c-63dc-481b-91d8-1bf26a79ced9",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "d65fd691-a12f-48fd-a311-bc896007ec87",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "1fd27a0f-5259-44c5-b811-f6f112f65236",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "328095c9-7e9b-452b-a226-9edc6623e7f8",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "fde02c6c-4b33-40df-9c59-e310b4c46e09",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "d7a8dd4f-7696-4bbd-9a02-eda04b18dd32"
+      }
+    },
+    {
+      "__guid": "6fd0c6da-81a4-48c7-b1a2-73f80e2ab720",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (9)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-618.044739,-692.783264,69.2772522"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "6fd0c6da-81a4-48c7-b1a2-73f80e2ab720",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "86d1f8bb-7c08-4e8b-8bcd-9d5df5fa68d7",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "bb0af43e-a703-4731-893d-a24f371aa13b",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "08402298-ca39-468f-b4b7-1e67f0663d60",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "19977fda-f94f-4070-9760-2ea08ad58623",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "b393000b-a90e-478c-921e-3097f7a50e3b"
+      }
+    },
+    {
+      "__guid": "aa9de357-d866-4b16-896d-435783d61caf",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (10)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-618.044739,-756.539307,69.2772522"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "aa9de357-d866-4b16-896d-435783d61caf",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "5c529bf7-761f-426c-942d-231c7e4d20d0",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "3858cbb7-e28d-400c-b39b-f63cc8dc6caa",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "2a2e2fff-fcb0-4d9e-8265-7da8ac29c2ac",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "8e86158c-dfa9-4150-8efc-6fa2333e9e56",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "8ae3dc19-631e-457b-b0c6-ef164c1582a9"
+      }
     }
   ],
   "SceneProperties": {

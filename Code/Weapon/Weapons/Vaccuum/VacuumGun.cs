@@ -26,11 +26,15 @@ public sealed class VacuumGun : Weapon
 	protected override void OnAwake()
 	{
 		base.OnAwake();
+		Ammo = 0;
 	}
 
 	protected override void PrimaryAttack()
 	{
-		CurrentFireTime = 0.0f;
+		StopSecondaryAttack();
+
+		ViewModel?.RunEvent<ViewModel>( x => x.OnAttack() );
+		CurrentVacuumMode = EVacuumGunMode.SUCKING;
 		if ( IsVacuumFull() && CurrentVacuumMode == EVacuumGunMode.SUCKING )
 		{
 			CannotSuckVacuumFull();
@@ -38,6 +42,16 @@ public sealed class VacuumGun : Weapon
 		}
 
 		base.PrimaryAttack();
+	}
+
+	protected override bool CanPrimaryAttack()
+	{
+		return !IsVacuumFull();
+	}
+
+	protected override bool CanSecondaryAttack()
+	{
+		return HasAmmo();
 	}
 
 	public override void Reload()
@@ -64,19 +78,55 @@ public sealed class VacuumGun : Weapon
 		{
 			CurrentFireTime += Time.Delta;
 
-			if ( CurrentFireTime < 1.0f / FireRate ) return;
+			if ( CurrentFireTime < FireRate ) return;
 		}
 		
 
 		ShootWeapon();
+	}
 
-		CurrentFireTime = 0.0f;
+	public override void OnControl( PobxPlayer Player )
+	{
+		if ( CanReload() )
+		{
+			if ( Input.Pressed( "Reload" ) )
+			{
+				Reload();
+			}
+		}
+
+		if ( Input.Pressed( "Attack1" ) )
+		{
+			if ( CanPrimaryAttack() )
+				PrimaryAttack();
+			else if ( !HasAmmo() )
+				OutOfAmmo();
+		}
+		else if ( Input.Released( "Attack1" ) )
+		{
+			StopPrimaryAttack();
+		}
+
+		if ( Input.Pressed( "Attack2" ) )
+		{
+			if ( HasSecondaryAttack && CanSecondaryAttack() )
+				SecondaryAttack();
+			else
+				Aim();
+		}
+		else if ( Input.Released( "Attack2" ) )
+		{
+			if ( HasSecondaryAttack )
+				StopSecondaryAttack();
+			else
+				StopAim();
+		}
 	}
 
 	protected override void ShootWeapon()
 	{
-		base.ShootWeapon();
-
+		// base.ShootWeapon();
+		CurrentFireTime = 0.0f;
 		switch (CurrentVacuumMode)
 		{
 			case EVacuumGunMode.SUCKING:
@@ -91,23 +141,23 @@ public sealed class VacuumGun : Weapon
 
 	private void Suck()
 	{
-
-		Vector3 forward = MuzzleSocket.WorldTransform.Forward;
-		Vector3 start = MuzzleSocket.WorldPosition + forward * VacuumScanForwardOffset;
+		Vector3 forward = AimRay.Forward;
+		Vector3 start = CurrentViewModelComp.GetTracerOrigin().Position + forward * VacuumScanForwardOffset;
 		Vector3 end = start + VacuumScanDistance * forward;
-
 		if ( DebugWeaponActions )
 		{
-			Log.Info( "Sucking..." );
+			// Log.Info( "Sucking..." );
 			DebugOverlay.Sphere( new Sphere( start, VacuumScanRadius ), Color.Red );
 			DebugOverlay.Sphere( new Sphere( end, VacuumScanRadius ), Color.Red );
 		}
 
-		var results = Scene.Trace.Sphere( VacuumScanRadius, start, end).WithTag( ScanCollisionTag ).IgnoreGameObjectHierarchy(this.GameObject).RunAll();
+		var results = Scene.Trace.Sphere( VacuumScanRadius, start, end).WithTag( ScanCollisionTag ).IgnoreGameObjectHierarchy(this.GameObject.Parent).RunAll();
 		foreach ( var item in results )
 		{
 			var entity = item.GameObject.GetComponent<IExtractionQuestEntity>();
-			if ( entity == null || !entity.CanBeRemoteGrabbed() )
+			if (entity == null)
+				continue;
+			if (!entity.CanBeRemoteGrabbed() )
 				continue;
 
 			if ( DebugWeaponActions )
@@ -132,9 +182,10 @@ public sealed class VacuumGun : Weapon
 	private void Spit()
 	{
 
-		if ( IsVacuumEmpty() )
+		if ( !HasAmmo() )
 		{
 			SpitOutFailedEmptyVacuum();
+			Log.Info( "Empty" );
 			return;
 		}
 
@@ -143,41 +194,62 @@ public sealed class VacuumGun : Weapon
 			Log.Info( "Spitting..." );
 		}
 
+		ViewModel?.RunEvent<ViewModel>( x => x.OnSecondaryAttack() );
+		Invoke( FireRate / 4, () => {
+			ViewModel?.RunEvent<ViewModel>( x => x.OnStopSecondaryAttack() );
+		} );
+		
 		IExtractionQuestEntity objectToSpitOut = SuckedEntities.Pop();
+		Ammo--;
 		PrepareEntityForSpitOut(objectToSpitOut);
-		objectToSpitOut.LaunchEntity( SpitOutStrength * MuzzleSocket.WorldTransform.Forward, true );
+		objectToSpitOut.LaunchEntity( SpitOutStrength * AimRay.Forward, true );
+		ApplyRecoil();
+		PlayShootSound();
 	}
 
 
 	private void SuckedObject( IExtractionQuestEntity objectSucked) {
 		objectSucked.ToggleEnablePhysics( false );
 		objectSucked.GetRenderer().Enabled = false;
-		objectSucked.GetGameObject().SetParent( this.GameObject );
+		objectSucked.GetGameObject().SetParent( this.ViewModel );
+		objectSucked.GetGameObject().WorldPosition = this.CurrentViewModelComp.GetTracerOrigin().Position;
+		objectSucked.GetGameObject().WorldRotation = this.CurrentViewModelComp.GetTracerOrigin().Rotation;
+		Ammo++;
 		SuckedEntities.Push( objectSucked );
 	}
 
 	private void PrepareEntityForSpitOut(IExtractionQuestEntity entity)
 	{
 		entity.ToggleEnablePhysics( true );
-		entity.GetRenderer().Enabled = true;
 		entity.GetGameObject().SetParent( null );
-		entity.GetGameObject().WorldPosition = MuzzleSocket.WorldPosition;
-		entity.GetGameObject().WorldRotation = MuzzleSocket.WorldRotation;
+		entity.GetGameObject().WorldPosition = this.CurrentViewModelComp.GetTracerOrigin().Position;
+		entity.GetGameObject().WorldRotation = this.CurrentViewModelComp.GetTracerOrigin().Rotation;
+		entity.GetRenderer().Enabled = true;
 	}
 
-	public override void ChangeFireMode()
-	{
-		CurrentVacuumMode = (EVacuumGunMode) (CurrentVacuumMode.AsInt() + 1 > 1 ? 0 : CurrentVacuumMode.AsInt() + 1);
-		switch (CurrentVacuumMode)
-		{
-			case EVacuumGunMode.SUCKING:
-				ChangedToSuckMode();
-				break;
+	
 
-			case EVacuumGunMode.SPITTING:
-				ChangedToSpitOutMode();
-				break;
-		}
+	protected override void SecondaryAttack()
+	{
+		StopPrimaryAttack();
+		CurrentVacuumMode = EVacuumGunMode.SPITTING;
+
+		ChangedToSuckMode();
+
+		base.SecondaryAttack();
+		// ShootWeapon();
+	}
+
+	public override void StopPrimaryAttack()
+	{
+		ViewModel?.RunEvent<ViewModel>( x => x.OnStopAttack() );
+		base.StopPrimaryAttack();
+	}
+
+	public override void StopSecondaryAttack()
+	{
+		base.StopSecondaryAttack();
+		ViewModel?.RunEvent<ViewModel>( x => x.OnStopSecondaryAttack() );
 	}
 
 	private void ChangedToSuckMode()
@@ -200,7 +272,5 @@ public sealed class VacuumGun : Weapon
 	{
 
 	}
-
-	public bool IsVacuumFull() => SuckedEntities.Count == MaxBullets;
-	public bool IsVacuumEmpty() => SuckedEntities.Count == 0;
+	public bool IsVacuumFull() => Ammo == MaxBullets;
 }

@@ -71,6 +71,10 @@ public class WeaponModel : Component
 
 	public virtual void OnStopAttack() { }
 
+	public virtual void OnSecondaryAttack() { }
+
+	public virtual void OnStopSecondaryAttack() { }
+
 	public virtual void CreateRangedEffects( Weapon weapon, Vector3 hitPoint, Vector3? origin )
 	{
 

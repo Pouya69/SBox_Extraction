@@ -1,7 +1,7 @@
 using Sandbox;
 using System.Diagnostics;
 
-public sealed class ViewModel : WeaponModel, ICameraSetup
+public class ViewModel : WeaponModel, ICameraSetup
 {
 
 	/// <summary>

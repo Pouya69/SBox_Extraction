@@ -18,6 +18,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	[Property, Feature( "Weapon" ), Group( "References" )] protected PrefabScene BulletPrefab { get; set; }
 	[Property, Feature( "Weapon" ), Group( "References" )] protected PrefabScene WeaponViewModelPrefab;
 	public GameObject ViewModel { get; protected set; }
+	public ViewModel CurrentViewModelComp { get; protected set; }
 
 	[Property, Feature( "Weapon" ), Group( "References" )] protected GameObject MuzzleSocket;
 	[Property, Feature( "Weapon" ), Group( "References" ), RequireComponent] protected Collider WeaponCollider { get; set; }
@@ -162,7 +163,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	// public void PlayReloadAnimation() => WeaponRenderer.Set("b_reload", true);
 	// public void PlayShootAnimation() => WeaponRenderer.Set("b_attack", true);
 
-	public bool HasAmmo() => Ammo > 0;
+	public virtual bool HasAmmo() => Ammo > 0;
 	public bool HasReserveBulletsLeft() => ReserveBulletsLeft > 0;
 
 	public void ToggleWeaponPhysics(bool simulate)
@@ -255,8 +256,8 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 	protected virtual void InitializeBulletAndShoot( PobxBullet bullet )
 	{
-		var viewModel = ViewModel.GetComponent<WeaponModel>();
-		var bulletTransform = viewModel.GetTracerOrigin();
+		// var viewModel = ViewModel.GetComponent<WeaponModel>();
+		var bulletTransform = CurrentViewModelComp.GetTracerOrigin();
 
 		var bulletPos = bulletTransform.Position;
 
@@ -308,8 +309,15 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 			return;
 		}
 
+		var randPitch = Random.Shared.Float( BulletConfig.RecoilPitch.x, BulletConfig.RecoilPitch.y );
+
+		if ( Owner.Head.WorldRotation.Pitch() + randPitch >= 89.0f || Owner.Head.WorldRotation.Pitch() + randPitch <= -89.0f )
+		{
+			randPitch = 0;
+		}
+
 		Owner.Head.WorldRotation *= Rotation.From(new Angles(
-			Random.Shared.Float( BulletConfig.RecoilPitch.x, BulletConfig.RecoilPitch.y ),
+			randPitch,
 			Random.Shared.Float( BulletConfig.RecoilYaw.x, BulletConfig.RecoilYaw.y ),
 			0
 		));
@@ -377,7 +385,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		else if ( Input.Released( "Attack2" ) )
 		{
 			if ( HasSecondaryAttack )
-				SecondaryAttack();
+				StopSecondaryAttack();
 			else
 				StopAim();
 		}
@@ -437,11 +445,11 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		ViewModel.Enabled = true;
 		ViewModel.Tags.Add( "firstperson", "viewmodel" );
 
-		var viewModelComp = ViewModel.GetComponent<ViewModel>();
-		viewModelComp.Controller = GetComponentInParent<SourceMovement>( false, false );
+		CurrentViewModelComp = ViewModel.GetComponent<ViewModel>();
+		CurrentViewModelComp.Controller = GetComponentInParent<SourceMovement>( false, false );
 
-		if ( viewModelComp.IsValid() )
-			viewModelComp.Deploy();
+		if ( CurrentViewModelComp.IsValid() )
+			CurrentViewModelComp.Deploy();
 
 
 	}
@@ -453,6 +461,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 		ViewModel?.Destroy();
 		ViewModel = null;
+		CurrentViewModelComp = null;
 	}
 
 	protected override void AddedItemToInventory( PlayerInteractionComponent interactionComponent )
