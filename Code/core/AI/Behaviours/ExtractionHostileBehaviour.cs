@@ -5,7 +5,7 @@ namespace NPBehave;
 
 public class ExtractionHostileBehaviour : BaseBehaviourTree
 {
-	public ExtractionHostileBehaviour( MyAttemptAI owner ) : base( owner )
+	public ExtractionHostileBehaviour( PobxAI_Character owner ) : base( owner )
 	{
 		this.InitComposite( [
 			new Sequence(

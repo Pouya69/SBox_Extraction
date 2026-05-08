@@ -214,7 +214,8 @@ public sealed class PlayerInventoryComponent : Component
 
 		IsGadgetEquipped = false;
 
-		ActiveWeapon = PrimaryWeapon;
+		ActiveWeapon = SecondaryWeapon;
+		ActiveWeapon.EnableItem();
 	}
 
 	/// <summary>

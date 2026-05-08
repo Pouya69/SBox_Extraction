@@ -12,7 +12,7 @@ public sealed class TestOnly_AITargetStateTester : Component
 
 	[Property] private Collider collider { get; set; }
 	[Property] private ETestOnlyAITargetState StateToSetOnCollide { get; set; }
-	[Property] private MyAttemptAI TargetAI { get; set; }
+	[Property] private PobxAI_Character TargetAI { get; set; }
 	protected override void OnUpdate()
 	{
 

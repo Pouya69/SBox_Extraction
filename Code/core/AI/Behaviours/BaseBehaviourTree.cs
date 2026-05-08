@@ -7,9 +7,9 @@ namespace NPBehave;
 
 public class BaseBehaviourTree : Selector
 {
-	public MyAttemptAI Owner;
+	public PobxAI_Character Owner;
 
-	public BaseBehaviourTree( MyAttemptAI owner ) : base() {
+	public BaseBehaviourTree( PobxAI_Character owner ) : base() {
 		Owner = owner;
 		
 		// this.InitComposite( children );

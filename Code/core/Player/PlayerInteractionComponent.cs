@@ -84,6 +84,9 @@ public sealed class PlayerInteractionComponent : Component
 			if ( interactable == null)
 				interactable = FocusedInteractable.Parent.GetComponent<IInteractable>(); ;
 
+			if ( interactable == null )
+				return;
+
 			if (interactable.IsInteractable())
 			{
 				interactable.Interact( this );

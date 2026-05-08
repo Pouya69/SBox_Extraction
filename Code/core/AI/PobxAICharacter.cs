@@ -13,7 +13,7 @@ public enum ECharacterGroundMovementType
 	AIMING
 }
 
-public class MyAttemptAI : Component
+public class PobxAI_Character : Component
 {
 	public Root _behaviorTree { get; set; }
 
@@ -23,16 +23,18 @@ public class MyAttemptAI : Component
 	[Group( "Footsteps" )] [Property] private float FootstepVolume { get; set; } = 1.0f;
 	[Group( "Footsteps" )] [Property] private MixerHandle FootstepMixer { get; set; }
 	[Group( "Footsteps" )] [Property] private bool EnableFootstepSounds { get; set; } = true;
-	[Property] private SkinnedModelRenderer Renderer { get; set; }
-	[Property] private CitizenAnimationHelper _anim { get; set; }
-	[Property] private SkinnedModelRenderer _modelRenderer;
+	[Property, Feature( "Components" )] private SkinnedModelRenderer Renderer { get; set; }
+	[Property, Feature( "Components" )] private CitizenAnimationHelper _anim { get; set; }
+	[Property, Feature( "Components" )] private SkinnedModelRenderer _modelRenderer;
 	[Group( "AI" )][Property] public bool IsRunningBehaviour { get; private set; } = true;
-	[Group( "AI" )] [Property] public NavMeshAgent Agent { get; private set; }
-	[Group( "AI" )] [Property] public CharacterController AiController { get; private set; }
+	[Group( "AI" ), Feature( "Components" )] [Property] public NavMeshAgent Agent { get; private set; }
+	[Group( "AI" ), Feature( "Components" )] [Property] public CharacterController AiController { get; private set; }
 	[Group( "AI" )] [Property] private SplineComponent _PatrolPath { get; set; }
 	[Group( "AI" )] [Property] public float WaitTimeBetweenPoints { get; private set; } = 5;
 	[Group( "AI" )] [Property] private PrefabScene WeaponToSpawnWith { get; set; }
-	[Group( "AI" )][Property] public EnvironmentQueryHandler AIEnvironmentQueryHandler { get; private set; }
+	[Group( "AI" ), Feature( "Components" )][Property] public EnvironmentQueryHandler AIEnvironmentQueryHandler { get; private set; }
+	[Group( "AI" ), Feature("Components")][Property] public AI_SightComponent AI_SightComp { get; private set; }
+
 	[Group( "Character Movement" )][Property] public float RotationSpeed { get; private set; } = 5;
 	[Group( "Character Movement" )][Property] public float RotationSpeedInCombat { get; private set; } = 30.0f;
 	[Group( "Character Movement" )][Property] private float SprintSpeed { get; set; } = 320.0f;
@@ -48,6 +50,34 @@ public class MyAttemptAI : Component
 	private TimeSince _timeSinceStep;
 
 	private bool IsOnGround => AiController?.IsOnGround ?? true;
+
+
+	protected override void OnAwake()
+	{
+		ActionSystemComponent.OnDeath += OnAIDeath;
+		AI_SightComp.OnSensedObjectInSight += SensedObjectInSight;
+		AI_SightComp.OnSensedObjectOutOfSight += SensedObjectOutOfSight;
+	}
+
+	private void SensedObjectOutOfSight( GameObject objectOutOfSight )
+	{
+		Log.Warning( this.GameObject.Name + " forgot: " + objectOutOfSight.Name );
+	}
+
+	private void SensedObjectInSight( GameObject objectSpotted )
+	{
+		Log.Warning( this.GameObject.Name + " spotted: " + objectSpotted.Name );
+	}
+
+	protected override void OnDestroy()
+	{
+		ActionSystemComponent.OnDeath -= OnAIDeath;
+	}
+
+	private void OnAIDeath( GameObject whoDied )
+	{
+		
+	}
 
 	protected override void OnStart()
 	{
@@ -65,7 +95,7 @@ public class MyAttemptAI : Component
 		ChangeGroundMovementTypeSprint( ECharacterGroundMovementType.WALKING );
 		// _blackboard.Set( "ASimpleBool", true);
 
-		if ( WeaponToSpawnWith is not null )
+		if ( WeaponToSpawnWith.IsValid() )
 			GiveWeapon( WeaponToSpawnWith.Clone().GetComponent<Weapon>() );
 		/*_behaviorTree = new Root(_blackboard,
 			new Selector(
@@ -124,7 +154,7 @@ public class MyAttemptAI : Component
 	{
 		CurrentWeaponEquipped = weapon;
 		CurrentWeaponEquipped.ToggleWeaponPhysics( false );
-		CurrentWeaponEquipped.GameObject.Parent = WeaponAttachmentSocket;
+		CurrentWeaponEquipped.GameObject.SetParent( WeaponAttachmentSocket );
 		CurrentWeaponEquipped.WorldPosition = WeaponAttachmentSocket.WorldPosition;
 		CurrentWeaponEquipped.WorldRotation = WeaponAttachmentSocket.WorldRotation;
 		CurrentWeaponEquipped.WorldScale = WeaponAttachmentSocket.WorldScale;
