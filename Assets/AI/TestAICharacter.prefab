@@ -7,7 +7,7 @@
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
-    "Tags": "player",
+    "Tags": "",
     "Enabled": true,
     "NetworkMode": 2,
     "NetworkFlags": 0,
@@ -260,7 +260,7 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
-        "Tags": "",
+        "Tags": "pawn",
         "Enabled": true,
         "NetworkMode": 2,
         "NetworkFlags": 0,
@@ -2178,7 +2178,7 @@
             ]
           },
           {
-            "__guid": "6ca34673-a94d-44c2-9c5e-a04e18433b99",
+            "__guid": "81f0181d-21c5-494f-864b-e65236f553b3",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - hair_bobcut",
@@ -2195,7 +2195,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "5c9d8efa-5c08-4740-a298-dcadb3e47ab7",
+                "__guid": "983227f7-efde-4fc8-add2-5d0ef08c2674",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2247,7 +2247,7 @@
             "Children": []
           },
           {
-            "__guid": "f2e414c4-0691-4d55-a075-fd54452b6426",
+            "__guid": "ce43f75a-e643-4dfe-b926-0e6bf009c64c",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - denim_skirt_green",
@@ -2264,7 +2264,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "388153e0-3590-4a6f-81ba-509038527c2c",
+                "__guid": "ab31bea1-c530-4482-a80a-1e58768e6771",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2316,7 +2316,7 @@
             "Children": []
           },
           {
-            "__guid": "265ac9d4-8f8f-40fe-9dcd-792a303b5543",
+            "__guid": "a7ba4a8f-962c-410a-8281-d78bd7e702fe",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - tshirt",
@@ -2333,7 +2333,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "72ddf814-c242-4c43-af90-c41840889c20",
+                "__guid": "7508f6ae-1465-4587-a83c-98285d88a908",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2385,7 +2385,7 @@
             "Children": []
           },
           {
-            "__guid": "ade8a6f6-05c3-4ef9-a115-f7e4e463d190",
+            "__guid": "0a1a100b-4f0a-4c8d-bed9-4d023b921bc5",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - boxing_boots_blue",
@@ -2402,7 +2402,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "b3a1d238-1748-4847-86ba-efb91451f7a9",
+                "__guid": "f157476d-4d82-400c-8fe0-c95d5aa6a67d",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2454,7 +2454,7 @@
             "Children": []
           },
           {
-            "__guid": "66062b1d-5679-47e8-bb03-ab35ee9a8e20",
+            "__guid": "e6ac26b2-9790-4e99-ad5e-aa4a857d692b",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - wizard_beard",
@@ -2471,7 +2471,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "8f6c7354-b124-4720-b774-3f432af0d6f3",
+                "__guid": "7cfc315f-f7b4-4f28-8758-e387a055313f",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2564,7 +2564,7 @@
                 "Flags": 0,
                 "BoxSize": "50,50,50",
                 "Center": "0,0,0",
-                "ColliderFlags": "IgnoreTraces, IgnoreMass",
+                "ColliderFlags": "IgnoreMass",
                 "Elasticity": null,
                 "Friction": null,
                 "Height": 3000,
@@ -2595,7 +2595,7 @@
                 "__enabled": true,
                 "Flags": 0,
                 "AsyncNthObjectNextFrame": 7,
-                "CheckInterval": 0.5,
+                "CheckInterval": 0.3,
                 "collider": {
                   "_type": "component",
                   "component_id": "2d4ef445-0eb0-42e9-b9f8-979e7d0e06b1",
@@ -2607,8 +2607,13 @@
                   "go": "d362b7ea-c365-49a6-8cbb-2f7af1295598"
                 },
                 "DebugSightSystem": true,
-                "EachObjectHorizentalCastRange": "15,15",
-                "EachObjectVerticalCastRange": "45,30",
+                "EachObjectHorizentalCastRange": "30,30",
+                "EachObjectTraceAddition": 20,
+                "EachObjectVerticalCastRange": "53,20",
+                "EyeTransform": {
+                  "_type": "gameobject",
+                  "go": "fc1a2c5f-2570-4749-880e-4f12d9c233ad"
+                },
                 "OnComponentDestroy": null,
                 "OnComponentDisabled": null,
                 "OnComponentEnabled": null,

@@ -1,6 +1,6 @@
 using System;
 
-public class ActionSystemComponent : Component, Component.IDamageable
+public class ActionSystemComponent : Component
 {
 	public event Action<GameObject, GameObject, float, float> OnDamaged;
 	public event Action<GameObject, float, float> OnHealed;

@@ -5,7 +5,7 @@
     "Flags": 0,
     "Name": "vacuum gun_02",
     "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
+    "Rotation": "-0.0103154331,0.107700765,0.094782576,0.989601076",
     "Scale": "1,1,1",
     "Tags": "interaction",
     "Enabled": true,
@@ -27,10 +27,10 @@
           "AimConeBase": "0.5,0.25",
           "AimConeSpread": "3,3",
           "AimConeRecovery": 0.2,
-          "RecoilPitch": "-0.300000012,-0.100000001",
-          "RecoilYaw": "-0.100000001,0.100000001",
-          "CameraRecoilStrength": 1,
-          "CameraRecoilFrequency": 1,
+          "RecoilPitch": "-0.889999986,-0.389999956",
+          "RecoilYaw": "-0.289999992,-0.24000001",
+          "CameraRecoilStrength": 3.0299997,
+          "CameraRecoilFrequency": 1.02,
           "Range": 4096
         },
         "BulletPoolingComp": null,
@@ -40,8 +40,16 @@
         "CurrentCount": 1,
         "DebugWeaponActions": false,
         "DeployThrowStrength": 300,
-        "EntityReference": null,
-        "FireRate": 0.09999999,
+        "EntityReference": {
+          "Type": "Component",
+          "Value": {
+            "_type": "component",
+            "component_id": "7f0afada-54dd-4892-9ccb-aea409889807",
+            "go": "f901538b-6e94-4662-8704-e96ba0acccb7",
+            "component_type": "ExtractionQuestEntityComponent"
+          }
+        },
+        "FireRate": 0.39999986,
         "HasSecondaryAttack": true,
         "InventoryMaxStackSize": 1,
         "IronSightsFireScale": 0.2,

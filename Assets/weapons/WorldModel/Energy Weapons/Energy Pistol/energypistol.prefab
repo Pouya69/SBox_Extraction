@@ -47,6 +47,7 @@
         "CanBeDropped": true,
         "CurrentCount": 1,
         "DebugWeaponActions": false,
+        "DeployThrowStrength": 300,
         "EntityReference": {
           "Type": "Component",
           "Value": {

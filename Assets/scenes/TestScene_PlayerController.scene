@@ -360,14 +360,6 @@
         "PropertyOverrides": [
           {
             "Target": {
-              "Type": "GameObject",
-              "IdValue": "be8c7b4e-6439-439e-ad02-f8074e1daba5"
-            },
-            "Property": "Name",
-            "Value": "Hud"
-          },
-          {
-            "Target": {
               "Type": "Component",
               "IdValue": "cbb5587c-a722-4f20-8ea8-f8da1eaba511"
             },
@@ -410,8 +402,8 @@
               "Type": "Component",
               "IdValue": "d7ca216d-b164-492e-b1ab-2f5d6153fbc4"
             },
-            "Property": "DeployThrowStrength",
-            "Value": 300
+            "Property": "ItemWorldModelPrefab",
+            "Value": null
           },
           {
             "Target": {
@@ -457,6 +449,38 @@
             },
             "Property": "Position",
             "Value": "137.714508,560.969238,32.0105438"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "5d4f5fb1-a708-4b1f-bbde-a868c9bcda6d"
+            },
+            "Property": "BulletPrefab",
+            "Value": null
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "5d4f5fb1-a708-4b1f-bbde-a868c9bcda6d"
+            },
+            "Property": "ItemWorldModelPrefab",
+            "Value": null
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "5d4f5fb1-a708-4b1f-bbde-a868c9bcda6d"
+            },
+            "Property": "WeaponViewModelPrefab",
+            "Value": null
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "003edcfe-9f58-4f41-ad5a-a453ecf4b29a"
+            },
+            "Property": "BulletPrefab",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -1141,7 +1165,7 @@
                                     {
                                       "TimeRange": "0,3240",
                                       "SampleRate": 30,
-                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfQebS+3m8F/gZbh31T2Y68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX9q6Fn5HK49/xku7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwDQt9OifAAAAA=="
+                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfgfHKegbGM/sZGE/cZ2A68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX8q35F8hsCj63Mu7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwAL05myfAAAAA=="
                                     }
                                   ]
                                 }
@@ -1510,7 +1534,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "550c3800-32f8-47e6-ae1c-0a94aed31784": "f0599520-4037-46be-8523-79d60575dd5a"
+        "29308bc6-17e4-47e4-8fd3-d0fa061bd512": "e3153c09-5662-4504-bb72-84fc2777a662"
       }
     },
     {
@@ -1565,15 +1589,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "dad3591a-f355-40d2-a6ec-15b272f4b617": "2460b1e9-7ee4-4a38-ac95-57125f0966f2",
-        "5674a111-7ef0-45f5-b8d6-a5520ebae11d": "83267ba3-1dcb-4d62-9ff7-baf15c72d0e8",
-        "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265": "6bad088a-7afc-450a-9fb7-41ea5a6d1406",
-        "7a6dc223-b091-4330-af61-77410fae0e2d": "d3ed03db-63c9-469e-b969-cb63452cf3a7",
-        "01bcf550-4e2a-45a5-a65b-cf4288677aa5": "7b17fa34-e572-4f6f-9bf5-ae1af5d3e1cf",
-        "a9422eed-40bc-4336-9270-153e5c5f28bd": "3a24d387-d49a-4b2b-ae4e-5aebdff9c4ff",
-        "cc5fcbfc-23f6-4a08-ac69-0e6affb2efa1": "e1582223-297b-456a-b536-bac897a5b6be",
-        "9017c026-053a-4cf9-b9b2-8e62381ad142": "26954203-cdc9-44cf-9045-7bd2609afa12",
-        "7e453cce-4d25-48af-9f9d-095eca364a72": "5b90b7d1-69ef-49e6-a700-7e56e0f5027a"
+        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "51f00986-7b78-4ffb-821c-0c23d52e10b5"
       }
     },
     {
@@ -1636,15 +1652,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "dad3591a-f355-40d2-a6ec-15b272f4b617": "104d528c-84b2-4dda-b36a-a751445dc907",
-        "5674a111-7ef0-45f5-b8d6-a5520ebae11d": "c68a0387-588a-43f6-a0b6-a8a73f5bf8af",
-        "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265": "8e2026ad-6eca-4885-a1ea-38db45c64238",
-        "7a6dc223-b091-4330-af61-77410fae0e2d": "82918ccc-c864-4eb4-bbfd-f3fd051a4b16",
-        "01bcf550-4e2a-45a5-a65b-cf4288677aa5": "dfadbc30-7d8f-43d9-99d5-2c58158a0e03",
-        "a9422eed-40bc-4336-9270-153e5c5f28bd": "7a23d8c9-ead3-4bbb-b936-785eb5d6eba9",
-        "cc5fcbfc-23f6-4a08-ac69-0e6affb2efa1": "0f0e779b-9c3d-4e6b-b26c-17e5a1d22cbd",
-        "9017c026-053a-4cf9-b9b2-8e62381ad142": "83cd6cfc-e146-4424-9fa1-73d98cf3a9bb",
-        "7e453cce-4d25-48af-9f9d-095eca364a72": "3e8a98fd-97f0-4fac-a212-18f4ef8a43fb"
+        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "bc2589d8-6305-45c6-a8f8-8054d86ba0bc"
       }
     },
     {
@@ -1707,15 +1715,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "dad3591a-f355-40d2-a6ec-15b272f4b617": "01475f0c-a48c-423e-b0c1-d20f85c14550",
-        "5674a111-7ef0-45f5-b8d6-a5520ebae11d": "6ed57e20-32b4-4b6a-9249-a8f92cfaa6db",
-        "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265": "50173517-d1ca-4b05-9f37-c73cd6ec5717",
-        "7a6dc223-b091-4330-af61-77410fae0e2d": "10af292d-8259-4d62-86ab-3ae38fef31be",
-        "01bcf550-4e2a-45a5-a65b-cf4288677aa5": "c782050e-ee3b-4834-86e2-d2d5fb188536",
-        "a9422eed-40bc-4336-9270-153e5c5f28bd": "85d1ee60-9ae0-4952-ba5d-f3c44bd4fe10",
-        "cc5fcbfc-23f6-4a08-ac69-0e6affb2efa1": "8ca874f5-31d7-4d5e-b974-6996ec40c0d1",
-        "9017c026-053a-4cf9-b9b2-8e62381ad142": "90d9207b-efb1-4b94-adfc-e838201214b5",
-        "7e453cce-4d25-48af-9f9d-095eca364a72": "29fe3506-7349-4a4c-8922-b3a40f5c23f1"
+        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "729e2725-cea5-4d22-9c73-20173a39492b"
       }
     },
     {
@@ -1778,15 +1778,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "dad3591a-f355-40d2-a6ec-15b272f4b617": "5999c4ad-78ca-4595-9c10-415e72432108",
-        "5674a111-7ef0-45f5-b8d6-a5520ebae11d": "80b528de-1fb7-41cf-b0ad-4d285842f2b2",
-        "f2a3f76e-dc90-48d9-8b61-03dc5f7f5265": "6eca3f7f-3be7-4ada-99f1-adf4191248dc",
-        "7a6dc223-b091-4330-af61-77410fae0e2d": "db9e0edf-981f-4392-a57f-6a0c8e738d50",
-        "01bcf550-4e2a-45a5-a65b-cf4288677aa5": "5d0842b1-a818-4180-a99f-cad219570c4c",
-        "a9422eed-40bc-4336-9270-153e5c5f28bd": "191cd9e2-9a73-405d-9a01-b7a20b62b369",
-        "cc5fcbfc-23f6-4a08-ac69-0e6affb2efa1": "4c79f27f-fcc3-4487-9787-bd34c3cbb7aa",
-        "9017c026-053a-4cf9-b9b2-8e62381ad142": "28a8e48f-0249-4292-8d83-b9c071db4ffe",
-        "7e453cce-4d25-48af-9f9d-095eca364a72": "0a55e902-a761-4aeb-9766-cf295c2e0959"
+        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "a8282b2f-aaee-49bf-8548-dd92cdf16a84"
       }
     },
     {
@@ -1804,6 +1796,23 @@
             },
             "Property": "Position",
             "Value": "449.387299,167.18721,32.1343498"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "72e5f52c-d730-47f9-94c6-fdb8721f38c6"
+            },
+            "Property": "ContainerItems",
+            "Value": [
+              {
+                "Amount": 4,
+                "ObjectPrefab": null
+              },
+              {
+                "Amount": 300,
+                "ObjectPrefab": null
+              }
+            ]
           }
         ],
         "MovedObjects": []
@@ -1841,14 +1850,14 @@
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
       },
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "1508a031-335e-47a8-ac87-12b89c8d041c"
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
         }
       }
     }

@@ -81,7 +81,7 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 				DebugOverlay.Line( new Line( EyeTransform.WorldPosition, (objectPos + Vector3.Down * EachObjectVerticalCastRange.y) ), traceResultDown.Hit && traceResultDown.GameObject.Equals(objectInCollider) ? Color.Green : Color.Red, CheckInterval );
 			}
 
-			if ( await IsObjectInSightFromTraceResult(objectInCollider, i,  traceResult, traceResultUp, traceResultRight, traceResultLeft, traceResultDown) )
+			if ( IsObjectInSightFromTraceResult(objectInCollider, i,  traceResult, traceResultUp, traceResultRight, traceResultLeft, traceResultDown) )
 			{
 				// In Sight.
 			}
@@ -104,7 +104,7 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 		IsAlreadyChecking = false;
 	}
 
-	private async Task<bool> IsObjectInSightFromTraceResult(GameObject objectInCollider, int IndexInList, params SceneTraceResult[] traceResults)
+	private bool IsObjectInSightFromTraceResult(GameObject objectInCollider, int IndexInList, params SceneTraceResult[] traceResults)
 	{
 		foreach ( var traceResult in traceResults ) {
 			if ( traceResult.Hit && traceResult.GameObject.Equals( objectInCollider ) )
