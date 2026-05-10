@@ -35,11 +35,13 @@ public class PobxAI_Character : Component
 	[Group( "AI" ), Feature( "Components" )][Property] public EnvironmentQueryHandler AIEnvironmentQueryHandler { get; private set; }
 	[Group( "AI" ), Feature("Components")][Property] public AI_SightComponent AI_SightComp { get; private set; }
 
-	[Group( "Character Movement" )][Property] public float RotationSpeed { get; private set; } = 5;
-	[Group( "Character Movement" )][Property] public float RotationSpeedInCombat { get; private set; } = 30.0f;
-	[Group( "Character Movement" )][Property] private float SprintSpeed { get; set; } = 320.0f;
-	[Group( "Character Movement" )][Property] private float NormalSpeed { get; set; } = 110.0f;
-	[Group( "Character Movement" )] [Property] private float AimingSpeed { get; set; } = 50.0f;
+
+
+	[Feature( "Character Movement" )][Property] public float RotationSpeed { get; private set; } = 5;
+	[Feature( "Character Movement" )][Property] public float RotationSpeedInCombat { get; private set; } = 30.0f;
+	[Feature( "Character Movement" )][Property] private float SprintSpeed { get; set; } = 320.0f;
+	[Feature( "Character Movement" )][Property] private float NormalSpeed { get; set; } = 110.0f;
+	[Feature( "Character Movement" )] [Property] private float AimingSpeed { get; set; } = 50.0f;
 	public ECharacterGroundMovementType CurrentGroundMovementType { get; private set; }
 	private Weapon CurrentWeaponEquipped { get; set; }
 	private GameObject LookAtObject;
@@ -67,6 +69,9 @@ public class PobxAI_Character : Component
 	private void SensedObjectInSight( GameObject objectSpotted )
 	{
 		Log.Warning( this.GameObject.Name + " spotted: " + objectSpotted.Name );
+
+		if (!IsHostile())
+			DetectedHostile( objectSpotted );
 	}
 
 	protected override void OnDestroy()
@@ -360,7 +365,8 @@ private void OnFootstepEvent( SceneModel.FootstepEvent e )
 	public void Shoot()
 	{
 		_modelRenderer.Set( "b_attack", true );
-		Log.Info( "SHOOT!" );
+		CurrentWeaponEquipped.Shoot();
+		// Log.Info( "SHOOT!" );
 	}
 	
 	public bool IsAIInMovement()

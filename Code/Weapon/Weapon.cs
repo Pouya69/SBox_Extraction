@@ -257,7 +257,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	protected virtual void InitializeBulletAndShoot( PobxBullet bullet )
 	{
 		// var viewModel = ViewModel.GetComponent<WeaponModel>();
-		var bulletTransform = CurrentViewModelComp.GetTracerOrigin();
+		var bulletTransform = CurrentViewModelComp?.GetTracerOrigin() ?? MuzzleSocket.WorldTransform;
 
 		var bulletPos = bulletTransform.Position;
 
@@ -300,7 +300,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	{
 		if ( !HasOwner )
 		{
-			if ( ShootForce > 0.0f && GetComponent<Rigidbody>( true ) is var rb )
+			if ( ShootForce > 0.0f && GetComponent<Rigidbody>( true ) is var rb && rb.IsValid() )
 			{
 				// physical recoil for AI and other stuff.
 				var muzzle = WorldModel?.GetComponent<WeaponModel>()?.MuzzleTransform.WorldTransform ?? (MuzzleSocket?.WorldTransform ?? WorldTransform);
