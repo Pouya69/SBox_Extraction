@@ -9,6 +9,8 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 	[Property] private GameObject EyeTransform { get; set; }
 	[Property] private bool DebugSightSystem { get; set; } = false;
 
+	[Property] private ActionSystemComponent ActionSystemComponent { get; set; }
+
 	/// <summary>
 	/// How much up and down cast should be far from the game object?
 	/// First is up, second is down
@@ -176,6 +178,7 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 
 	protected override void OnDisabled()
 	{
+		if ( !this.ActionSystemComponent.IsAlive() ) return;
 		this.GameObject.Enabled = false;
 		collider.Enabled = false;
 		ForgetAllObjects();
@@ -192,6 +195,16 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 	protected override void OnAwake()
 	{
 		TimeUntilAISenseCheck = CheckInterval;
+		ActionSystemComponent.OnDeath += OnDeath;
 	}
-	
+
+	protected override void OnDestroy()
+	{
+		ActionSystemComponent.OnDeath -= OnDeath;
+	}
+
+	private void OnDeath( GameObject obj )
+	{
+		this.Destroy();
+	}
 }

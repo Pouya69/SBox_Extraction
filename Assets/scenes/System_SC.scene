@@ -1,0 +1,71 @@
+{
+  "__guid": "c1609bc1-5320-481d-84b0-c53e58c97ac6",
+  "GameObjects": [
+    {
+      "__guid": "c4075e67-1c1b-4bf9-b27a-2c0a0c219b40",
+      "__version": 2,
+      "__Prefab": "scenes/barney levels/asdadas/hud.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "c9edb890-ef46-4cdf-800d-9586a952b0c4"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "be8c7b4e-6439-439e-ad02-f8074e1daba5": "c4075e67-1c1b-4bf9-b27a-2c0a0c219b40",
+        "cbb5587c-a722-4f20-8ea8-f8da1eaba511": "eb89865f-3c46-4678-9ecb-f3515b2d9d56",
+        "1ad086f1-caae-4407-bfc5-5cada4e28587": "1cc89971-6575-4e74-b76f-d39a5691a9d2",
+        "c9edb890-ef46-4cdf-800d-9586a952b0c4": "fbfa8cfd-9a4e-41a2-b974-a5ce41db449a"
+      }
+    }
+  ],
+  "SceneProperties": {
+    "NetworkInterpolation": true,
+    "TimeScale": 1,
+    "WantsSystemScene": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": false,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": "",
+      "DeferGeneration": false,
+      "CustomBounds": false
+    },
+    "GameObjectSystems": {
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "caf70d62-7cfd-4d4a-8434-79f7affff740"
+        }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      }
+    }
+  },
+  "ResourceVersion": 3,
+  "Title": null,
+  "Description": null,
+  "__references": [],
+  "__version": 3
+}

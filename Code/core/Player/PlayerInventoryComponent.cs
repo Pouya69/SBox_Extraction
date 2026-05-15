@@ -1,32 +1,29 @@
 using Conna.Inventory;
 
-public sealed class PlayerInventoryComponent : Component
+public sealed class PlayerInventoryComponent : Component, Global.IPlayerEvents
 {
 	[Property, RequireComponent, Feature( "Components" )] private PobxPlayer Player { get; set; }
-	[Property, RequireComponent, Feature( "Components" )] private PobxPlayerInventoryHud InventoryHud { get; set; }
+	public PobxPlayerInventoryHud InventoryHud => Player?.InventoryHud;
 
-	[Property, RequireComponent, Feature( "Inventory" ), Group( "Config" )] public PobxPlayerInventory Inventory { get; private set; }
+	[Property, Feature( "Inventory" ), Group( "Config" )] public PobxPlayerInventory Inventory => Player?.PlayerState?.PlayerInventory;
 	[Property, Feature( "Inventory" ), Group( "Config" )] private Vector2Int InventoryStorageSize = new( 3, 3 );
 	[Property, Feature( "Inventory" ), Group("Config")] private InventorySlotMode InventorySlotMode = InventorySlotMode.Single;
 
 	[Property, Feature( "Inventory" ), Group( "Drop" )] public float DropDistanceFromCameraForward { get; private set; } = 10.0f;
 	[Property, Feature( "Inventory" ), Group( "Drop" )] private float DropScanRadius = 30.0f;
 
-	public Weapon PrimaryWeapon { get; private set; }
-	public Weapon SecondaryWeapon { get; private set; }
 
-	public Weapon ActiveWeapon { get; private set; }
-	public GadgetBase Gadget { get; private set; }
+	public VacuumGun VacuumGun => Inventory.VacuumGun;
+	public EnergyPistolWeapon PistolWeapon => Inventory.PistolWeapon;
+
+
+	public Weapon ActiveWeapon { get; set; }
+	public GadgetBase Gadget => Inventory.Gadget;
 
 	public bool IsGadgetEquipped { get; private set; } = false;
 
-	protected override void OnAwake()
+	protected override void OnStart()
 	{
-		Inventory = new PobxPlayerInventory( Id, InventoryStorageSize.x, InventoryStorageSize.y, InventorySlotMode );
-		if (!InventoryHud.IsValid())
-			InventoryHud = Scene.Get<PobxPlayerInventoryHud>();
-
-		SubscribeToInventoryEvents();
 		
 	}
 
@@ -44,22 +41,22 @@ public sealed class PlayerInventoryComponent : Component
 
 		if (Input.Pressed( "Slot1" ) )
 		{
-			SwitchToPrimaryWeapon();
+			SwitchToSlot( 1 );
 		}
 		else if ( Input.Pressed( "Slot2" ) )
 		{
-			SwitchToSecondaryWeapon();
+			SwitchToSlot( 2 );
 		}
 		else if ( Input.Pressed( "Slot3" ) )
-			SwitchToSlot3OrMore( 3 );
+			SwitchToSlot( 3 );
 		else if ( Input.Pressed( "Slot4" ) )
-			SwitchToSlot3OrMore( 4 );
+			SwitchToSlot( 4 );
 		else if ( Input.Pressed( "Slot5" ) )
-			SwitchToSlot3OrMore( 5 );
+			SwitchToSlot( 5 );
 		else if ( Input.Pressed( "Slot6" ) )
-			SwitchToSlot3OrMore( 6 );
+			SwitchToSlot( 6 );
 		else if ( Input.Pressed( "Slot7" ) )
-			SwitchToSlot3OrMore( 7 );
+			SwitchToSlot( 7 );
 
 
 		if ( IsGadgetEquipped )
@@ -84,10 +81,16 @@ public sealed class PlayerInventoryComponent : Component
 		{
 			if ( (item.InventoryGrabbableReference as Weapon) is var weapon && weapon.IsValid())
 			{
-				if (!PrimaryWeapon.IsValid())
-					PrimaryWeapon = weapon;
-				else if (!SecondaryWeapon.IsValid())
-					SecondaryWeapon = weapon;
+				if ( (weapon as EnergyPistolWeapon) is var pistol && pistol.IsValid() )
+				{
+					if ( !PistolWeapon.IsValid() )
+						Inventory.PistolWeapon = pistol;
+				}
+				else if ( (weapon as VacuumGun) is var vacuum && vacuum.IsValid() )
+				{
+					if ( !VacuumGun.IsValid() )
+						Inventory.VacuumGun = vacuum;
+				}
 				Log.Info( "Added Weapon" );
 			}
 			else if ( (item.InventoryGrabbableReference as GadgetBase) is var gadget && gadget.IsValid() )
@@ -96,7 +99,7 @@ public sealed class PlayerInventoryComponent : Component
 				{
 					Log.Info( "Gadget" );
 
-					Gadget = gadget;
+					Inventory.Gadget = gadget;
 					Gadget.InitializeGadget( this.Player );
 				}
 				else
@@ -134,15 +137,26 @@ public sealed class PlayerInventoryComponent : Component
 			return;
 		}
 
-		Vector3 startPos = Player.Camera.WorldPosition;
+		if ( !Player.IsValid() )
+		{
+			return;
+		}
+
+		Vector3 startPos = Player.Head.WorldPosition;
 		Vector3 projectedSpawnPos = startPos + Player.EyeTransform.Forward * DropDistanceFromCameraForward;
+
+		// DebugOverlay.Line(new Line( startPos, projectedSpawnPos ), Color.Red, 9.0f);
+
 
 		// We check so that if we hit something, we don't spawn behind the wall or smth.
 
 		var traceResult = Scene.Trace.Sphere( DropScanRadius, startPos, projectedSpawnPos ).IgnoreGameObjectHierarchy( Player.GameObject ).UseHitPosition( true ).Run();
 
 		if ( traceResult.Hit )
+		{
+			// DebugOverlay.Sphere( new Sphere( traceResult.HitPosition, 10.0f ), Color.Red, 9.0f );
 			projectedSpawnPos = traceResult.HitPosition;
+		}
 
 
 		Rotation spawnRot = Rotation.Identity;
@@ -156,10 +170,16 @@ public sealed class PlayerInventoryComponent : Component
 		}
 		else
 		{
-			item.InventoryGrabbableReference.GameObject.SetParent( null );
 			item.InventoryGrabbableReference.WorldPosition = projectedSpawnPos;
 			item.InventoryGrabbableReference.WorldRotation = spawnRot;
+
+			item.InventoryGrabbableReference.GameObject.SetParent( null );
 			item.InventoryGrabbableReference.ItemRemovedFromInventory(this.Player);
+
+			item.InventoryGrabbableReference.WorldPosition = projectedSpawnPos;
+			item.InventoryGrabbableReference.WorldRotation = spawnRot;
+
+
 		}
 		
 		
@@ -182,54 +202,43 @@ public sealed class PlayerInventoryComponent : Component
 		Inventory.OnItemAdded -= OnItemAddedToInventory;
 	}
 
-	public void SwitchToPrimaryWeapon()
+	/// <summary>
+	/// Must be more than 2
+	/// </summary>
+	/// <param name="slotNumber"></param>
+	public void SwitchToSlot(int slotNumber)
 	{
-		if (IsGadgetEquipped)
-		{
-			Gadget.DisableItem();
+		switch ( slotNumber ) {
+			case 1:
+				SwitchToWeapon();
+				ActiveWeapon = PistolWeapon;
+				ActiveWeapon?.EnableItem();
+				break;
+
+			case 2:
+				SwitchToWeapon();
+				ActiveWeapon = VacuumGun;
+				ActiveWeapon?.EnableItem();
+				break;
+
+			case 5:
+				SwitchToGadget();
+				break;
 		}
-
-		IsGadgetEquipped = false;
-
-		if (ActiveWeapon.IsValid())
-		{
-			ActiveWeapon.DisableItem();
-		}
-
-		ActiveWeapon = PrimaryWeapon;
-		ActiveWeapon.EnableItem();
 	}
 
-	public void SwitchToSecondaryWeapon()
+	private void SwitchToWeapon()
 	{
 		if ( IsGadgetEquipped )
 		{
 			Gadget.DisableItem();
 		}
 
+		IsGadgetEquipped = false;
+
 		if ( ActiveWeapon.IsValid() )
 		{
 			ActiveWeapon.DisableItem();
-		}
-
-		IsGadgetEquipped = false;
-
-		ActiveWeapon = SecondaryWeapon;
-		ActiveWeapon.EnableItem();
-	}
-
-	/// <summary>
-	/// Must be more than 2
-	/// </summary>
-	/// <param name="slotNumber"></param>
-	public void SwitchToSlot3OrMore(int slotNumber)
-	{
-		if ( slotNumber <= 2 ) return;
-
-		switch ( slotNumber ) {
-			case 3:
-				SwitchToGadget();
-				break;
 		}
 	}
 
@@ -237,7 +246,7 @@ public sealed class PlayerInventoryComponent : Component
 	{
 		IsGadgetEquipped = false;
 		Gadget.DisableItem();
-		Gadget = null;
+		Inventory.Gadget = null;
 	}
 
 	private void SwitchToGadget()
@@ -257,6 +266,24 @@ public sealed class PlayerInventoryComponent : Component
 		}
 
 		Gadget.EnableItem();
+	}
+
+	void Global.IPlayerEvents.OnPlayerSpawned()
+	{
+		if ( Player?.PlayerState?.PlayerInventory == null)
+			Player?.PlayerState?.PlayerInventory = new PobxPlayerInventory( Id, InventoryStorageSize.x, InventoryStorageSize.y, InventorySlotMode );
+		else
+		{
+			
+		}
+
+		InventoryHud.PlayerInitialized();
+		SubscribeToInventoryEvents();
+	}
+
+	void Global.IPlayerEvents.OnPlayerDied()
+	{
+		ActiveWeapon?.DisableItem();
 	}
 
 }

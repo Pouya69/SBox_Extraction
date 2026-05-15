@@ -48,7 +48,7 @@ public class ActionSystemComponent : Component
 
 	public virtual void ApplyDamage(GameObject Attacker, float Damage)
 	{
-		Log.Info( "Applying damage..." );
+		// Log.Info( "Applying damage..." );
 		if ( Damage > 0.0f )
 		{
 			// Damaged.
@@ -83,7 +83,7 @@ public class ActionSystemComponent : Component
 	
 	protected override void OnStart()
 	{
-		Health = MaxHealth;
+		_health = MaxHealth;
 		Damage = BaseDamage;
 	}
 

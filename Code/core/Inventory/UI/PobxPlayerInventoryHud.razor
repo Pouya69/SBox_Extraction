@@ -4,16 +4,15 @@
 @inherits PanelComponent
 @namespace Conna.Inventory
 
-@if (Inventory is null)
+@if (Player.InventoryComponent.Inventory is null)
 	return;
 
 <root>
-	<PobxPlayerInventoryPanel @ref="InventoryPanelRef" Title="Inventory" Inventory="@Inventory" />
+	<PobxPlayerInventoryPanel @ref="InventoryPanelRef" Title="Inventory" Inventory="@Player.InventoryComponent.Inventory" />
 </root>
 
 @code {
 	private PobxPlayer Player { get; set; }
-	private PobxPlayerInventory Inventory { get; set; }
 	private PobxPlayerInventoryPanel InventoryPanelRef { get; set; }
 
 	protected override void OnTreeFirstBuilt()
@@ -33,12 +32,23 @@
 
 	protected override void OnStart()
 	{
+		/*
 		Player = Scene.Get<PobxPlayer>();
 		Inventory = Player.InventoryComponent.Inventory;
 
 		Assert.True(Player.IsValid());
 
 		Assert.True(Inventory != null);
+		*/
+	}
+
+	public void PlayerInitialized()
+	{
+		Player = PobxPlayer.FindLocalPlayer();
+
+		Assert.True(Player.IsValid());
+		
+			// Assert.True(Inventory != null);
 	}
 
 	public void HandleInput()

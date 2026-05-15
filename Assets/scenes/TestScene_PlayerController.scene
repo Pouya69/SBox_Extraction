@@ -297,7 +297,9 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "OverrideMassCenter": false,
+          "PreciseContacts": false,
           "RigidbodyFlags": 0,
+          "SleepThreshold": 2,
           "StartAsleep": false
         }
       ],
@@ -536,7 +538,36 @@
       "__version": 2,
       "__Prefab": "player/sbe_player.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "df1159f1-ab5e-40dc-b21e-728af2150a57"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "547a8582-d6c3-4218-bbf9-8a9a2bd7d92b"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Conna.Inventory.PobxPlayerInventoryHud",
+              "__guid": "df1159f1-ab5e-40dc-b21e-728af2150a57",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -548,7 +579,24 @@
             "Value": "220.618561,570.473877,48"
           }
         ],
-        "MovedObjects": []
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "fa1dd5e5-2a48-4767-9b0c-9e61c5056b5e"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "b352dd5f-3913-4e13-bab9-73db91d44acf"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "df1159f1-ab5e-40dc-b21e-728af2150a57"
+            }
+          }
+        ]
       },
       "__PrefabIdToInstanceId": {
         "b352dd5f-3913-4e13-bab9-73db91d44acf": "854057e4-4783-4329-9c77-e7cb1999476f",
@@ -567,14 +615,9 @@
         "a93420e5-402a-44b5-bf52-75a4bf2b044e": "874027f6-5a06-41f2-b0a7-3198e2a09167",
         "f34d4196-12b7-48bf-90e9-21ee18233ea1": "7c3d4958-7017-4431-bca5-b90813cbcd0f",
         "87639332-8b40-4158-9bb7-add1baff564d": "33d4ceb9-dee6-4521-b46e-99bb7c055c38",
-        "3631bc5f-3313-40f7-9416-ae6cdb207908": "00a1860e-6307-42bd-b9bb-b7aef6ce1ac5",
-        "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14": "bac6a0c4-80dc-4a3a-bfc6-503c22c79385",
-        "015c545e-6bad-4bf7-b027-15f53f1d0a62": "a7e28e55-6a4d-4998-85a8-e6485f88ab40",
-        "e9e40d73-4dab-49ce-9ecf-7f1961ee984f": "126a6637-8bcc-47a4-8bbf-c43d468e3875",
-        "ab9d8442-678a-4b43-b685-a7036fc71d20": "13ede155-488a-4811-b4cc-5c079a54fb59",
-        "90ec2447-a5f0-40d8-8238-64631ae4d508": "af50f47b-d12e-475a-bacb-948ea8a86a95",
+        "fa1dd5e5-2a48-4767-9b0c-9e61c5056b5e": "b640156a-56fe-4cd5-abbe-8794a23f11bd",
         "9fecde9f-8b24-4c1c-8abf-a4e81bf1b271": "f378b829-67bf-44f0-ae8f-4426a5b8b080",
-        "304c9354-d2ac-4038-9346-24f339392e9a": "1081b9d3-a579-4391-ba5b-b9ec21fd3956",
+        "547a8582-d6c3-4218-bbf9-8a9a2bd7d92b": "eb6ca43e-f006-48b5-b8c2-7f532862da11",
         "305c7f42-4d82-49bb-b78e-ee60b83c2433": "2b017d92-0254-47f0-afa0-d217960f835c"
       }
     },
@@ -677,7 +720,9 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "OverrideMassCenter": false,
+          "PreciseContacts": false,
           "RigidbodyFlags": 0,
+          "SleepThreshold": 2,
           "StartAsleep": false
         }
       ],
@@ -803,7 +848,9 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "OverrideMassCenter": false,
+          "PreciseContacts": false,
           "RigidbodyFlags": 0,
+          "SleepThreshold": 2,
           "StartAsleep": false
         }
       ],
@@ -929,7 +976,9 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "OverrideMassCenter": false,
+          "PreciseContacts": false,
           "RigidbodyFlags": 0,
+          "SleepThreshold": 2,
           "StartAsleep": false
         }
       ],
@@ -1055,7 +1104,9 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "OverrideMassCenter": false,
+          "PreciseContacts": false,
           "RigidbodyFlags": 0,
+          "SleepThreshold": 2,
           "StartAsleep": false
         }
       ],
@@ -1165,7 +1216,7 @@
                                     {
                                       "TimeRange": "0,3240",
                                       "SampleRate": 30,
-                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfgfHKegbGM/sZGE/cZ2A68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX8q35F8hsCj63Mu7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwAL05myfAAAAA=="
+                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfQebS+3m8F/gZbh31T2Y68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX9q6Fn5HK49/xku7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwDQt9OifAAAAA=="
                                     }
                                   ]
                                 }
@@ -1483,7 +1534,9 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "OverrideMassCenter": false,
+          "PreciseContacts": false,
           "RigidbodyFlags": 0,
+          "SleepThreshold": 2,
           "StartAsleep": false
         },
         {
@@ -1534,7 +1587,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "29308bc6-17e4-47e4-8fd3-d0fa061bd512": "e3153c09-5662-4504-bb72-84fc2777a662"
+        "eb1e91bf-b840-4615-a76e-6ed50768ce56": "939c14eb-7c2c-4ec4-9e71-bf8dcab27c9e"
       }
     },
     {
@@ -1589,7 +1642,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "51f00986-7b78-4ffb-821c-0c23d52e10b5"
+        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "d912082d-0b69-477c-bcf5-adc7a3b1211a"
       }
     },
     {
@@ -1652,7 +1705,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "bc2589d8-6305-45c6-a8f8-8054d86ba0bc"
+        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "f2d6f2cd-5b1d-437a-b0ef-5f49e60efd29"
       }
     },
     {
@@ -1715,7 +1768,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "729e2725-cea5-4d22-9c73-20173a39492b"
+        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "4db14edc-1ea4-4887-b409-9e97f0d168e7"
       }
     },
     {
@@ -1778,7 +1831,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "985f7e53-7b3b-4eff-8936-b9041acf3bde": "a8282b2f-aaee-49bf-8548-dd92cdf16a84"
+        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "4f880dba-246e-475b-a070-c6e89ca05947"
       }
     },
     {
@@ -1847,13 +1900,13 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "1508a031-335e-47a8-ac87-12b89c8d041c"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {

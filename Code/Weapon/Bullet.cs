@@ -106,6 +106,9 @@ public sealed class PobxBullet : Component, Component.ICollisionListener
 
 	void ICollisionListener.OnCollisionStart( Collision collision )
 	{
+		if ( (this.BelongsToWeapon.HasOwner && collision.Other.GameObject.Equals(this.BelongsToWeapon.Owner.GameObject))
+			|| collision.Other.GameObject.Equals( this.BelongsToWeapon.GameObject.Parent ) ) return;
+
 		DamageInfo damageInfo = new( Damage, BelongsToWeapon.GameObject.Parent, BelongsToWeapon.GameObject )
 		{
 			Position = collision.Contact.Point,

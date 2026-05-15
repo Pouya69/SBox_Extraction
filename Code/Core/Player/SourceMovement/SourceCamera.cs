@@ -27,6 +27,8 @@ public class SourceCamera : Component {
 			return;
 		}
 
+		// if ( !Player.IsInputEnabled ) return;
+
 		var eyeAngles = Head.WorldRotation.Angles();
 		eyeAngles.pitch += Input.MouseDelta.y * Sensitivity;
 		eyeAngles.yaw -= Input.MouseDelta.x * Sensitivity;

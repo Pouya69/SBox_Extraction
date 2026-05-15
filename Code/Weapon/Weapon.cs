@@ -116,7 +116,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	{
 		get
 		{
-			return GetComponentInParent<PobxPlayer>( true );
+			return GetComponentInParent<PobxPlayerState>( true )?.CurrentPlayerReference;
 		}
 	}
 
@@ -446,7 +446,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		ViewModel.Tags.Add( "firstperson", "viewmodel" );
 
 		CurrentViewModelComp = ViewModel.GetComponent<ViewModel>();
-		CurrentViewModelComp.Controller = GetComponentInParent<SourceMovement>( false, false );
+		CurrentViewModelComp.Controller = Owner.SourceMovement;
 
 		if ( CurrentViewModelComp.IsValid() )
 			CurrentViewModelComp.Deploy();
@@ -454,7 +454,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 	}
 
-	protected void DestroyViewModel()
+	public void DestroyViewModel()
 	{
 		if ( !ViewModel.IsValid() )
 			return;
@@ -466,7 +466,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 	protected override void AddedItemToInventory( PlayerInteractionComponent interactionComponent )
 	{
-		this.GameObject.SetParent( interactionComponent.Player.GameObject, false );
+		this.GameObject.SetParent( interactionComponent.Player.PlayerState.GameObject, false );
 		ToggleWeaponPhysics( false );
 		WorldModel.Enabled = false;
 		// base.AddedItemToInventory();
@@ -484,6 +484,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	{
 		// BulletPoolingComp.SpawnBulletsAndAddToPool();
 		Log.Info( "Enabling Weapon" );
+		IsShooting = false;
 		CreateViewModel();
 		// base.EnableItem();
 	}
@@ -492,6 +493,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	{
 		// BulletPoolingComp.ClearPool();
 		Log.Info( "Disabling Weapon" );
+		IsShooting = false;
 		DestroyViewModel();
 		// base.DisableItem();
 	}

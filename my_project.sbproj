@@ -23,12 +23,12 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene",
     "LaunchMode": "Normal",
     "ControlModes": {
       "Keyboard": false,
       "VR": false,
       "Gamepad": false
-    }
+    },
+    "SystemScene": "scenes/system_sc.scene"
   }
 }

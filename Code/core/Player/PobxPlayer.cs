@@ -2,6 +2,8 @@ using Conna.Inventory;
 
 public sealed class PobxPlayer : Component
 {
+	public PobxPlayerState PlayerState { get; set;  }
+
 	private static PobxPlayer LocalPlayer { get; set; }
 	public static PobxPlayer FindLocalPlayer() => LocalPlayer;
 	public static T FindLocalWeapon<T>() where T : InventoryGrabbableComponent => FindLocalPlayer()?.GetComponentInChildren<T>( true );
@@ -14,7 +16,7 @@ public sealed class PobxPlayer : Component
 	[Property, RequireComponent, Feature( "Components" )] public CameraComponent Camera { get; private set; }
 	[Property, RequireComponent, Feature( "Components") ] private ActionSystemComponent ActionSystemComp { get; set; }
 	[Property, RequireComponent, Feature( "Components" )] public PlayerInventoryComponent InventoryComponent { get; private set; }
-	[Property, RequireComponent, Feature( "Components" )] private PobxPlayerInventoryHud InventoryHud { get; set; }
+	public PobxPlayerInventoryHud InventoryHud { get; private set; }
 	[Property, RequireComponent, Feature( "Components" )] private PlayerInteractionComponent PlayerInteractionComponent { get; set; }
 
 	public Transform EyeTransform
@@ -29,11 +31,43 @@ public sealed class PobxPlayer : Component
 
 	protected override void OnAwake()
 	{
+		if (IsLocalPlayer)
+		{
+			LocalPlayer = this;
+			InventoryHud = Scene.GetComponentInChildren<PobxPlayerInventoryHud>(true);
+		}
+
+		ActionSystemComp.OnDamaged += OnDamaged;
+		ActionSystemComp.OnDeath += OnDeath;
+	}
+
+	protected override void OnDestroy()
+	{
+		this.ActionSystemComp.OnDamaged -= OnDamaged;
+	}
+
+	private void OnDamaged( GameObject arg1, GameObject arg2, float arg3, float arg4 )
+	{
 		
+	}
+
+	private void OnDeath( GameObject obj )
+	{
+		Global.IPlayerEvents.Post(x => x.OnPlayerDied());
+
+		this.InventoryComponent.ActiveWeapon?.DestroyViewModel();
+		this.InventoryComponent.Gadget?.GameObject.Enabled = false;
+		this.SourceMovement.DisableInput();
+
+		GameManager.Current.RespawnPlayer( this.PlayerState );
+
+		// this.Enabled = false;
 	}
 
 	protected override void OnFixedUpdate()
 	{
+		if ( !this.SourceMovement.IsInputEnabled ) return;
+
 		OnControl();
 	}
 

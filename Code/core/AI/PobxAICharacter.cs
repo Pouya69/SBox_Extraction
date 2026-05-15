@@ -29,6 +29,7 @@ public class PobxAI_Character : Component
 	[Group( "AI" )][Property] public bool IsRunningBehaviour { get; private set; } = true;
 	[Group( "AI" ), Feature( "Components" )] [Property] public NavMeshAgent Agent { get; private set; }
 	[Group( "AI" ), Feature( "Components" )] [Property] public CharacterController AiController { get; private set; }
+	[Group( "AI" ), Feature( "Components" )] [Property] public CapsuleCollider CapsuleCollider { get; private set; }
 	[Group( "AI" )] [Property] private SplineComponent _PatrolPath { get; set; }
 	[Group( "AI" )] [Property] public float WaitTimeBetweenPoints { get; private set; } = 5;
 	[Group( "AI" )] [Property] private PrefabScene WeaponToSpawnWith { get; set; }
@@ -52,6 +53,7 @@ public class PobxAI_Character : Component
 	private TimeSince _timeSinceStep;
 
 	private bool IsOnGround => AiController?.IsOnGround ?? true;
+	ModelPhysics _ragdoll;
 
 
 	protected override void OnAwake()
@@ -63,6 +65,9 @@ public class PobxAI_Character : Component
 
 	private void SensedObjectOutOfSight( GameObject objectOutOfSight )
 	{
+		if ( GetCurrentHostile().Equals( objectOutOfSight ) )
+			EndHostile();
+
 		Log.Warning( this.GameObject.Name + " forgot: " + objectOutOfSight.Name );
 	}
 
@@ -81,7 +86,43 @@ public class PobxAI_Character : Component
 
 	private void OnAIDeath( GameObject whoDied )
 	{
-		
+		this.AiController.Enabled = false;
+		this._anim.Enabled = false;
+		this.Agent.Enabled = false;
+		this.AIEnvironmentQueryHandler.Enabled = false;
+
+		StopAIBehaviour();
+		Ragdoll();
+	}
+
+	private void Ragdoll()
+	{
+		if ( !this.Renderer.IsValid() ) return;
+		if ( this._ragdoll.IsValid() ) return;
+
+		this.CapsuleCollider.Enabled = false;
+
+		_ragdoll = AddComponent<ModelPhysics>();
+		_ragdoll.Renderer = this.Renderer;
+		_ragdoll.Model = this.Renderer.Model;
+	}
+
+	private void UnRagdoll()
+	{
+		if ( !this.Renderer.IsValid() ) return;
+		if ( !this._ragdoll.IsValid() ) return;
+
+		this.CapsuleCollider.Enabled = true;
+
+		_ragdoll.Destroy();
+	}
+
+	public void StopAIBehaviour()
+	{
+		if (!_behaviorTree.IsStopRequested && _behaviorTree.IsActive)
+			_behaviorTree.Stop();
+		_blackboard.Disable();
+		this.Enabled = false;
 	}
 
 	protected override void OnStart()

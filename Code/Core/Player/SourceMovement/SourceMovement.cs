@@ -29,6 +29,8 @@ public class SourceMovement : Component {
 	[Sync] public bool IsDucking { get; private set; } = false;
 	[Sync] public bool IsRunning { get; private set; } = false;
 
+	public bool IsInputEnabled { get; private set; } = true;
+
 	public GameObject Head { get; set; }
 	[Property, RequireComponent] public CharacterController Controller { get; private set; }
 
@@ -36,8 +38,18 @@ public class SourceMovement : Component {
 		Head = GameObject.Children.FirstOrDefault(go => go.Name == "Head");
 	}
 
+	public void DisableInput()
+	{
+		IsInputEnabled = false;
+	}
+
+	public void EnableInput()
+	{
+		IsInputEnabled = true;
+	}
+
 	protected override void OnUpdate() {
-		if (Network.IsProxy) return;
+		if ( !IsInputEnabled || Network.IsProxy) return;
 		if (!Controller.IsOnGround) UpdateJump();
 		UpdateDuck();
 
@@ -63,7 +75,7 @@ public class SourceMovement : Component {
 	}
 
 	protected override void OnFixedUpdate() {
-		if (Network.IsProxy) return;
+		if ( !IsInputEnabled || Network.IsProxy) return;
 
 		Build();
 		Move();

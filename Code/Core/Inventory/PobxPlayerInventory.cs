@@ -16,6 +16,15 @@ public class PobxPlayerInventory( Guid id, int width, int height, InventorySlotM
 	/// </summary>
 	public Action<PobxBaseInventoryItem> OnItemFullyDroppedFromInventory;
 
+
+
+	public VacuumGun VacuumGun { get; set; }
+	public EnergyPistolWeapon PistolWeapon { get; set; }
+
+
+	public Weapon ActiveWeapon { get; set; }
+	public GadgetBase Gadget { get; set; }
+
 	public InventoryResult RemoveItemAndDropFromInventory(PobxBaseInventoryItem item)
 	{
 		var result = TryRemove( item );

@@ -5,7 +5,7 @@
     "Flags": 0,
     "Name": "sbe_player",
     "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
+    "Rotation": "-7.25443243E-08,-7.31901153E-08,0.710233212,0.703966498",
     "Scale": "1,1,1",
     "Tags": "player",
     "Enabled": true,
@@ -50,7 +50,7 @@
           "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
           "component_type": "CharacterController"
         },
-        "DuckSpeed": 120,
+        "DuckSpeed": 100,
         "Friction": 4.8,
         "GravityScale": 1,
         "JumpPower": 280,
@@ -60,10 +60,10 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "RunByDefault": true,
-        "RunSpeed": 518.07996,
+        "RunByDefault": false,
+        "RunSpeed": 400,
         "StopSpeed": 75,
-        "WalkSpeed": 240
+        "WalkSpeed": 250
       },
       {
         "__type": "PobxPlayer",
@@ -104,12 +104,6 @@
           "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
           "component_type": "PlayerInventoryComponent"
         },
-        "InventoryHud": {
-          "_type": "component",
-          "component_id": "ab9d8442-678a-4b43-b685-a7036fc71d20",
-          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
-          "component_type": "PobxPlayerInventoryHud"
-        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -148,15 +142,9 @@
         "__guid": "4407d421-040d-4db3-b341-b4bb30385c62",
         "__enabled": true,
         "Flags": 0,
-        "DropDistanceFromCameraForward": 10,
+        "DropDistanceFromCameraForward": 13.240013,
         "DropScanRadius": 30,
         "Inventory": null,
-        "InventoryHud": {
-          "_type": "component",
-          "component_id": "ab9d8442-678a-4b43-b685-a7036fc71d20",
-          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
-          "component_type": "PobxPlayerInventoryHud"
-        },
         "InventorySlotMode": "Tetris",
         "InventoryStorageSize": "3,3",
         "OnComponentDestroy": null,
@@ -258,44 +246,10 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "OverrideMassCenter": true,
+        "PreciseContacts": false,
         "RigidbodyFlags": "DisableCollisionSounds",
+        "SleepThreshold": 2,
         "StartAsleep": false
-      },
-      {
-        "__type": "Conna.Inventory.PobxPlayerInventoryHud",
-        "__guid": "ab9d8442-678a-4b43-b685-a7036fc71d20",
-        "__enabled": true,
-        "Flags": 0,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null
-      },
-      {
-        "__type": "Conna.Inventory.PobxPlayerInventoryHud",
-        "__guid": "90ec2447-a5f0-40d8-8238-64631ae4d508",
-        "__enabled": true,
-        "Flags": 0,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null
-      },
-      {
-        "__type": "Conna.Inventory.PobxPlayerInventoryHud",
-        "__guid": "015c545e-6bad-4bf7-b027-15f53f1d0a62",
-        "__enabled": true,
-        "Flags": 0,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null
       },
       {
         "__type": "PobxCharacterEntityComponent",
@@ -304,8 +258,8 @@
         "Flags": 0,
         "collider": {
           "_type": "component",
-          "component_id": "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14",
-          "go": "3631bc5f-3313-40f7-9416-ae6cdb207908",
+          "component_id": "547a8582-d6c3-4218-bbf9-8a9a2bd7d92b",
+          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
           "component_type": "CapsuleCollider"
         },
         "Controller": {
@@ -343,54 +297,43 @@
         "ShouldReportToQuestSystem": true
       },
       {
-        "__type": "PobxCharacterEntityComponent",
-        "__guid": "304c9354-d2ac-4038-9346-24f339392e9a",
+        "__type": "Sandbox.CapsuleCollider",
+        "__guid": "547a8582-d6c3-4218-bbf9-8a9a2bd7d92b",
         "__enabled": true,
         "Flags": 0,
-        "collider": null,
-        "Controller": null,
-        "EntityActionSystemComponent": null,
-        "EntityInfo": null,
-        "ObjectSize": "SMALL",
+        "ColliderFlags": 0,
+        "Elasticity": null,
+        "End": "0,0,60",
+        "Friction": null,
+        "IsTrigger": false,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "renderer": null,
-        "rigidbody": {
-          "_type": "component",
-          "component_id": "e008bb2d-9b77-416a-9066-a0654d490cb7",
-          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
-          "component_type": "Rigidbody"
-        },
-        "ShouldReportToQuestSystem": true
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "Radius": 16,
+        "RollingResistance": null,
+        "Start": "0,0,0",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "PobxCharacterEntityComponent",
-        "__guid": "e9e40d73-4dab-49ce-9ecf-7f1961ee984f",
+        "__type": "Conna.Inventory.PobxPlayerInventoryHud",
+        "__guid": "fa1dd5e5-2a48-4767-9b0c-9e61c5056b5e",
         "__enabled": true,
         "Flags": 0,
-        "collider": null,
-        "Controller": null,
-        "EntityActionSystemComponent": null,
-        "EntityInfo": null,
-        "ObjectSize": "SMALL",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "renderer": null,
-        "rigidbody": {
-          "_type": "component",
-          "component_id": "e008bb2d-9b77-416a-9066-a0654d490cb7",
-          "go": "b352dd5f-3913-4e13-bab9-73db91d44acf",
-          "component_type": "Rigidbody"
-        },
-        "ShouldReportToQuestSystem": true
+        "OnComponentUpdate": null
       }
     ],
     "Children": [
@@ -593,52 +536,6 @@
             "Strength": 4.051095,
             "Threshold": 2,
             "Tint": "1,1,1,1"
-          }
-        ],
-        "Children": []
-      },
-      {
-        "__guid": "3631bc5f-3313-40f7-9416-ae6cdb207908",
-        "__version": 2,
-        "Flags": 0,
-        "Name": "Object",
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkFlags": 0,
-        "NetworkOrphaned": 0,
-        "NetworkTransmit": true,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.CapsuleCollider",
-            "__guid": "d2af4055-9c05-4d33-b5ae-4f55e5b2fd14",
-            "__enabled": true,
-            "Flags": 0,
-            "ColliderFlags": 0,
-            "Elasticity": null,
-            "End": "0,0,40",
-            "Friction": null,
-            "IsTrigger": false,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "Radius": 16,
-            "RollingResistance": null,
-            "Start": "0,0,0",
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
           }
         ],
         "Children": []

@@ -109,7 +109,7 @@ public class DeployableGadget : GadgetBase, Component.ICollisionListener
 
 	void ICollisionListener.OnCollisionStart( Collision collision )
 	{
-		if ( !IsDeploying || !IsDropFromUsing || collision.Other.GameObject.Equals(Player) ) return;
+		if ( !IsDeploying || !IsDropFromUsing || collision.Other.GameObject.Tags.Has("player") ) return;
 
 		var pos = collision.Contact.Point;
 		var endPos = pos + Vector3.Down * 20.0f;
