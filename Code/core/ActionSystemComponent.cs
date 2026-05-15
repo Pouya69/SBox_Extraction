@@ -76,8 +76,10 @@ public class ActionSystemComponent : Component
 	public bool CanBeHealed(bool isExtra = false) => isExtra ? Health < 2 * MaxHealth : Health < MaxHealth;
 
 
-	protected virtual void Death()
+	public virtual void Death()
 	{
+		_health = 0.0f;
+
 		OnDeath?.Invoke( GameObject );
 	}
 	

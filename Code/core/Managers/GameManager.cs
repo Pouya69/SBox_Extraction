@@ -6,7 +6,9 @@ public class GameManager : GameObjectSystem<GameManager>, Component.INetworkList
 {
 	public GameManager( Scene scene ) : base( scene ) { }
 
-	private IEnumerable<PobxPlayerState> Players => PobxPlayerState.All;
+	private List<PobxPlayerState> Players = new();
+
+	public bool IsResettingLevel { get; private set; }
 
 	void ISceneStartup.OnHostInitialize()
 	{
@@ -24,8 +26,6 @@ public class GameManager : GameObjectSystem<GameManager>, Component.INetworkList
 
 		var playerData = CreatePlayerInfo( channel );
 		SpawnPlayer( playerData );
-
-
 
 		// Scene.Get<Chat>()?.AddSystemText( $"{channel.DisplayName} has joined the game", "👋" );
 	}
@@ -45,6 +45,8 @@ public class GameManager : GameObjectSystem<GameManager>, Component.INetworkList
 
 		go.NetworkSpawn( null );
 		go.Network.SetOwnerTransfer( OwnerTransfer.Fixed );
+
+		Players.Add(data);
 
 		return data;
 	}
@@ -79,15 +81,40 @@ public class GameManager : GameObjectSystem<GameManager>, Component.INetworkList
 
 	public void RespawnPlayer( Connection connection ) => RespawnPlayer( PobxPlayerState.For( connection ) );
 
+	public bool AreAllPlayersDead()
+	{
+		foreach ( var playerState in Players )
+		{
+			if ( playerState.CurrentPlayerReference?.ActionSystemComp.IsAlive() ?? true )
+				return false;
+		}
+
+		return true;
+	}
+
 	public async void RespawnPlayer( PobxPlayerState playerState )
 	{
 		if ( playerState.IsRespawning )
 			return;
 
 		playerState.IsRespawning = true;
+
+		if ( !IsResettingLevel || AreAllPlayersDead() )
+		{
+			ResetLevel();
+			return;
+		}
+
+		
 		Log.Warning( "trying..." );
 
 		await Task.Delay( Global.PlayerRespawnAfterSeconds * 1000 );
+
+		if ( !playerState.IsRespawning )
+		{
+			// For when we reset the scene etc.
+			return;
+		}
 
 		Log.Warning( "Working Respawn" );
 
@@ -96,6 +123,30 @@ public class GameManager : GameObjectSystem<GameManager>, Component.INetworkList
 		await Task.Delay( 20 );
 
 		SpawnPlayer( playerState );
+	}
+
+	void ISceneStartup.OnClientInitialize()
+	{
+		// ResetLevel();
+	}
+
+	public async void ResetLevel()
+	{
+		IsResettingLevel = true;
+
+		foreach ( var playerState in PobxPlayerState.All )
+		{
+			if ( !playerState.IsRespawning && !playerState.CurrentPlayerReference.ActionSystemComp.IsAlive() )
+				playerState.CurrentPlayerReference.ActionSystemComp.Death();
+
+			// RespawnPlayer( playerState );
+		}
+
+		await Task.Delay( SceneResetAfterSeconds * 1000 );
+
+		LoadNewLevel( Scene.Source as SceneFile);
+		IsResettingLevel = false;
+		// Scene.Load( Scene.Source );
 	}
 
 	/// <summary>
@@ -115,7 +166,6 @@ public class GameManager : GameObjectSystem<GameManager>, Component.INetworkList
 
 		return Random.Shared.FromArray( spawnPoints ).Transform.World;
 	}
-
 
 	public void LoadNewLevel(SceneFile newScene) {
 		var loadOptions = new SceneLoadOptions() { ShowLoadingScreen = true, IsAdditive = false };
