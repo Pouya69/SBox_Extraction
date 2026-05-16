@@ -10,6 +10,5 @@ public interface IDoor
 	/// <returns></returns>
 	public bool IsInProgress();
 
-	public void StartCloseDoor();
-	public void StartOpenDoor();
+	public void ToggleOpenDoor();
 }

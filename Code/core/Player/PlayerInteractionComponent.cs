@@ -17,6 +17,8 @@ public sealed class PlayerInteractionComponent : Component
 	[Property, RequireComponent, Group("Components")] public PobxPlayer Player {  get; private set; }
 	private GameObject FocusedInteractable;
 
+	private IInteractable _interactingInteractable;
+
 	// Temporary For Now.
 	public IExtractionQuestEntity GrabbingEntity { get; private set; }
 	public bool IsHoldingObject { get; private set; }
@@ -25,8 +27,12 @@ public sealed class PlayerInteractionComponent : Component
 	{
 		FindBestInteractable();
 
+		// Out of range.
+		if ( FocusedInteractable == null && _interactingInteractable != null )
+			Released();
+
 		//if ( Hold_IK_Enabled && IsHoldingObject )
-			//SetHandPositionAroundGrabbedObject_IK();
+		//SetHandPositionAroundGrabbedObject_IK();
 	}
 
 	private void FindBestInteractable()
@@ -34,7 +40,7 @@ public sealed class PlayerInteractionComponent : Component
 		Vector3 start = this.WorldPosition;
 		Vector3 end = start + this.WorldTransform.Forward * InteractionFindDistance;
 
-		var results = Scene.Trace.Sphere( InteractionFindRadius, start, end ).IgnoreGameObjectHierarchy(this.GameObject).WithTag( "interaction" ).RunAll();
+		var results = Scene.Trace.Sphere( InteractionFindRadius, start, end ).IgnoreGameObjectHierarchy(this.GameObject).WithTag( "interaction" ).UseHitPosition().RunAll();
 
 		if ( !results.Any() )
 		{
@@ -47,6 +53,13 @@ public sealed class PlayerInteractionComponent : Component
 
 		foreach ( var item in results )
 		{
+			if ( !item.Hit ) continue;
+
+			var blockedByObstacleTrace = Scene.Trace.Ray( item.HitPosition, this.Player.Head.WorldPosition ).IgnoreGameObjectHierarchy( this.GameObject ).WithCollisionRules("world").Run();
+			if ( blockedByObstacleTrace.Hit && !blockedByObstacleTrace.GameObject.Equals(this.GameObject) )
+			{
+				continue;
+			}
 
 			float dot = (item.Component.WorldPosition - start).Dot( item.Direction );
 
@@ -90,10 +103,22 @@ public sealed class PlayerInteractionComponent : Component
 			if (interactable.IsInteractable())
 			{
 				interactable.Interact( this );
+				_interactingInteractable = interactable;
 			}
 			
 		}
 			
+	}
+
+	public void Released()
+	{
+		if (_interactingInteractable == null)
+		{
+			return;
+		}
+
+		_interactingInteractable.Released();
+		_interactingInteractable = null;
 	}
 
 	public async void PickUpEntity(IExtractionQuestEntity entity) {
@@ -170,6 +195,10 @@ public sealed class PlayerInteractionComponent : Component
 		if ( Input.Pressed( "Use" ) )
 		{
 			AttemptInteract();
+		}
+		else if (Input.Released("Use"))
+		{
+			Released();
 		}
 	}
 
