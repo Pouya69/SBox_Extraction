@@ -34,6 +34,11 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	[Property, Feature( "Weapon" ), Group( "Config" )]
 	protected bool IsReloadable { get; set; } = true;
 
+	/// <summary>
+	/// Is Using Projectile Bullet
+	/// </summary>
+	protected bool IsProjectileWeapon => BulletPrefab.IsValid();
+
 	[Property, Feature( "Weapon" ), Group( "Config" )]
 	protected bool ShouldReloadAutomatically{ get; set; } = true;
 
@@ -178,8 +183,22 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 	public virtual void Reload()
 	{
+		if (!this.HasReserveBulletsLeft())
+		{
+			return;
+		}
+
 		IsReloading = true;
 		ViewModel?.RunEvent<ViewModel>( x => x.OnReloadStart() );
+	}
+
+	public virtual void MagazineWentIn()
+	{
+		int NewAmmoCount = Math.Min( ReserveBulletsLeft, MaxAmmoPerMagazine ) + Ammo;
+		ReserveBulletsLeft = Math.Max(ReserveBulletsLeft - NewAmmoCount, 0);
+		Ammo = NewAmmoCount;
+
+		OnMagazineIn?.Invoke( this );
 	}
 
 	public virtual void ReloadFinished()
@@ -203,25 +222,34 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 		CurrentFireTime = 0.0f;
 		ViewModel?.RunEvent<ViewModel>( x => x.OnAttack() );
-		// @TODO: add check for NOT bullet pooling.
-		if ( IsUsingBulletPooling() )
+		if ( IsProjectileWeapon )
 		{
-			bool DidGrabBulletFromPool = BulletPoolingComp.PopBulletFromPool( out PobxBullet outBulletFromPool );
-			if (!DidGrabBulletFromPool)
+			// Physical projectile (RPG etc.)
+			if ( IsUsingBulletPooling() )
 			{
-				Log.Warning( "Bullet pool not big enough for fire rate and bullet properties for " + this.GameObject.Name +
-					". Increase the bullet pool size for this weapon. Or Change the fire rate etc." );
-				SpawnBulletAndShoot();
+				bool DidGrabBulletFromPool = BulletPoolingComp.PopBulletFromPool( out PobxBullet outBulletFromPool );
+				if ( !DidGrabBulletFromPool )
+				{
+					Log.Warning( "Bullet pool not big enough for fire rate and bullet properties for " + this.GameObject.Name +
+						". Increase the bullet pool size for this weapon. Or Change the fire rate etc." );
+					SpawnBulletAndShoot();
+					return;
+				}
+				// Normal shooting that was grabbed from bullet pool.
+				InitializeBulletAndShoot( outBulletFromPool );
+
 				return;
 			}
-			// Normal shooting that was grabbed from bullet pool.
-			InitializeBulletAndShoot( outBulletFromPool );
 
-			return;
+			// When not using bullet pooling.
+			SpawnBulletAndShoot();
 		}
-
-		// When not using bullet pooling.
-		SpawnBulletAndShoot();
+		else
+		{
+			InitializeBulletAndShoot(null);
+			// Trace Type
+		}
+		
 	}
 
 	public virtual bool AddBulletToPool(PobxBullet bullet)
@@ -268,9 +296,12 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 			);
 		Vector3 bulletForward = fwd;
 		Ray aimRay = AimRay with { Forward = fwd };
-		
+
 		// var traceEndPos = traceStartPos + ();
-		var traceResult = Scene.Trace.Ray(aimRay, BulletConfig.Range).IgnoreGameObjectHierarchy(this.GameObject.Parent).WithTag( "projectile" ).Radius( BulletConfig.BulletRadius ).UseHitPosition().UseHitboxes().Run();
+		var traceData = Scene.Trace.Ray( aimRay, BulletConfig.Range ).IgnoreGameObjectHierarchy( this.GameObject.Parent ).IgnoreGameObjectHierarchy( this.Owner?.GameObject )
+			.WithCollisionRules( "projectile" ).Radius( BulletConfig.BulletRadius ).UseHitPosition().UseHitboxes();
+
+		var traceResult = traceData.Run();
 		if (traceResult.Hit)
 		{
 			Log.Info( "Hit" );
@@ -279,7 +310,22 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 		var bulletRot = Rotation.LookAt( bulletForward );
 
-		bullet.InitializeBullet( bulletPos, bulletRot, BulletConfig );
+		if (bullet.IsValid())
+			bullet.InitializeBullet( bulletPos, bulletRot, BulletConfig );
+		else
+		{
+			// Trace Type
+			if ( traceResult.Hit )
+			{
+				DamageInfo damageInfo = new( BulletConfig.Damage, HasOwner ? this.Owner.GameObject : this.GameObject, this.GameObject )
+				{
+					Position = traceResult.HitPosition,
+					Origin = bulletPos,
+				};
+
+				PobxFunctionLibrary.ApplyDirectionalDamage( damageInfo, traceResult.GameObject );
+			}
+		}
 
 		PlayShootSound();
 		ApplyRecoil();
@@ -403,7 +449,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		IsShooting = true;
 	}
 
-	protected virtual bool CanPrimaryAttack() => HasAmmo() && !IsReloading;
+	protected virtual bool CanPrimaryAttack() => !IsReloading;
 	protected virtual bool CanSecondaryAttack() => false;
 
 
@@ -446,6 +492,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		ViewModel.Tags.Add( "firstperson", "viewmodel" );
 
 		CurrentViewModelComp = ViewModel.GetComponent<ViewModel>();
+		CurrentViewModelComp.CurrentWeaponReference = this;
 		CurrentViewModelComp.Controller = Owner.SourceMovement;
 
 		if ( CurrentViewModelComp.IsValid() )
@@ -516,6 +563,18 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		return count;
 	}
 
+	public virtual bool GiveAmmo(int count)
+	{
+		if ( !UsesBullets ||
+			this.ReserveBulletsLeft >= MaxBullets ) return false;
+
+		this.ReserveBulletsLeft = Math.Min( this.ReserveBulletsLeft + count, MaxBullets );
+
+		return true;
+
+
+	}
+
 	public void StopShoot() => StopPrimaryAttack();
 	public void Shoot() => PrimaryAttack();
 
@@ -538,6 +597,8 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		} );
 		IsAiming = false;
 	}
+
+
 
 	
 }

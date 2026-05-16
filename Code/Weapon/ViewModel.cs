@@ -77,11 +77,7 @@ public class ViewModel : WeaponModel, ICameraSetup
 			// Don't render shadows for viewmodels
 			renderer.RenderType = ModelRenderer.ShadowRenderType.Off;
 		}
-	}
 
-	protected override void OnAwake()
-	{
-		// HandsViewModelObject.Renderer.BoneMergeTarget = this.Renderer;
 	}
 
 	protected override void OnUpdate()
@@ -173,6 +169,10 @@ public class ViewModel : WeaponModel, ICameraSetup
 
 	public void OnReloadStart()
 	{
+		// Renderer?.Set( "reload_type", 0 );
+
+		UseFastAnimations = CurrentWeaponReference.HasAmmo();
+
 		// Log.Info( "Reload" );
 		isFinishingReload = false;
 		Renderer?.Set( "speed_reload", AnimationSpeed );
@@ -182,13 +182,14 @@ public class ViewModel : WeaponModel, ICameraSetup
 	/// <summary>
 	/// e.g. On shotgun shell in.
 	/// </summary>
-	public void OnIncrementalReload()
+	protected override void OnIncrementalReload()
 	{
+		base.OnIncrementalReload();
 		Renderer?.Set( "speed_reload", IncrementalAnimationSpeed );
 		Renderer?.Set( "b_reloading_shell", true );
 	}
 
-	public void OnReleoadFinish()
+	public override void OnReleoadFinish()
 	{
 		if (IsIncremental)
 		{

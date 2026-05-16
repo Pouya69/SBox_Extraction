@@ -68,12 +68,12 @@ public class PobxAI_Character : Component
 		if ( GetCurrentHostile().Equals( objectOutOfSight ) )
 			EndHostile();
 
-		Log.Warning( this.GameObject.Name + " forgot: " + objectOutOfSight.Name );
+		// Log.Warning( this.GameObject.Name + " forgot: " + objectOutOfSight.Name );
 	}
 
 	private void SensedObjectInSight( GameObject objectSpotted )
 	{
-		Log.Warning( this.GameObject.Name + " spotted: " + objectSpotted.Name );
+		// Log.Warning( this.GameObject.Name + " spotted: " + objectSpotted.Name );
 
 		if (!IsHostile())
 			DetectedHostile( objectSpotted );

@@ -11,14 +11,18 @@ public static class PobxFunctionLibrary
 	}
 
 	public static void ApplyDirectionalDamage( DamageInfo damageInfo, GameObject Victim ) {
-		var entity = Victim.GetComponentInChildren<Rigidbody>();
+		var entity = Victim.GetComponentInChildren<Rigidbody>(true);
 		Log.Info( "Victim: " + Victim.Name );
 		if ( entity.IsValid())
 		{
-			// Log.Info( "Working" );
+			Log.Info( "Forcing..." );
 			entity.Sleeping = false;
-			entity.ApplyImpulse( damageInfo.Damage * 5.0f * ((damageInfo.Position - damageInfo.Origin).Normal) );
+			entity.ApplyImpulse( damageInfo.Damage * 500.0f * ((damageInfo.Position - damageInfo.Origin).Normal) );
 			entity.Sleeping = false;
+		}
+		else
+		{
+			
 		}
 
 		ApplyDamage( damageInfo, Victim );

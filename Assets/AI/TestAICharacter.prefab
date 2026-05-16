@@ -217,6 +217,7 @@
           "component_type": "EnvironmentQueryHandler"
         },
         "AimingSpeed": 50,
+        "CapsuleCollider": null,
         "EnableFootstepSounds": true,
         "FootstepMixer": {
           "Name": "unknown",
@@ -1842,6 +1843,69 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "__guid": "ece448d6-f4ef-43ae-9ea0-e6720b27e3d1",
+                    "__version": 2,
+                    "Flags": 0,
+                    "Name": "Container_Origin",
+                    "Position": "0.0214545727,9.691576,-0.157599211",
+                    "Rotation": "-0.513269365,-0.502090096,-0.489079177,-0.495238721",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkFlags": 0,
+                    "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
+                    "OwnerTransfer": 1,
+                    "Components": [
+                      {
+                        "__type": "CharacterContainer",
+                        "__guid": "1257557a-5fcc-48ef-967f-01a70b79617b",
+                        "__enabled": true,
+                        "Flags": 0,
+                        "ActionSystemComponent": {
+                          "_type": "component",
+                          "component_id": "4413b42a-6531-4cf2-ba1a-2308ae03f18f",
+                          "go": "f6a69296-ac3b-4558-abe4-34932d61a7c4",
+                          "component_type": "ActionSystemComponent"
+                        },
+                        "ContainerItems": [
+                          {
+                            "Amount": "0,1",
+                            "ObjectPrefab": {
+                              "_type": "gameobject",
+                              "prefab": "gadgets/consumables/medkit_prefab.prefab"
+                            }
+                          },
+                          {
+                            "Amount": "3,10",
+                            "ObjectPrefab": {
+                              "_type": "gameobject",
+                              "prefab": "gadgets/consumables/ammos/ar_ammo.prefab"
+                            }
+                          }
+                        ],
+                        "ContainerOpenSound": null,
+                        "ObjectSpawnPoint": {
+                          "_type": "gameobject",
+                          "go": "ece448d6-f4ef-43ae-9ea0-e6720b27e3d1"
+                        },
+                        "OnComponentDestroy": null,
+                        "OnComponentDisabled": null,
+                        "OnComponentEnabled": null,
+                        "OnComponentFixedUpdate": null,
+                        "OnComponentStart": null,
+                        "OnComponentUpdate": null,
+                        "SpitOutDelay": 0.04000003,
+                        "SpitOutHorizentalRandomness": 30,
+                        "SpitOutStrengthRange": "500,500",
+                        "SpitOutVerticalRandomness": 30,
+                        "SpitSound": "audio/gadgets/containers/chest/chest_spitsound.sound"
+                      }
+                    ],
+                    "Children": []
                   }
                 ]
               },
@@ -2178,7 +2242,7 @@
             ]
           },
           {
-            "__guid": "81f0181d-21c5-494f-864b-e65236f553b3",
+            "__guid": "f4f25380-cae0-48fb-bcf0-6bec97f60712",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - hair_bobcut",
@@ -2195,7 +2259,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "983227f7-efde-4fc8-add2-5d0ef08c2674",
+                "__guid": "4328c35b-8cf2-49c4-8a2e-5aff4ad21c06",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2247,7 +2311,7 @@
             "Children": []
           },
           {
-            "__guid": "ce43f75a-e643-4dfe-b926-0e6bf009c64c",
+            "__guid": "974cce6e-461f-4eca-8aa8-b7cf6f56c861",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - denim_skirt_green",
@@ -2264,7 +2328,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "ab31bea1-c530-4482-a80a-1e58768e6771",
+                "__guid": "d6cec184-1073-4388-9cae-6d6ca0aaeca0",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2316,7 +2380,7 @@
             "Children": []
           },
           {
-            "__guid": "a7ba4a8f-962c-410a-8281-d78bd7e702fe",
+            "__guid": "d38281b8-5ad4-4c18-afb0-ee232e8ba466",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - tshirt",
@@ -2333,7 +2397,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "7508f6ae-1465-4587-a83c-98285d88a908",
+                "__guid": "120e5bf7-24a2-47ff-add6-c3db6cd84cb1",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2385,7 +2449,7 @@
             "Children": []
           },
           {
-            "__guid": "0a1a100b-4f0a-4c8d-bed9-4d023b921bc5",
+            "__guid": "63306905-b58f-4e82-98d4-274b6363d4aa",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - boxing_boots_blue",
@@ -2402,7 +2466,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "f157476d-4d82-400c-8fe0-c95d5aa6a67d",
+                "__guid": "413c12e5-4494-4382-90a0-2e4cd95543b6",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2454,7 +2518,7 @@
             "Children": []
           },
           {
-            "__guid": "e6ac26b2-9790-4e99-ad5e-aa4a857d692b",
+            "__guid": "5073b005-aa39-4245-b21a-ae5f251b80b5",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - wizard_beard",
@@ -2471,7 +2535,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "7cfc315f-f7b4-4f28-8758-e387a055313f",
+                "__guid": "7352f2a2-e1e0-48d0-a401-39ac56156769",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -2594,6 +2658,7 @@
                 "__guid": "19671f4f-b1c3-45e1-8026-d15ecd84e1fd",
                 "__enabled": true,
                 "Flags": 0,
+                "ActionSystemComponent": null,
                 "AsyncNthObjectNextFrame": 7,
                 "CheckInterval": 0.3,
                 "collider": {

@@ -1216,7 +1216,7 @@
                                     {
                                       "TimeRange": "0,3240",
                                       "SampleRate": 30,
-                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfQebS+3m8F/gZbh31T2Y68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX9q6Fn5HK49/xku7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwDQt9OifAAAAA=="
+                                      "Samples": "H4sIAAAAAAAACgF8AIP//////wEAAAAbAAAAAAAAAP75B8AJ4P//Ctz//wvU//8MzA8AD8wfAM7FL2RPwg+cEMAvAKq5v2Z5vr+ZEbxPAIa5D2mcuq+XE7h/ABDAbwBevc9rwL4/lRHEjwAQwK8AC9RvAA/IrwA9yZ9t2N5/kzfhn20I3J8A2t4fkyexUox8AAAA"
                                     }
                                   ]
                                 }
@@ -1587,7 +1587,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "eb1e91bf-b840-4615-a76e-6ed50768ce56": "939c14eb-7c2c-4ec4-9e71-bf8dcab27c9e"
+        "3219b995-6b38-40af-ab54-5bb9b42a1a73": "6a107819-f508-4ed2-9268-d19409c55666"
       }
     },
     {
@@ -1642,7 +1642,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "d912082d-0b69-477c-bcf5-adc7a3b1211a"
+        "c8dfeb13-d477-4740-855a-8e40c3149294": "98c067fe-8f81-4d5e-98ee-eec68b725f96"
       }
     },
     {
@@ -1705,7 +1705,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "f2d6f2cd-5b1d-437a-b0ef-5f49e60efd29"
+        "c8dfeb13-d477-4740-855a-8e40c3149294": "9fdc8c43-df2a-43ee-a813-e442456d4946"
       }
     },
     {
@@ -1768,7 +1768,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "4db14edc-1ea4-4887-b409-9e97f0d168e7"
+        "c8dfeb13-d477-4740-855a-8e40c3149294": "599d3e93-84f0-405d-8c3c-7ebd9483ef0d"
       }
     },
     {
@@ -1831,7 +1831,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "9ee60d4a-c620-4a40-ac2c-f707da33a13c": "4f880dba-246e-475b-a070-c6e89ca05947"
+        "c8dfeb13-d477-4740-855a-8e40c3149294": "1bc6b454-4a20-4a5f-9102-5b3b64573056"
       }
     },
     {
@@ -1858,11 +1858,11 @@
             "Property": "ContainerItems",
             "Value": [
               {
-                "Amount": 4,
+                "Amount": "0,0",
                 "ObjectPrefab": null
               },
               {
-                "Amount": 300,
+                "Amount": "0,0",
                 "ObjectPrefab": null
               }
             ]
@@ -1900,17 +1900,17 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "1508a031-335e-47a8-ac87-12b89c8d041c"
-        }
-      },
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
+        }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "1508a031-335e-47a8-ac87-12b89c8d041c"
         }
       }
     }

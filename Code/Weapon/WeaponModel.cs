@@ -3,6 +3,8 @@ using System.Diagnostics;
 
 public class WeaponModel : Component
 {
+	public Weapon CurrentWeaponReference { get; set; }
+
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 	[Property] public GameObject MuzzleTransform { get; set; }
 	[Property] public GameObject EjectTransform { get; set; }
@@ -78,5 +80,42 @@ public class WeaponModel : Component
 	public virtual void CreateRangedEffects( Weapon weapon, Vector3 hitPoint, Vector3? origin )
 	{
 
+	}
+
+	protected virtual void OnAnimEvent(SceneModel.AnimTagEvent eventTag)
+	{
+		Log.Warning( eventTag );
+		if (eventTag.Name.Equals( "attack_discouraged" ) && eventTag.Status == SceneModel.AnimTagStatus.End )
+		{
+			if ( CurrentWeaponReference.IsReloading )
+			{
+				CurrentWeaponReference?.ReloadFinished();
+			}
+		}
+		else if ( eventTag.Name.Equals( "reload_increment" ) )
+		{
+			OnIncrementalReload();
+		}
+	}
+
+	public virtual void OnReleoadFinish()
+	{
+
+	}
+
+	protected virtual void OnIncrementalReload()
+	{
+		Log.Warning( "Mag" );
+		CurrentWeaponReference?.MagazineWentIn();
+	}
+
+	protected override void OnAwake()
+	{
+		Renderer.OnAnimTagEvent += OnAnimEvent;
+	}
+
+	protected override void OnDestroy()
+	{
+		Renderer.OnAnimTagEvent -= OnAnimEvent;
 	}
 }

@@ -15,6 +15,7 @@ public sealed class PlayerInventoryComponent : Component, Global.IPlayerEvents
 
 	public VacuumGun VacuumGun => Inventory.VacuumGun;
 	public EnergyPistolWeapon PistolWeapon => Inventory.PistolWeapon;
+	public M4A4Weapon AssaultRifleWeapon => Inventory.AssaultRifleWeapon;
 
 
 	public Weapon ActiveWeapon { get; set; }
@@ -91,6 +92,12 @@ public sealed class PlayerInventoryComponent : Component, Global.IPlayerEvents
 					if ( !VacuumGun.IsValid() )
 						Inventory.VacuumGun = vacuum;
 				}
+				else if ( (weapon as M4A4Weapon) is var assaultRifle && assaultRifle.IsValid() )
+				{
+					if ( !AssaultRifleWeapon.IsValid() )
+						Inventory.AssaultRifleWeapon = assaultRifle;
+				}
+
 				Log.Info( "Added Weapon" );
 			}
 			else if ( (item.InventoryGrabbableReference as GadgetBase) is var gadget && gadget.IsValid() )
@@ -221,6 +228,13 @@ public sealed class PlayerInventoryComponent : Component, Global.IPlayerEvents
 				ActiveWeapon?.EnableItem();
 				break;
 
+			case 3:
+				SwitchToWeapon();
+				ActiveWeapon = AssaultRifleWeapon;
+				ActiveWeapon?.EnableItem();
+				break;
+
+
 			case 5:
 				SwitchToGadget();
 				break;
@@ -284,6 +298,26 @@ public sealed class PlayerInventoryComponent : Component, Global.IPlayerEvents
 	void Global.IPlayerEvents.OnPlayerDied()
 	{
 		ActiveWeapon?.DisableItem();
+	}
+
+	public bool GiveAmmo( EAmmoType ammoType, int Amount)
+	{
+		switch ( ammoType )
+		{
+			case EAmmoType.ENERGY:
+				return PistolWeapon.GiveAmmo( Amount );
+
+			case EAmmoType.SHOTGUN:
+				break;
+
+			case EAmmoType.RIFLE:
+				return AssaultRifleWeapon.GiveAmmo( Amount );
+
+			default:
+				break;
+		}
+
+		return false;
 	}
 
 }

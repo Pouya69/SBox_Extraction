@@ -111,8 +111,8 @@
           "Roll": false
         },
         "MassCenterOverride": "0,0,0",
-        "MassOverride": 0,
-        "MinImpactDamageSpeed": 500,
+        "MassOverride": 17.39,
+        "MinImpactDamageSpeed": 5,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -121,7 +121,9 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "OverrideMassCenter": false,
+        "PreciseContacts": false,
         "RigidbodyFlags": 0,
+        "SleepThreshold": 2,
         "StartAsleep": false
       },
       {

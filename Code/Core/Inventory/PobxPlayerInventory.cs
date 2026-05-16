@@ -20,6 +20,7 @@ public class PobxPlayerInventory( Guid id, int width, int height, InventorySlotM
 
 	public VacuumGun VacuumGun { get; set; }
 	public EnergyPistolWeapon PistolWeapon { get; set; }
+	public M4A4Weapon AssaultRifleWeapon { get; set; }
 
 
 	public Weapon ActiveWeapon { get; set; }

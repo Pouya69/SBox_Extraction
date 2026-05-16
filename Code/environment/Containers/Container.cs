@@ -44,7 +44,8 @@ public class ContainerBase : Component
 		for ( int i = ContainerItems.Count-1; i >= 0; i-- )
 		{
 			var objectPrefab = ContainerItems[i].ObjectPrefab;
-			var objectAmount = ContainerItems[i].Amount;
+			var amountRange = ContainerItems[i].Amount;
+			var objectAmount = Random.Shared.Next( amountRange.x, amountRange.y);
 			for ( int j = 0; j < objectAmount; j++ )
 			{
 				SpitOut( objectPrefab.Clone( new CloneConfig() { StartEnabled = false, Transform = Transform.World.WithScale(1) } ) );
@@ -66,6 +67,6 @@ public class ContainerBase : Component
 
 public struct FContainerItem
 {
-	public int Amount { get; set; }
+	public Vector2Int Amount { get; set; }
 	public PrefabScene ObjectPrefab { get; set; }
 }

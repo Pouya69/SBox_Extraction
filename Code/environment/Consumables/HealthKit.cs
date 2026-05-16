@@ -1,14 +1,10 @@
 using Sandbox;
 
-public sealed class HealthKit : Component, IInteractable
+public sealed class HealthKit : ConsumableBase
 {
 	[Property, Feature("Health Kit")] public float HealAmount { get; private set; }
-	public bool CanBePickedUp()
-	{
-		return false;
-	}
 
-	public void Interact( PlayerInteractionComponent interactionComponent )
+	public override void Interact( PlayerInteractionComponent interactionComponent )
 	{
 		if ( interactionComponent.GameObject.GetComponent<ActionSystemComponent>( true ) is var actionSystemComp )
 		{
@@ -19,12 +15,5 @@ public sealed class HealthKit : Component, IInteractable
 			}
 		}
 		
-	}
-
-	public bool IsInteractable() => true;
-
-	public bool IsPickUpTwoHanded()
-	{
-		return false;
 	}
 }
