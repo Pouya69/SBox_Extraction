@@ -92,7 +92,7 @@ public class WeaponModel : Component
 				CurrentWeaponReference?.ReloadFinished();
 			}
 		}
-		else if ( eventTag.Name.Equals( "reload_increment" ) )
+		else if ( eventTag.Name.Equals( "reload_increment" ) && eventTag.Status == SceneModel.AnimTagStatus.End )
 		{
 			OnIncrementalReload();
 		}

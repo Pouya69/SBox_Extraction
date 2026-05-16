@@ -183,8 +183,15 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 	public virtual void Reload()
 	{
-		if (!this.HasReserveBulletsLeft())
+
+		if ( !this.HasReserveBulletsLeft() )
 		{
+			Log.Info( "No left" );
+			return;
+		}
+		if ( this.Ammo >= MaxAmmoPerMagazine )
+		{
+			Log.Info( $"Already Full: {this.Ammo}" );
 			return;
 		}
 
@@ -194,9 +201,10 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 
 	public virtual void MagazineWentIn()
 	{
-		int NewAmmoCount = Math.Min( ReserveBulletsLeft, MaxAmmoPerMagazine ) + Ammo;
-		ReserveBulletsLeft = Math.Max(ReserveBulletsLeft - NewAmmoCount, 0);
+		int NewAmmoCount = Math.Min( ReserveBulletsLeft, MaxAmmoPerMagazine );
+		ReserveBulletsLeft = Math.Max(ReserveBulletsLeft - (NewAmmoCount - Ammo), 0);
 		Ammo = NewAmmoCount;
+		Log.Info( "Mag In" );
 
 		OnMagazineIn?.Invoke( this );
 	}
@@ -213,6 +221,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	/// </summary>
 	protected virtual void ShootWeapon()
 	{
+		// Log.Info( $"{this.ReserveBulletsLeft}/{this.Ammo}" );
 		int AmountsToShoot = TakeAmmo( BulletsShotPerAttack );
 		if (AmountsToShoot == 0)
 		{
@@ -548,7 +557,7 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 	public override bool WillBeDestroyedOnAddToInventory() => false;
 	public virtual int TakeAmmo(int count)
 	{
-		if ( !UsesBullets ) return count;
+		if ( !UsesBullets || !HasOwner ) return count;
 
 		if ( Ammo < count ) {
 			int newAmmoCount = Math.Max( Ammo - count, 0 );

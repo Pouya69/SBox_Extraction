@@ -557,14 +557,6 @@
               "Type": "Component",
               "IdValue": "b6843d52-658a-43cb-8aa5-9c40800e29f5"
             },
-            "Property": "MassOverride",
-            "Value": 0.19999999
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "b6843d52-658a-43cb-8aa5-9c40800e29f5"
-            },
             "Property": "MinImpactDamageSpeed",
             "Value": 5
           },
@@ -664,7 +656,7 @@
               "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
             },
             "Property": "Position",
-            "Value": "-618.044739,-692.783264,69.2772522"
+            "Value": "-120.929871,-875.327881,433.455658"
           },
           {
             "Target": {
@@ -713,7 +705,7 @@
               "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
             },
             "Property": "Position",
-            "Value": "-618.044739,-756.539307,69.2772522"
+            "Value": "-120.929871,-939.083923,433.455658"
           },
           {
             "Target": {
@@ -762,7 +754,7 @@
               "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
             },
             "Property": "Position",
-            "Value": "-580.531921,-696.439392,69.2772522"
+            "Value": "-83.4170532,-878.984009,433.455658"
           },
           {
             "Target": {
@@ -811,7 +803,7 @@
               "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
             },
             "Property": "Position",
-            "Value": "-644.402954,-730.28717,69.2772522"
+            "Value": "-147.288086,-912.831787,433.455658"
           },
           {
             "Target": {
@@ -860,7 +852,7 @@
               "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
             },
             "Property": "Position",
-            "Value": "-623.380127,-712.252014,69.2772522"
+            "Value": "-126.265259,-894.796631,433.455658"
           },
           {
             "Target": {
@@ -909,7 +901,7 @@
               "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
             },
             "Property": "Position",
-            "Value": "-595.792358,-729.602783,69.2772522"
+            "Value": "-98.6774902,-912.1474,433.455658"
           },
           {
             "Target": {
@@ -958,7 +950,7 @@
               "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
             },
             "Property": "Position",
-            "Value": "-647.337708,-756.378845,69.2772522"
+            "Value": "-150.222839,-938.923462,433.455658"
           },
           {
             "Target": {
@@ -983,6 +975,2064 @@
         "22bb2dc3-45ba-47bb-a723-6a3c54782548": "a3dea18c-d850-4951-925f-963ed8f57491",
         "b6843d52-658a-43cb-8aa5-9c40800e29f5": "85b26c85-7846-4cb6-ad93-179a6003bc54",
         "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "3343860a-90ce-4577-82fd-fe7d089800ee"
+      }
+    },
+    {
+      "__guid": "578ead27-70e7-4276-a7b9-5ea4b1760ee8",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (23)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-36.8190079,-841.398621,433.455566"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "578ead27-70e7-4276-a7b9-5ea4b1760ee8",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "95361d39-5141-4516-96a4-97c8980db7a3",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "8b83b9c4-a52a-46f0-a624-5b71d68861e5",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "122a5db8-0b67-4f65-88a7-aef223e7d5e5",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "e2743e92-b4f6-4245-8e4e-bd2da5ea4caf",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "3fc2ba38-3166-408a-888b-ad6513ad096e"
+      }
+    },
+    {
+      "__guid": "47e29216-2e34-472d-8c55-dbb50ecad7c9",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (22)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-36.8190079,-905.154663,433.455566"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "47e29216-2e34-472d-8c55-dbb50ecad7c9",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "317026ac-09b0-4d85-8842-e9ab5b593173",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "e63e7b38-5f14-436d-8271-e80af903342d",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "09e1c4af-d7ca-4dc9-a901-9ac6938a40ed",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "e357849b-0a60-470c-bf37-07c0c5f1c678",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "f091a5ea-211c-4f43-872f-03586dd2d112"
+      }
+    },
+    {
+      "__guid": "3ed0ba0c-0ce9-424b-aab1-d73909b39762",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (21)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "0.693809509,-845.054749,433.455566"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "3ed0ba0c-0ce9-424b-aab1-d73909b39762",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "676687b0-147c-4184-a702-6ae1bc720578",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "d6831077-69dc-4c39-a76a-3a00fb8b2d28",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "27f71db6-8e00-4c1e-8c31-85bd1b59efe2",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "5e0c26e2-2eb2-478e-9fb5-a28ec3a5ef74",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "b635141e-513d-46b0-b7ba-283e058042b6"
+      }
+    },
+    {
+      "__guid": "5ce723f6-251e-4a8a-9bcd-264a4bd37327",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (20)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-63.1772232,-878.902527,433.455566"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "5ce723f6-251e-4a8a-9bcd-264a4bd37327",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "2e79d8e8-faa9-4b4f-bb99-aa3bf789c307",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "226867f0-880c-41bd-9a50-6cdc0798bb52",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "8830f78a-392c-4c27-9f09-aab078084cd8",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "a9b8304c-e62f-4938-8fe2-c81b81995e26",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "387e511a-0d91-44a9-aaf5-f6c27c3c4457"
+      }
+    },
+    {
+      "__guid": "14dfb5a8-216b-404d-b5a7-4402a3fcd244",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (19)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-42.1543961,-860.867371,433.455566"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "14dfb5a8-216b-404d-b5a7-4402a3fcd244",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "2c982ea0-77bd-40b7-9994-9a3ee79970e3",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "83a80b90-f30a-47ab-8dbc-c54f5fd8158e",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "c3c5ece4-c7f1-4b94-a2f0-6e0a71095e58",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "3c8c4667-6348-4d72-8caf-21ecd4c8a58b",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "5baf4bf4-fbf8-4111-b3f5-5c4e43b1053b"
+      }
+    },
+    {
+      "__guid": "b3991b16-7e5c-4d8f-8f7f-407f9ce1ce3c",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (18)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-14.5666275,-878.21814,433.455566"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "b3991b16-7e5c-4d8f-8f7f-407f9ce1ce3c",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "87cac4d3-260f-4f10-9fbc-1a044bd5ab5c",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "0c456976-e559-4fed-98b8-690904310dd5",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "dcc4c5de-b84a-40b6-ad3f-7f6c09f2f65b",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "c2d1eeb1-9cc9-45c9-8b70-4408b7a915c4",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "47ae5cf7-5149-4cae-b929-10d4a2930fed"
+      }
+    },
+    {
+      "__guid": "fb3e7e8b-3d9c-4ebe-bdad-e88d0c2ea4dd",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (17)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-66.1119766,-904.994202,433.455566"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "fb3e7e8b-3d9c-4ebe-bdad-e88d0c2ea4dd",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "e0d7e10a-2d4b-4b0e-8e6c-925b1a71a24c",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "9b10cb4d-05e2-4aa9-8665-6c1a04dfe1f8",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "b221d4a9-e04f-4223-9587-c6fc8ec82ec7",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "342513dc-f6df-46fc-b2cc-614dd886c360",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "1274e84c-f530-403b-9b37-e5248d59ab17"
+      }
+    },
+    {
+      "__guid": "37e6a6aa-33df-4136-9c15-6c325106a136",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (30)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-127.404213,-793.09082,433.455597"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "37e6a6aa-33df-4136-9c15-6c325106a136",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "d05e0c6b-a18d-4c28-a0ef-93164610b1b8",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "5b72702d-4913-407a-9e77-f57c06f942b6",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "282a98ce-3f09-4f84-8adb-b109382a7a97",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "05245329-8ad3-4115-af52-f9662476e939",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "30f371f9-69f8-4c2b-b879-e7454a2d7fe3"
+      }
+    },
+    {
+      "__guid": "0dfe15ce-719c-417e-a10f-c70e6d2948b1",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (29)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-127.404213,-856.846863,433.455597"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "0dfe15ce-719c-417e-a10f-c70e6d2948b1",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "3867b822-f1ba-48ae-b1c0-0178903239d4",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "1f9c1987-2470-40d0-b8d7-66a86dfa5a38",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "4ac4348b-6175-43a3-9092-92f485d02bdd",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "6ae1896e-f1d2-4811-945e-7f55f8a8aec0",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "a1735938-99cf-4b3a-ae11-237c8f9b7e21"
+      }
+    },
+    {
+      "__guid": "bc88b927-d62a-4086-8658-56545b01c749",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (28)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-89.8913956,-796.746948,433.455597"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "bc88b927-d62a-4086-8658-56545b01c749",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "adca9010-9d07-4d7c-94af-dddfe39442d5",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "7e69b974-e93d-446c-9301-938bb35d2f32",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "5cfc2bef-b4bc-4ee1-933d-7b9fb66e4edd",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "57a6f9f4-390d-4217-bb88-d794a9b564c8",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "1914eaab-2c4a-49c5-aeda-0fea9b210429"
+      }
+    },
+    {
+      "__guid": "23cdfc54-e49a-4dc0-a2ff-1b3a89dc5ee6",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (27)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-153.762421,-830.594727,433.455597"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "23cdfc54-e49a-4dc0-a2ff-1b3a89dc5ee6",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "74c1ef91-b99c-4214-9b9c-ed565dd9ff4b",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "6f02fdc5-9072-4487-81c1-28cecad6dc2b",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "ede5fde4-620a-4b7b-801b-b06631e44c98",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "188d9ee8-a51d-444d-bba2-e71331d8a3b5",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "63970fe9-8ea9-4301-a87a-ab4c65903b9b"
+      }
+    },
+    {
+      "__guid": "e77e5dde-b879-4159-a67c-5fb58b8a4f04",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (26)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-132.739594,-812.55957,433.455597"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "e77e5dde-b879-4159-a67c-5fb58b8a4f04",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "9522a5b6-b572-4a87-a4c3-7c762355c35e",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "870d32ea-9c38-404c-bd73-b186ade9bb0e",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "45d080b9-1a6a-4fd3-a506-1fdef38d823a",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "da3fa1f0-d58d-470b-a0c6-57ef15ffbfe7",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "230ba96b-3882-47d0-95f8-e9b6d6d2a8c9"
+      }
+    },
+    {
+      "__guid": "db59cbc2-e4e1-46a7-aedd-268480530199",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (25)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-105.151833,-829.910339,433.455597"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "db59cbc2-e4e1-46a7-aedd-268480530199",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "3734f072-df35-496d-9bbe-a7b1ec79eab0",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "558cbed7-22fe-41d6-8ddf-de7446b3fb3c",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "ab9aa94d-14e3-4785-adb2-795215fbee3f",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "870f3fd5-5542-4e63-9c66-8e462e7a2b18",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "61019a45-9a60-4e4b-bd35-c12614990f61"
+      }
+    },
+    {
+      "__guid": "c1829075-dcb6-4cab-8b7c-4b1f5ae289b9",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (24)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-156.697174,-856.686401,433.455597"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "c1829075-dcb6-4cab-8b7c-4b1f5ae289b9",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "4cf30bef-2a45-47d0-8114-85c38ab000d6",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "9d50946c-a076-4d7e-a4dc-f153f35a8493",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "d1be1254-cdf9-415c-ae12-d25925d21ca3",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "e4465b5d-58bb-423a-a44e-5ef11cb61984",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "31d2fd25-0743-4245-be4b-fabeaf31c44e"
+      }
+    },
+    {
+      "__guid": "1f5fd38a-ecf7-471d-af04-29e23985b5da",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (37)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-58.3203583,-755.583923,433.455505"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "1f5fd38a-ecf7-471d-af04-29e23985b5da",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "e97adf8c-81bc-4e08-b284-a2a2f3ecf7f0",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "640982c0-1426-4e7e-930a-35bf19c0ca72",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "7380d095-b6e1-42d9-94c3-0645935cbfe7",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "9811e4cb-3719-4536-9107-dcd8e760a73a",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "feceb47c-7dc0-4267-948d-97c7a04bd1fb"
+      }
+    },
+    {
+      "__guid": "41cea1b0-fcdb-4430-b876-64920ff2279f",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (36)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-58.3203583,-819.339966,433.455505"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "41cea1b0-fcdb-4430-b876-64920ff2279f",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "41dcf581-56b6-4c32-97c8-f38d5f02e806",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "ca57eef2-8985-43f9-836f-8806042250a9",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "221efc2c-a426-454f-9566-288f66208525",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "3e90be83-26cd-4882-b37f-6c5a36db7109",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "df2e67d0-06b4-4977-a85d-6a2e1ffed7e1"
+      }
+    },
+    {
+      "__guid": "f3cb8b5e-fb9a-46ef-99c1-8b248422aea0",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (35)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-20.8075409,-759.240051,433.455505"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "f3cb8b5e-fb9a-46ef-99c1-8b248422aea0",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "9294ab9c-872d-42ee-91ff-ea44d9e800f5",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "c9b03ece-f91f-4664-8896-9ee4220eba32",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "a874c353-fb8a-40e0-8574-c54772a04f79",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "dc51f4c4-c0ed-43ef-b7af-435e18194dc8",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "cde355bd-5148-4cf6-ae25-8425abcf336b"
+      }
+    },
+    {
+      "__guid": "d535abb6-d0a0-4924-9d93-659ebaba4c48",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (34)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-84.678566,-793.08783,433.455505"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "d535abb6-d0a0-4924-9d93-659ebaba4c48",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "1861ec39-d380-4216-bcef-ae42dacc957a",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "21649e72-107f-49c0-9444-b46a6cd760f1",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "5539f617-1b1b-4aba-b872-6abe10b65068",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "0b9336ba-15fa-4440-b4f4-71d1b2833f1b",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "c17f5cbe-99d9-43f3-8e0d-46df55e8ea36"
+      }
+    },
+    {
+      "__guid": "3b34772a-fa73-49f7-b4be-0000a5e99b71",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (33)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-63.6557388,-775.052673,433.455505"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "3b34772a-fa73-49f7-b4be-0000a5e99b71",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "f4adc36e-d54d-45c9-b6da-c377b2df3d74",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "574c5065-5334-41e2-a12e-d56f868cecd7",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "3b745e5d-4b6a-481f-b3e2-8720b3526629",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "46c51f20-5e0c-4060-bbef-d6ca55d498eb",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "adf1f9b0-e04f-4c3e-a7f8-486bff968f99"
+      }
+    },
+    {
+      "__guid": "2fb86f1a-94c2-4a46-a2b5-522cb28b6904",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (32)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-36.0679779,-792.403442,433.455505"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "2fb86f1a-94c2-4a46-a2b5-522cb28b6904",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "2c121481-d20b-43d5-bf1b-aa7cdd5dc978",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "0c74032b-4139-4ec8-9f93-081de54eb3a3",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "6445ff53-4301-46e0-a013-bb6fd321bd2e",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "69c4bbd3-75a1-48e0-bba3-38a185b7147f",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "f075df58-3bfd-42b0-a418-e9c78b80a047"
+      }
+    },
+    {
+      "__guid": "fca48bee-4441-4205-81a4-edbedd763c42",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (31)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-87.6133194,-819.179504,433.455505"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "fca48bee-4441-4205-81a4-edbedd763c42",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "11f0eb8e-bd21-4c95-8203-6b88b048f1e6",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "c9889913-06c6-4f9b-adf3-66629e100baa",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "609428a7-e525-4b97-8e8a-d3a052a4bd1d",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "30d55f40-f220-45d2-bb98-4a0b583cf793",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "0dadb1a9-4aea-48c5-b590-fd88341874fe"
+      }
+    },
+    {
+      "__guid": "db9be084-20d0-472c-a34e-1667947f0703",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (44)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-91.6752319,-969.379272,433.45578"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "db9be084-20d0-472c-a34e-1667947f0703",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "e6a3d15b-d6c2-46be-a82b-01d84b0b46a4",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "a23f019b-7e14-4c33-ac28-53e0c6f09db4",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "e902101a-8192-41ed-9bae-4ede8c176d60",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "3cb23887-7a41-40a6-bf6f-9a375d46185e",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "d894751b-7107-4623-94cf-980577efd793"
+      }
+    },
+    {
+      "__guid": "f87e8d4c-c8ea-45bc-99a6-2f9731ce249e",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (43)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-91.6752319,-1033.13525,433.45578"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "f87e8d4c-c8ea-45bc-99a6-2f9731ce249e",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "5627ac36-3909-4763-9eae-d8c26c57ae7b",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "5398431f-5687-4cc4-bca6-ee802a33d450",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "637805c6-f838-4c1c-90a0-f868785f79b4",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "2dfb859d-dd8d-4d55-9e00-a3dcfd4b825a",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "d72832a5-3908-4a83-948e-84b85e7e97b7"
+      }
+    },
+    {
+      "__guid": "249c6b45-2349-47e5-9fa6-98aba52aa1fb",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (42)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-54.1624184,-973.0354,433.45578"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "249c6b45-2349-47e5-9fa6-98aba52aa1fb",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "d2eb22d9-6191-4cb1-99c4-dd1e3340707a",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "2cfe9fe9-4525-43ad-a8a7-1b3c1a2deee8",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "544ece62-dc05-4130-af04-1b57c4e8bd91",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "7603c1ea-e192-477a-b88e-6868ebe859b3",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "e1c508bb-9091-4b21-b6a1-736a4f3d1f67"
+      }
+    },
+    {
+      "__guid": "824e7b70-088e-4b23-a7b3-a7e34446d34f",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (41)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-118.033447,-1006.88318,433.45578"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "824e7b70-088e-4b23-a7b3-a7e34446d34f",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "1dab4866-6644-483c-b2f3-8046344f7f12",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "4c9f340e-f968-42fe-b9a7-4678845bbc9d",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "6ef3e369-b28f-49b7-afbc-d102eb1f970b",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "969959ff-dd7d-4a78-8f85-01b096bc8404",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "26c68c50-4324-4bf8-a4e7-61c268ab289a"
+      }
+    },
+    {
+      "__guid": "6f294886-cfb2-4d65-bd6c-17ab696dd653",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (40)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-97.0106201,-988.848022,433.45578"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "6f294886-cfb2-4d65-bd6c-17ab696dd653",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "1426b61c-4bc9-463f-ab3c-c9b5b4c9d046",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "a6cf4379-405b-40c8-8170-2d525037a836",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "a3f1ecae-de59-471a-9359-c06e1969934a",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "c0f39933-217e-437c-b891-249ebba97dea",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "0944a1f2-736c-4f20-ab28-771999e908b8"
+      }
+    },
+    {
+      "__guid": "3bc8ddd3-b5cb-4431-8c90-90643bb54481",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (39)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-69.4228516,-1006.19879,433.45578"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "3bc8ddd3-b5cb-4431-8c90-90643bb54481",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "f3c328ee-8450-4a33-b328-717bd8d7393a",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "2d24782e-17ee-45c1-b2ba-9fe88f6892b3",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "a64de437-8545-4718-a4df-d07e3a802a65",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "15a0f5fa-9059-4a76-8fd8-82415559f599",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "4e7406d1-cd38-47cd-9897-b5bfd32a2641"
+      }
+    },
+    {
+      "__guid": "961f6218-4e52-4a77-ac33-1084d6186fb7",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (38)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-120.968201,-1032.97485,433.45578"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "961f6218-4e52-4a77-ac33-1084d6186fb7",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "17ec387b-9608-441f-a395-415b3e82886a",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "a344bdb9-8e44-4e4d-b846-7b08a6065108",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "b42f17de-d695-4dec-92e8-2f51ab6fdcdb",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "77ff72bc-d84e-45a7-a253-41bcfcb50cd9",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "ec10ef50-b7b1-4817-9be4-99de63d72f3e"
+      }
+    },
+    {
+      "__guid": "c88d32ce-b02d-43fa-a9f1-59a6c1884312",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (51)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-199.977066,-922.55011,433.45575"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "c88d32ce-b02d-43fa-a9f1-59a6c1884312",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "15a6e8fb-9a90-4c9e-b7c0-9137eca52754",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "75e11f14-c4c2-45b1-a6ac-cce93d66874d",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "cb3394f3-31c8-4865-9ddc-f856948bc9ab",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "3c006367-ff8c-4fe0-a6a0-5750c5ce3492",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "83699503-8d4c-4f77-ac44-2b48fc23410f"
+      }
+    },
+    {
+      "__guid": "89b32493-3ffc-4a54-befa-afd7f4e8f02a",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (50)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-199.977066,-986.306091,433.45575"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "89b32493-3ffc-4a54-befa-afd7f4e8f02a",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "0bd5117a-7ec8-4c5b-900a-7aea4630b7a3",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "f28289e3-1cfc-49ce-a22a-90ac9da4fba6",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "6d7e92cc-c2a2-4b92-9337-18b54e666d20",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "38ac080f-5ba6-4667-9599-604a286aa2b6",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "7f43273a-212d-4d23-8bb8-bdff4271fe48"
+      }
+    },
+    {
+      "__guid": "3633ac45-e11c-4abc-844e-a3fd598cfd3f",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (49)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-162.464249,-926.206238,433.45575"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "3633ac45-e11c-4abc-844e-a3fd598cfd3f",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "38360966-41c4-4e6c-b8f7-27d67ea2333f",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "ad1aca6f-e08e-4ad6-adf9-7cd96b48dcb9",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "2de210cd-4db5-45e1-a4fa-14c7f41abe76",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "96c32624-dd63-4d57-9916-71a742573a4e",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "3a810ca4-626c-40fa-b57a-32d2cae508b5"
+      }
+    },
+    {
+      "__guid": "34615dd2-233a-4e19-9328-4c77e0522806",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (48)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-226.335281,-960.054016,433.45575"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "34615dd2-233a-4e19-9328-4c77e0522806",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "bc803181-b072-4326-8b4c-32adaae37e34",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "5dbc37f9-10cc-4961-abdf-d5016d159160",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "b716ac81-fdd5-4f42-9e5d-42a66573d350",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "d278601e-6639-40eb-9573-673947bf42b7",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "86e9d34f-a6a7-4b87-8f21-c2547f5929cf"
+      }
+    },
+    {
+      "__guid": "b27b2f5f-00ef-4820-899a-8834266ecb76",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (47)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-205.312454,-942.01886,433.45575"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "b27b2f5f-00ef-4820-899a-8834266ecb76",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "9624aa9c-ed64-4a3c-8272-9ef6573d51c7",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "bd06a27c-e7d1-477f-8f3a-392c82eadc66",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "2cf57725-9d7d-4038-b294-54b1c9a6aec4",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "94fc8897-a090-44a8-9f8f-e41162df1b80",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "82b17430-4b9a-4069-92d9-714355690365"
+      }
+    },
+    {
+      "__guid": "a07da9a2-beda-40ab-96f1-961a7c062f82",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (46)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-177.724686,-959.369629,433.45575"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "a07da9a2-beda-40ab-96f1-961a7c062f82",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "d06d538e-4544-4b70-a610-b24cb243aa64",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "2a4718d1-f113-412b-8507-01aa35a5de6b",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "c6f418cb-f285-468a-9763-162bb90f918f",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "7b34f368-044b-4d74-b407-0d9c701a08d6",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "4db29e2d-c763-4980-874a-a7adc285a180"
+      }
+    },
+    {
+      "__guid": "3c11acc3-21d4-4844-ab51-e7db1ea7ce08",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (45)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-229.270035,-986.145691,433.45575"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "3c11acc3-21d4-4844-ab51-e7db1ea7ce08",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "940a06b0-de3f-4aeb-aebe-2d0db656cdc0",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "fa0aa6a7-5b02-4d41-8ea3-8a8803e5417d",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "51fd7dca-d7e9-4155-aeb9-2f5cdb88b3ce",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "554acc5c-df47-4498-99d8-baef20f87d09",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "8b89cb62-685a-4d68-b360-e69cd2562f28"
+      }
+    },
+    {
+      "__guid": "82d1c555-5866-434f-9657-253ca0882d25",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (58)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "10.6353302,-910.807739,433.455963"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "82d1c555-5866-434f-9657-253ca0882d25",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "8aaca648-4c6f-4eb7-ad61-898dcea76286",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "7ae3f6f6-9ef8-477f-a2f4-35fb498a96d4",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "63d2635f-47ea-460f-8a10-0c7bc498eef8",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "09154b36-f1eb-4b0c-b974-56fcc02d219c",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "fab2ac48-9eb9-4d47-a9c9-1ac97a2c6381"
+      }
+    },
+    {
+      "__guid": "0bcc1a95-0f99-4fbb-ba21-e56bd6b3cb1c",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (57)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "10.6353302,-974.563721,433.455963"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "0bcc1a95-0f99-4fbb-ba21-e56bd6b3cb1c",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "77288670-4cf5-4576-8f2d-64fb55159f02",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "af34465c-793e-44ed-a334-5d58cbeaa211",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "533a65a5-0746-4476-92c3-69ddd29dbb86",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "7dff63d9-3c06-43c5-87aa-5bb68c7394fb",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "2f6e673c-b231-42bf-b0bf-cff37fb904c4"
+      }
+    },
+    {
+      "__guid": "89666ef9-f8b5-4c40-a4c7-3f8652abf6b0",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (56)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "48.1481476,-914.463867,433.455963"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "89666ef9-f8b5-4c40-a4c7-3f8652abf6b0",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "a7f805b8-345d-40a8-a191-cca8a25235ee",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "80fa39c4-787c-4f65-8c6d-90964b7e7abb",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "ceb19f98-3cf1-45d0-8f3c-b82e89668b16",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "9f9f7a08-9e4e-4926-943f-b9cf72634d4f",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "85925361-3398-4945-abb0-22903745b048"
+      }
+    },
+    {
+      "__guid": "d408b2a0-d107-4038-9ad7-1f2307cd76b9",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (55)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-15.7228851,-948.311646,433.455963"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "d408b2a0-d107-4038-9ad7-1f2307cd76b9",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "4de5c38f-bd52-4690-a2f9-49a63e6cd741",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "0da81130-f41a-4503-9aea-ff6246281ed7",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "8a6bc75d-5675-4f80-b4d1-599ae0950400",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "fcf0e1ae-9c82-4b72-a3fa-9136518b2a72",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "613cfeea-eb45-4dea-8e55-c11dfc6988bf"
+      }
+    },
+    {
+      "__guid": "b2e6ff7d-bbb8-4ca0-a671-f7e60a2adadc",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (54)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "5.29994202,-930.276489,433.455963"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "b2e6ff7d-bbb8-4ca0-a671-f7e60a2adadc",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "356fc9ad-b718-4f55-ac91-e3b6cd8a945b",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "d78bb371-bf47-497a-b8e1-2249ea127eb4",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "b40cf92e-f31b-4ba1-be8f-2f85eccc141f",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "523a0244-c839-477c-b69a-ef6e9b0f19a3",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "bd0fdb84-420b-4ce2-848d-40779dfa29a6"
+      }
+    },
+    {
+      "__guid": "7b63c5bc-7c3e-4294-a7b0-109f8105a9b0",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (53)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "32.8877106,-947.627258,433.455963"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "7b63c5bc-7c3e-4294-a7b0-109f8105a9b0",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "8fa63dd7-7256-46b3-802f-1b60c8d28c20",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "21c13aad-2dd7-48ab-a66b-172faeafa412",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "c09096f8-1f2f-44e9-8d07-33bb889f5930",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "8e82490a-34d5-417f-b322-cfba3013fedf",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "27df7988-43e6-4d6f-894e-03bf7a8aa39b"
+      }
+    },
+    {
+      "__guid": "5f16830e-ac15-4466-bc1f-b0590ed78e85",
+      "__version": 2,
+      "__Prefab": "environment/misc/watermelon01a (8).prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Name",
+            "Value": "watermelon01a (52)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9132d4ea-f674-4ea2-b500-0ad6083a3a72"
+            },
+            "Property": "Position",
+            "Value": "-18.6576385,-974.40332,433.455963"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae"
+            },
+            "Property": "collider",
+            "Value": {
+              "_type": "component",
+              "component_id": "22bb2dc3-45ba-47bb-a723-6a3c54782548",
+              "go": "9132d4ea-f674-4ea2-b500-0ad6083a3a72",
+              "component_type": "ModelCollider"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9132d4ea-f674-4ea2-b500-0ad6083a3a72": "5f16830e-ac15-4466-bc1f-b0590ed78e85",
+        "81bb8d03-4cba-4551-934c-63030856e7f1": "fa77c338-8581-48e2-b5e0-1709a207d5ec",
+        "9176beb8-a4fc-44eb-80a1-23141559bdb1": "c552e3a9-7753-4b61-b07e-64ecf210a2da",
+        "22bb2dc3-45ba-47bb-a723-6a3c54782548": "c9702fa1-14e2-4548-a510-68c9d06c68cf",
+        "b6843d52-658a-43cb-8aa5-9c40800e29f5": "efd31261-5341-408e-aee2-d069d7c4507c",
+        "d9ee5aef-b375-4fd5-9c3d-7e0165eb11ae": "79610067-5cf8-4a2a-b89a-936595d32865"
       }
     },
     {
@@ -1037,7 +3087,7 @@
           {
             "Id": {
               "Type": "GameObject",
-              "IdValue": "8f761664-ef09-489f-b9f8-b9cefb33d032"
+              "IdValue": "f2285a24-00c0-4924-a42e-ba51eed64b0a"
             },
             "Parent": {
               "Type": "GameObject",
@@ -1050,7 +3100,7 @@
             "ContainerProperty": "Children",
             "IsContainerArray": true,
             "Data": {
-              "__guid": "8f761664-ef09-489f-b9f8-b9cefb33d032",
+              "__guid": "f2285a24-00c0-4924-a42e-ba51eed64b0a",
               "__version": 2,
               "Flags": 0,
               "Name": "Clothing - hair_bobcut",
@@ -1071,18 +3121,18 @@
           {
             "Id": {
               "Type": "Component",
-              "IdValue": "b041d23a-fcb1-4fb6-8d7a-3b210e8b9485"
+              "IdValue": "0b4491e7-d72a-46dd-be06-050be80e9a5a"
             },
             "Parent": {
               "Type": "GameObject",
-              "IdValue": "8f761664-ef09-489f-b9f8-b9cefb33d032"
+              "IdValue": "f2285a24-00c0-4924-a42e-ba51eed64b0a"
             },
             "PreviousElement": null,
             "ContainerProperty": "Components",
             "IsContainerArray": true,
             "Data": {
               "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "b041d23a-fcb1-4fb6-8d7a-3b210e8b9485",
+              "__guid": "0b4491e7-d72a-46dd-be06-050be80e9a5a",
               "__enabled": true,
               "Flags": 0,
               "AnimationGraph": null,
@@ -1134,7 +3184,7 @@
           {
             "Id": {
               "Type": "GameObject",
-              "IdValue": "24bb3f72-6dea-4c2c-b196-31fd38909eb0"
+              "IdValue": "c0f9e2e3-5e27-476f-800b-fabd58e31606"
             },
             "Parent": {
               "Type": "GameObject",
@@ -1142,12 +3192,12 @@
             },
             "PreviousElement": {
               "Type": "GameObject",
-              "IdValue": "8f761664-ef09-489f-b9f8-b9cefb33d032"
+              "IdValue": "f2285a24-00c0-4924-a42e-ba51eed64b0a"
             },
             "ContainerProperty": "Children",
             "IsContainerArray": true,
             "Data": {
-              "__guid": "24bb3f72-6dea-4c2c-b196-31fd38909eb0",
+              "__guid": "c0f9e2e3-5e27-476f-800b-fabd58e31606",
               "__version": 2,
               "Flags": 0,
               "Name": "Clothing - denim_skirt_green",
@@ -1168,18 +3218,18 @@
           {
             "Id": {
               "Type": "Component",
-              "IdValue": "31b7ec3e-7a16-4086-8171-c01172848818"
+              "IdValue": "3ce045c5-5ff2-4e03-8b63-89a38cef7dc5"
             },
             "Parent": {
               "Type": "GameObject",
-              "IdValue": "24bb3f72-6dea-4c2c-b196-31fd38909eb0"
+              "IdValue": "c0f9e2e3-5e27-476f-800b-fabd58e31606"
             },
             "PreviousElement": null,
             "ContainerProperty": "Components",
             "IsContainerArray": true,
             "Data": {
               "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "31b7ec3e-7a16-4086-8171-c01172848818",
+              "__guid": "3ce045c5-5ff2-4e03-8b63-89a38cef7dc5",
               "__enabled": true,
               "Flags": 0,
               "AnimationGraph": null,
@@ -1231,7 +3281,7 @@
           {
             "Id": {
               "Type": "GameObject",
-              "IdValue": "e82223ad-8287-4fd9-955b-44a6f2eff2a2"
+              "IdValue": "7dbc779d-edd5-4b61-a344-8d328c8f4346"
             },
             "Parent": {
               "Type": "GameObject",
@@ -1239,12 +3289,12 @@
             },
             "PreviousElement": {
               "Type": "GameObject",
-              "IdValue": "24bb3f72-6dea-4c2c-b196-31fd38909eb0"
+              "IdValue": "c0f9e2e3-5e27-476f-800b-fabd58e31606"
             },
             "ContainerProperty": "Children",
             "IsContainerArray": true,
             "Data": {
-              "__guid": "e82223ad-8287-4fd9-955b-44a6f2eff2a2",
+              "__guid": "7dbc779d-edd5-4b61-a344-8d328c8f4346",
               "__version": 2,
               "Flags": 0,
               "Name": "Clothing - tshirt",
@@ -1265,18 +3315,18 @@
           {
             "Id": {
               "Type": "Component",
-              "IdValue": "d668b1f1-3c74-44aa-b39c-80db78b19ac9"
+              "IdValue": "fb531543-a721-4e09-b0b3-f1854855d41d"
             },
             "Parent": {
               "Type": "GameObject",
-              "IdValue": "e82223ad-8287-4fd9-955b-44a6f2eff2a2"
+              "IdValue": "7dbc779d-edd5-4b61-a344-8d328c8f4346"
             },
             "PreviousElement": null,
             "ContainerProperty": "Components",
             "IsContainerArray": true,
             "Data": {
               "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "d668b1f1-3c74-44aa-b39c-80db78b19ac9",
+              "__guid": "fb531543-a721-4e09-b0b3-f1854855d41d",
               "__enabled": true,
               "Flags": 0,
               "AnimationGraph": null,
@@ -1328,7 +3378,7 @@
           {
             "Id": {
               "Type": "GameObject",
-              "IdValue": "d5168090-d984-404e-921e-23bca9ab7626"
+              "IdValue": "77c5a4c7-3427-4107-895f-121d375c1802"
             },
             "Parent": {
               "Type": "GameObject",
@@ -1336,12 +3386,12 @@
             },
             "PreviousElement": {
               "Type": "GameObject",
-              "IdValue": "e82223ad-8287-4fd9-955b-44a6f2eff2a2"
+              "IdValue": "7dbc779d-edd5-4b61-a344-8d328c8f4346"
             },
             "ContainerProperty": "Children",
             "IsContainerArray": true,
             "Data": {
-              "__guid": "d5168090-d984-404e-921e-23bca9ab7626",
+              "__guid": "77c5a4c7-3427-4107-895f-121d375c1802",
               "__version": 2,
               "Flags": 0,
               "Name": "Clothing - boxing_boots_blue",
@@ -1362,18 +3412,18 @@
           {
             "Id": {
               "Type": "Component",
-              "IdValue": "6d19c7c3-8d9b-4035-a336-6c3f79dea44c"
+              "IdValue": "b1fe729c-725d-4959-95ac-97dfed8e1d09"
             },
             "Parent": {
               "Type": "GameObject",
-              "IdValue": "d5168090-d984-404e-921e-23bca9ab7626"
+              "IdValue": "77c5a4c7-3427-4107-895f-121d375c1802"
             },
             "PreviousElement": null,
             "ContainerProperty": "Components",
             "IsContainerArray": true,
             "Data": {
               "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "6d19c7c3-8d9b-4035-a336-6c3f79dea44c",
+              "__guid": "b1fe729c-725d-4959-95ac-97dfed8e1d09",
               "__enabled": true,
               "Flags": 0,
               "AnimationGraph": null,
@@ -1425,7 +3475,7 @@
           {
             "Id": {
               "Type": "GameObject",
-              "IdValue": "5ec56fa3-2c6e-4b30-9495-a6006ff8a287"
+              "IdValue": "d1f8b160-9c5c-404d-996c-4cf95661434f"
             },
             "Parent": {
               "Type": "GameObject",
@@ -1433,12 +3483,12 @@
             },
             "PreviousElement": {
               "Type": "GameObject",
-              "IdValue": "d5168090-d984-404e-921e-23bca9ab7626"
+              "IdValue": "77c5a4c7-3427-4107-895f-121d375c1802"
             },
             "ContainerProperty": "Children",
             "IsContainerArray": true,
             "Data": {
-              "__guid": "5ec56fa3-2c6e-4b30-9495-a6006ff8a287",
+              "__guid": "d1f8b160-9c5c-404d-996c-4cf95661434f",
               "__version": 2,
               "Flags": 0,
               "Name": "Clothing - wizard_beard",
@@ -1459,18 +3509,18 @@
           {
             "Id": {
               "Type": "Component",
-              "IdValue": "5b8cb018-0501-4b04-98b9-8c6c464fc4bd"
+              "IdValue": "f0d9beef-b3c7-4170-a01a-3ab43c4ed5ad"
             },
             "Parent": {
               "Type": "GameObject",
-              "IdValue": "5ec56fa3-2c6e-4b30-9495-a6006ff8a287"
+              "IdValue": "d1f8b160-9c5c-404d-996c-4cf95661434f"
             },
             "PreviousElement": null,
             "ContainerProperty": "Components",
             "IsContainerArray": true,
             "Data": {
               "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "5b8cb018-0501-4b04-98b9-8c6c464fc4bd",
+              "__guid": "f0d9beef-b3c7-4170-a01a-3ab43c4ed5ad",
               "__enabled": true,
               "Flags": 0,
               "AnimationGraph": null,
@@ -1850,54 +3900,11 @@
       }
     },
     {
-      "__guid": "b12d6991-d992-44af-804e-6d5f7e9feb0f",
-      "__version": 2,
-      "__Prefab": "prefabs/democube.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "150830bf-b557-4ea2-8234-c0ddbd638b9e"
-            },
-            "Property": "Position",
-            "Value": "1848.65625,-1549.92798,197.146866"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "150830bf-b557-4ea2-8234-c0ddbd638b9e"
-            },
-            "Property": "Rotation",
-            "Value": "0.104117602,0.173177183,-0.504635334,0.83935231"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "150830bf-b557-4ea2-8234-c0ddbd638b9e"
-            },
-            "Property": "Tags",
-            "Value": "world"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "150830bf-b557-4ea2-8234-c0ddbd638b9e": "b12d6991-d992-44af-804e-6d5f7e9feb0f",
-        "5d09ef65-1e7d-4031-823a-ad62cf67e39c": "74e1d1c3-faea-4e5f-b765-11920056fe28",
-        "87a210b9-3ea2-4310-b948-6dfe71e5cae9": "b99ccd9d-e203-483b-8ff9-cc0664fb541a",
-        "87e3cdf7-8820-422b-942f-ba063a554ee5": "846a7801-b8b8-4b07-88fd-7248143887ea",
-        "7cc7f95d-cf8d-461c-b3e5-cd7104de56c9": "f38b91eb-ede7-40c3-9b5a-3af7628c6684"
-      }
-    },
-    {
       "__guid": "6f0e916d-3ca4-4eb6-8777-aa0834f9d7cf",
       "__version": 2,
       "Flags": 0,
       "Name": "Path_01",
-      "Position": "78.7499008,0,-20.4912663",
+      "Position": "96.6353226,7.13447523,-20.4908504",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1934,13 +3941,13 @@
                 "Mode": "Linear"
               },
               {
-                "Pos": "489.82962,-410.199768,0.000155463815",
+                "Pos": "489.82962,-396.456421,0.000155463815",
                 "In": "0,0,0",
                 "Out": "0,0,0",
                 "Mode": "Linear"
               },
               {
-                "Pos": "489.82962,-342.196503,0.000155463815",
+                "Pos": "489.82962,-356.776306,0.000155463815",
                 "In": "0,0,0",
                 "Out": "0,0,0",
                 "Mode": "Linear"
@@ -2024,6 +4031,2854 @@
         "c1eef7f4-7663-4200-ab4b-e93b20549a22": "df714d9f-69da-47aa-b748-e7ea7762b467",
         "3e56cd92-7a76-43f1-a87f-64cdf4c03d34": "538251d7-0ac6-48cd-b86a-91a038bca92d"
       }
+    },
+    {
+      "__guid": "163be66e-8d76-4a97-b4f6-d6ff8970fd26",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence",
+      "Position": "-276.755798,-561.640503,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "bec5513f-9d01-47cd-a1fc-761c1bf65e41",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "d9094364-a6e4-4d68-bf45-de2f7e92cdee",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "1a70662c-2aad-44e9-8bea-8e8bba6080c6",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (1)",
+      "Position": "-370.315002,-561.640503,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "9172743b-af93-4734-8add-93d714092e2b",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "0cbcec31-4adc-433a-b7a9-4649f727f10e",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "d769566e-debb-4606-a2b7-105425eb5593",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (3)",
+      "Position": "-276.755798,-726.232422,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "abc8488e-ccbb-43d2-a621-effb4e321823",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "2c5be9bf-af34-461a-87ad-305b5341c283",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "fc732e24-eae5-4496-b94e-767f22d5d302",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (2)",
+      "Position": "-370.315002,-726.232422,406.385284",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "ad046be6-a6ee-477d-968f-26e7f6e50d7d",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "e17a783c-f470-4121-aa51-3283fbdd1f15",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "45d4738c-1cb7-44ef-b303-537569bd135a",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (7)",
+      "Position": "-79.7292328,-561.640442,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "3a6885dd-e1c1-4425-9830-758ccaba6c49",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "1fe1a80f-4b3a-4957-aa6f-ffac764347c2",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "0464834c-5b57-4085-972f-aa69c8c99851",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (6)",
+      "Position": "-173.288498,-561.640442,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "ac796aff-3cd2-40a0-9e3e-d5053f14778b",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "6eb595a3-d46a-4c41-940c-2a4c5c5fba3b",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "fde4bcac-e905-4b3b-b4b6-1860de650595",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (5)",
+      "Position": "-79.7292328,-726.232361,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "3a2c3ccd-c161-4b20-8594-5a40136f9915",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "1e3a6113-f844-4f58-9015-48a8280ce6bc",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "390599b7-5b3a-4e55-ae9e-3be647d536f5",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (4)",
+      "Position": "-173.288498,-726.232361,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "35d177e9-d661-4752-9411-a1b94e150432",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "5be6db3d-7066-48a3-8fa9-bf4afc7bcdb7",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "ab8a4047-4612-4c84-9f56-d11552cb483d",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (15)",
+      "Position": "-276.755798,-887.981323,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "9c87fb44-bab7-4753-8a90-8a21d886eb7e",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "cbfc54cb-5f75-4f78-befb-8e7917eca900",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "b80b46dc-15d1-4504-b273-22f3431e874b",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (14)",
+      "Position": "-370.315002,-887.981323,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "361a99e7-c3af-4d8e-803e-17281eecb182",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "c653342f-9d13-49ac-9345-f9afd28e8da1",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "e13be557-ab0e-4541-a4e6-04942d6a22d0",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (13)",
+      "Position": "-276.755798,-1052.57324,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "0c340527-2ca2-4418-a6fc-f05adba175d2",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "25303642-08e0-4156-910b-bc2e2ee2f97b",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "b3978948-1b24-4ad8-90bc-95f192ec5a87",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (12)",
+      "Position": "-370.315002,-1052.57324,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "d7a75ac5-908b-43db-a6da-f39beef4a9cb",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "5055bb29-f74e-4c2e-8f96-37f73ba4ef4f",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "11c4a824-91cd-41f3-994b-5b216b7b3248",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (11)",
+      "Position": "-79.7292328,-887.981262,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "ca5705d0-02ef-48e2-b0dc-86a180582ed1",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "2be7229f-9dbd-4486-bd0f-e0e261240b9f",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "be419995-7a72-4072-8f9e-1dd10e9d1777",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (10)",
+      "Position": "-173.288467,-887.981262,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "c8d58091-eb0c-4ca3-972b-1739ee570d87",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "e527623e-b427-4dba-a108-20ddad8a661c",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "5aa5f905-345a-4da2-a625-6761668d4cbf",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (9)",
+      "Position": "-79.7292328,-1052.57324,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "0fcdd1b2-1dcb-4e16-b832-c98ef8e3a83b",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "c12b2c2f-0e02-4371-a883-a2db6bd60e25",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "faaa521d-672b-41c9-86b4-93908b108744",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (8)",
+      "Position": "-173.288467,-1052.57324,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "614e08f9-2654-4138-aae0-c5dfdc676a8c",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "d1513b2f-4bfd-4973-9830-4a6686792054",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "bf754698-8e71-4ca0-8513-fdd79ce70195",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (31)",
+      "Position": "108.782677,-561.640503,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "65e04d53-6873-48bf-8347-1066c073cdbd",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "a9cf8715-ec84-4e7a-9c45-872fe126cc74",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "9e08d10b-a173-4769-a3e5-3cf88b8ac93f",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (30)",
+      "Position": "15.2234421,-561.640503,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "2a168cf2-cec5-47db-9ed7-64e779816443",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "ebc7be65-97b0-4da7-bf05-d91f84f38c55",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "ccc36891-5b5a-418e-95d1-463eee7af7c5",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (29)",
+      "Position": "108.782677,-726.232422,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "4a3b0062-94b9-45b3-940b-9643192f789d",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "52b62e75-275d-434e-b64c-5404c1c4ebb8",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "da7381d6-a507-4f17-b604-c701a1f4b2d4",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (28)",
+      "Position": "15.2234421,-726.232422,406.385223",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "3e546e76-bb0c-4e32-975c-4ee412c9ba4a",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "fdfee37b-9012-4902-897c-7e34a8bdb1dd",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "dcaf7e0a-5c50-47d9-96c8-000ee0502e64",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (27)",
+      "Position": "305.809204,-561.640442,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "d57d51d7-7cc8-427f-8147-9fac9529a684",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "e2a123da-9f8e-4bf8-ac0a-ada778024b45",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "7696f93a-b3fe-473e-9bbb-973894af0813",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (26)",
+      "Position": "212.249969,-561.640442,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "6bfc070a-20ce-4f3b-bce4-2ffb8f95c304",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "03a8f51d-3a27-46ba-a030-2c0d0bd76a83",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "bd480791-c2af-4b90-8fd6-19a488d2b6c6",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (25)",
+      "Position": "305.809204,-726.232361,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "2a1126f8-a423-4764-91bf-03b1d0155fbd",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "01184e08-8c75-4baf-8e02-bcc24c2eef63",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "d6f2e969-51f4-4654-9f26-ff54dfabb671",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (24)",
+      "Position": "212.249969,-726.232361,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "b17a8ad5-618d-4f26-a3ea-a327567ee3e8",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "2da17b76-1dd7-45df-a5e6-c2a4f0449196",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "c6047131-e849-49e5-a871-15e4793c22fb",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (23)",
+      "Position": "108.782692,-887.981323,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "5fe9655d-e2c1-40fe-a17e-75c039da60f3",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "edfb7990-27bc-4bf8-97e5-934cbf304fea",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "11a53838-525b-4363-a14d-840160630a5a",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (22)",
+      "Position": "15.2234573,-887.981323,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "24ac0c1b-0c24-4003-b4d1-fa4017914b91",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "309cb7ad-574b-4ae9-9ab4-6cd429ff2fbe",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "25c975f6-9702-42c5-966d-c163fe2e8bc0",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (21)",
+      "Position": "108.782692,-1052.57324,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "b3460a6d-e8f9-48c5-9991-ec3ce3f59f9a",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "6cfbd47d-3ada-4b2e-8ff5-37f341fde5f3",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "521774e3-f421-4c54-9495-903d470e3a8a",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (20)",
+      "Position": "15.2234573,-1052.57324,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "b6f71726-7984-49f3-8112-f9a2a4887f9d",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "b01d2d88-3194-428c-8037-b6a1d15f2b8a",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "8473ce2a-153b-4499-a8b2-9890d0420617",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (19)",
+      "Position": "305.809204,-887.981262,406.385101",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "1e2febfa-94d0-4cd8-862d-8534db923e82",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "3ba1d37a-ab08-4a2d-b6be-63b70c6413bd",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "3e87e70f-d51f-4a67-aa0c-bbaba1ce2621",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (18)",
+      "Position": "212.25,-887.981262,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "0cd021b4-5779-44d1-9d6b-9fe63952c5cd",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "b545c994-4025-49dc-89d4-e54fb8e5291e",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "d4062ca6-1532-4ad8-b11c-e1a21bac356f",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (17)",
+      "Position": "305.809204,-1052.57324,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "6c448266-f5fc-4c6f-9ec9-119aaaa319f2",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "73d2872b-c673-46a7-bc4f-0220e43a9dbe",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "67c16ba4-12ad-4160-af42-981397a1ce63",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "simple_fence (16)",
+      "Position": "212.25,-1052.57324,406.385162",
+      "Rotation": "0,-0.707106709,0,0.707106829",
+      "Scale": "1,1,2.21759582",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "4af57bd6-dedf-40f4-8ac5-b2d226429c77",
+          "__enabled": true,
+          "Flags": 0,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/simple_fence.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "ce64c593-0951-455b-b6d0-8fbc892877f0",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/simple_fence.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -2050,17 +6905,6 @@
       }
     },
     "GameObjectSystems": {
-      "RedSnail.WaterTool.WaterManager": {
-        "UnderwaterPostProcessVolume": {
-          "_type": "component",
-          "component_id": "466d8ec8-ee73-4113-a847-b18296e7665f",
-          "go": "a8f524ee-a71a-40e0-ba34-d8ddaaeb6956",
-          "component_type": "PostProcessVolume"
-        }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
@@ -2070,12 +6914,25 @@
         "Storage": {
           "$blob": "c71fc41f-5365-452b-b8db-9df690473a91"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
+      "RedSnail.WaterTool.WaterManager": {
+        "UnderwaterPostProcessVolume": {
+          "_type": "component",
+          "component_id": "466d8ec8-ee73-4113-a847-b18296e7665f",
+          "go": "a8f524ee-a71a-40e0-ba34-d8ddaaeb6956",
+          "component_type": "PostProcessVolume"
+        }
       }
     }
   },
   "ResourceVersion": 3,
   "Title": null,
   "Description": null,
-  "__references": [],
+  "__references": [
+    "ispersonal.simple_fence#66241"
+  ],
   "__version": 3
 }
