@@ -3,7 +3,7 @@ using Sandbox;
 using Sandbox.Mapping;
 using static Sandbox.Gizmo;
 
-public sealed class PobxButton : Component, IInteractable, IPobxSwitchInterface
+public class PobxButton : Component, IInteractable, IPobxSwitchInterface
 {
 	[Property, Group( "Button" )] private GameObject AnimatingObject { get; set; }
 
@@ -40,9 +40,15 @@ public sealed class PobxButton : Component, IInteractable, IPobxSwitchInterface
 	[Property, Group( "Sounds" )] public SoundEvent NotActiveSound { get; set; }
 
 
-	protected override void OnAwake()
+	public virtual void SetInitialValues()
 	{
 		_offPositon = this.AnimatingObject.LocalPosition;
+	}
+
+	protected override void OnAwake()
+	{
+		SetInitialValues();
+		
 	}
 
 	protected override void OnFixedUpdate()
@@ -64,7 +70,7 @@ public sealed class PobxButton : Component, IInteractable, IPobxSwitchInterface
 
 	}
 
-	private void Animate()
+	public virtual void Animate()
 	{
 		this.AnimatingObject.LocalPosition = MathUtils.VInterpTo( this.AnimatingObject.LocalPosition, _targetPosition, Time.Delta, ButtonSpeed );
 		if (this.AnimatingObject.LocalPosition.DistanceSquared(_targetPosition) <= 0.3f * 0.3f)

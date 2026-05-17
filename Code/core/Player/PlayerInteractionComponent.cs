@@ -61,25 +61,26 @@ public sealed class PlayerInteractionComponent : Component
 				continue;
 			}
 
-			float dot = (item.Component.WorldPosition - start).Dot( item.Direction );
+			float dot = (item.GameObject.WorldPosition - start).Dot( item.Direction );
 
 			if ( DebugInteraction )
 			{
-				float distance = item.Component.WorldPosition.Distance( start );
-				string debugString = item.GameObject.Name + "\tDot: " + dot + "\t" + "Distance: " + distance;
+				float distancea = item.Component.WorldPosition.Distance( start );
+				string debugString = item.GameObject.Name + "\tDot: " + dot + "\t" + "Distance: " + distancea;
 				Log.Info( debugString );
 				DebugOverlay.Text( item.Component.WorldPosition, debugString );
 			}
 
-			if (dot > bestDot)
+			float distance = item.GameObject.WorldPosition.Distance( start );
+
+			if ( dot > bestDot || distance <= closestDistance )
 			{
-				float distance = item.Component.WorldPosition.Distance( start );
-				if ( distance < closestDistance )
-				{
-					FocusedInteractable = item.GameObject;
+				if ( distance <= closestDistance )
 					closestDistance = distance;
+				if ( dot > bestDot )
 					bestDot = dot;
-				}
+
+				FocusedInteractable = item.GameObject;
 			}
 		}
 

@@ -324,8 +324,18 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		else
 		{
 			// Trace Type
+			if (DebugWeaponActions)
+			{
+				DebugOverlay.Line( new Line( traceResult.StartPosition, traceResult.HitPosition ), Color.Blue, 5.0f );
+			}
+
 			if ( traceResult.Hit )
 			{
+				if ( DebugWeaponActions )
+				{
+					DebugOverlay.Sphere( new Sphere(traceResult.HitPosition, 4.0f), Color.Red, 10.0f );
+				}
+
 				DamageInfo damageInfo = new( BulletConfig.Damage, HasOwner ? this.Owner.GameObject : this.GameObject, this.GameObject )
 				{
 					Position = traceResult.HitPosition,

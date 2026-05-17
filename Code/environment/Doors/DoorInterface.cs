@@ -11,4 +11,10 @@ public interface IDoor
 	public bool IsInProgress();
 
 	public void ToggleOpenDoor();
+
+	public void OpenDoor();
+	public void CloseDoor();
+
+	public event Action OnDoorOpened;
+	public event Action OnDoorClosed;
 }

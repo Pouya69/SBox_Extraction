@@ -18,6 +18,9 @@ public sealed class DoubleSlidingDoor : Component, IInteractable, IDoor
 
 	private bool _isOpen = false;
 
+	[Property, Feature( "Door" ), Group( "Events" )] public event Action OnDoorOpened;
+	[Property, Feature( "Door" ), Group( "Events" )] public event Action OnDoorClosed;
+
 	protected override void OnAwake()
 	{
 		_closedPosition = this.Door_01.LocalPosition;
@@ -70,7 +73,14 @@ public sealed class DoubleSlidingDoor : Component, IInteractable, IDoor
 		this.Door_02.LocalPosition = MathUtils.VInterpTo( this.Door_02.LocalPosition, _targetPosition_02, Time.Delta, DoorSpeed );
 		if ((this.Door_01.LocalPosition).DistanceSquared(this._targetPosition) <= 2f * 2f && (this.Door_02.LocalPosition).DistanceSquared( this._targetPosition_02 ) <= 2f * 2f)
 		{
+			this.Door_01.LocalPosition = this._targetPosition;
+			this.Door_02.LocalPosition = this._targetPosition_02;
+
 			this.Enabled = false;
+			if ( IsOpen() )
+				OnDoorOpened?.Invoke();
+			else
+				OnDoorClosed?.Invoke();
 		}
 	}
 

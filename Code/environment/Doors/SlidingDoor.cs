@@ -10,9 +10,12 @@ public sealed class SlidingDoor : Component, IInteractable, IDoor
 
 	private bool _isOpen = false;
 
+	[Property, Feature( "Door" ), Group( "Events" )] public event Action OnDoorOpened;
+	[Property, Feature( "Door" ), Group( "Events" )] public event Action OnDoorClosed;
+
 	protected override void OnAwake()
 	{
-		_closedPosition = this.WorldPosition;
+		_closedPosition = this.LocalPosition;
 		this.Enabled = false;
 	}
 
@@ -54,10 +57,16 @@ public sealed class SlidingDoor : Component, IInteractable, IDoor
 
 	protected override void OnFixedUpdate()
 	{
-		this.WorldPosition = MathUtils.VInterpTo(this.WorldPosition, _targetPosition, Time.Delta, DoorSpeed );
-		if ((this.WorldPosition).DistanceSquared(this._targetPosition) <= 2f * 2f )
+		this.LocalPosition = MathUtils.VInterpTo(this.LocalPosition, _targetPosition, Time.Delta, DoorSpeed );
+		if ((this.LocalPosition).DistanceSquared(this._targetPosition) <= 2f * 2f )
 		{
+			this.LocalPosition = this._targetPosition;
+
 			this.Enabled = false;
+			if ( IsOpen() )
+				OnDoorOpened?.Invoke();
+			else
+				OnDoorClosed?.Invoke();
 		}
 	}
 
