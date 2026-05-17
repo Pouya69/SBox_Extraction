@@ -246,7 +246,6 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "OverrideMassCenter": true,
-        "PreciseContacts": false,
         "RigidbodyFlags": "DisableCollisionSounds",
         "SleepThreshold": 2,
         "StartAsleep": false

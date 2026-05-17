@@ -37,10 +37,10 @@ public sealed class PlayerInteractionComponent : Component
 
 	private void FindBestInteractable()
 	{
-		Vector3 start = this.WorldPosition;
-		Vector3 end = start + this.WorldTransform.Forward * InteractionFindDistance;
+		Vector3 start = this.Player.EyeTransform.Position;
+		Vector3 end = start + this.Player.EyeTransform.Forward * InteractionFindDistance;
 
-		var results = Scene.Trace.Sphere( InteractionFindRadius, start, end ).IgnoreGameObjectHierarchy(this.GameObject).WithTag( "interaction" ).UseHitPosition().RunAll();
+		var results = Scene.Trace.Sphere( InteractionFindRadius, start, end ).IgnoreGameObjectHierarchy(this.Player.GameObject).WithTag( "interaction" ).UseHitPosition(true).RunAll();
 
 		if ( !results.Any() )
 		{
@@ -49,40 +49,46 @@ public sealed class PlayerInteractionComponent : Component
 		}
 
 		float closestDistance = 99999999.0f;
-		float bestDot = -2.0f;
+		float bestDot = -200000.0f;
 
+		GameObject BestInteractableSoFar = null;
 		foreach ( var item in results )
 		{
 			if ( !item.Hit ) continue;
 
-			var blockedByObstacleTrace = Scene.Trace.Ray( item.HitPosition, this.Player.Head.WorldPosition ).IgnoreGameObjectHierarchy( this.GameObject ).WithCollisionRules("world").Run();
-			if ( blockedByObstacleTrace.Hit && !blockedByObstacleTrace.GameObject.Equals(this.GameObject) )
+			var blockedByObstacleTrace = Scene.Trace.Ray( start, item.HitPosition ).IgnoreGameObjectHierarchy( this.Player.GameObject ).WithTag("solid").Run();
+			if ( blockedByObstacleTrace.Hit && !blockedByObstacleTrace.GameObject.Equals(item.GameObject) )
 			{
+				if (DebugInteraction)
+				{
+					DebugOverlay.Sphere(new Sphere( item.HitPosition, 2.0f), Color.Orange);
+					Log.Info( $"{item.GameObject.Name} is blocked by {blockedByObstacleTrace.GameObject.Name}" );
+				}
 				continue;
 			}
 
-			float dot = (item.GameObject.WorldPosition - start).Dot( item.Direction );
+			BestInteractableSoFar ??= item.GameObject;
+
+			float dot = (item.HitPosition - start).Normal.Dot( item.Direction );
 
 			if ( DebugInteraction )
 			{
-				float distancea = item.Component.WorldPosition.Distance( start );
-				string debugString = item.GameObject.Name + "\tDot: " + dot + "\t" + "Distance: " + distancea;
+				float distancea = item.HitPosition.Distance( start );
+				string debugString = item.GameObject.Name + "\nDot: " + dot + "\n" + "Distance: " + distancea;
 				Log.Info( debugString );
-				DebugOverlay.Text( item.Component.WorldPosition, debugString );
+				DebugOverlay.Text( item.HitPosition, debugString );
 			}
 
-			float distance = item.GameObject.WorldPosition.Distance( start );
-
-			if ( dot > bestDot || distance <= closestDistance )
+			float distance = item.HitPosition.Distance( start );
+			if ( dot > bestDot && distance <= closestDistance )
 			{
-				if ( distance <= closestDistance )
-					closestDistance = distance;
-				if ( dot > bestDot )
-					bestDot = dot;
-
-				FocusedInteractable = item.GameObject;
+				
+				bestDot = dot;
+				closestDistance = distance;
+				BestInteractableSoFar = item.GameObject;
 			}
 		}
+		FocusedInteractable = BestInteractableSoFar;
 
 		if ( DebugInteraction && FocusedInteractable != null)
 		{
