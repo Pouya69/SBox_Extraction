@@ -45,4 +45,6 @@ public class PobxCharacterEntityComponent : ExtractionQuestEntityComponent
 	public override bool CanBeRemoteGrabbed() => false;
 
 	public override bool IsUsingJumpPad() => IsCharacterUsingJumpPad;
+
+	public override bool CanBeDetected() => true;
 }

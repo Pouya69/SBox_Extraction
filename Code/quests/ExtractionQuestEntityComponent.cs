@@ -93,4 +93,6 @@ public class ExtractionQuestEntityComponent : Component, IExtractionQuestEntity
 	}
 
 	public virtual bool IsUsingJumpPad() => false;
+
+	public virtual bool CanBeDetected() => false;
 }

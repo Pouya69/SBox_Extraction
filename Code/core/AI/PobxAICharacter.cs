@@ -31,10 +31,12 @@ public class PobxAI_Character : Component
 	[Group( "AI" ), Feature( "Components" )] [Property] public CharacterController AiController { get; private set; }
 	[Group( "AI" ), Feature( "Components" )] [Property] public CapsuleCollider CapsuleCollider { get; private set; }
 	[Group( "AI" )] [Property] private SplineComponent _PatrolPath { get; set; }
+	[Group( "AI" ), Property, DefaultValue( 0 )] private int StartingPatrolIndex { get; set; } = 0;
 	[Group( "AI" )] [Property] public float WaitTimeBetweenPoints { get; private set; } = 5;
 	[Group( "AI" )] [Property] private PrefabScene WeaponToSpawnWith { get; set; }
 	[Group( "AI" ), Feature( "Components" )][Property] public EnvironmentQueryHandler AIEnvironmentQueryHandler { get; private set; }
 	[Group( "AI" ), Feature("Components")][Property] public AI_SightComponent AI_SightComp { get; private set; }
+
 
 
 
@@ -172,7 +174,7 @@ public class PobxAI_Character : Component
 		_blackboard.Set( "Target Destination", WorldPosition );
 		_blackboard.Set( "Is Moving To Destination", false );
 
-		var patrolBehaviour = new ExtractionPatrollingNPCBehaviour( this, GetPointsFromSpine( _PatrolPath.Spline, _PatrolPath.WorldPosition ) );
+		var patrolBehaviour = new ExtractionPatrollingNPCBehaviour( this, StartingPatrolIndex, GetPointsFromSpine( _PatrolPath.Spline, _PatrolPath.WorldPosition ) );
 		var hostileBehaviour = new ExtractionHostileBehaviour( this );
 
 		_behaviorTree = new Root( _blackboard,

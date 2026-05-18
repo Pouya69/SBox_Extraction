@@ -54,6 +54,8 @@ public interface IExtractionQuestEntity
 	public Collider GetCollider();
 
 	public bool IsUsingJumpPad();
+
+	public bool CanBeDetected() => false;
 }
 
 public interface IExtractionQuest

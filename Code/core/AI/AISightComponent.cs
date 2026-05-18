@@ -148,7 +148,7 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 
 	void ITriggerListener.OnTriggerEnter( GameObject other )
 	{
-		if ( ColliderOfThisNPC.IsValid() && other.Equals( ColliderOfThisNPC ) )
+		if ( !CanDetect( other ) )
 			return;
 
 		ObjectsInCollider.Add( other );
@@ -161,7 +161,7 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 
 	void ITriggerListener.OnTriggerExit( GameObject other )
 	{
-		if ( ColliderOfThisNPC.IsValid() && other.Equals( ColliderOfThisNPC ) )
+		if ( !CanDetect(other) )
 			return;
 
 		if ( ObjectsInSight.Contains( other ) )
@@ -174,6 +174,11 @@ public sealed class AI_SightComponent : Component, Component.ITriggerListener
 		{
 			Log.Info( other.Name + " exited " + GameObject.Name + "'s conesight" );
 		}
+	}
+
+	public bool CanDetect(GameObject other)
+	{
+		return ColliderOfThisNPC.IsValid() && (!other.Equals( ColliderOfThisNPC ) && other.GetComponent<IExtractionQuestEntity>(true) is var entity && entity != null && entity.CanBeDetected());
 	}
 
 	protected override void OnDisabled()

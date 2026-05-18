@@ -8,10 +8,10 @@ public class ExtractionPatrollingNPCBehaviour : BaseBehaviourTree
 	public int PatrolPointsCount { get; private set;  }
 	public int currentPatrolPathTargetSplineIndex = 0;
 
-	public ExtractionPatrollingNPCBehaviour( PobxAI_Character owner, Vector3[] patrolPositions) : base(owner)
+	public ExtractionPatrollingNPCBehaviour( PobxAI_Character owner, int startingPatrolIndex, Vector3[] patrolPositions) : base(owner)
 	{
 
-		Owner.SetNewTargetLocation( patrolPositions[0] );
+		Owner.SetNewTargetLocation( patrolPositions[startingPatrolIndex] );
 		this.InitComposite( [PatrolPathsSequence()] );
 
 
