@@ -403,6 +403,14 @@
               "Type": "Component",
               "IdValue": "d7ca216d-b164-492e-b1ab-2f5d6153fbc4"
             },
+            "Property": "Cost",
+            "Value": 1
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d7ca216d-b164-492e-b1ab-2f5d6153fbc4"
+            },
             "Property": "ItemWorldModelPrefab",
             "Value": null
           },
@@ -1211,7 +1219,7 @@
                                     {
                                       "TimeRange": "0,3240",
                                       "SampleRate": 30,
-                                      "Samples": "H4sIAAAAAAAACvv///9/RgYGBmkGKGCRUGC4U8/AcKOfgfHKegbGM/sZGE/cZ2A68Z6B6ch7BuYD/xlYdvAzsuzhZ2Tdw8/Ivuc/A+sefUaOLfKM7Af+M+zedX8q35F8hsCj63Mu7Js/xeni/xzuE+8Zbp07P5njTj2D+cP5ubcu+U82fTo/FwAL05myfAAAAA=="
+                                      "Samples": "H4sIAAAAAAAACgF8AIP//////wEAAAAbAAAAAAAAAP75B8AJ4P//Ctz//+/Vz2EByK8ANs6vnc7FL2RPwg+cEMAvAKq5v2Z5vr+ZEbxPAIa5D2mcuq+XE7h/ABDAbwBevc9rCMjfAMm675QQwK8AC9RvAA/IrwA9yZ9t2N5/kzfhn20I3J8A2t4fk4nRXvN8AAAA"
                                     }
                                   ]
                                 }
@@ -1581,7 +1589,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "0521ab7e-aed9-4e4d-9484-54f29abb16d3": "18fee216-204e-4a31-83f7-de70b24b47a4"
+        "e7c5b913-ae2e-472e-966d-26c0963b5cc0": "b489b44f-f31c-491b-8e7f-7bc2de0f5e51"
       }
     },
     {
@@ -1636,7 +1644,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "6d537659-c132-4a38-990c-5933d49449a0": "18d542a8-856e-4d86-abd7-2fc4178fb2f5"
+        "0ce652a3-f13b-42ea-af42-178f90522e3a": "52b7083c-4db1-43e2-9dab-385f6854b3bd"
       }
     },
     {
@@ -1699,7 +1707,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "6d537659-c132-4a38-990c-5933d49449a0": "a102f845-47c5-4518-b146-5e9d3a1d0b88"
+        "0ce652a3-f13b-42ea-af42-178f90522e3a": "abed104a-1b61-4460-8392-167114fd0a14"
       }
     },
     {
@@ -1762,7 +1770,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "6d537659-c132-4a38-990c-5933d49449a0": "5b58191a-5a98-493c-b446-d07155f547d8"
+        "0ce652a3-f13b-42ea-af42-178f90522e3a": "f71ff8ee-c698-4ce1-9f90-2eff7ae81566"
       }
     },
     {
@@ -1825,7 +1833,7 @@
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "6d537659-c132-4a38-990c-5933d49449a0": "e6479d91-f29c-4f3f-8f59-818919d0e5f9"
+        "0ce652a3-f13b-42ea-af42-178f90522e3a": "5af458df-5864-4bcd-b87e-efcb8d3b7a9a"
       }
     },
     {
@@ -1852,10 +1860,16 @@
             "Property": "ContainerItems",
             "Value": [
               {
+                "IsUnique": false,
+                "Cost": 0,
+                "AmountMultiplier": 0,
                 "Amount": "0,0",
                 "ObjectPrefab": null
               },
               {
+                "IsUnique": false,
+                "Cost": 0,
+                "AmountMultiplier": 0,
                 "Amount": "0,0",
                 "ObjectPrefab": null
               }
@@ -1899,13 +1913,13 @@
           "SelectionSets": []
         }
       },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "1508a031-335e-47a8-ac87-12b89c8d041c"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },

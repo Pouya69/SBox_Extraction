@@ -71,7 +71,7 @@
         "BulletPrefab": null,
         "BulletsShotPerAttack": 1,
         "CanBeDropped": true,
-        "Cost": 1,
+        "Cost": 200,
         "CurrentCount": 1,
         "DebugWeaponActions": false,
         "DeployThrowStrength": 300,

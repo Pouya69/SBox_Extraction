@@ -17,7 +17,7 @@ public sealed class PobxPlayer : Component
 	[Property, RequireComponent, Feature( "Components") ] public ActionSystemComponent ActionSystemComp { get; private set; }
 	[Property, RequireComponent, Feature( "Components" )] public PlayerInventoryComponent InventoryComponent { get; private set; }
 	public PobxPlayerInventoryHud InventoryHud { get; private set; }
-	[Property, RequireComponent, Feature( "Components" )] private PlayerInteractionComponent PlayerInteractionComponent { get; set; }
+	[Property, RequireComponent, Feature( "Components" )] public PlayerInteractionComponent PlayerInteractionComponent { get; private set; }
 
 	public Transform EyeTransform
 	{

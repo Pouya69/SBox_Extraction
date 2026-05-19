@@ -1,0 +1,27 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+@if (Shop is null)
+	return;
+
+<root>
+	<Pobx_MedShop_UI @ref="MedShopPanelRef" Title="Med Shop" shop="@Shop" />
+</root>
+
+@code
+{
+	private Pobx_MedShop_UI MedShopPanelRef { get; set; }
+	[Property] private IShopInterface Shop { get; set; }
+
+	protected override void OnTreeFirstBuilt()
+	{
+		base.OnTreeFirstBuilt();
+		// Log.Info(Inventory);
+
+
+		StateHasChanged();
+	}
+
+}

@@ -30,6 +30,10 @@ public abstract class BaseInventory : IDisposable
 	private bool _bypassAuthorityCheck;
 	private readonly int _chunksPerRow;
 	private readonly ulong[] _rowBits;
+
+	public int ChunksPerRow => _chunksPerRow;
+	public ulong[] RowBits => _rowBits;
+
 	private readonly Dictionary<Guid, Entry> _entries = new();
 
 	public IReadOnlyCollection<Entry> Entries => _entries.Values;

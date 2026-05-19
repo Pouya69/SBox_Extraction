@@ -23,7 +23,7 @@ public class InventoryGrabbableComponent : Component, IInteractable
 	protected override void OnAwake()
 	{
 		WorldModel = Renderer.GameObject;
-		pobxBaseInventoryItem = new PobxBaseInventoryItem( ItemWorldModelPrefab, EntityReference.GetEntityName(), ItemSizeInInventory.x, ItemSizeInInventory.y, InventoryMaxStackSize, CurrentCount, WillBeDestroyedOnAddToInventory(), this );
+		pobxBaseInventoryItem = new( ItemWorldModelPrefab, EntityReference.GetEntityName(), ItemSizeInInventory.x, ItemSizeInInventory.y, InventoryMaxStackSize, CurrentCount, WillBeDestroyedOnAddToInventory(), this );
 	}
 
 	protected override void OnEnabled()
@@ -96,5 +96,5 @@ public class InventoryGrabbableComponent : Component, IInteractable
 
 	public virtual bool IsInteractable() => true;
 
-	public int GetCost() => Cost;
+	public int GetCost() => this.Cost;
 }

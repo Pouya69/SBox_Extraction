@@ -13,7 +13,13 @@ public interface IShopInterface
 	public int GetShopCredits();
 
 	public bool OpenShop(PobxPlayerState playerState);
+
+	public PobxPlayerState GetCurrentPlayerUsingShop();
+
 	public void CloseShop();
+	public int ShopTotalItemCount();
+
+	public event Action OnShopChanged;
 }
 
 public interface IShopItem
@@ -39,12 +45,12 @@ public class ShopItem : IShopItem
 
 	public void BoughtByPlayer( IShopInterface shopBoughtFrom, PobxPlayerState playerThatBought )
 	{
-		throw new NotImplementedException();
+		
 	}
 
 	public void SoldToShop( IShopInterface shopSoldTo, PobxPlayerState playerThatSold )
 	{
-		throw new NotImplementedException();
+		
 	}
 	public int GetCost() => _cost;
 	public PrefabScene GetObjectPrefab() => _objectPrefab;
