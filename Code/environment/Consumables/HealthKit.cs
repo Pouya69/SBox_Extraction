@@ -4,9 +4,9 @@ public sealed class HealthKit : ConsumableBase
 {
 	[Property, Feature("Health Kit")] public float HealAmount { get; private set; }
 
-	public override void Interact( PlayerInteractionComponent interactionComponent )
+	public override void Interact( IInteractionComp interactionComponent )
 	{
-		if ( interactionComponent.GameObject.GetComponent<ActionSystemComponent>( true ) is var actionSystemComp )
+		if ( interactionComponent.GetGameObject().GetComponent<ActionSystemComponent>( true ) is var actionSystemComp )
 		{
 			if ( actionSystemComp.CanBeHealed() )
 			{

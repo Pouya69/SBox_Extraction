@@ -530,9 +530,10 @@ public class Weapon : InventoryGrabbableComponent, ISbokuWeapon
 		CurrentViewModelComp = null;
 	}
 
-	protected override void AddedItemToInventory( PlayerInteractionComponent interactionComponent )
+	protected override void AddedItemToInventory( IInteractionComp interactionComponent )
 	{
-		this.GameObject.SetParent( interactionComponent.Player.PlayerState.GameObject, false );
+
+		this.GameObject.SetParent( interactionComponent.GetAttachmentGameObject(), false );
 		ToggleWeaponPhysics( false );
 		WorldModel.Enabled = false;
 		// base.AddedItemToInventory();

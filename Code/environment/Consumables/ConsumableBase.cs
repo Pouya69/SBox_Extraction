@@ -2,14 +2,15 @@ using Sandbox;
 
 public class ConsumableBase : Component, IInteractable
 {
+	[Property] public int Cost { get; set; }
+
 	public bool CanBePickedUp()
 	{
 		return false;
 	}
 
-	public virtual void Interact( PlayerInteractionComponent interactionComponent )
+	public virtual void Interact( IInteractionComp interactionComponent )
 	{
-		
 		
 	}
 
@@ -21,4 +22,6 @@ public class ConsumableBase : Component, IInteractable
 	{
 		return false;
 	}
+
+	public virtual int GetCost() => Cost;
 }

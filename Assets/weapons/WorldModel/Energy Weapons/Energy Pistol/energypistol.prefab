@@ -45,6 +45,7 @@
         },
         "BulletsShotPerAttack": 1,
         "CanBeDropped": true,
+        "Cost": 1,
         "CurrentCount": 1,
         "DebugWeaponActions": false,
         "DeployThrowStrength": 300,
@@ -242,7 +243,6 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null,
             "OverrideMassCenter": false,
-            "PreciseContacts": false,
             "RigidbodyFlags": 0,
             "SleepThreshold": 2,
             "StartAsleep": false

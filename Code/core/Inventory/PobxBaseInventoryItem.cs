@@ -40,3 +40,28 @@ public class PobxBaseInventoryItem : InventoryItem
 		return clone;
 	}
 }
+
+public struct FPobxInventoryItem
+{
+	public bool WillDestroyOnAdd = true;
+	public PrefabScene PobxItemReference;
+	public string displayName;
+	public int width;
+	public int height;
+	public int maxStackSize;
+	public Vector2Int startingStackCount;
+	public int StackCount;
+
+	public FPobxInventoryItem( PrefabScene pobxItemReference, string displayName, int width, int height, int maxStackSize, int startingStackCount, bool willDestroyOnAdd = true )
+	{
+		this.WillDestroyOnAdd = willDestroyOnAdd;
+		PobxItemReference = pobxItemReference;
+		this.displayName = displayName;
+		this.width = width;
+		this.height = height;
+		this.maxStackSize = maxStackSize;
+
+		this.startingStackCount = startingStackCount;
+		this.StackCount = startingStackCount;
+	}
+}

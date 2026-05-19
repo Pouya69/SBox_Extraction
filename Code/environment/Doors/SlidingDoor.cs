@@ -19,7 +19,7 @@ public sealed class SlidingDoor : Component, IInteractable, IDoor
 		this.Enabled = false;
 	}
 
-	public void Interact( PlayerInteractionComponent interactionComponent )
+	public void Interact( IInteractionComp interactionComponent )
 	{
 		if (!IsInProgress())
 			ToggleOpenDoor();

@@ -151,7 +151,11 @@ public sealed class VacuumGun : Weapon
 			DebugOverlay.Sphere( new Sphere( end, VacuumScanRadius ), Color.Red );
 		}
 
-		var results = Scene.Trace.Sphere( VacuumScanRadius, start, end).WithTag( ScanCollisionTag ).IgnoreGameObjectHierarchy(this.GameObject.Parent).RunAll();
+		var traceData = Scene.Trace.Sphere( VacuumScanRadius, start, end ).WithTag( ScanCollisionTag ).IgnoreGameObjectHierarchy( this.GameObject.Parent );
+		if ( HasOwner )
+			traceData.IgnoreGameObjectHierarchy( this.Owner.GameObject );
+		var results = traceData.RunAll();
+
 		foreach ( var item in results )
 		{
 			var entity = item.GameObject.GetComponent<IExtractionQuestEntity>();

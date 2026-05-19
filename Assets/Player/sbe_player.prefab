@@ -171,7 +171,7 @@
         "IK_HoldMaxHandsDistance": 8,
         "IK_HoldPositionReference": null,
         "IK_HoldScanRadius": 6,
-        "InteractionAcceptableDistance": 50,
+        "InteractionAcceptableDistance": 30,
         "InteractionFindDistance": 80,
         "InteractionFindRadius": 200,
         "OnComponentDestroy": null,

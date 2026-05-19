@@ -1,7 +1,7 @@
 using Conna.Inventory;
 using Sandbox;
 
-public sealed class PlayerInteractionComponent : Component
+public sealed class PlayerInteractionComponent : Component, IInteractionComp
 {
 	[Property, Group( "Config" )] private bool DebugInteraction { get; set; } = false;
 	[Property, Group("Config")] private float InteractionAcceptableDistance { get; set; } = 50.0f;
@@ -56,6 +56,9 @@ public sealed class PlayerInteractionComponent : Component
 		{
 			if ( !item.Hit ) continue;
 
+			float dot = (item.HitPosition - start).Normal.Dot( item.Direction );
+			if ( dot < 0 ) continue;
+
 			var blockedByObstacleTrace = Scene.Trace.Ray( start, item.HitPosition ).IgnoreGameObjectHierarchy( this.Player.GameObject ).WithTag("solid").Run();
 			if ( blockedByObstacleTrace.Hit && !blockedByObstacleTrace.GameObject.Equals(item.GameObject) )
 			{
@@ -69,8 +72,6 @@ public sealed class PlayerInteractionComponent : Component
 
 			BestInteractableSoFar ??= item.GameObject;
 
-			float dot = (item.HitPosition - start).Normal.Dot( item.Direction );
-
 			if ( DebugInteraction )
 			{
 				float distancea = item.HitPosition.Distance( start );
@@ -82,7 +83,6 @@ public sealed class PlayerInteractionComponent : Component
 			float distance = item.HitPosition.Distance( start );
 			if ( dot > bestDot && distance <= closestDistance )
 			{
-				
 				bestDot = dot;
 				closestDistance = distance;
 				BestInteractableSoFar = item.GameObject;
@@ -212,4 +212,10 @@ public sealed class PlayerInteractionComponent : Component
 	public InventoryResult AddItemToInventory( PobxBaseInventoryItem item ) {
 		return Player.InventoryComponent.AddItemToInventory( item );
 	}
+
+	public GameObject GetGameObject() => this.Player.GameObject;
+
+	public IExtractionQuestEntity GetEntity() => Player.EntityComponent;
+
+	public GameObject GetAttachmentGameObject() => Player.PlayerState.GameObject;
 }

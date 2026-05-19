@@ -1,7 +1,7 @@
 
 public interface IInteractable
 {
-	public void Interact(PlayerInteractionComponent interactionComponent);
+	public void Interact(IInteractionComp interactionComponent);
 
 	public void Released() { }
 
@@ -9,4 +9,6 @@ public interface IInteractable
 	public bool IsPickUpTwoHanded();
 
 	public bool IsInteractable();
+
+	public int GetCost() => 0;
 }

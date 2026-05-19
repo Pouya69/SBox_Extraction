@@ -58,8 +58,8 @@
         "BulletConfig": {
           "Damage": 15,
           "BulletRadius": 1,
-          "AimConeBase": "0.5,0.25",
-          "AimConeSpread": "3,3",
+          "AimConeBase": "0.409999907,0.25999999",
+          "AimConeSpread": "0.889999866,1.14999974",
           "AimConeRecovery": 0.2,
           "RecoilPitch": "-5.9199934,-5.84999657",
           "RecoilYaw": "-0.389999956,0.330000043",
@@ -71,6 +71,7 @@
         "BulletPrefab": null,
         "BulletsShotPerAttack": 1,
         "CanBeDropped": true,
+        "Cost": 1,
         "CurrentCount": 1,
         "DebugWeaponActions": false,
         "DeployThrowStrength": 300,
@@ -86,7 +87,7 @@
         "FireRate": 0.06999998,
         "HasSecondaryAttack": false,
         "InventoryMaxStackSize": 1,
-        "IronSightsFireScale": 0.5000013,
+        "IronSightsFireScale": 0.39000136,
         "IsReloadable": true,
         "ItemSizeInInventory": "1,1",
         "ItemWorldModelPrefab": {
@@ -211,7 +212,6 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null,
             "OverrideMassCenter": false,
-            "PreciseContacts": false,
             "RigidbodyFlags": 0,
             "SleepThreshold": 2,
             "StartAsleep": false

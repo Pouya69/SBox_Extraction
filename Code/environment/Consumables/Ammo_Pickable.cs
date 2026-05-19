@@ -14,10 +14,10 @@ public sealed class AmmoPickable : ConsumableBase
 	[Property, Feature( "Ammo" )] public int Ammo { get; private set; } = 5;
 	[Property, Feature( "Ammo" )] public EAmmoType AmmoType { get; private set; }
 
-	public override void Interact( PlayerInteractionComponent interactionComponent )
+	public override void Interact( IInteractionComp interactionComponent )
 	{
 
-		if ( !interactionComponent.Player.InventoryComponent.GiveAmmo( AmmoType, Ammo ) ) return;
+		if ( !interactionComponent.GetGameObject().GetComponent<PlayerInventoryComponent>(true).GiveAmmo( AmmoType, Ammo ) ) return;
 
 		DestroyGameObject();
 

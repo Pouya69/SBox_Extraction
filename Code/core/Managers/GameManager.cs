@@ -81,6 +81,15 @@ public class GameManager : GameObjectSystem<GameManager>, Component.INetworkList
 
 	public void RespawnPlayer( Connection connection ) => RespawnPlayer( PobxPlayerState.For( connection ) );
 
+	public async void RefreshAllStoreItems() {
+		var shops = Scene.GetAll<IShopInterface>();
+
+		foreach ( var shop in shops )
+		{
+			shop.RefreshShopItems();
+		}
+	}
+
 	public bool AreAllPlayersDead()
 	{
 		foreach ( var playerState in Players )

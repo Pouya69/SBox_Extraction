@@ -7,7 +7,7 @@ public class GrabbableComponent : Component, IInteractable
 
 	public bool CanBePickedUp() => true;
 
-	public void Interact( PlayerInteractionComponent interactionComponent )
+	public void Interact( IInteractionComp interactionComponent )
 	{
 		interactionComponent.PickUpEntity( EntityRef );
 	}

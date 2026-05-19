@@ -80,9 +80,9 @@ public class PobxButton : Component, IInteractable, IPobxSwitchInterface
 		}
 	}
 
-	public void Interact( PlayerInteractionComponent interactionComponent )
+	public void Interact( IInteractionComp interactionComponent )
 	{
-		ToggleInteract( interactionComponent.Player.GameObject );
+		ToggleInteract( interactionComponent.GetGameObject() );
 	}
 
 	public bool IsInteractable() => !_isAnimating;

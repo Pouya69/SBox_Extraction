@@ -5,11 +5,12 @@ public class InventoryGrabbableComponent : Component, IInteractable
 	/// <summary>
 	/// This will be used for dropping etc.
 	/// </summary>
-	[Property, Feature( "Inventory" )] protected PrefabScene ItemWorldModelPrefab;
+	[Property, Feature( "Inventory" )] public PrefabScene ItemWorldModelPrefab { get; protected set; }
 	[Property, Feature( "Inventory" )] protected Renderer Renderer;
 	[Property, Feature( "Inventory" )] protected Vector2Int ItemSizeInInventory = new(1,1);
 	[Property, Feature( "Inventory" )] protected int InventoryMaxStackSize = 1;
 	[Property, Feature( "Inventory" )] protected int CurrentCount = 1;
+	[Property, Feature( "Inventory" )] public int Cost { get; set; } = 1;
 	public GameObject WorldModel { get; protected set; }
 	/// <summary>
 	/// If false, the item will be discarded upon dropping.
@@ -37,7 +38,7 @@ public class InventoryGrabbableComponent : Component, IInteractable
 
 	public virtual bool WillBeDestroyedOnAddToInventory() => true;
 
-	public void Interact( PlayerInteractionComponent interactionComponent )
+	public void Interact( IInteractionComp interactionComponent )
 	{
 		var result = interactionComponent.AddItemToInventory( pobxBaseInventoryItem );
 
@@ -56,9 +57,9 @@ public class InventoryGrabbableComponent : Component, IInteractable
 		//GameObject.Destroy();
 	}
 
-	protected virtual void AddedItemToInventory( PlayerInteractionComponent interactionComponent )
+	protected virtual void AddedItemToInventory( IInteractionComp interactionComponent )
 	{
-		ExtractionQuestSystem.EntityPickedUp( interactionComponent.Player.EntityComponent, EntityReference );
+		ExtractionQuestSystem.EntityPickedUp( interactionComponent.GetEntity(), EntityReference );
 		if (pobxBaseInventoryItem.WillDestroyOnAdd)
 			this.GameObject.Destroy();
 	}
@@ -94,4 +95,6 @@ public class InventoryGrabbableComponent : Component, IInteractable
 	public virtual void OnControl( PobxPlayer Player ) { }
 
 	public virtual bool IsInteractable() => true;
+
+	public int GetCost() => Cost;
 }
